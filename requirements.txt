@@ -1,0 +1,9 @@
+Django==3.2.5
+django-cleanup==5.2.0
+djangorestframework==3.12.4
+djangorestframework-datatables==0.6.0
+xhtml2pdf==0.2.5
+Pillow==8.3.0
+PyPDF2==1.26.0
+python-dotenv==0.18.0
+psycopg2==2.9.1
