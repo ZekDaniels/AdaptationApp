@@ -1,0 +1,52 @@
+{% extends 'login_register/login_register_layout.html' %}
+
+{% load static %}
+{% block title %} Kayıt Ol {% endblock title %}
+{% block content %}
+<div class="login-form">
+  <div class="text-center">
+    <h1 class="h4 text-gray-900 mb-4">Kayıt Ol</h1>
+  </div>
+  <form>
+    {% comment %} form based errors {% endcomment %}
+    {% if form.non_field_errors %}
+    {{form.non_field_errors}}
+    {% endif %}
+
+    <div class="form-group">
+
+    </div>
+    <hr>
+  </form>
+  <form id="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+
+      {% for field in profileform %}
+      <div class="form-group col-lg-4">
+        <label>{{field.label}}</label>
+        {{ field }}
+        {{ field.errors }}
+      </div>
+      {% endfor %}
+      {% for field in userform %}
+      <div class="form-group col-lg-4 align-items-center">
+        <label>{{field.label}}</label>
+        {{ field }}
+        {{ field.errors }}
+      </div>
+      {% endfor %}
+
+    </div>
+    <hr>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-block h3">Register</button>
+    </div>
+  </form>
+  <div class="text-center">
+    <a class="font-weight-bold small" href="{% url 'login_page' %}">Zaten hesabın var mı?</a>
+  </div>
+  <div class="text-center">
+  </div>
+</div>
+{% endblock content %}

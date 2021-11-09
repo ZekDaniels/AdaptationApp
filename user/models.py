@@ -20,7 +20,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
                               help_text=("Lütfen kare profil resminizi kare olacak şekilde yükleyin, yoksa fotoğrafınız kırpılacaktır."))
-    birthday = models.DateField(("Doğum Günü"), blank=False, null=True)
+    namesurname = models.CharField(("Ad Soyad"), max_length=200, default="")
+    birthday = models.DateField(("Doğum Tarihi"), blank=False, null=True)
     phone_number = models.CharField(("Telefon Numarası"), max_length=50, blank=False, null=True)
     address = models.TextField(("Adres"), blank=True, null=True)
     user_role = models.CharField(("Kullanıcı Rolü"), max_length=7, choices=USER_ROLE_CHOICES, default=student)
