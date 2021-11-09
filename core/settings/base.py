@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #myapps
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -145,4 +147,4 @@ LOGIN_URL = 'landing_page'
 LOGIN_REDIRECT_URL = 'profile_page'
 LOGOUT_REDIRECT_URL = 'landing_page'
 
-FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+# FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
