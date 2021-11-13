@@ -21,7 +21,6 @@ class Profile(models.Model):
     image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
                               help_text=("Lütfen kare profil resminizi kare olacak şekilde yükleyin, yoksa fotoğrafınız kırpılacaktır."))
     namesurname = models.CharField(("Ad Soyad"), max_length=200, default="")
-    birthday = models.DateField(("Doğum Tarihi"), blank=False, null=True)
     phone_number = models.CharField(("Telefon Numarası"), max_length=50, blank=False, null=True)
     address = models.TextField(("Adres"), blank=True, null=True)
     user_role = models.CharField(("Kullanıcı Rolü"), max_length=7, choices=USER_ROLE_CHOICES, default=student)
@@ -35,8 +34,8 @@ class Profile(models.Model):
         super().__init_(*args, **kwargs)
         self.__image = self.image
 
-    def __str_(self):
-        return f"{self.user} | {self.user.get_full_name()}"
+    def __str__(self):
+        return f"{self.namesurname} | {self.user.username}"
 
     def save(self, *args, **kwargs):
         """

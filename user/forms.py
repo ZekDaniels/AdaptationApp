@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 
 STYLES = {
      "else": {
@@ -13,7 +14,6 @@ class UserLoginForm(AuthenticationForm):
     
 class NewUserForm(UserCreationForm):    
     email = forms.EmailField(required=True)
- 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for name in self.fields:
@@ -35,6 +35,8 @@ class NewUserForm(UserCreationForm):
         return user
 
 class NewProfileForm(forms.ModelForm):
+    student_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'type':'number'}) )
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for name in self.fields:
@@ -44,6 +46,15 @@ class NewProfileForm(forms.ModelForm):
             else:
                 self.fields[name].widget.attrs.update(STYLES["else"])
     
+    def clean_student_number(self):
+        student_number = self.cleaned_data['student_number']
+        if len(student_number) != 9:
+            raise ValidationError('Eksik veya fazla karakter girdiniz..')
+        
+        if Profile.objects.filter(student_number=student_number).count() > 0:
+            raise ValidationError('Bu numara ile daha önce kayıt olunmuş..')
+        return student_number
+    
     class Meta:
         model = Profile
-        fields = ['namesurname', 'student_number', 'education_time', 'birthday', 'phone_number']
+        fields = ['namesurname', 'student_number', 'education_time', 'phone_number']

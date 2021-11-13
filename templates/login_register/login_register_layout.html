@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="{% static 'img/logo/logo.png' %}" rel="icon">
   <title>{% block title %}{% endblock %}</title>
   <link href="{% static 'lib/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'lib/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
@@ -40,10 +40,11 @@
 </div>
 </div>
 <!-- Login Content -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-<script src="{% static 'js/ruang-admin.min.js' %}"></script>
+
+<script src="{% static 'lib/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'lib/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'lib/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+<script src="{% static 'lib/js/ruang-admin.min.js' %}"></script>
 </body>
 
 </html>

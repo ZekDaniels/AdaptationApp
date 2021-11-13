@@ -31,6 +31,8 @@ class LoginPageView(LoginView):
     
 class RegisterView(View):
     def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('dashboard')
         userform = NewUserForm()
         profileform = NewProfileForm()
         context = {'userform':userform, 'profileform':profileform}
@@ -39,7 +41,7 @@ class RegisterView(View):
     def post(self, request, *args, **kwargs):
         userform = NewUserForm(request.POST)
         profileform = NewProfileForm(request.POST)
-
+        
         if userform.is_valid() and profileform.is_valid():
             userform.instance.username = profileform.instance.student_number
             user = userform.save()    
@@ -49,7 +51,6 @@ class RegisterView(View):
             messages.success(request, "Registration successful.")
             return redirect("dashboard")
         else:
-            messages.error(request, "Unsuccessful registration. Invalid information.")
-            form = NewUserForm()
+            messages.error(request, "Kayıt Başarısız.")
             return render (request, "register.html", context={"userform":userform, "profileform":profileform})
 
