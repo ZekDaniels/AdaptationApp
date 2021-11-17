@@ -1,0 +1,1282 @@
+ [{
+         "model": "adaptation.university",
+         "pk": "1",
+         "fields": {
+             "name": "Abant İzzet Baysal Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "2",
+         "fields": {
+             "name": "Abdullah Gül Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "3",
+         "fields": {
+             "name": "Acıbadem Mehmet Ali Aydınlar Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "4",
+         "fields": {
+             "name": "Adana Bilim Ve Teknoloji Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "5",
+         "fields": {
+             "name": "Adıyaman Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "6",
+         "fields": {
+             "name": "Adnan Menderes Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "7",
+         "fields": {
+             "name": "Afyon Kocatepe Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "8",
+         "fields": {
+             "name": "Ağrı İbrahim Çeçen Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "9",
+         "fields": {
+             "name": "Ahi Evran Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "10",
+         "fields": {
+             "name": "Akdeniz Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "11",
+         "fields": {
+             "name": "Aksaray Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "12",
+         "fields": {
+             "name": "Alanya Alaaddin Keykubat Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "13",
+         "fields": {
+             "name": "Alanya Hamdullah Emin Paşa Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "14",
+         "fields": {
+             "name": "Altınbaş Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "15",
+         "fields": {
+             "name": "Amasya Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "16",
+         "fields": {
+             "name": "Anadolu Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "17",
+         "fields": {
+             "name": "Ankara Sosyal Bilimler Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "18",
+         "fields": {
+             "name": "Ankara Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "19",
+         "fields": {
+             "name": "Ankara Yıldırım Beyazıt Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "20",
+         "fields": {
+             "name": "Antalya Akev Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "21",
+         "fields": {
+             "name": "Antalya Bilim Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "22",
+         "fields": {
+             "name": "Ardahan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "23",
+         "fields": {
+             "name": "Artvin Çoruh Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "24",
+         "fields": {
+             "name": "Ataşehir Adıgüzel Meslek Yüksekokulu"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "25",
+         "fields": {
+             "name": "Atatürk Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "26",
+         "fields": {
+             "name": "Atılım Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "27",
+         "fields": {
+             "name": "Avrasya Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "28",
+         "fields": {
+             "name": "Avrupa Meslek Yüksekokulu"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "29",
+         "fields": {
+             "name": "Bahçeşehir Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "30",
+         "fields": {
+             "name": "Balıkesir Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "31",
+         "fields": {
+             "name": "Bandırma Onyedi Eylül Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "32",
+         "fields": {
+             "name": "Bartın Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "33",
+         "fields": {
+             "name": "Başkent Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "34",
+         "fields": {
+             "name": "Batman Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "35",
+         "fields": {
+             "name": "Bayburt Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "36",
+         "fields": {
+             "name": "Beykent Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "37",
+         "fields": {
+             "name": "Beykoz Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "38",
+         "fields": {
+             "name": "Bezm-İ Âlem Vakıf Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "39",
+         "fields": {
+             "name": "Bilecik Şeyh Edebali Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "40",
+         "fields": {
+             "name": "Bingöl Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "41",
+         "fields": {
+             "name": "Biruni Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "42",
+         "fields": {
+             "name": "Bitlis Eren Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "43",
+         "fields": {
+             "name": "Boğaziçi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "44",
+         "fields": {
+             "name": "Bozok Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "45",
+         "fields": {
+             "name": "Bursa Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "46",
+         "fields": {
+             "name": "Bülent Ecevit Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "47",
+         "fields": {
+             "name": "Canik Başarı Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "48",
+         "fields": {
+             "name": "Cumhuriyet Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "49",
+         "fields": {
+             "name": "Çağ Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "50",
+         "fields": {
+             "name": "Çanakkale Onsekiz Mart Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "51",
+         "fields": {
+             "name": "Çankaya Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "52",
+         "fields": {
+             "name": "Çankırı Karatekin Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "53",
+         "fields": {
+             "name": "Çukurova Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "54",
+         "fields": {
+             "name": "Dicle Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "55",
+         "fields": {
+             "name": "Doğuş Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "56",
+         "fields": {
+             "name": "Dokuz Eylül Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "57",
+         "fields": {
+             "name": "Dumlupınar Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "58",
+         "fields": {
+             "name": "Düzce Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "59",
+         "fields": {
+             "name": "Ege Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "60",
+         "fields": {
+             "name": "Erciyes Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "61",
+         "fields": {
+             "name": "Erzincan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "62",
+         "fields": {
+             "name": "Erzurum Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "63",
+         "fields": {
+             "name": "Eskişehir Osmangazi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "64",
+         "fields": {
+             "name": "Faruk Saraç Tasarım Meslek Yüksekokulu"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "65",
+         "fields": {
+             "name": "Fatih Sultan Mehmet Vakıf Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "66",
+         "fields": {
+             "name": "Fırat Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "67",
+         "fields": {
+             "name": "Galatasaray Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "68",
+         "fields": {
+             "name": "Gazi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "69",
+         "fields": {
+             "name": "Gaziantep Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "70",
+         "fields": {
+             "name": "Gaziosmanpaşa Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "71",
+         "fields": {
+             "name": "Gebze Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "72",
+         "fields": {
+             "name": "Giresun Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "73",
+         "fields": {
+             "name": "Gümüşhane Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "74",
+         "fields": {
+             "name": "Hacettepe Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "75",
+         "fields": {
+             "name": "Hakkari Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "76",
+         "fields": {
+             "name": "Haliç Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "77",
+         "fields": {
+             "name": "Harran Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "78",
+         "fields": {
+             "name": "Hasan Kalyoncu Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "79",
+         "fields": {
+             "name": "Hitit Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "80",
+         "fields": {
+             "name": "Iğdır Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "81",
+         "fields": {
+             "name": "Işık Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "82",
+         "fields": {
+             "name": "İbn Haldun Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "83",
+         "fields": {
+             "name": "İhsan Doğramacı Bilkent Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "84",
+         "fields": {
+             "name": "İnönü Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "85",
+         "fields": {
+             "name": "İskenderun Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "86",
+         "fields": {
+             "name": "İstanbul 29 Mayıs Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "87",
+         "fields": {
+             "name": "İstanbul Arel Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "88",
+         "fields": {
+             "name": "İstanbul Aydın Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "89",
+         "fields": {
+             "name": "İstanbul Ayvansaray Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "90",
+         "fields": {
+             "name": "İstanbul Bilgi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "91",
+         "fields": {
+             "name": "İstanbul Bilim Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "92",
+         "fields": {
+             "name": "İstanbul Esenyurt Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "93",
+         "fields": {
+             "name": "İstanbul Gedik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "94",
+         "fields": {
+             "name": "İstanbul Gelişim Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "95",
+         "fields": {
+             "name": "İstanbul Kavram Meslek Yüksekokulu"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "96",
+         "fields": {
+             "name": "İstanbul Kemerburgaz Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "97",
+         "fields": {
+             "name": "İstanbul Kent Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "98",
+         "fields": {
+             "name": "İstanbul Kültür Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "99",
+         "fields": {
+             "name": "İstanbul Medeniyet Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "100",
+         "fields": {
+             "name": "İstanbul Medipol Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "101",
+         "fields": {
+             "name": "İstanbul Rumeli Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "102",
+         "fields": {
+             "name": "İstanbul Sabahattin Zaim Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "103",
+         "fields": {
+             "name": "İstanbul Şehir Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "104",
+         "fields": {
+             "name": "İstanbul Şişli Meslek Yüksekokulu"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "105",
+         "fields": {
+             "name": "İstanbul Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "106",
+         "fields": {
+             "name": "İstanbul Ticaret Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "107",
+         "fields": {
+             "name": "İstanbul Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "108",
+         "fields": {
+             "name": "İstanbul Yeni Yüzyıl Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "109",
+         "fields": {
+             "name": "İstinye Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "110",
+         "fields": {
+             "name": "İzmir Bakırçay Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "111",
+         "fields": {
+             "name": "İzmir Demokrasi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "112",
+         "fields": {
+             "name": "İzmir Ekonomi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "113",
+         "fields": {
+             "name": "İzmir Katip Çelebi Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "114",
+         "fields": {
+             "name": "İzmir Yüksek Teknoloji Enstitüsü"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "115",
+         "fields": {
+             "name": "Kadir Has Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "116",
+         "fields": {
+             "name": "Kafkas Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "117",
+         "fields": {
+             "name": "Kahramanmaraş Sütçü İmam Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "118",
+         "fields": {
+             "name": "Kapadokya Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "119",
+         "fields": {
+             "name": "Karabük Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "120",
+         "fields": {
+             "name": "Karadeniz Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "121",
+         "fields": {
+             "name": "Karamanoğlu Mehmetbey Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "122",
+         "fields": {
+             "name": "Kastamonu Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "123",
+         "fields": {
+             "name": "Kırıkkale Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "124",
+         "fields": {
+             "name": "Kırklareli Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "125",
+         "fields": {
+             "name": "Kilis 7 Aralık Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "126",
+         "fields": {
+             "name": "Kocaeli Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "127",
+         "fields": {
+             "name": "Koç Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "128",
+         "fields": {
+             "name": "Konya Gıda Ve Tarım Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "129",
+         "fields": {
+             "name": "Kto Karatay Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "130",
+         "fields": {
+             "name": "Maltepe Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "131",
+         "fields": {
+             "name": "Manisa Celâl Bayar Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "132",
+         "fields": {
+             "name": "Mardin Artuklu Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "133",
+         "fields": {
+             "name": "Marmara Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "134",
+         "fields": {
+             "name": "Mef Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "135",
+         "fields": {
+             "name": "Mehmet Akif Ersoy Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "136",
+         "fields": {
+             "name": "Melikşah Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "137",
+         "fields": {
+             "name": "Mersin Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "138",
+         "fields": {
+             "name": "Mimar Sinan Güzel Sanatlar Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "139",
+         "fields": {
+             "name": "Muğla Sıtkı Koçman Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "140",
+         "fields": {
+             "name": "Munzur Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "141",
+         "fields": {
+             "name": "Mustafa Kemal Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "142",
+         "fields": {
+             "name": "Muş Alparslan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "143",
+         "fields": {
+             "name": "Namık Kemal Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "144",
+         "fields": {
+             "name": "Necmettin Erbakan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "145",
+         "fields": {
+             "name": "Nevşehir Hacı Bektaş Veli Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "146",
+         "fields": {
+             "name": "Niğde Ömer Halisdemir Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "147",
+         "fields": {
+             "name": "Niğde Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "148",
+         "fields": {
+             "name": "Nişantaşı Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "149",
+         "fields": {
+             "name": "Nuh Naci Yazgan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "150",
+         "fields": {
+             "name": "Okan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "151",
+         "fields": {
+             "name": "Ondokuz Mayıs Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "152",
+         "fields": {
+             "name": "Ordu Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "153",
+         "fields": {
+             "name": "Orta Doğu Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "154",
+         "fields": {
+             "name": "Osmaniye Korkut Ata Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "155",
+         "fields": {
+             "name": "Özyeğin Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "156",
+         "fields": {
+             "name": "Pamukkale Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "157",
+         "fields": {
+             "name": "Piri Reis Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "158",
+         "fields": {
+             "name": "Recep Tayyip Erdoğan Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "159",
+         "fields": {
+             "name": "Sabancı Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "160",
+         "fields": {
+             "name": "Sağlık Bilimleri Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "161",
+         "fields": {
+             "name": "Sakarya Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "162",
+         "fields": {
+             "name": "Sanko Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "163",
+         "fields": {
+             "name": "Selçuk Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "164",
+         "fields": {
+             "name": "Siirt Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "165",
+         "fields": {
+             "name": "Sinop Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "166",
+         "fields": {
+             "name": "Süleyman Demirel Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "167",
+         "fields": {
+             "name": "Şırnak Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "168",
+         "fields": {
+             "name": "Ted Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "169",
+         "fields": {
+             "name": "Tobb Ekonomi Ve Teknoloji Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "170",
+         "fields": {
+             "name": "Toros Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "171",
+         "fields": {
+             "name": "Trakya Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "172",
+         "fields": {
+             "name": "Türk Hava Kurumu Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "173",
+         "fields": {
+             "name": "Türk-Alman Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "174",
+         "fields": {
+             "name": "Ufuk Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "175",
+         "fields": {
+             "name": "Uludağ Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "176",
+         "fields": {
+             "name": "Uşak Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "177",
+         "fields": {
+             "name": "Üsküdar Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "178",
+         "fields": {
+             "name": "Yalova Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "179",
+         "fields": {
+             "name": "Yaşar Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "180",
+         "fields": {
+             "name": "Yeditepe Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "181",
+         "fields": {
+             "name": "Yıldız Teknik Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "182",
+         "fields": {
+             "name": "Yüksek İhtisas Üniversitesi"
+         }
+     },
+     {
+         "model": "adaptation.university",
+         "pk": "183",
+         "fields": {
+             "name": "Yüzüncü Yıl Üniversitesi"
+         }
+     }
+ ]
