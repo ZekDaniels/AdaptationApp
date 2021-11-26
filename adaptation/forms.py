@@ -18,8 +18,8 @@ class ProtoAdaptionForm(forms.ModelForm):
     NULL_TUPPLE =  [
     ('', '---------'),
     ]
-    faculty = forms.ChoiceField(choices=NULL_TUPPLE, required=True)
-    science = forms.ChoiceField(choices=NULL_TUPPLE, required=True)
+    faculty = forms.ChoiceField(choices=NULL_TUPPLE, required=True, label="Fakülte")
+    science = forms.ChoiceField(choices=NULL_TUPPLE, required=True, label="Bölüm")
 
     FIELDS = {
         'decision_date':{

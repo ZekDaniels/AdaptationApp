@@ -30,6 +30,10 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
+    class Meta:
+        verbose_name = 'Kullanıcı'
+        verbose_name_plural = 'Kullanıcılar'
+
     def __init_(self, *args, **kwargs):
         super().__init_(*args, **kwargs)
         self.__image = self.image

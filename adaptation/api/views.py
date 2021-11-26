@@ -70,10 +70,7 @@ class QueryListAPIView(generics.ListAPIView):
         return self._paginator
 
 class FacultyListView(QueryListAPIView):
-    """
-    Returns all contacts
-    Use GET parameters to filter queryset
-    """
+    
     custom_related_fields = ["university"]
     queryset = Faculty.objects.select_related(*custom_related_fields).all()
     serializer_class = FacultyListSerializer
@@ -81,12 +78,17 @@ class FacultyListView(QueryListAPIView):
     ordering_fields = '__all__'
 
 class ScienceListView(QueryListAPIView):
-    """
-    Returns all contacts
-    Use GET parameters to filter queryset
-    """
+    
     custom_related_fields = ["university"]
     queryset = Science.objects.select_related(*custom_related_fields).all()
     serializer_class = ScienceListSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = '__all__'
+
+class AdaptationCreateAPIView(generics.CreateAPIView):
+   
+    queryset = Adaptation.objects.all()
+    serializer_class = AdaptationCreateSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

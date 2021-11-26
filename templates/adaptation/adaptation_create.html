@@ -9,14 +9,14 @@
     <div class="col-lg-9 m-auto">
         <div class="card mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">General Element</h6>
+                <h6 class="m-0 font-weight-bold text-primary">İntibak Kayıt Formu</h6>
             </div>
             <div class="card-body">
                 {% if form.non_field_errors %}
                 {{form.non_field_errors}}
                 {% endif %}
-                <form>
-
+                <form id="mainForm">
+                    {% csrf_token %}
                     {% for field in adaptation_create_form %}
                     {% if field.name == 'decision_date' %}
                     <div class="form-group" id="simple-date2">
@@ -40,6 +40,15 @@
                     {% endif %}
 
                     {% endfor %}
+                    <br>
+                    <div class="row">
+                    <button type="submit" href="#" class="btn btn-success btn-icon-split m-auto">
+                        <span class="icon text-white-50">
+                          <i class="fas fa-check"></i>
+                        </span>
+                        <span class="text">Split Button Success</span>
+                    </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -50,10 +59,11 @@
 
 {% block javascript %}
 <script>
-    faculties_api_url = new URL(window.location.href) 
-    faculties_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
-    sciences_api_url = new URL(window.location.href) 
-    sciences_api_url.pathname = "{% url 'adaptation:science_list_api' %}"
+    faculty_list_api_url = new URL(window.location.href) 
+    faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
+    science_list_api_url = new URL(window.location.href) 
+    science_list_api_url.pathname = "{% url 'adaptation:science_list_api' %}"
+    adaptation_create_api_url = "{% url 'adaptation:adaptation_create_api' %}"
 </script>
 
 <script src="{% static 'js/adaptation/adaptation_create/adaptation_create.js' %}"></script>
