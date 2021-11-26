@@ -21,4 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path(os.getenv('SECRET_ADMIN_URL')+'/admin/', admin.site.urls),
     path('', include('user.urls')),
+    path('intibak/', include('adaptation.urls')),
 ]

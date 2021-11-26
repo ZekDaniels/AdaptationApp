@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block title %}İntibak{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-lg-9 m-auto">
+        <div class="card mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">General Element</h6>
+            </div>
+            <div class="card-body">
+                {% if form.non_field_errors %}
+                {{form.non_field_errors}}
+                {% endif %}
+                <form>
+
+                    {% for field in adaptation_create_form %}
+                    {% if field.name == 'decision_date' %}
+                    <div class="form-group" id="simple-date2">
+
+                        <label for="oneYearView">{{field.label}}</label>
+                        <div class="input-group date">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                            {{field}}
+                        </div>
+                        {{field.errors}}
+                    </div>
+                    {% else %}
+                    <!-- General Element -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">{{field.label}}</label>
+                        {{field}}
+                        {{field.errors}}
+                    </div>
+                    {% endif %}
+
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    faculties_api_url = new URL(window.location.href) 
+    faculties_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
+    sciences_api_url = new URL(window.location.href) 
+    sciences_api_url.pathname = "{% url 'adaptation:science_list_api' %}"
+</script>
+
+<script src="{% static 'js/adaptation/adaptation_create/adaptation_create.js' %}"></script>
+
+{% endblock %}
