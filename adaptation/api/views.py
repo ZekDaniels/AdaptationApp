@@ -92,3 +92,8 @@ class AdaptationCreateAPIView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+class AdaptationUpdateAPIView(generics.UpdateAPIView):
+   
+    queryset = Adaptation.objects.all()
+    serializer_class = AdaptationCreateSerializer

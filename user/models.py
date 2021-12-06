@@ -31,8 +31,8 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
     class Meta:
-        verbose_name = 'Kullanıcı'
-        verbose_name_plural = 'Kullanıcılar'
+        verbose_name = 'Profil'
+        verbose_name_plural = 'Profiller'
 
     def __init_(self, *args, **kwargs):
         super().__init_(*args, **kwargs)

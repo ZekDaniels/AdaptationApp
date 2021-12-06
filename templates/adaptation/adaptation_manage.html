@@ -5,10 +5,133 @@
 {% block title %}İntibak Ders Seçim{% endblock %}
 
 {% block content %}
+<div class="row mb-3">
+    <div class="col-lg-12 mb-4">
+        <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">İntibak Bilgileri</h6>
+            </div>
+            <div class="card-body">
+                <form id="mainForm" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
 
+                        {% for field in adaptation_create_form %}
+                        <div class="form-group col-lg-4">
+                            <label>{{field.label}}</label>
+                            {{ field }}
+                            {{ field.errors }}
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-footer">
+                <div class="row p-3">
+                    <button type="submit" id="main-form-submit" href="#" class="btn btn-success btn-icon-split ml-auto">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="text">Kaydet</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 mb-4">
+        <!-- Simple Tables -->
+        <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">İntibak Dersleri</h6>
+                <button class="btn btn-primary">Yeni Ders Ekle</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr class="text-center">
+                            <th class="border border-white" colspan="6" scope="colgroup">Geldiği Kurumdan Aldığı Dersler</th>                           
+                            <th class="border border-white" colspan="6" scope="colgroup">Muaf Olduğu Dersler</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th class="border border-white">Sıra</th>
+                            <th class="border border-white">Kodu</th>
+                            <th class="border border-white">Dersin Adı</th>
+                            <th class="border border-white">D</th>
+                            <th class="border border-white">K</th>
+                            <th class="border border-white">AKTS</th>
+
+                            <th class="border border-white">Kodu</th>
+                            <th class="border border-white">Dersin Adı</th>
+                            <th class="border border-white">D</th>
+                            <th class="border border-white">K</th>
+                            <th class="border border-white">AKTS</th>
+                            <th class="border border-white">Başarı Notu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">UNVTD005</td>
+                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">UNVTD005</td>
+                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">CC</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">UNVTD005</td>
+                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">UNVTD005</td>
+                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">CC</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">UNVTD005</td>
+                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">UNVTD005</td>
+                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">2</td>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">CC</td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block javascript %}
+<script>
+    adaptation_id={{adaptation.id}}
+    faculty_list_api_url = new URL(window.location.href)
+    faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
+    science_list_api_url = new URL(window.location.href)
+    science_list_api_url.pathname = "{% url 'adaptation:science_list_api' %}"
+    adaptation_update_api_url = "{% url 'adaptation:adaptation_update_api' 0 %}"
+</script>
 
+<script src="{% static 'js/adaptation/adaptation_manage.js' %}"></script>
 {% endblock %}
-

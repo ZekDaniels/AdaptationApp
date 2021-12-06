@@ -14,10 +14,14 @@
     <link href="{% static 'lib/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'lib/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'lib/css/ruang-admin.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
+
     <!-- /Main CSS file -->
 
     <script src="{% static 'lib/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'lib/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/js/sweet_alert.min.js' %}"></script>
 
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -36,6 +40,13 @@
 
                 <!-- Container Fluid-->
                 <div class="container-fluid" id="container-wrapper">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="./">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                      </div>
                     {% block content %}
                     {% endblock content %}
                 </div>
@@ -80,6 +91,7 @@
 
     <script src="{% static 'lib/vendor/chart.js/Chart.min.js' %}"></script>
     <script src="{% static 'lib/js/demo/chart-area-demo.js' %}"></script>
+    <script src="{% static 'lib/js/alert.js' %}"></script>
     <!-- /Main scirpt file -->
 
 
@@ -92,7 +104,6 @@
     const messages = [
     {% for message in messages %}
         { "message":{"non_field_message":"{{message}}"} {% if message.tags %}, "icon":"{{ message.tags }}"{% endif %}
-        {% if message.tags == "warning" %}, "toast":true{% endif %}},
     {% endfor %}
     ]
     fire_alert(messages)
