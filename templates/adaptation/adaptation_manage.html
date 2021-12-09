@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% load static %}
-
+{% load get_max_grade %}
 {% block title %}İntibak Ders Seçim{% endblock %}
 
 {% block content %}
@@ -91,10 +91,11 @@
                                 <td rowspan="2" class="align-middle">{{adaptation_class.class_name}}</td>
                                 <td rowspan="2" class="align-middle">{{adaptation_class.semester}}</td>
                                 <td rowspan="2" class="align-middle">{{adaptation_class.credit}}</td>
-                                <td rowspan="2" class="align-middle">{{adaptation_class.akts}}</td>
-                                <td rowspan="2" class="align-middle">CC</td>
-                            </div>
+                                <td rowspan="2" class="align-middle">{{adaptation_class.akts}}</td>     
+                                <td rowspan="2" class="align-middle">{{student_class|get_max_grade}}</td>  
+                            </div>                               
                             {% endif %}
+                            
 
                         </tr>
                         {% endfor %}

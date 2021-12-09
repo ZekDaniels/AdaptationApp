@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Max
 
 STYLES = {
      "else": {
@@ -97,15 +98,28 @@ class StudentClass(models.Model):
     """
     The classes can take from user(student),
     """
+    
+    GRADE_CHOICES = (
+        (4.0, ("AA")),
+        (3.5, ("BA")),
+        (3.0, ("BB")),
+        (2.5, ("CB")),
+        (2.0, ("CC")),
+        (1.5, ("DC")),
+        (1.0, ("DD")),
+        (0.5, ("FD")),
+        (0, ("FF")),
+    )
     class Meta:
         verbose_name = 'Öğrenicin Dersi'
         verbose_name_plural = 'Öğrencinin Dersleri'
         
     code = models.CharField("Kodu", max_length=20)
     class_name = models.CharField("Dersin Adı", max_length=255)
-    semester = models.CharField("Semester", max_length=1, choices= SEMESETER_CHOICES)
-    credit = models.IntegerField("Credit")
+    semester = models.CharField("Dönem", max_length=1, choices= SEMESETER_CHOICES)
+    credit = models.IntegerField("Kredi")
     akts = models.IntegerField("AKTS")
+    grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("student_class"), verbose_name="Öğrenci", default=1)      
@@ -114,3 +128,10 @@ class StudentClass(models.Model):
     
     def __str__(self):
         return self.code+" - "+self.class_name
+    
+    
+    def get_max_grade(self):
+        candidate_classes = StudentClass.objects.filter(adaptation_class=self.adaptation_class)
+        candidate_classes.aggregate(Max('grade'))
+        max_grade_class = candidate_classes.order_by('-grade').first()
+        return max_grade_class.get_grade_display()
