@@ -51,9 +51,11 @@
                 <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                         <tr class="text-center">
-                            <th class="border border-white" colspan="6" scope="colgroup">Geldiği Kurumdan Aldığı Dersler</th>                           
+                            <th class="border border-white" colspan="6" scope="colgroup">Geldiği Kurumdan Aldığı Dersler
+                            </th>
                             <th class="border border-white" colspan="6" scope="colgroup">Muaf Olduğu Dersler</th>
                         </tr>
+
                         <tr class="text-center">
                             <th class="border border-white">Sıra</th>
                             <th class="border border-white">Kodu</th>
@@ -71,49 +73,34 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for adaptation_class in adaptation_classes %}
+
+                        {% for student_class in adaptation_class.student_classes.all|dictsort:"created_at"  %}
                         <tr class="text-center">
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">UNVTD005</td>
-                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">UNVTD005</td>
-                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">CC</td>
+                            <div class="student-class">
+                                <td class="align-middle">{{ forloop.counter }}</td>
+                                <td class="align-middle">{{student_class.code}}</td>
+                                <td class="align-middle">{{student_class.class_name}}</td>
+                                <td class="align-middle">{{student_class.semester}}</td>
+                                <td class="align-middle">{{student_class.credit}}</td>
+                                <td class="align-middle">{{student_class.akts}}</td>
+                            </div>
+                            {% if forloop.first %}
+                            <div class="adaptation-class">
+                                <td rowspan="2" class="align-middle">{{adaptation_class.code}}</td>
+                                <td rowspan="2" class="align-middle">{{adaptation_class.class_name}}</td>
+                                <td rowspan="2" class="align-middle">{{adaptation_class.semester}}</td>
+                                <td rowspan="2" class="align-middle">{{adaptation_class.credit}}</td>
+                                <td rowspan="2" class="align-middle">{{adaptation_class.akts}}</td>
+                                <td rowspan="2" class="align-middle">CC</td>
+                            </div>
+                            {% endif %}
+
                         </tr>
-                        <tr class="text-center">
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">UNVTD005</td>
-                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">UNVTD005</td>
-                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">CC</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">UNVTD005</td>
-                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">UNVTD005</td>
-                            <td class="align-middle">Atatürk İlk. Ve İnkılap Tarihi-I</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">CC</td>
-                        </tr>
-                      
+                        {% endfor %}
+
+
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -125,7 +112,11 @@
 
 {% block javascript %}
 <script>
-    adaptation_id={{adaptation.id}}
+    adaptation_id = {
+        {
+            adaptation.id
+        }
+    }
     faculty_list_api_url = new URL(window.location.href)
     faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
     science_list_api_url = new URL(window.location.href)
