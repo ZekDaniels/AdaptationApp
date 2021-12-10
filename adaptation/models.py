@@ -7,7 +7,6 @@ STYLES = {
         'class': 'form-control'
     }
 }
-SEMESETER_CHOICES = (("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5"), ("6", "6"), ("7", "7"), ("8", "8"), )
 
 class University(models.Model): 
     name = models.CharField("Üniversite", max_length=255)
@@ -58,7 +57,7 @@ class Adaptation(models.Model):
         (YO, ("Yaz Okulu")),
         (MT, ("Mühendislik Tamamlama")),
     )
-
+    SEMESETER_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"), (6, "6"), (7, "7"), (8, "8"), )
     YEAR_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), )
     university = models.ForeignKey(University, on_delete=models.DO_NOTHING, verbose_name="Üniversite")    
     faculty = models.ForeignKey(Faculty, on_delete=models.DO_NOTHING, verbose_name="Fakülte")
@@ -74,12 +73,13 @@ class Adaptation(models.Model):
     
     def __str__(self):
         return f"{self.user.profile.namesurname} {self.user.username}"
-    
 
 class AdapatationClass(models.Model):
     """
     The classes added in system,
     """
+    SEMESETER_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"), (6, "6"), (7, "7"), (8, "8"), )
+
     class Meta:
         verbose_name = 'İntibak Dersi'
         verbose_name_plural = 'İntibak Dersleri'
@@ -98,6 +98,8 @@ class StudentClass(models.Model):
     """
     The classes can take from user(student),
     """
+    SEMESETER_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"), (6, "6"), (7, "7"), (8, "8"), )
+
     
     GRADE_CHOICES = (
         (4.0, ("AA")),
