@@ -113,11 +113,7 @@
 
 {% block javascript %}
 <script>
-    adaptation_id = {
-        {
-            adaptation.id
-        }
-    }
+    adaptation_id = {{adaptation.id}}
     faculty_list_api_url = new URL(window.location.href)
     faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
     science_list_api_url = new URL(window.location.href)
