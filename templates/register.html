@@ -9,8 +9,13 @@
   </div>
   <form>
     {% comment %} form based errors {% endcomment %}
-    {% if form.non_field_errors %}
-    {{form.non_field_errors}}
+    {% if profileform.non_field_errors %}
+    {{profileform.non_field_errors}}
+    {% endif %}
+   
+    {% comment %} form based errors {% endcomment %}
+    {% if userform.non_field_errors %} 
+    {{profileform.non_field_errors}}
     {% endif %}
 
     <div class="form-group">
