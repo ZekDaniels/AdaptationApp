@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from adaptation.models import Adaptation, Faculty,Science
+from adaptation.models import Adaptation, Faculty,Science, StudentClass
 
 class FacultyListSerializer(serializers.ModelSerializer):
 
@@ -42,6 +42,13 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
     def validate(self, data):
         data = super().validate(data)        
         return data
+    
+class StudentClassCreateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = StudentClass
+        exclude = ['created_at','updated_at']
+        
  
 
 
