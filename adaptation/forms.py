@@ -1,6 +1,6 @@
 from django import forms
 import datetime
-from adaptation.models import Adaptation, Faculty, Science
+from adaptation.models import Adaptation, Faculty, Science, StudentClass
 
 STYLES = {
     "date-input":{
@@ -14,6 +14,19 @@ STYLES = {
 class DateInput(forms.DateInput):
     input_type = 'date'
     
+class StyledFormMixin(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            if hasattr(self, "FIELDS"):
+                if name in self.FIELDS:
+                    self.fields[name].widget.attrs.update(self.FIELDS[name])
+            # add some special classes depend on the element
+            if self.fields[name].widget.__class__.__name__ in STYLES:
+                self.fields[name].widget.attrs.update(STYLES[self.fields[name].widget.__class__.__name__])
+            else:
+                self.fields[name].widget.attrs.update(STYLES["else"])
+                
 class ProtoAdaptionForm(forms.ModelForm):
     NULL_TUPPLE =  [
     ('', '---------'),
@@ -58,6 +71,12 @@ class AdaptationUpdateForm(ProtoAdaptionForm):
        
         self.fields['faculty'].choices += [(faculty.id, faculty.name) for faculty in self.instance.university.faculties.all()]
         self.fields['science'].choices += [(science.id, science.name) for science in self.instance.faculty.sciences.all()]
+
+class ClassForm(forms.ModelForm, StyledFormMixin):
+    
+    class Meta:
+        model = StudentClass
+        exclude = ['user','adapatation_class', 'created_at', 'updated_at']
 
 
 

@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
-from adaptation.forms import AdaptationUpdateForm, ProtoAdaptionForm
+from adaptation.forms import AdaptationUpdateForm, ClassForm, ProtoAdaptionForm
 from adaptation.models import AdapatationClass, Adaptation
 
 class AdaptationCreateView(LoginRequiredMixin, View):
@@ -20,9 +20,10 @@ class AdaptationManageView(LoginRequiredMixin, View):
         adaptation = get_object_or_404(Adaptation, pk=id)
         adaptation_create_form = AdaptationUpdateForm(instance=adaptation)
         adaptation_classes = AdapatationClass.objects.order_by("id")
-        
+        class_form = ClassForm()
         context = {
             'adaptation_create_form': adaptation_create_form,
+            'class_form': class_form,
             'adaptation':adaptation,
             'adaptation_classes':adaptation_classes,
             }
