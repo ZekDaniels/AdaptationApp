@@ -125,7 +125,7 @@ const get_alert = function (_modal) {
     } else {
       if (Array.isArray(_modal.message[key])) {
         for (let text of _modal.message[key]) {
-          texts.push(`<span>${text}</span><br>`)
+          texts.push(`<span><b class='font-weight-bold'>${key}:</b> ${text}</span><br>`)
         };
       } else {
         texts.push(`<span>${_modal.message[key]}</span>`);

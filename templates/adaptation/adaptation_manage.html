@@ -45,7 +45,7 @@
         <div class="card">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">İntibak Dersleri</h6>
-                <button class="btn btn-primary">Yeni Ders Ekle</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addClassForm">Yeni Ders Ekle</button>
             </div>
             <div class="table-responsive">
                 <table class="table align-items-center table-flush">
@@ -109,6 +109,7 @@
         </div>
     </div>
 </div>
+{% include "adaptation/components/modals.html" %}
 {% endblock %}
 
 {% block javascript %}
