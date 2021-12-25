@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.views.generic.base import View
 from django.contrib import messages
 from django.contrib.auth import login
+from django.db import transaction
 
 
 from user.forms import NewUserForm, NewProfileForm, UserLoginForm
@@ -44,12 +45,13 @@ class RegisterView(View):
         
         if userform.is_valid() and profileform.is_valid():
             userform.instance.username = profileform.instance.student_number
-            user = userform.save()    
-            profileform = NewProfileForm(request.POST or None, instance=user.profile)
-            profileform.save()
-            login(request, user)
-            messages.success(request, "Registration successful.")
-            return redirect("dashboard")
+            with transaction.atomic():
+                user = userform.save()    
+                profileform = NewProfileForm(request.POST or None, instance=user.profile)
+                profileform.save()
+                login(request, user)
+                messages.success(request, "Registration successful.")
+                return redirect("dashboard")
         else:
             messages.error(request, "Kayıt Başarısız.")
             return render (request, "register.html", context={"userform":userform, "profileform":profileform})
