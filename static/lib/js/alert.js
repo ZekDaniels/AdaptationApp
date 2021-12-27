@@ -112,7 +112,7 @@ const fire_alert = function (_messages) {
 const get_alert = function (_modal) {
   let texts = [];
   for (var key of Object.keys(_modal.message)) {
-    if ($(`[name=${key}]`).length) {
+    if ($(`[name='${key}']`).length) {
       let name = key.replaceAll('_', ' ')
       if (Array.isArray(_modal.message[key])) {
         texts.push(`<span class="font-weight-bold text-capitalize">${name}:</span>`);
