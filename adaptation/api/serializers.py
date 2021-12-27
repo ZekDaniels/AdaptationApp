@@ -40,7 +40,12 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
         return verbose_errors
     
     def validate(self, data):
-        data = super().validate(data)        
+        data = super().validate(data)
+        
+        adaptation_year = data.get('adaptation_year')        
+        adaptation_semester = data.get('adaptation_semester')    
+        if (adaptation_semester != adaptation_year * 2) and (adaptation_semester != ((adaptation_year * 2) - 1) ):
+            raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
         return data
     
 class StudentClassCreateSerializer(serializers.ModelSerializer):
