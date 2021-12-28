@@ -84,7 +84,7 @@ class AdapatationClass(models.Model):
         verbose_name = 'İntibak Dersi'
         verbose_name_plural = 'İntibak Dersleri'
     
-    code = models.CharField("Kodu", max_length=20)
+    code = models.CharField("Ders Kodu", max_length=20)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.CharField("Semester", max_length=1, choices= SEMESETER_CHOICES)
     credit = models.IntegerField("Credit")
@@ -116,7 +116,7 @@ class StudentClass(models.Model):
         verbose_name = 'Öğrenicin Dersi'
         verbose_name_plural = 'Öğrencinin Dersleri'
         
-    code = models.CharField("Kodu", max_length=20)
+    code = models.CharField("Ders Kodu", max_length=20)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.CharField("Dönem", max_length=1, choices= SEMESETER_CHOICES)
     credit = models.IntegerField("Kredi")
