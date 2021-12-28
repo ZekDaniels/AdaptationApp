@@ -102,3 +102,6 @@ class StudentClassCreateAPI(generics.CreateAPIView):
     
     queryset = StudentClass.objects.all()
     serializer_class = StudentClassCreateSerializer
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
