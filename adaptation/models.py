@@ -86,7 +86,7 @@ class AdapatationClass(models.Model):
     
     code = models.CharField("Ders Kodu", max_length=20)
     class_name = models.CharField("Dersin Adı", max_length=255)
-    semester = models.CharField("Semester", max_length=1, choices= SEMESETER_CHOICES)
+    semester = models.IntegerField("Semester", max_length=1, choices= SEMESETER_CHOICES)
     credit = models.IntegerField("Credit")
     akts = models.IntegerField("AKTS")
     is_active = models.BooleanField(("Aktif mi?"), default=True)
@@ -118,7 +118,7 @@ class StudentClass(models.Model):
         
     code = models.CharField("Ders Kodu", max_length=20)
     class_name = models.CharField("Dersin Adı", max_length=255)
-    semester = models.CharField("Dönem", max_length=1, choices= SEMESETER_CHOICES)
+    semester = models.IntegerField("Dönem", max_length=1, choices= SEMESETER_CHOICES)
     credit = models.IntegerField("Kredi")
     akts = models.IntegerField("AKTS")
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
