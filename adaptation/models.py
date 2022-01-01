@@ -129,7 +129,7 @@ class StudentClass(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
     
     def __str__(self):
-        return self.code+" - "+self.class_name
+        return self.code+" - "+self.class_name+" --> "+ self.adaptation_class.class_name
     
     
     def get_max_grade(self):
