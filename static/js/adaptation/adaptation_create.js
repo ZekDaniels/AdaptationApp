@@ -123,7 +123,7 @@ function createAdaptation(_data, _url, _button) {
       }
       if (response.ok) {
         response.json().then(data => {
-          window.location.replace("http://stackoverflow.com");
+          location.reload();
         })
       } else {
         response.json().then(errors => {
