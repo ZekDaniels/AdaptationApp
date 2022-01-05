@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from adaptation.models import Adaptation, Faculty,Science, StudentClass
+from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
 
 class FacultyListSerializer(serializers.ModelSerializer):
 
@@ -47,9 +47,16 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
         if (adaptation_semester != adaptation_year * 2) and (adaptation_semester != ((adaptation_year * 2) - 1) ):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
         return data
-    
+
+class AdaptationClassListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = AdapatationClass
+        fields = "__all__" 
+
 class StudentClassCreateSerializer(serializers.ModelSerializer):
 
+    adaptation_class = AdaptationClassListSerializer(read_only=True)
     class Meta:
         model = StudentClass
         exclude = ['created_at','updated_at']
