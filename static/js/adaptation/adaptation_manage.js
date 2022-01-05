@@ -5,7 +5,9 @@ let university_input = $("#id_university");
 let faculty_input = $("#id_faculty");
 let science_input = $("#id_science");
 let mainForm = $("#mainForm")
-let submit_button = $("#main-form-submit");
+let addClassForm = $("#addClassForm")
+let main_submit_button = $("#main_submit_button");
+let add_class_button = $("#add_class_button");
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -98,19 +100,30 @@ function setupListeners() {
   faculty_input.change(() => {
     updateSciences();
   });
-  submit_button.click(function (event) {
-    mainForm.submit()
+  main_submit_button.click(function (event) {
+    mainForm.submit();
+  });
+  add_class_button.click(function (event) {
+    addClassForm.submit();
   });
   mainForm.submit(function name(event) {
     event.preventDefault();
     let formData = new FormData(this);
     let data = Object.fromEntries(formData.entries());
-    let button = $(this).find("button[type='submit']").first();
-    UpdateAdaptation(data, adaptation_update_api_url, button);
+    UpdateAdaptation(data, adaptation_update_api_url, main_submit_button);
+  });
+  addClassForm.submit(function name(event) {
+    event.preventDefault();
+    console.log("asdss")
+    let formData = new FormData(this);
+    let data = Object.fromEntries(formData.entries());
+    console.log(data)
+    // addStudentClass(data, student_class_create_api_url, add_class_button);
   });
 }
 
 function UpdateAdaptation(_data, _url, _button) {
+  console.log("asdss")
   let button_text = ""
   if (_button) {
     button_text = _button.html();
@@ -141,4 +154,38 @@ function UpdateAdaptation(_data, _url, _button) {
         throw new Error('Something went wrong');
       }
     });
+}
+
+function addStudentClass(_data, _url, _button) {
+  let button_text = ""
+  if (_button) {
+    button_text = _button.html();
+    _button.prop("disabled", true);
+    _button.html(`<i class="icon-spinner2 spinner"></i>`);
+  }
+  request
+    .post_r(_url, _data).then((response) => {
+      if (_button) {
+        _button.html(button_text);
+        _button.prop("disabled", false);
+      }
+      if (response.ok) {
+        response.json().then(data => {
+          console.log(data);
+        })
+      } else {
+        response.json().then(errors => {
+          console.log(errors)
+          fire_alert([{
+            message: errors,
+            icon: "error"
+          }]);
+        })
+        throw new Error('Something went wrong');
+      }
+    });
+}
+
+function buildClass() {
+  
 }

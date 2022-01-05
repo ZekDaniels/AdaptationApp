@@ -30,7 +30,7 @@
 
             <div class="card-footer">
                 <div class="row p-3">
-                    <button type="submit" id="main-form-submit" href="#" class="btn btn-success btn-icon-split ml-auto">
+                    <button type="submit" id="main_submit_button" href="#" class="btn btn-success btn-icon-split ml-auto">
                         <span class="icon text-white-50">
                             <i class="fas fa-check"></i>
                         </span>
@@ -87,12 +87,12 @@
                             </div>
                             {% if forloop.first %}
                             <div class="adaptation-class">
-                                <td rowspan="2" class="align-middle">{{adaptation_class.code}}</td>
-                                <td rowspan="2" class="align-middle">{{adaptation_class.class_name}}</td>
-                                <td rowspan="2" class="align-middle">{{adaptation_class.semester}}</td>
-                                <td rowspan="2" class="align-middle">{{adaptation_class.credit}}</td>
-                                <td rowspan="2" class="align-middle">{{adaptation_class.akts}}</td>     
-                                <td rowspan="2" class="align-middle">{{student_class|get_max_grade}}</td>  
+                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.code}}</td>
+                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.class_name}}</td>
+                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.semester}}</td>
+                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.credit}}</td>
+                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.akts}}</td>     
+                                <td rowspan="2" class="align-middle m-auto" >{{student_class|get_max_grade}}</td>  
                             </div>                               
                             {% endif %}
                             
@@ -120,6 +120,7 @@
     science_list_api_url = new URL(window.location.href)
     science_list_api_url.pathname = "{% url 'adaptation:science_list_api' %}"
     adaptation_update_api_url = "{% url 'adaptation:adaptation_update_api' 0 %}"
+    student_class_create_api_url = "{% url 'adaptation:student_class_create_api' %}"
 </script>
 
 <script src="{% static 'js/adaptation/adaptation_manage.js' %}"></script>
