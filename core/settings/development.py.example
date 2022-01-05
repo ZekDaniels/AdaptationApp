@@ -10,7 +10,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'intibak',
         'USER': 'postgres',
-        'PASSWORD': 'zek',
+        'PASSWORD': '1126',
         'HOST': 'localhost',
         'PORT': '5432',
     }
