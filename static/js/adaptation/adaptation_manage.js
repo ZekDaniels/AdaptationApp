@@ -1,13 +1,13 @@
 // Assigning Elements
 const request = new Request(csrfToken);
 
-let university_input = $("#id_university");
-let faculty_input = $("#id_faculty");
-let science_input = $("#id_science");
-let mainForm = $("#mainForm")
-let addClassForm = $("#addClassForm")
-let main_submit_button = $("#main_submit_button");
-let add_class_button = $("#add_class_button");
+const university_input = $("#id_university");
+const faculty_input = $("#id_faculty");
+const science_input = $("#id_science");
+const mainForm = $("#mainForm")
+const addClassForm = $("#addClassForm")
+const main_submit_button = $("#main_submit_button");
+const add_class_button = $("#add_class_button");
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
