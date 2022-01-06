@@ -76,7 +76,7 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
     class Meta:
         model = StudentClass
-        exclude = ['user','adapatation_class', 'created_at', 'updated_at']
+        exclude = ['user', 'created_at', 'updated_at']
 
 
 
