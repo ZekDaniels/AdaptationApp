@@ -72,7 +72,7 @@ class AdaptationUpdateForm(ProtoAdaptionForm):
         self.fields['faculty'].choices += [(faculty.id, faculty.name) for faculty in self.instance.university.faculties.all()]
         self.fields['science'].choices += [(science.id, science.name) for science in self.instance.faculty.sciences.all()]
 
-class ClassForm(forms.ModelForm, StyledFormMixin):
+class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
     class Meta:
         model = StudentClass
