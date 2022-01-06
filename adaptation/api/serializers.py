@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
+from django.forms.models import model_to_dict
 
 class FacultyListSerializer(serializers.ModelSerializer):
 
@@ -56,10 +57,25 @@ class AdaptationClassListSerializer(serializers.ModelSerializer):
 
 class StudentClassCreateSerializer(serializers.ModelSerializer):
 
-    adaptation_class = AdaptationClassListSerializer(read_only=True)
+    adaptation_class = serializers.PrimaryKeyRelatedField(queryset=AdapatationClass.objects.all())
+    adaptation_class_data = serializers.SerializerMethodField()
+
     class Meta:
         model = StudentClass
         exclude = ['created_at','updated_at']
+        depth = 1
+
+    def get_adaptation_class_data(self, obj):
+        return model_to_dict(obj.adaptation_class)
+
+    def validate(self, data):   
+        print(data)           
+        validated_data = super().validate(data)
+        return validated_data
+        
+    def create(self, validated_data):
+        data = super().create(validated_data)    
+        return data
         
  
 

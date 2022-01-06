@@ -114,11 +114,10 @@ function setupListeners() {
   });
   addClassForm.submit(function name(event) {
     event.preventDefault();
-    console.log("asdss")
     let formData = new FormData(this);
     let data = Object.fromEntries(formData.entries());
-    console.log(data)
-    // addStudentClass(data, student_class_create_api_url, add_class_button);
+    console.log(data);  
+    addStudentClass(data, student_class_create_api_url, add_class_button);
   });
 }
 
@@ -157,6 +156,8 @@ function UpdateAdaptation(_data, _url, _button) {
 }
 
 function addStudentClass(_data, _url, _button) {
+  console.log(_data);  
+
   let button_text = ""
   if (_button) {
     button_text = _button.html();
