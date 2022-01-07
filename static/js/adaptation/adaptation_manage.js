@@ -116,13 +116,11 @@ function setupListeners() {
     event.preventDefault();
     let formData = new FormData(this);
     let data = Object.fromEntries(formData.entries());
-    console.log(data);  
     addStudentClass(data, student_class_create_api_url, add_class_button);
   });
 }
 
-function UpdateAdaptation(_data, _url, _button) {
-  console.log("asdss")
+function UpdateAdaptation(_data, _url, _button = null, _modal = null,  _table = null) {
   let button_text = ""
   if (_button) {
     button_text = _button.html();
@@ -141,10 +139,13 @@ function UpdateAdaptation(_data, _url, _button) {
             message: {message:"Kaydınız başarıyla güncellendi"},
             icon: "success"
           }]);
+          if (_modal) {
+            _modal.modal('hide');
+          }
         })
       } else {
         response.json().then(errors => {
-          console.log(errors)
+          console.log(errors);
           fire_alert([{
             message: errors,
             icon: "error"
@@ -155,8 +156,7 @@ function UpdateAdaptation(_data, _url, _button) {
     });
 }
 
-function addStudentClass(_data, _url, _button) {
-  console.log(_data);  
+function addStudentClass(_data, _url, _button = null, _modal = null,  _table = null) {
 
   let button_text = ""
   if (_button) {
@@ -172,11 +172,11 @@ function addStudentClass(_data, _url, _button) {
       }
       if (response.ok) {
         response.json().then(data => {
-          console.log(data);
+          buildClassesTable(data);
         })
       } else {
         response.json().then(errors => {
-          console.log(errors)
+          console.log(errors);
           fire_alert([{
             message: errors,
             icon: "error"
@@ -187,6 +187,44 @@ function addStudentClass(_data, _url, _button) {
     });
 }
 
-function buildClass() {
+function buildClassesTable(data) {
+  const table_body_selector = ".table tbody";
+  const counter_cell_selector = "td.counter_cell";
+  const table_row_selector = `${table_body_selector} tr`;
+  const row_count = $(table_row_selector).length;
+  const last_student_class_row_selector = `${table_row_selector}.${data.adaptation_class_data.code}:last`;
+  const adaptation_class_selector = `${table_row_selector}.${data.adaptation_class_data.code}.adaptation_row`;
+  
+  let counter = 0;
+  if(row_count){
+    counter = $(`${last_student_class_row_selector} ${counter_cell_selector}`).html();
+    console.log(counter);
+  }
+  counter++;
+  console.log(adaptation_class_selector);
+  const default_adaptation_cells =`
+  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.code}</td>
+  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.class_name}</td>
+  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.semester}</td>
+  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.credit}</td>
+  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td>     
+  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td> 
+  `
+  const default_student_row = `
+  <tr class="text-center ${data.adaptation_class_data.code} ${!adaptation_class_selector.length ? 'adaptation_row':''}">
+  <td class="align-middle">${counter}</td>
+  <td class="align-middle">${data.code}</td>
+  <td class="align-middle">${data.class_name}</td>
+  <td class="align-middle">${data.semester}</td>
+  <td class="align-middle">${data.credit}</td>
+  <td class="align-middle">${data.akts}</td>
+  ${!adaptation_class_selector.length ? default_adaptation_cells:''}
+  ${!row_count ? default_adaptation_cells:''}
+  </tr>
+  `
+
+  if(row_count) $(last_student_class_row_selector).after(default_student_row);
+  else $(table_body_selector).html(default_student_row);                                        
+ 
   
 }

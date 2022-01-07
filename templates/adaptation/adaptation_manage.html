@@ -76,9 +76,9 @@
                         {% for adaptation_class in adaptation_classes %}
 
                         {% for student_class in adaptation_class.student_classes.all|dictsort:"created_at"  %}
-                        <tr class="text-center">
+                        <tr class="text-center {{adaptation_class.code}} {% if forloop.first %}adaptation_row{% endif %}">
                             <div class="student-class">
-                                <td class="align-middle">{{ forloop.counter }}</td>
+                                <td class="align-middle counter_cell">{{ forloop.counter }}</td>
                                 <td class="align-middle">{{student_class.code}}</td>
                                 <td class="align-middle">{{student_class.class_name}}</td>
                                 <td class="align-middle">{{student_class.semester}}</td>
@@ -87,16 +87,15 @@
                             </div>
                             {% if forloop.first %}
                             <div class="adaptation-class">
-                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.code}}</td>
-                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.class_name}}</td>
-                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.semester}}</td>
-                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.credit}}</td>
-                                <td rowspan="2" class="align-middle m-auto" >{{adaptation_class.akts}}</td>     
-                                <td rowspan="2" class="align-middle m-auto" >{{student_class|get_max_grade}}</td>  
+                                <td rowspan="1" class="align-middle m-auto" >{{adaptation_class.code}}</td>
+                                <td rowspan="1" class="align-middle m-auto" >{{adaptation_class.class_name}}</td>
+                                <td rowspan="1" class="align-middle m-auto" >{{adaptation_class.semester}}</td>
+                                <td rowspan="1" class="align-middle m-auto" >{{adaptation_class.credit}}</td>
+                                <td rowspan="1" class="align-middle m-auto" >{{adaptation_class.akts}}</td>     
+                                <td rowspan="1" class="align-middle m-auto" >{{student_class|get_max_grade}}</td>  
                             </div>                               
                             {% endif %}
                             
-
                         </tr>
                         {% endfor %}
 
