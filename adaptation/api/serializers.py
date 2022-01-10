@@ -13,7 +13,13 @@ class ScienceListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Science
         fields = "__all__"
-        
+   
+class AdaptationClassListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = AdapatationClass
+        fields = "__all__"        
+
 class AdaptationCreateSerializer(serializers.ModelSerializer):
     
     class Meta:
@@ -49,12 +55,6 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
         return data
 
-class AdaptationClassListSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = AdapatationClass
-        fields = "__all__" 
-
 class StudentClassCreateSerializer(serializers.ModelSerializer):
 
     adaptation_class = serializers.PrimaryKeyRelatedField(queryset=AdapatationClass.objects.all())
@@ -78,6 +78,15 @@ class StudentClassCreateSerializer(serializers.ModelSerializer):
         return data
         
  
+class StudentClassListserializer(serializers.ModelSerializer):
+    
+    adaptation_class = AdaptationClassListSerializer(read_only=True)
+    
+    class Meta:
+        model=StudentClass
+        exclude = ['created_at', 'updated_at']
+
+
 
 
 

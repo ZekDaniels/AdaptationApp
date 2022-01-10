@@ -9,6 +9,8 @@ const addClassForm = $("#addClassForm")
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
 
+const table = $(".table");
+
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
     $(this).removeAttr("selected");
@@ -44,6 +46,7 @@ init();
 
 function init() {
   setupListeners();
+  initializeStudentClassDatatables(table, student_class_create_api_url)
 }
 
 function getSelectionText() {
@@ -172,7 +175,7 @@ function addStudentClass(_data, _url, _button = null, _modal = null,  _table = n
       }
       if (response.ok) {
         response.json().then(data => {
-          buildClassesTable(data);
+          console.log(data);
         })
       } else {
         response.json().then(errors => {
@@ -187,44 +190,117 @@ function addStudentClass(_data, _url, _button = null, _modal = null,  _table = n
     });
 }
 
-function buildClassesTable(data) {
-  const table_body_selector = ".table tbody";
-  const counter_cell_selector = "td.counter_cell";
-  const table_row_selector = `${table_body_selector} tr`;
-  const row_count = $(table_row_selector).length;
-  const last_student_class_row_selector = `${table_row_selector}.${data.adaptation_class_data.code}:last`;
-  const adaptation_class_selector = `${table_row_selector}.${data.adaptation_class_data.code}.adaptation_row`;
-  
-  let counter = 0;
-  if(row_count){
-    counter = $(`${last_student_class_row_selector} ${counter_cell_selector}`).html();
-    console.log(counter);
-  }
-  counter++;
-  console.log(adaptation_class_selector);
-  const default_adaptation_cells =`
-  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.code}</td>
-  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.class_name}</td>
-  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.semester}</td>
-  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.credit}</td>
-  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td>     
-  <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td> 
-  `
-  const default_student_row = `
-  <tr class="text-center ${data.adaptation_class_data.code} ${!adaptation_class_selector.length ? 'adaptation_row':''}">
-  <td class="align-middle">${counter}</td>
-  <td class="align-middle">${data.code}</td>
-  <td class="align-middle">${data.class_name}</td>
-  <td class="align-middle">${data.semester}</td>
-  <td class="align-middle">${data.credit}</td>
-  <td class="align-middle">${data.akts}</td>
-  ${!adaptation_class_selector.length ? default_adaptation_cells:''}
-  ${!row_count ? default_adaptation_cells:''}
-  </tr>
-  `
+function initializeStudentClassDatatables(_table, _student_class_list_api_url) {
+  $.extend($.fn.dataTable.defaults, {
+    autoWidth: false,
+    dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
+    language: {
+      search: "<span>Filter:</span> _INPUT_",
+      searchPlaceholder: "Type to filter...",
+      lengthMenu: "<span>Show:</span> _MENU_",
+      paginate: {
+        first: "First",
+        last: "Last",
+        next: $("html").attr("dir") == "rtl" ? "&larr;" : "&rarr;",
+        previous: $("html").attr("dir") == "rtl" ? "&rarr;" : "&larr;",
+      },
+    },
+  });
+  _table.DataTable({
+    // "searchCols": [
+    //   null,
+    //   {
+    //     "search": _adaptation_id
+    //   },
+    // ],
+    "serverSide": true,
+    "ajax": _student_class_list_api_url,
+    "columns": [
+      {
+        "data": "id"
+      },
+      {
+        "data": "quotation.id"
+      },
+     
+    ],
+      "columnDefs": [
+      // {
+      //   searchable: false,
+      //   targets: [7, 9, 11, 12],
+      // },
+      {
+        searchable: false,
+        targets: [3],
+      },
+      {
+        "targets": [8, 9],
+        data: null,
+        createdCell: function (td, cellData, rowData, row, col) {
+          $(td).css('width', '125px');
+        }
+      },
+      {
+        "targets": 13,
+        "data": null,
+        className: 'align-center',
+        createdCell: function (td, cellData, rowData, row, col) {
+          $(td).css('white-space', 'nowrap');
+        },
+        defaultContent:
+          `
+        <button class='partCompare btn p-0 mx-1'><i class='text-yellow icon-git-compare'></i></button>
+        <button class='partAddNote btn p-0 mx-1'><i class='text-muted icon-notebook'></i></button>
+        <button class='partUpdate btn p-0 mx-1'><i class='text-success icon-checkmark3'></i></button>
+        <button class='partDelete btn p-0 mx-1'><i class='text-danger fas fa-trash'></i></button>`
+      },
+      {
+        targets: [0, 1, 2],
+        className: "d-none"
+      }
+    ]
+  });
+}
 
-  if(row_count) $(last_student_class_row_selector).after(default_student_row);
-  else $(table_body_selector).html(default_student_row);                                        
+
+// function buildClassesTable(data) {
+//   const table_body_selector = ".table tbody";
+//   const counter_cell_selector = "td.counter_cell";
+//   const table_row_selector = `${table_body_selector} tr`;
+//   const row_count = $(table_row_selector).length;
+//   const last_student_class_row_selector = `${table_row_selector}.${data.adaptation_class_data.code}:last`;
+//   const adaptation_class_selector = `${table_row_selector}.${data.adaptation_class_data.code}.adaptation_row`;
+  
+//   let counter = 0;
+//   if(row_count){
+//     counter = $(`${last_student_class_row_selector} ${counter_cell_selector}`).html();
+//     console.log(counter);
+//   }
+//   counter++;
+//   console.log(adaptation_class_selector);
+//   const default_adaptation_cells =`
+//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.code}</td>
+//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.class_name}</td>
+//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.semester}</td>
+//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.credit}</td>
+//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td>     
+//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td> 
+//   `
+//   const default_student_row = `
+//   <tr class="text-center ${data.adaptation_class_data.code} ${!adaptation_class_selector.length ? 'adaptation_row':''}">
+//   <td class="align-middle">${counter}</td>
+//   <td class="align-middle">${data.code}</td>
+//   <td class="align-middle">${data.class_name}</td>
+//   <td class="align-middle">${data.semester}</td>
+//   <td class="align-middle">${data.credit}</td>
+//   <td class="align-middle">${data.akts}</td>
+//   ${!adaptation_class_selector.length ? default_adaptation_cells:''}
+//   ${!row_count ? default_adaptation_cells:''}
+//   </tr>
+//   `
+
+//   if(row_count) $(last_student_class_row_selector).after(default_student_row);
+//   else $(table_body_selector).html(default_student_row);                                        
  
   
-}
+// }
