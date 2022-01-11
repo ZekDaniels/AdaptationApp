@@ -9,7 +9,7 @@ const addClassForm = $("#addClassForm")
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
 
-const table = $(".table");
+var table = $(".table");
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -46,7 +46,7 @@ init();
 
 function init() {
   setupListeners();
-  initializeStudentClassDatatables(table, student_class_create_api_url)
+  initializeStudentClassDatatables(table, student_class_list_api_url, adaptation_id)
 }
 
 function getSelectionText() {
@@ -65,6 +65,127 @@ function getSelectionText() {
     // For IE
     return document.selection.createRange().text;
   }
+}
+
+function initializeStudentClassDatatables(_table, _student_class_list_api_url, _adaptation_id) {
+  $.extend($.fn.dataTable.defaults, {
+    autoWidth: false,
+    dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
+    language: {
+      search: "<span>Filter:</span> _INPUT_",
+      searchPlaceholder: "Type to filter...",
+      lengthMenu: "<span>Show:</span> _MENU_",
+      paginate: {
+        first: "First",
+        last: "Last",
+        next: $("html").attr("dir") == "rtl" ? "&larr;" : "&rarr;",
+        previous: $("html").attr("dir") == "rtl" ? "&rarr;" : "&larr;",
+      },
+    },
+  });
+  table = _table.DataTable({
+    "searchCols": [
+      null,
+      {
+        "search": _adaptation_id
+      },
+    ],
+    "serverSide": true,
+    "ajax": {"url":_student_class_list_api_url,"dataSrc":""},
+    "columns": [
+      {
+        "data": "id"
+      },
+      {
+        "data": "code"
+      },
+      
+      {
+        "data": "class_name"
+      },
+      
+      {
+        "data": "semester"
+      },
+      
+      {
+        "data": "credit"
+      },
+      
+      {
+        "data": "akts"
+      },
+      {
+        "name":"code",
+        "data":"adaptation_class.code"
+      },
+      {
+        "name":"class_name",
+        "data":"adaptation_class.class_name"
+      },
+      {
+        "name":"semester",
+        "data":"adaptation_class.semester"
+      },  
+      {
+        "name":"credit",
+        "data":"adaptation_class.credit"
+      },   
+      {
+        "name":"akts",
+        "data":"adaptation_class.akts"
+      },
+      {
+        "name":"max_grade",
+        "data":"max_grade"
+      }
+     
+    ],
+    "rowsGroup": [
+      "code:name",
+      "class_name:name",
+      "semester:name",
+      "credit:name",
+      "akts:name",
+      "max_grade:name",
+    ],
+      "columnDefs": [
+        {
+          searchable: true,
+          targets: [1, 2, 6, 7],
+        },
+      ]
+    //   {
+    //     searchable: false,
+    //     targets: [3],
+    //   },
+    //   {
+    //     "targets": [8, 9],
+    //     data: null,
+    //     createdCell: function (td, cellData, rowData, row, col) {
+    //       $(td).css('width', '125px');
+    //     }
+    //   },
+    //   {
+    //     "targets": 13,
+    //     "data": null,
+    //     className: 'align-center',
+    //     createdCell: function (td, cellData, rowData, row, col) {
+    //       $(td).css('white-space', 'nowrap');
+    //     },
+    //     defaultContent:
+    //       `
+    //     <button class='partCompare btn p-0 mx-1'><i class='text-yellow icon-git-compare'></i></button>
+    //     <button class='partAddNote btn p-0 mx-1'><i class='text-muted icon-notebook'></i></button>
+    //     <button class='partUpdate btn p-0 mx-1'><i class='text-success icon-checkmark3'></i></button>
+    //     <button class='partDelete btn p-0 mx-1'><i class='text-danger fas fa-trash'></i></button>`
+    //   },
+    //   {
+    //     targets: [0, 1, 2],
+    //     className: "d-none"
+    //   }
+    // ]
+  });
 }
 
 function updateFaculties() {
@@ -118,8 +239,9 @@ function setupListeners() {
   addClassForm.submit(function name(event) {
     event.preventDefault();
     let formData = new FormData(this);
+    formData.append("adaptation", adaptation_id);
     let data = Object.fromEntries(formData.entries());
-    addStudentClass(data, student_class_create_api_url, add_class_button);
+    addStudentClass(data, student_class_create_api_url, add_class_button, table);
   });
 }
 
@@ -159,7 +281,9 @@ function UpdateAdaptation(_data, _url, _button = null, _modal = null,  _table = 
     });
 }
 
-function addStudentClass(_data, _url, _button = null, _modal = null,  _table = null) {
+
+
+function addStudentClass(_data, _url, _button = null, _table = null, _modal = null) {
 
   let button_text = ""
   if (_button) {
@@ -175,7 +299,7 @@ function addStudentClass(_data, _url, _button = null, _modal = null,  _table = n
       }
       if (response.ok) {
         response.json().then(data => {
-          console.log(data);
+          _table.ajax.reload();
         })
       } else {
         response.json().then(errors => {
@@ -190,77 +314,7 @@ function addStudentClass(_data, _url, _button = null, _modal = null,  _table = n
     });
 }
 
-function initializeStudentClassDatatables(_table, _student_class_list_api_url) {
-  $.extend($.fn.dataTable.defaults, {
-    autoWidth: false,
-    dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
-    language: {
-      search: "<span>Filter:</span> _INPUT_",
-      searchPlaceholder: "Type to filter...",
-      lengthMenu: "<span>Show:</span> _MENU_",
-      paginate: {
-        first: "First",
-        last: "Last",
-        next: $("html").attr("dir") == "rtl" ? "&larr;" : "&rarr;",
-        previous: $("html").attr("dir") == "rtl" ? "&rarr;" : "&larr;",
-      },
-    },
-  });
-  _table.DataTable({
-    // "searchCols": [
-    //   null,
-    //   {
-    //     "search": _adaptation_id
-    //   },
-    // ],
-    "serverSide": true,
-    "ajax": _student_class_list_api_url,
-    "columns": [
-      {
-        "data": "id"
-      },
-      {
-        "data": "quotation.id"
-      },
-     
-    ],
-      "columnDefs": [
-      // {
-      //   searchable: false,
-      //   targets: [7, 9, 11, 12],
-      // },
-      {
-        searchable: false,
-        targets: [3],
-      },
-      {
-        "targets": [8, 9],
-        data: null,
-        createdCell: function (td, cellData, rowData, row, col) {
-          $(td).css('width', '125px');
-        }
-      },
-      {
-        "targets": 13,
-        "data": null,
-        className: 'align-center',
-        createdCell: function (td, cellData, rowData, row, col) {
-          $(td).css('white-space', 'nowrap');
-        },
-        defaultContent:
-          `
-        <button class='partCompare btn p-0 mx-1'><i class='text-yellow icon-git-compare'></i></button>
-        <button class='partAddNote btn p-0 mx-1'><i class='text-muted icon-notebook'></i></button>
-        <button class='partUpdate btn p-0 mx-1'><i class='text-success icon-checkmark3'></i></button>
-        <button class='partDelete btn p-0 mx-1'><i class='text-danger fas fa-trash'></i></button>`
-      },
-      {
-        targets: [0, 1, 2],
-        className: "d-none"
-      }
-    ]
-  });
-}
+
 
 
 // function buildClassesTable(data) {

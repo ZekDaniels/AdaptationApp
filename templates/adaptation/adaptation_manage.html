@@ -6,6 +6,8 @@
 
 {% block plugins %}
 <script src="{% static 'lib/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'lib/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'lib/vendor/datatables/dataTables.rowsGroup.js' %}"></script>
 {% endblock %}
 
 
@@ -99,7 +101,7 @@
 
     adaptation_update_api_url = "{% url 'adaptation:adaptation_update_api' 0 %}"
 
-    student_class_list_api_url = "{% url 'adaptation:student_class_list_api' %}"
+    student_class_list_api_url = "{% url 'adaptation:student_classes_list_api' %}"
     student_class_create_api_url = "{% url 'adaptation:student_class_create_api' %}"
 </script>
 

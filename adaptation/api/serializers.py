@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.fields import SerializerMethodField
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
 from django.forms.models import model_to_dict
 
@@ -55,8 +56,20 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
         return data
 
-class StudentClassCreateSerializer(serializers.ModelSerializer):
+class StudentClassListserializer(serializers.ModelSerializer):
+    
+    adaptation_class = AdaptationClassListSerializer(read_only=True)
+    max_grade = SerializerMethodField(source='get_max_grade', read_only=True)
 
+    def get_max_grade(self, obj):
+        return obj.get_max_grade()
+
+    class Meta:
+        model=StudentClass
+        exclude = ['created_at', 'updated_at']
+
+class StudentClassCreateSerializer(serializers.ModelSerializer):
+    adaptation = serializers.PrimaryKeyRelatedField(queryset=Adaptation.objects.all())
     adaptation_class = serializers.PrimaryKeyRelatedField(queryset=AdapatationClass.objects.all())
     adaptation_class_data = serializers.SerializerMethodField()
 
@@ -74,23 +87,9 @@ class StudentClassCreateSerializer(serializers.ModelSerializer):
         return validated_data
         
     def create(self, validated_data):
-        data = super().create(validated_data)    
+        data = super().create(validated_data) 
+        print(data)   
         return data
         
- 
-class StudentClassListserializer(serializers.ModelSerializer):
-    
-    adaptation_class = AdaptationClassListSerializer(read_only=True)
-    
-    class Meta:
-        model=StudentClass
-        exclude = ['created_at', 'updated_at']
-
-
-
-
-
-
-
 
 

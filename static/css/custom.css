@@ -1,3 +1,24 @@
 .swal2-actions {
     text-align: center;
 }
+
+.table tr{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tr.odd td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tr.even td{
+    text-align: center;
+    vertical-align: middle;
+}
+.datatable-header{
+    display: none;
+}
+.datatable-footer{
+    display: none;
+}

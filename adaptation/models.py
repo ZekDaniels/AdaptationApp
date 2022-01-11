@@ -66,7 +66,7 @@ class Adaptation(models.Model):
     adaptation_year = models.IntegerField("İntibak Sınıfı", choices=YEAR_CHOICES)
     adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES)
     decision_date = models.DateField("Karar Tarihi", null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True, null=True)      
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True)      
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     
@@ -84,7 +84,7 @@ class AdapatationClass(models.Model):
         verbose_name = 'İntibak Dersi'
         verbose_name_plural = 'İntibak Dersleri'
     
-    code = models.CharField("Ders Kodu", max_length=20)
+    code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.IntegerField("Semester", choices= SEMESETER_CHOICES)
     credit = models.IntegerField("Credit")
@@ -116,13 +116,13 @@ class StudentClass(models.Model):
         verbose_name = 'Öğrenicin Dersi'
         verbose_name_plural = 'Öğrencinin Dersleri'
         
-    code = models.CharField("Ders Kodu", max_length=20)
+    code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.IntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
     credit = models.IntegerField("Kredi")
     akts = models.IntegerField("AKTS")
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("student_class"), verbose_name="Öğrenci")      
+    adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak")      
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)

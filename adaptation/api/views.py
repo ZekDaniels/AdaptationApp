@@ -2,7 +2,7 @@ from adaptation.api.serializers import *
 from django.core.validators import EMPTY_VALUES
 from django.db.models import QuerySet
 from rest_framework import generics
-from rest_framework.filters import OrderingFilter
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.views import APIView
 from rest_framework_datatables.filters import DatatablesFilterBackend
 
@@ -96,17 +96,20 @@ class AdaptationCreateAPIView(generics.CreateAPIView):
 class AdaptationUpdateAPIView(generics.UpdateAPIView):
    
     queryset = Adaptation.objects.all()
+    
     serializer_class = AdaptationCreateSerializer
     
-class StudentClassAPIView(generics.CreateAPIView):
+class StudentClassListAPIView(QueryListAPIView):
    
-    queryset = StudentClass.objects.all()
+    custom_related_fields = ["adaptation_class","adaptation"]
+    queryset = StudentClass.objects.select_related(*custom_related_fields).all().order_by('-adaptation_class__pk') 
     serializer_class = StudentClassListserializer
+    filter_backends = [OrderingFilter, SearchFilter]
+    ordering_fields = "__all__"
+    search_fields = ['code', 'class_name','adaptation_class__code', 'adaptation_class__class_name']
+
 
 class StudentClassCreateAPI(generics.CreateAPIView):
     
     queryset = StudentClass.objects.all()
     serializer_class = StudentClassCreateSerializer
-    
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
