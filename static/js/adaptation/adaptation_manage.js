@@ -9,12 +9,12 @@ const mainForm = $("#mainForm")
 const addClassForm = $("#addClassForm")
 
 const addClassModal = $("#addClassModal")
+const deleteClassModal = $("#deleteClassModal")
 
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
-const update_class_button = $("#update_class_button");
-const delete_class_button = $("#delete_class_button");
-
+const update_class_button_selector = ".update_class_button"
+const delete_class_button_selector = ".delete_class_button"
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
     $(this).removeAttr("selected");
@@ -48,13 +48,13 @@ const fillOptions = function (select_input, data, callback = null) {
 
 // Variables
 var table = $(".table");
-var deleteable_class = null
+// var deleteable_class_id = null
 
 init();
 
 function init() {
   setupListeners();
-  initializeStudentClassDatatables(table, student_class_list_api_url, adaptation_id)
+  initializeStudentClassDatatables(table, student_classes_list_api_url, adaptation_id)
 }
 
 function getSelectionText() {
@@ -75,7 +75,7 @@ function getSelectionText() {
   }
 }
 
-function initializeStudentClassDatatables(_table, _student_class_list_api_url, _adaptation_id) {
+function initializeStudentClassDatatables(_table, _student_classes_list_api_url, _adaptation_id) {
   $.extend($.fn.dataTable.defaults, {
     autoWidth: false,
     dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
@@ -99,7 +99,7 @@ function initializeStudentClassDatatables(_table, _student_class_list_api_url, _
       },
     ],
     "serverSide": true,
-    "ajax": {"url":_student_class_list_api_url,"dataSrc":""},
+    "ajax": {"url":_student_classes_list_api_url,"dataSrc":""},
     "columns": [
       {
         "data": "code"
@@ -126,8 +126,8 @@ function initializeStudentClassDatatables(_table, _student_class_list_api_url, _
           console.log(data)
           return `
           <div class="row">
-          <button class='update_class_button btn p-0 mx-auto' data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
-          <button class='delete_class_button btn p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
+          <button class='btn update_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
+          <button class='btn delete_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
           </div>
           `;
         }
@@ -225,7 +225,14 @@ function setupListeners() {
     let data = Object.fromEntries(formData.entries());
     addStudentClass(data, student_class_create_api_url, add_class_button, table, addClassModal);
   });
+ 
 }
+
+
+$('tbody').on("click", '.delete_class_button', function () {
+  let deleteable_class_id = $(this).data('id');
+  DeleteStudentClass(deleteable_class_id, student_class_update_api_url, table);
+})
 
 function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = null) {
   let button_text = ""
@@ -297,6 +304,33 @@ function addStudentClass(_data, _url, _button = null, _table = null, _modal = nu
         throw new Error('Something went wrong');
       }
     });
+}
+
+
+function DeleteStudentClass(_id, _url, _table = null) {
+  console.log(_id)
+  sweetCombineDynamic(
+    "Emin misin?",
+    "Bu dersi silmek isdtediğine emin misin!",
+    "warning",
+    "delete",
+    () => {
+      request
+        .delete_r(_url.replace("0", _id))
+        .then((response) => {
+          if (response.ok) {
+            if (_table) {
+              _table.ajax.reload()
+            }
+          } else {
+            response.json().then(errors => {
+              fire_alert([{ message: errors, icon: "error" }]);
+            })
+            throw new Error('Something went wrong');
+          }
+        })
+    }
+  );
 }
 
 

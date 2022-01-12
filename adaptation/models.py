@@ -122,7 +122,7 @@ class StudentClass(models.Model):
     credit = models.IntegerField("Kredi")
     akts = models.IntegerField("AKTS")
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
-    adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak")      
+    adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
