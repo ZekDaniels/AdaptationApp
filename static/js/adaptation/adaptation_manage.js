@@ -4,12 +4,16 @@ const request = new Request(csrfToken);
 const university_input = $("#id_university");
 const faculty_input = $("#id_faculty");
 const science_input = $("#id_science");
+
 const mainForm = $("#mainForm")
 const addClassForm = $("#addClassForm")
+
+const addClassModal = $("#addClassModal")
+
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
-
-var table = $(".table");
+const update_class_button = $("#update_class_button");
+const delete_class_button = $("#delete_class_button");
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -41,6 +45,10 @@ const fillOptions = function (select_input, data, callback = null) {
     callback();
   }
 };
+
+// Variables
+var table = $(".table");
+var deleteable_class = null
 
 init();
 
@@ -94,9 +102,6 @@ function initializeStudentClassDatatables(_table, _student_class_list_api_url, _
     "ajax": {"url":_student_class_list_api_url,"dataSrc":""},
     "columns": [
       {
-        "data": "id"
-      },
-      {
         "data": "code"
       },
       
@@ -114,6 +119,18 @@ function initializeStudentClassDatatables(_table, _student_class_list_api_url, _
       
       {
         "data": "akts"
+      },
+      {
+        "data": null,
+        "render": function ( data, type, row ) {
+          console.log(data)
+          return `
+          <div class="row">
+          <button class='update_class_button btn p-0 mx-auto' data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
+          <button class='delete_class_button btn p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
+          </div>
+          `;
+        }
       },
       {
         "name":"code",
@@ -138,7 +155,8 @@ function initializeStudentClassDatatables(_table, _student_class_list_api_url, _
       {
         "name":"max_grade",
         "data":"max_grade"
-      }
+      },
+          
      
     ],
     "rowsGroup": [
@@ -149,42 +167,6 @@ function initializeStudentClassDatatables(_table, _student_class_list_api_url, _
       "akts:name",
       "max_grade:name",
     ],
-      "columnDefs": [
-        {
-          searchable: true,
-          targets: [1, 2, 6, 7],
-        },
-      ]
-    //   {
-    //     searchable: false,
-    //     targets: [3],
-    //   },
-    //   {
-    //     "targets": [8, 9],
-    //     data: null,
-    //     createdCell: function (td, cellData, rowData, row, col) {
-    //       $(td).css('width', '125px');
-    //     }
-    //   },
-    //   {
-    //     "targets": 13,
-    //     "data": null,
-    //     className: 'align-center',
-    //     createdCell: function (td, cellData, rowData, row, col) {
-    //       $(td).css('white-space', 'nowrap');
-    //     },
-    //     defaultContent:
-    //       `
-    //     <button class='partCompare btn p-0 mx-1'><i class='text-yellow icon-git-compare'></i></button>
-    //     <button class='partAddNote btn p-0 mx-1'><i class='text-muted icon-notebook'></i></button>
-    //     <button class='partUpdate btn p-0 mx-1'><i class='text-success icon-checkmark3'></i></button>
-    //     <button class='partDelete btn p-0 mx-1'><i class='text-danger fas fa-trash'></i></button>`
-    //   },
-    //   {
-    //     targets: [0, 1, 2],
-    //     className: "d-none"
-    //   }
-    // ]
   });
 }
 
@@ -241,11 +223,11 @@ function setupListeners() {
     let formData = new FormData(this);
     formData.append("adaptation", adaptation_id);
     let data = Object.fromEntries(formData.entries());
-    addStudentClass(data, student_class_create_api_url, add_class_button, table);
+    addStudentClass(data, student_class_create_api_url, add_class_button, table, addClassModal);
   });
 }
 
-function UpdateAdaptation(_data, _url, _button = null, _modal = null,  _table = null) {
+function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = null) {
   let button_text = ""
   if (_button) {
     button_text = _button.html();
@@ -300,6 +282,9 @@ function addStudentClass(_data, _url, _button = null, _table = null, _modal = nu
       if (response.ok) {
         response.json().then(data => {
           _table.ajax.reload();
+          if (_modal) {
+            _modal.modal('hide');
+          }
         })
       } else {
         response.json().then(errors => {

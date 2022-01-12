@@ -95,8 +95,7 @@ class AdaptationCreateAPIView(generics.CreateAPIView):
 
 class AdaptationUpdateAPIView(generics.UpdateAPIView):
    
-    queryset = Adaptation.objects.all()
-    
+    queryset = Adaptation.objects.all()   
     serializer_class = AdaptationCreateSerializer
     
 class StudentClassListAPIView(QueryListAPIView):
@@ -113,3 +112,12 @@ class StudentClassCreateAPI(generics.CreateAPIView):
     
     queryset = StudentClass.objects.all()
     serializer_class = StudentClassCreateSerializer
+
+class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
+    
+    queryset = StudentClass.objects.all()
+    serializer_class = StudentClassCreateSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        return super().destroy(request, *args, **kwargs)

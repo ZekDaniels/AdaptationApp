@@ -66,7 +66,7 @@ class Adaptation(models.Model):
     adaptation_year = models.IntegerField("İntibak Sınıfı", choices=YEAR_CHOICES)
     adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES)
     decision_date = models.DateField("Karar Tarihi", null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True)      
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True, null=True, blank=False)      
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     
