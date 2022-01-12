@@ -52,12 +52,21 @@
         <div class="card">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">İntibak Dersleri</h6>
+                <div class="buttons">
+                <button class="btn btn-secondary btn-icon-split" data-toggle="modal" data-target="#classListModal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-list"></i>
+                    </span>
+                    <span class="text">Ders İçeriği Listesi</span>    
+                </button>
+
                 <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#addClassModal">
                     <span class="icon text-white-50">
                         <i class="fas fa-plus"></i>
                     </span>
                     <span class="text">Yeni Ders Ekle</span>    
                 </button>
+            </div>
             </div>
             <div class="table-responsive">
                 <table class="table align-items-center table-flush">
@@ -89,10 +98,20 @@
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer"></div>
+            <div class="card-footer">            
+            </div>
         </div>
     </div>
+    <div class="col-lg-12 mb-4 ">
+        <button class="btn btn-success btn-icon-split float-right" data-toggle="modal" data-target="#classListModal">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag-checkered"></i>
+            </span>
+            <span class="text">İntibak Kaydını Bitir</span>    
+        </button>
+    </div>
 </div>
+
 {% include "adaptation/components/modals.html" %}
 {% endblock %}
 
