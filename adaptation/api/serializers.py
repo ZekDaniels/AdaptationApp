@@ -3,30 +3,7 @@ from rest_framework.fields import SerializerMethodField
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
 from django.forms.models import model_to_dict
 
-class FacultyListSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Faculty
-        fields = "__all__"
-
-class ScienceListSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Science
-        fields = "__all__"
-   
-class AdaptationClassListSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = AdapatationClass
-        fields = "__all__"        
-
-class AdaptationCreateSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = Adaptation
-        exclude = ['created_at', 'updated_at']
-    
+class ErrorNameMixin(serializers.Serializer):
     @property
     def errors(self):
         # get errors
@@ -47,6 +24,25 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
         print(verbose_errors)
         return verbose_errors
     
+
+class FacultyListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Faculty
+        fields = "__all__"
+
+class ScienceListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Science
+        fields = "__all__"
+
+class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
+    
+    class Meta:
+        model = Adaptation
+        exclude = ['created_at', 'updated_at']
+    
     def validate(self, data):
         data = super().validate(data)
         
@@ -56,7 +52,13 @@ class AdaptationCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
         return data
 
-class StudentClassListserializer(serializers.ModelSerializer):
+class AdaptationClassListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = AdapatationClass
+        fields = "__all__"        
+
+class StudentClassListSerializer(serializers.ModelSerializer):
     
     adaptation_class = AdaptationClassListSerializer(read_only=True)
     max_grade = SerializerMethodField(source='get_max_grade', read_only=True)
@@ -68,7 +70,7 @@ class StudentClassListserializer(serializers.ModelSerializer):
         model=StudentClass
         exclude = ['created_at', 'updated_at']
 
-class StudentClassCreateSerializer(serializers.ModelSerializer):
+class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
     adaptation = serializers.PrimaryKeyRelatedField(queryset=Adaptation.objects.all())
     adaptation_class = serializers.PrimaryKeyRelatedField(queryset=AdapatationClass.objects.all())
     adaptation_class_data = serializers.SerializerMethodField()

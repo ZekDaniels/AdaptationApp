@@ -102,7 +102,7 @@ class StudentClassListAPIView(QueryListAPIView):
    
     custom_related_fields = ["adaptation_class","adaptation"]
     queryset = StudentClass.objects.select_related(*custom_related_fields).all().order_by('-adaptation_class__pk') 
-    serializer_class = StudentClassListserializer
+    serializer_class = StudentClassListSerializer
     filter_backends = [OrderingFilter, SearchFilter]
     ordering_fields = "__all__"
     search_fields = ['code', 'class_name','adaptation_class__code', 'adaptation_class__class_name']

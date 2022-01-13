@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
+from django.core.validators import MinValueValidator
 
 STYLES = {
      "else": {
@@ -118,9 +119,9 @@ class StudentClass(models.Model):
         
     code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
-    semester = models.IntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
-    credit = models.IntegerField("Kredi")
-    akts = models.IntegerField("AKTS")
+    semester = models.PositiveIntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
+    credit = models.PositiveIntegerField("Kredi", null=True, blank=True, validators=[MinValueValidator(1)])
+    akts = models.PositiveIntegerField("AKTS", null=True, blank=True, validators=[MinValueValidator(1)])
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
     adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
