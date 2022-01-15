@@ -88,12 +88,17 @@ class AdapatationClass(models.Model):
     code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.IntegerField("Semester", choices= SEMESETER_CHOICES)
+    teorical = models.PositiveIntegerField("Teorik", default = 0)
+    practical = models.PositiveIntegerField("Pratik", default = 0)
     credit = models.IntegerField("Credit")
     akts = models.IntegerField("AKTS")
     is_active = models.BooleanField(("Aktif mi?"), default=True)
     
     def __str__(self):
         return self.code+" - "+self.class_name  
+
+    def get_sum(self):
+        return self.teorical + self.practical
 
 class StudentClass(models.Model):
     """
@@ -120,6 +125,8 @@ class StudentClass(models.Model):
     code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.PositiveIntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
+    teorical = models.PositiveIntegerField("Teorik", default = 0)
+    practical = models.PositiveIntegerField("Pratik", default = 0)
     credit = models.PositiveIntegerField("Kredi", null=True, blank=True, validators=[MinValueValidator(1)])
     akts = models.PositiveIntegerField("AKTS", null=True, blank=True, validators=[MinValueValidator(1)])
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
@@ -138,3 +145,10 @@ class StudentClass(models.Model):
         candidate_classes.aggregate(Max('grade'))
         max_grade_class = candidate_classes.order_by('-grade').first()
         return max_grade_class.get_grade_display()
+
+    def get_sum(self):
+            return self.teorical + self.practical
+       
+
+    def get_adaptation_class_sum(self):
+        return self.adaptation_class.get_sum()

@@ -62,9 +62,17 @@ class StudentClassListSerializer(serializers.ModelSerializer):
     
     adaptation_class = AdaptationClassListSerializer(read_only=True)
     max_grade = SerializerMethodField(source='get_max_grade', read_only=True)
+    sum = SerializerMethodField(source='get_sum', read_only=True)
+    adaptation_class_sum = SerializerMethodField(source='get_adaptation_class_sum', read_only=True)
 
     def get_max_grade(self, obj):
         return obj.get_max_grade()
+
+    def get_sum(self, obj):
+        return obj.get_sum()
+
+    def get_adaptation_class_sum(self, obj):
+        return obj.get_adaptation_class_sum()
 
     class Meta:
         model=StudentClass

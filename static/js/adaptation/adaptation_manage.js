@@ -112,7 +112,15 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
       {
         "data": "semester"
       },
-      
+      // {
+      //   "data": "teorical"
+      // },
+      // {
+      //   "data": "practical"
+      // },
+      // {
+      //   "data": "sum"
+      // },
       {
         "data": "credit"
       },
@@ -144,6 +152,15 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
         "name":"semester",
         "data":"adaptation_class.semester"
       },  
+      // {
+      //   "data": "adaptation_class.teorical"
+      // },
+      // {
+      //   "data": "adaptation_class.practical"
+      // },
+      // {
+      //   "data": "adaptation_class_sum"
+      // },
       {
         "name":"credit",
         "data":"adaptation_class.credit"
