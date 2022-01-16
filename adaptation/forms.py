@@ -29,7 +29,7 @@ class StyledFormMixin(forms.Form):
             else:
                 self.fields[name].widget.attrs.update(STYLES["else"])
                 
-class ProtoAdaptionForm(forms.ModelForm):
+class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
     NULL_TUPPLE =  [
     ('', '---------'),
     ]
@@ -44,17 +44,6 @@ class ProtoAdaptionForm(forms.ModelForm):
         
     }
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for name in self.fields:
-            
-            if name in self.FIELDS:
-                self.fields[name].widget.attrs.update(self.FIELDS[name])
-            # add some special classes depend on the element
-            if self.fields[name].widget.__class__.__name__ in STYLES:
-                self.fields[name].widget.attrs.update(STYLES[self.fields[name].widget.__class__.__name__])
-            else:
-                self.fields[name].widget.attrs.update(STYLES["else"])
 
     class Meta:
        model = Adaptation
@@ -64,7 +53,7 @@ class ProtoAdaptionForm(forms.ModelForm):
         }
 
 
-class AdaptationUpdateForm(ProtoAdaptionForm):
+class AdaptationUpdateForm(ProtoAdaptionForm, StyledFormMixin):
    
    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
