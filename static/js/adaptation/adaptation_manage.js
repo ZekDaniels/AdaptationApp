@@ -48,7 +48,8 @@ const fillOptions = function (select_input, data, callback = null) {
 
 // Variables
 var table = $(".table");
-// var deleteable_class_id = null
+let updateable_class_id = null;
+let updateable = false;
 
 init();
 
@@ -81,6 +82,124 @@ function getSelectionText() {
   }
 }
 
+function setupListeners() {
+  university_input.change(() => {
+    updateFaculties();
+  });
+  faculty_input.change(() => {
+    updateSciences();
+  });
+  main_submit_button.click(function (event) {
+    mainForm.submit();
+  });
+  add_class_button.click(function (event) {
+    addClassForm.submit();
+  });
+  mainForm.submit(function name(event) {
+    event.preventDefault();
+    let formData = new FormData(this);
+    let data = Object.fromEntries(formData.entries());
+    UpdateAdaptation(data, adaptation_update_api_url, main_submit_button);
+  });
+  addClassForm.submit(function name(event) {
+    event.preventDefault();
+    let formData = new FormData(this);
+    formData.append("adaptation", adaptation_id);
+    let data = Object.fromEntries(formData.entries());
+
+    if (updateable)
+    updateStudentClass(updateable_class_id, data, student_class_update_api_url, add_class_button, table, addClassModal);
+    else
+    addStudentClass(data, student_class_create_api_url, add_class_button, table, addClassModal);
+
+    updateable = false;
+  });
+ 
+}
+
+
+//jQuery events
+
+$('tbody').on("click", '.delete_class_button', function () {
+  let deleteable_class_id = $(this).data('id');
+  DeleteStudentClass(deleteable_class_id, student_class_update_api_url, table);
+});
+
+$('tbody').on("click", '.update_class_button', function (event) {
+  updateable_class_id = $(this).data('id');
+  updateable = true;
+  let row = $(this).closest("tr");
+  let data = table.row(row).data();
+  FillDataAddClassForm(data);
+});
+
+//Adaptation Activies
+function updateFaculties() {
+  new_value = getSelectionText(university_input)
+  if (!new_value) {
+    cleanOptions(faculty_input);
+  } else {
+    urlParams = new URLSearchParams();
+    urlParams.set("university", new_value);
+    faculty_list_api_url.search = urlParams;
+    fetch(faculty_list_api_url)
+      .then((response) => response.json())
+      .then((data) => fillOptions(faculty_input, data, cleanOptions(science_input)))
+  }
+}
+
+function updateSciences() {
+  new_value = getSelectionText(university_input)
+  new_value_faculty = getSelectionText(faculty_input)
+  if (!new_value) {
+    cleanOptions(science_input);
+  } else {
+    urlParams = new URLSearchParams();
+    urlParams.set("faculty", new_value);
+    science_list_api_url.search = urlParams;
+    fetch(science_list_api_url)
+      .then((response) => response.json())
+      .then((data) => fillOptions(science_input, data))
+  }
+}
+
+function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = null) {
+  let button_text = ""
+  if (_button) {
+    button_text = _button.html();
+    _button.prop("disabled", true);
+    _button.html(`<i class="icon-spinner2 spinner"></i>`);
+  }
+  request
+    .put_r(_url.replace("0", adaptation_id), _data).then((response) => {
+      if (_button) {
+        _button.html(button_text);
+        _button.prop("disabled", false);
+      }
+      if (response.ok) {
+        response.json().then(data => {
+          fire_alert([{
+            message: {message:"Kaydınız başarıyla güncellendi"},
+            icon: "success"
+          }]);
+          if (_modal) {
+            _modal.modal('hide');
+          }
+        })
+      } else {
+        response.json().then(errors => {
+          console.log(errors);
+          fire_alert([{
+            message: errors,
+            icon: "error"
+          }]);
+        })
+        throw new Error('Something went wrong');
+      }
+    });
+}
+
+//Classes Activies
 function initializeStudentClassDatatables(_table, _student_classes_list_api_url, _adaptation_id) {
   $.extend($.fn.dataTable.defaults, {
     autoWidth: false,
@@ -140,7 +259,7 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
           console.log(data)
           return `
           <div class="row">
-          <button class='btn update_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
+          <button class='btn update_class_button p-0 mx-auto'  data-toggle="modal" data-target="#addClassModal" data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
           <button class='btn delete_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
           </div>
           `;
@@ -193,71 +312,8 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
   });
 }
 
-function updateFaculties() {
-  new_value = getSelectionText(university_input)
-  if (!new_value) {
-    cleanOptions(faculty_input);
-  } else {
-    urlParams = new URLSearchParams();
-    urlParams.set("university", new_value);
-    faculty_list_api_url.search = urlParams;
-    fetch(faculty_list_api_url)
-      .then((response) => response.json())
-      .then((data) => fillOptions(faculty_input, data, cleanOptions(science_input)))
-  }
-}
+function addStudentClass(_data, _url, _button = null, _table = null, _modal = null) {
 
-function updateSciences() {
-  new_value = getSelectionText(university_input)
-  new_value_faculty = getSelectionText(faculty_input)
-  if (!new_value) {
-    cleanOptions(science_input);
-  } else {
-    urlParams = new URLSearchParams();
-    urlParams.set("faculty", new_value);
-    science_list_api_url.search = urlParams;
-    fetch(science_list_api_url)
-      .then((response) => response.json())
-      .then((data) => fillOptions(science_input, data))
-  }
-}
-
-function setupListeners() {
-  university_input.change(() => {
-    updateFaculties();
-  });
-  faculty_input.change(() => {
-    updateSciences();
-  });
-  main_submit_button.click(function (event) {
-    mainForm.submit();
-  });
-  add_class_button.click(function (event) {
-    addClassForm.submit();
-  });
-  mainForm.submit(function name(event) {
-    event.preventDefault();
-    let formData = new FormData(this);
-    let data = Object.fromEntries(formData.entries());
-    UpdateAdaptation(data, adaptation_update_api_url, main_submit_button);
-  });
-  addClassForm.submit(function name(event) {
-    event.preventDefault();
-    let formData = new FormData(this);
-    formData.append("adaptation", adaptation_id);
-    let data = Object.fromEntries(formData.entries());
-    addStudentClass(data, student_class_create_api_url, add_class_button, table, addClassModal);
-  });
- 
-}
-
-
-$('tbody').on("click", '.delete_class_button', function () {
-  let deleteable_class_id = $(this).data('id');
-  DeleteStudentClass(deleteable_class_id, student_class_update_api_url, table);
-})
-
-function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = null) {
   let button_text = ""
   if (_button) {
     button_text = _button.html();
@@ -265,17 +321,15 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
     _button.html(`<i class="icon-spinner2 spinner"></i>`);
   }
   request
-    .put_r(_url.replace("0", adaptation_id), _data).then((response) => {
+    .post_r(_url, _data).then((response) => {
       if (_button) {
         _button.html(button_text);
         _button.prop("disabled", false);
       }
       if (response.ok) {
         response.json().then(data => {
-          fire_alert([{
-            message: {message:"Kaydınız başarıyla güncellendi"},
-            icon: "success"
-          }]);
+          _table.ajax.reload();
+          clearAddClassForm();
           if (_modal) {
             _modal.modal('hide');
           }
@@ -292,9 +346,7 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
       }
     });
 }
-
-
-function addStudentClass(_data, _url, _button = null, _table = null, _modal = null) {
+function updateStudentClass(_id, _data, _url, _button = null, _table = null, _modal = null) {
 
   let button_text = ""
   if (_button) {
@@ -303,7 +355,7 @@ function addStudentClass(_data, _url, _button = null, _table = null, _modal = nu
     _button.html(`<i class="icon-spinner2 spinner"></i>`);
   }
   request
-    .post_r(_url, _data).then((response) => {
+    .put_r(_url.replace("0", _id), _data).then((response) => {
       if (_button) {
         _button.html(button_text);
         _button.prop("disabled", false);
@@ -356,47 +408,10 @@ function DeleteStudentClass(_id, _url, _table = null) {
   );
 }
 
-
-
-
-// function buildClassesTable(data) {
-//   const table_body_selector = ".table tbody";
-//   const counter_cell_selector = "td.counter_cell";
-//   const table_row_selector = `${table_body_selector} tr`;
-//   const row_count = $(table_row_selector).length;
-//   const last_student_class_row_selector = `${table_row_selector}.${data.adaptation_class_data.code}:last`;
-//   const adaptation_class_selector = `${table_row_selector}.${data.adaptation_class_data.code}.adaptation_row`;
-  
-//   let counter = 0;
-//   if(row_count){
-//     counter = $(`${last_student_class_row_selector} ${counter_cell_selector}`).html();
-//     console.log(counter);
-//   }
-//   counter++;
-//   console.log(adaptation_class_selector);
-//   const default_adaptation_cells =`
-//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.code}</td>
-//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.class_name}</td>
-//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.semester}</td>
-//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.credit}</td>
-//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td>     
-//   <td rowspan="2" class="align-middle m-auto" >${data.adaptation_class_data.akts}</td> 
-//   `
-//   const default_student_row = `
-//   <tr class="text-center ${data.adaptation_class_data.code} ${!adaptation_class_selector.length ? 'adaptation_row':''}">
-//   <td class="align-middle">${counter}</td>
-//   <td class="align-middle">${data.code}</td>
-//   <td class="align-middle">${data.class_name}</td>
-//   <td class="align-middle">${data.semester}</td>
-//   <td class="align-middle">${data.credit}</td>
-//   <td class="align-middle">${data.akts}</td>
-//   ${!adaptation_class_selector.length ? default_adaptation_cells:''}
-//   ${!row_count ? default_adaptation_cells:''}
-//   </tr>
-//   `
-
-//   if(row_count) $(last_student_class_row_selector).after(default_student_row);
-//   else $(table_body_selector).html(default_student_row);                                        
- 
-  
-// }
+function FillDataAddClassForm(_data) {
+  _data['grade'] = _data['grade'].toFixed(1);
+  $.each( _data, function( key, value ) {     
+    $(`#id_${key}`).val(value);
+  });
+  $(`#id_adaptation_class`).val(_data.adaptation_class.id);
+}
