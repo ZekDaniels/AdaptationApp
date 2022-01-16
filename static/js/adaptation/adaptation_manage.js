@@ -57,6 +57,12 @@ function init() {
   initializeStudentClassDatatables(table, student_classes_list_api_url, adaptation_id)
 }
 
+function clearAddClassForm() {
+  $("#addClassForm input").val(''); 
+  $("#addClassForm textarea").val(''); 
+  $("#addClassForm select").val(''); 
+}
+
 function getSelectionText() {
   if (window.getSelection) {
     try {
@@ -288,7 +294,6 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
 }
 
 
-
 function addStudentClass(_data, _url, _button = null, _table = null, _modal = null) {
 
   let button_text = ""
@@ -306,6 +311,7 @@ function addStudentClass(_data, _url, _button = null, _table = null, _modal = nu
       if (response.ok) {
         response.json().then(data => {
           _table.ajax.reload();
+          clearAddClassForm();
           if (_modal) {
             _modal.modal('hide');
           }

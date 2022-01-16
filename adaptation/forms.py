@@ -18,6 +18,8 @@ class StyledFormMixin(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for name in self.fields:
+            if self.fields[name].required is True:
+                    self.fields[name].label +="*"
             if hasattr(self, "FIELDS"):
                 if name in self.FIELDS:
                     self.fields[name].widget.attrs.update(self.FIELDS[name])

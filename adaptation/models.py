@@ -93,6 +93,9 @@ class AdapatationClass(models.Model):
     credit = models.IntegerField("Credit")
     akts = models.IntegerField("AKTS")
     is_active = models.BooleanField(("Aktif mi?"), default=True)
+
+    turkish_content = models.TextField("Türkçe İçerik")
+    english_content = models.TextField("İngilizce İçerik", null=True, blank=True)
     
     def __str__(self):
         return self.code+" - "+self.class_name  
@@ -125,12 +128,18 @@ class StudentClass(models.Model):
     code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.PositiveIntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
+   
     teorical = models.PositiveIntegerField("Teorik", default = 0)
     practical = models.PositiveIntegerField("Pratik", default = 0)
     credit = models.PositiveIntegerField("Kredi", null=True, blank=True, validators=[MinValueValidator(1)])
     akts = models.PositiveIntegerField("AKTS", null=True, blank=True, validators=[MinValueValidator(1)])
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
     adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
+
+    turkish_content = models.TextField("Türkçe İçerik")
+    english_content = models.TextField("İngilizce İçerik", null=True, blank=True)
+
+
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
