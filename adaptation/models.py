@@ -84,6 +84,7 @@ class AdapatationClass(models.Model):
     class Meta:
         verbose_name = 'İntibak Dersi'
         verbose_name_plural = 'İntibak Dersleri'
+        ordering = ['class_name']
     
     code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
