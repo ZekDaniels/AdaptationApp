@@ -1,58 +1,134 @@
-<div class="modal fade" id="addClassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-  aria-hidden="true">
+{% load filter_student_class_list %}
+
+<!-- Class List Modal -->
+<div
+  class="modal fade"
+  id="classListModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelLogout"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabelClassList">
+          Ders Listesi
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="classes">
+          {% for semester in '12345678'|make_list %}       
+          <div class="row">
+            <div class="btn-group btn-block mb-1">
+              <button class="btn btn-primary btn-lg btn-block dropdown-toggle toggle-semester-table m-3" type="button" data-semester="{{semester}}">
+                {{semester}}. Yarıyıl Dersleri
+              </button>
+            </div>
+          </div>
+          <div id="semester-table-{{semester}}" class="row semester-table">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                ></div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Kodu</th>
+                        <th>Dersin Adı</th>
+                        <th>Öğretim</th>
+                        <th>Teorik</th>
+                        <th>Lab. Uyg.</th>
+                        <th>Kredi</th>
+                        <th>AKTS</th>
+                        <th>İşlem</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for class in adaptation_classes|filter_student_class_list:semester %}
+                      <tr>
+                        <td>{{class.code}}</td>
+                        <td>{{class.class_name}}</td>
+                        <td>{{class.get_education_time_display}}</td>
+                        <td>{{class.teorical}}</td>
+                        <td>{{class.practical}}</td>
+                        <td>{{class.credit}}</td>
+                        <td>{{class.akts}}</td>
+                        <td><button class="btn btn-md btn-primary show-content" data-id="{{class.id}}">İçerik Öğren</button></td>
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Class Modal -->
+<div
+  class="modal fade"
+  id="addClassModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelLogout"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabelLogout">Ders Ekle</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLabelAddClass">Ders Ekle</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="login-form">
-
           <form id="addClassForm" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="row ">
-
+            <div class="row">
               {% for field in class_form %}
-                   
-              <div class="form-group  {% if forloop.last %} col-lg-12 {% else %} col-lg-6 {% endif %} mx-auto mb-2">
+
+              <div
+                class="form-group {% if forloop.last %} col-lg-12 {% else %} col-lg-6 {% endif %} mx-auto mb-2"
+              >
                 <label>{{field.label}}</label>
-                {{ field }}
-                {{ field.errors }}
+                {{ field }} {{ field.errors }}
               </div>
-             
-              {% endfor %}          
+
+              {% endfor %}
             </div>
-            
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button id="add_class_button" type="button" class="btn btn-success">Ders Ekle</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal DeleteClass -->
-<div class="modal fade" id="deleteClassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelDeleteClass"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabelDeleteClass">Çıkış</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button id="add_class_button" type="button" class="btn btn-success">
+          Ders Ekle
         </button>
-      </div>
-      <div class="modal-body">
-        <p>Bu dersi silmek istediğinizden emin misiniz?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">İptal</button>
-        <button id="" class="btn btn-danger">Oturumu Kapat</button>
       </div>
     </div>
   </div>

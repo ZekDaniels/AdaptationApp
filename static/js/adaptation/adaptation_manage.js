@@ -13,8 +13,11 @@ const deleteClassModal = $("#deleteClassModal")
 
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
-const update_class_button_selector = ".update_class_button"
-const delete_class_button_selector = ".delete_class_button"
+const update_class_button_selector = ".update_class_button";
+const delete_class_button_selector = ".delete_class_button";
+
+const semester_dropdowns_selector = ".toggle-semester-table";
+
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
     $(this).removeAttr("selected");
@@ -47,7 +50,7 @@ const fillOptions = function (select_input, data, callback = null) {
 };
 
 // Variables
-var table = $(".table");
+var table = $("#class-datatable");
 let updateable_class_id = null;
 let updateable = false;
 
@@ -132,6 +135,13 @@ $('tbody').on("click", '.update_class_button', function (event) {
   let data = table.row(row).data();
   FillDataAddClassForm(data);
 });
+
+$(semester_dropdowns_selector).on("click", function(){
+  let semester = $(this).data("semester");
+  semesterTable = $(`#semester-table-${semester}`);
+  console.log(semesterTable);
+  semesterTable.slideToggle();
+})
 
 //Adaptation Activies
 function updateFaculties() {
