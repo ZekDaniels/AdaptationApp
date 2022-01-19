@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
 from django.forms.models import model_to_dict
-
+import numbers, decimal
 class ErrorNameMixin(serializers.Serializer):
     @property
     def errors(self):
@@ -83,6 +83,9 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
     adaptation_class = serializers.PrimaryKeyRelatedField(queryset=AdapatationClass.objects.all())
     adaptation_class_data = serializers.SerializerMethodField()
 
+    credit = serializers.CharField(default=None, required=False, allow_blank=True, allow_null=True,)
+    akts = serializers.CharField(default=None, required=False, allow_blank=True, allow_null=True,)
+
     class Meta:
         model = StudentClass
         exclude = ['created_at','updated_at']
@@ -91,14 +94,40 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
     def get_adaptation_class_data(self, obj):
         return model_to_dict(obj.adaptation_class)
 
-    def validate(self, data):   
-        print(data)           
+    def validate(self, data): 
+
+        credit = data.get('credit')        
+        akts = data.get('akts')    
+        
         validated_data = super().validate(data)
+
+        try:
+            validated_data['credit'] = float(credit)
+        except:
+            validated_data['credit'] = None
+        try:
+            validated_data['akts'] = int(akts)
+        except:
+            validated_data['akts'] = None
+        
+        # if validated_data['credit'] is not None and not akts.isdigit():
+        #     raise serializers.ValidationError({"akts": ("Bu alan tamsayı olmalı")})
+        # if validated_data['akts'] is not None and not credit.replace(".", "", 1).isdigit():
+        #     raise serializers.ValidationError({"credit": ("Bu alan tamsayı veya virgüllü sayı olmalı.")}) 
+
+        if validated_data['credit'] is None and validated_data['akts'] is None:
+            raise serializers.ValidationError(("Kredi tamsayı veya virgüllü sayı olmalı, AKTS tam sayı olmalı. Her iki değerden birisi mutlaka girilmeli.")) 
+
+        if validated_data['credit'] is not None and validated_data['credit']  < 1:
+            raise serializers.ValidationError({"credit": ("Bu alan 1 veya 1'den büyük olmalı.")}) 
+
+        if validated_data['akts'] is not None and validated_data['akts'] < 1:
+            raise serializers.ValidationError({"akts": ("Bu alan 1 veya 1'den büyük olmalı.")}) 
+
         return validated_data
         
     def create(self, validated_data):
         data = super().create(validated_data) 
-        print(data)   
         return data
         
 
