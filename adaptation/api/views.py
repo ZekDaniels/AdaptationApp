@@ -97,6 +97,11 @@ class AdaptationUpdateAPIView(generics.UpdateAPIView):
    
     queryset = Adaptation.objects.all()   
     serializer_class = AdaptationCreateSerializer
+
+class AdaptationClassDetailAPIView(generics.RetrieveAPIView):
+
+    queryset = AdapatationClass.objects.all() 
+    serializer_class = AdaptationClassListSerializer
     
 class StudentClassListAPIView(QueryListAPIView):
    

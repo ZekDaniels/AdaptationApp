@@ -6,7 +6,7 @@
   id="classListModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="exampleModalLabelLogout"
+  aria-labelledby="exampleModalLabelClassList"
   aria-hidden="true"
 >
   <div class="modal-dialog modal-xl" role="document">
@@ -65,7 +65,7 @@
                         <td>{{class.practical}}</td>
                         <td>{{class.credit}}</td>
                         <td>{{class.akts}}</td>
-                        <td><button class="btn btn-md btn-primary show-content" data-id="{{class.id}}">İçerik Öğren</button></td>
+                        <td><button class="btn btn-md btn-primary show-content" data-id="{{class.id}}" data-toggle="modal" data-target="#AdaptationClassContentModal">Ders İçeriğini Gör</button></td>
                       </tr>
                       {% endfor %}
                       
@@ -84,13 +84,61 @@
   </div>
 </div>
 
+<!-- Show Class Content Modal -->
+<div
+  class="modal fade m-5"
+  id="AdaptationClassContentModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelshowClassContent"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleLabelLabelshowClassContent">Ders İçeriği</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="disable-content-form">
+          <form>
+            <div class="container">
+              <div class="row mb-3">
+                <div class="col-lg-12">
+                  <h6 class="modal-title mb-1">Türkçe İçerik</h6>
+                  <textarea id="turkish-content" class="form-control" cols="25" rows="10" disabled></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <h6 class="modal-title mb-1">İngilizce İçerik</h6>
+                  <textarea id="english-content" class="form-control"  cols="5" rows="10" disabled></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Add Class Modal -->
 <div
   class="modal fade"
   id="addClassModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="exampleModalLabelLogout"
+  aria-labelledby="exampleModalLabelAddClass"
   aria-hidden="true"
 >
   <div class="modal-dialog modal-lg" role="document">

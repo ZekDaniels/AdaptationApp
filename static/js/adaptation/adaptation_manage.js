@@ -4,17 +4,22 @@ const request = new Request(csrfToken);
 const university_input = $("#id_university");
 const faculty_input = $("#id_faculty");
 const science_input = $("#id_science");
+const turkish_content = $("#turkish-content");
+const english_content = $("#english-content");
 
-const mainForm = $("#mainForm")
-const addClassForm = $("#addClassForm")
+const mainForm = $("#mainForm");
+const addClassForm = $("#addClassForm");
 
-const addClassModal = $("#addClassModal")
-const deleteClassModal = $("#deleteClassModal")
+const addClassModal = $("#addClassModal");
+const deleteClassModal = $("#deleteClassModal");
+const AdaptationClassContentModal = $("#AdaptationClassContentModal");
 
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
+
 const update_class_button_selector = ".update_class_button";
 const delete_class_button_selector = ".delete_class_button";
+const show_content_button_selector =".show-content";
 
 const semester_dropdowns_selector = ".toggle-semester-table";
 
@@ -139,9 +144,15 @@ $('tbody').on("click", '.update_class_button', function (event) {
 $(semester_dropdowns_selector).on("click", function(){
   let semester = $(this).data("semester");
   semesterTable = $(`#semester-table-${semester}`);
-  console.log(semesterTable);
   semesterTable.slideToggle();
-})
+});
+
+$(show_content_button_selector).on("click", function(){
+  let id = $(this).data("id");
+  getAdaptationClassContent(id, adaptation_class_detail_api_url, AdaptationClassContentModal)
+});
+
+
 
 //Adaptation Activies
 function updateFaculties() {
@@ -208,6 +219,7 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
       }
     });
 }
+
 
 //Classes Activies
 function initializeStudentClassDatatables(_table, _student_classes_list_api_url, _adaptation_id) {
@@ -322,6 +334,28 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
   });
 }
 
+function getAdaptationClassContent(_id, _url, _modal = null) {
+  request
+    .get_r(_url.replace("0", _id))
+    .then((response) => {
+      if (response.ok) {
+        response.json().then(data => {
+          fillAdaptationClassContent(data);
+        })
+      } else {
+        response.json().then(errors => {
+          fire_alert([{ message: errors, icon: "error" }]);
+        })
+        throw new Error('Something went wrong');
+      }
+    })
+}
+
+function fillAdaptationClassContent(_data) {
+  turkish_content.html(_data.turkish_content);
+  english_content.html(_data.english_content);
+}
+
 function addStudentClass(_data, _url, _button = null, _table = null, _modal = null) {
 
   let button_text = ""
@@ -356,6 +390,7 @@ function addStudentClass(_data, _url, _button = null, _table = null, _modal = nu
       }
     });
 }
+
 function updateStudentClass(_id, _data, _url, _button = null, _table = null, _modal = null) {
 
   let button_text = ""
