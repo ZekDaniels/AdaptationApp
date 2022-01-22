@@ -71,6 +71,8 @@ class Adaptation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     
+    is_closed =  models.BooleanField(("Kapalı mı?"), default=False)
+
     
     def __str__(self):
         return f"{self.user.profile.namesurname} {self.user.username}"
@@ -127,8 +129,10 @@ class StudentClass(models.Model):
     class Meta:
         verbose_name = 'Öğrenicin Dersi'
         verbose_name_plural = 'Öğrencinin Dersleri'
+        unique_together = (("code"), ("adaptation_class") )
         
-    code = models.CharField("Ders Kodu", max_length=20, unique=True)
+        
+    code = models.CharField("Ders Kodu", max_length=20)
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.PositiveIntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
    

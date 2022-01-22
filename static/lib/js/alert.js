@@ -2,9 +2,9 @@
 var swalInit = swal.mixin({
   buttonsStyling: false,
   customClass: {
-    confirmButton: "btn btn-primary",
-    cancelButton: "btn btn-light",
-    denyButton: "btn btn-light",
+    confirmButton: "btn m-1 btn-primary",
+    cancelButton: "btn m-1 btn-light",
+    denyButton: "btn m-1 btn-light",
     input: "form-control",
   },
 });
@@ -26,7 +26,8 @@ function sweetCombine(
   title,
   text,
   type,
-  action,
+  confirmButtonText,
+  cancelButtonText,
   success,
   succesMessageTitle,
   succesMessageText,
@@ -42,10 +43,10 @@ function sweetCombine(
       text: text,
       icon: type,
       showCancelButton: true,
-      confirmButtonText: "Yes, " + action + " it!",
-      cancelButtonText: "No, cancel!",
-      confirmButtonClass: "btn btn-success",
-      cancelButtonClass: "btn btn-danger",
+      confirmButtonText: confirmButtonText,
+      cancelButtonText: cancelButtonText,
+      confirmButtonClass: "btn m-1 btn-success",
+      cancelButtonClass: "btn m-1 btn-danger",
       buttonsStyling: false,
     })
     .then(function (result) {
@@ -125,7 +126,6 @@ const get_alert = function (_modal) {
     } else {
       if (Array.isArray(_modal.message[key])) {
         for (let text of _modal.message[key]) {
-          console.log(key);
           if(key  ==  'non_field_errors')  texts.push(`<span>${text}</span><br>`);    
           else texts.push(`<span><b class='font-weight-bold'>${key}:</b> ${text}</span><br>`);         
         };
@@ -150,7 +150,8 @@ const sweetCombineDynamic = function (
   title,
   text,
   type,
-  action,
+  confirmButtonText,
+  cancelButtonText,
   success = null,
   succesMessageTitle = null,
   succesMessageText = null,
@@ -166,10 +167,10 @@ const sweetCombineDynamic = function (
       text: text,
       icon: type,
       showCancelButton: true,
-      confirmButtonText: "Yes, " + action + " it!",
-      cancelButtonText: "No, don't " + action + "!",
-      confirmButtonClass: "btn btn-success",
-      cancelButtonClass: "btn btn-danger",
+      confirmButtonText: confirmButtonText,
+      cancelButtonText: cancelButtonText,
+      confirmButtonClass: "btn m-1 btn-success",
+      cancelButtonClass: "btn m-1 btn-danger",
       buttonsStyling: false,
     })
     .then(function (result) {

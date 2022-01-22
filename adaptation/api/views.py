@@ -124,5 +124,14 @@ class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = StudentClassCreateSerializer
 
     def destroy(self, request, *args, **kwargs):
+
+        
         instance = self.get_object()
+
+        if instance.adaptation.is_closed:
+            raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
+          
+        if instance.adaptation.user != request.user:
+            raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+            
         return super().destroy(request, *args, **kwargs)

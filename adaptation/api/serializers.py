@@ -3,6 +3,8 @@ from rest_framework.fields import SerializerMethodField
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
 from django.forms.models import model_to_dict
 import numbers, decimal
+
+
 class ErrorNameMixin(serializers.Serializer):
     @property
     def errors(self):
@@ -24,7 +26,6 @@ class ErrorNameMixin(serializers.Serializer):
         print(verbose_errors)
         return verbose_errors
     
-
 class FacultyListSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -44,13 +45,27 @@ class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         exclude = ['created_at', 'updated_at']
     
     def validate(self, data):
-        data = super().validate(data)
-        
-        adaptation_year = data.get('adaptation_year')        
-        adaptation_semester = data.get('adaptation_semester')    
+        validated_data = super().validate(data)
+
+        if self.instance:
+            if self.instance.is_closed:
+                raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))       
+
+            request_owner = None
+            request = self.context.get("request")
+            if request and hasattr(request, "user"):
+                request_owner = request.user
+
+            if self.instance.user != request_owner:
+                raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+
+    
+
+        adaptation_year = validated_data.get('adaptation_year', 0)        
+        adaptation_semester = validated_data.get('adaptation_semester', 0)    
         if (adaptation_semester != adaptation_year * 2) and (adaptation_semester != ((adaptation_year * 2) - 1) ):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
-        return data
+        return validated_data
 
 class AdaptationClassListSerializer(serializers.ModelSerializer):
 
@@ -95,11 +110,24 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         return model_to_dict(obj.adaptation_class)
 
     def validate(self, data): 
-
+         
         credit = data.get('credit')        
         akts = data.get('akts')    
         
         validated_data = super().validate(data)
+
+        adaptation = validated_data.get('adaptation', None)
+        if adaptation.is_closed:
+            raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
+
+        request_owner = None
+        request = self.context.get("request")
+        if request and hasattr(request, "user"):
+            request_owner = request.user
+            
+        if adaptation.user != request_owner:
+            raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+
 
         try:
             validated_data['credit'] = float(credit)

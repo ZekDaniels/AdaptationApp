@@ -1,6 +1,14 @@
 // Assigning Elements
 const request = new Request(csrfToken);
 
+
+const update_class_button_selector = ".update_class_button";
+const delete_class_button_selector = ".delete_class_button";
+const show_content_button_selector =".show_content_button";
+const finish_adaptation_button_selector ="#finish_adaptation_button";
+
+const semester_dropdowns_selector = ".toggle-semester-table";
+
 const university_input = $("#id_university");
 const faculty_input = $("#id_faculty");
 const science_input = $("#id_science");
@@ -16,12 +24,7 @@ const AdaptationClassContentModal = $("#AdaptationClassContentModal");
 
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
-
-const update_class_button_selector = ".update_class_button";
-const delete_class_button_selector = ".delete_class_button";
-const show_content_button_selector =".show-content";
-
-const semester_dropdowns_selector = ".toggle-semester-table";
+const finish_adaptation_button = $(finish_adaptation_button_selector);
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -151,6 +154,11 @@ $(show_content_button_selector).on("click", function(){
   let id = $(this).data("id");
   getAdaptationClassContent(id, adaptation_class_detail_api_url, AdaptationClassContentModal)
 });
+$(finish_adaptation_button_selector).on("click", function(){
+  data = { 'is_closed': true };
+  finishAdaptation(adaptation_id, data, adaptation_update_api_url, finish_adaptation_button);
+});
+
 
 
 
@@ -218,6 +226,37 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
         throw new Error('Something went wrong');
       }
     });
+}
+
+function finishAdaptation(_id,_data, _url, _button = null) {
+  sweetCombineDynamic(
+    "Emin misin?",
+    "Bu intibak başvurusunu bitirmek istediğine emin misin!",
+    "success",
+    "Başvuruyu bitir.",
+    "İptal et.",
+    () => {
+      request
+      .patch_r(_url.replace("0", _id), _data).then((response) => {
+        if (response.ok) {
+          response.json().then(data => {
+            console.log(_button);
+            _button.prop("disabled", true);
+          });
+        } else {
+          response.json().then(errors => {
+            console.log(errors);
+            fire_alert([{
+              message: errors,
+              icon: "error"
+            }]);
+          })
+          throw new Error('Something went wrong');
+        }
+      });
+    }
+    
+  );
 }
 
 
@@ -428,12 +467,12 @@ function updateStudentClass(_id, _data, _url, _button = null, _table = null, _mo
 
 
 function DeleteStudentClass(_id, _url, _table = null) {
-  console.log(_id)
   sweetCombineDynamic(
     "Emin misin?",
     "Bu dersi silmek isdtediğine emin misin!",
     "warning",
-    "delete",
+    "Kaydı sil.",
+    "İptal et.",
     () => {
       request
         .delete_r(_url.replace("0", _id))
@@ -449,7 +488,8 @@ function DeleteStudentClass(_id, _url, _table = null) {
             throw new Error('Something went wrong');
           }
         })
-    }
+    },
+    "saddas"
   );
 }
 

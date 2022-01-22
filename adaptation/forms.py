@@ -47,7 +47,7 @@ class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
 
     class Meta:
        model = Adaptation
-       exclude = ['created_at','update_at','user']
+       exclude = ['is_closed','user','created_at','update_at']
        widgets = {
             'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
         }
