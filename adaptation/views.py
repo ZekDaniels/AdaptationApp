@@ -17,7 +17,7 @@ class AdaptationManageView(LoginRequiredMixin, View):
     def get(self, request, id, *args, **kwargs):
         if not request.user.adaptation:
              return redirect('adaptation:adaptation_create')
-        adaptation = get_object_or_404(Adaptation, pk=id)
+        adaptation = get_object_or_404(Adaptation, pk=id, user=request.user)
         adaptation_create_form = AdaptationUpdateForm(instance=adaptation)
         adaptation_classes = AdapatationClass.objects.order_by("id")
         class_form = StudentClassForm()
