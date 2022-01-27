@@ -18,7 +18,7 @@ class DashboardView(LoginRequiredMixin, View):
 
 
 class LoginPageView(LoginView):
-    template_name = '../templates/login.html'
+    template_name = '../templates/registration/login.html'
     form_class = UserLoginForm
     redirect_authenticated_user = True
     
@@ -37,7 +37,7 @@ class RegisterView(View):
         userform = NewUserForm()
         profileform = NewProfileForm()
         context = {'userform':userform, 'profileform':profileform}
-        return render(request, 'register.html', context)
+        return render(request, 'registration/register.html', context)
     
     def post(self, request, *args, **kwargs):
         userform = NewUserForm(request.POST)
@@ -54,5 +54,8 @@ class RegisterView(View):
                 return redirect("dashboard")
         else:
             messages.error(request, "Kayıt Başarısız.")
-            return render (request, "register.html", context={"userform":userform, "profileform":profileform})
+            return render (request, "registration/register.html", context={"userform":userform, "profileform":profileform})
+
+# class PasswordResetView(v)
+
 

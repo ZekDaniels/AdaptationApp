@@ -1,27 +1,47 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordResetForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+
+from user.models import Profile
+
 
 STYLES = {
      "else": {
         'class': 'form-control'
     }
 }
-from user.models import Profile
-class UserLoginForm(AuthenticationForm):
-    remember_me = forms.BooleanField(required=False)
-    
-class NewUserForm(UserCreationForm):    
-    email = forms.EmailField(required=True)
+
+
+class StyledFormMixin(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for name in self.fields:
+          
+            if hasattr(self, "FIELDS"):
+                if name in self.FIELDS:
+                    self.fields[name].widget.attrs.update(self.FIELDS[name])
             # add some special classes depend on the element
             if self.fields[name].widget.__class__.__name__ in STYLES:
                 self.fields[name].widget.attrs.update(STYLES[self.fields[name].widget.__class__.__name__])
             else:
                 self.fields[name].widget.attrs.update(STYLES["else"])
+                
+class UserLoginForm(AuthenticationForm):
+    remember_me = forms.BooleanField(required=False)
+    
+
+class UserPasswordResetFormForm(PasswordResetForm, StyledFormMixin):
+     
+    FIELDS = {
+        'email':{
+            'class':"form-control col-lg-12",
+        },
+        
+    }
+
+class NewUserForm(UserCreationForm, StyledFormMixin):    
+    email = forms.EmailField(required=True)
                      
     class Meta:
         model = User
@@ -34,17 +54,9 @@ class NewUserForm(UserCreationForm):
             user.save()
         return user
 
-class NewProfileForm(forms.ModelForm):
-    student_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'type':'number'}) )
+class NewProfileForm(forms.ModelForm, StyledFormMixin):
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for name in self.fields:
-            # add some special classes depend on the element
-            if self.fields[name].widget.__class__.__name__ in STYLES:
-                self.fields[name].widget.attrs.update(STYLES[self.fields[name].widget.__class__.__name__])
-            else:
-                self.fields[name].widget.attrs.update(STYLES["else"])
+    student_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'type':'number'}) )
     
     def clean_student_number(self):
         student_number = self.cleaned_data['student_number']
