@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordResetForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
@@ -31,11 +31,11 @@ class UserLoginForm(AuthenticationForm):
     remember_me = forms.BooleanField(required=False)
     
 
-class UserPasswordResetForm(PasswordResetForm, StyledFormMixin):
+class UserPasswordResetForm(StyledFormMixin, PasswordResetForm):
      
     FIELDS = {}
 
-class UserPasswordChangeForm(PasswordResetForm, StyledFormMixin):
+class UserSetPasswordForm(StyledFormMixin, SetPasswordForm):
 
     FIELDS = {}
 
