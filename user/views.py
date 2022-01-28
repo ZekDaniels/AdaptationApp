@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+
 from django.shortcuts import redirect, render
 from django.views.generic.base import View
 from django.contrib import messages
@@ -55,7 +56,4 @@ class RegisterView(View):
         else:
             messages.error(request, "Kayıt Başarısız.")
             return render (request, "registration/register.html", context={"userform":userform, "profileform":profileform})
-
-# class PasswordResetView(v)
-
 

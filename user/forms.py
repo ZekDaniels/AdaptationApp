@@ -31,14 +31,14 @@ class UserLoginForm(AuthenticationForm):
     remember_me = forms.BooleanField(required=False)
     
 
-class UserPasswordResetFormForm(PasswordResetForm, StyledFormMixin):
+class UserPasswordResetForm(PasswordResetForm, StyledFormMixin):
      
-    FIELDS = {
-        'email':{
-            'class':"form-control col-lg-12",
-        },
-        
-    }
+    FIELDS = {}
+
+class UserPasswordChangeForm(PasswordResetForm, StyledFormMixin):
+
+    FIELDS = {}
+
 
 class NewUserForm(UserCreationForm, StyledFormMixin):    
     email = forms.EmailField(required=True)
