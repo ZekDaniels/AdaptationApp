@@ -50,4 +50,4 @@ urlpatterns = [
     ),
 ]
 
-print(PasswordResetConfirmView.get_form_class())
+# print(PasswordResetConfirmView.get_form_class())
