@@ -159,7 +159,9 @@ $(finish_adaptation_button_selector).on("click", function(){
   finishAdaptation(adaptation_id, data, adaptation_update_api_url, finish_adaptation_button);
 });
 
-
+$(addClassModal).on('hidden.bs.modal', function () {
+  clearAddClassForm();
+});
 
 
 //Adaptation Activies
@@ -240,7 +242,6 @@ function finishAdaptation(_id,_data, _url, _button = null) {
       .patch_r(_url.replace("0", _id), _data).then((response) => {
         if (response.ok) {
           response.json().then(data => {
-            console.log(_button);
             _button.prop("disabled", true);
           });
         } else {
@@ -317,7 +318,6 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
       {
         "data": null,
         "render": function ( data, type, row ) {
-          console.log(data)
           return `
           <div class="row">
           <button class='btn update_class_button p-0 mx-auto'  data-toggle="modal" data-target="#addClassModal" data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
