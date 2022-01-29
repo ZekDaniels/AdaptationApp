@@ -51,5 +51,3 @@ urlpatterns = [
         name="password_reset_complete",
     ),
 ]
-
-# print(PasswordResetConfirmView.get_form_class())

@@ -58,14 +58,14 @@
                     <tbody>
                       {% for class in adaptation_classes|filter_student_class_list:semester %}
                       <tr>
-                        <td>{{class.code}}</td>
-                        <td>{{class.class_name}}</td>
-                        <td>{{class.get_education_time_display}}</td>
-                        <td>{{class.teorical}}</td>
-                        <td>{{class.practical}}</td>
-                        <td>{{class.credit}}</td>
-                        <td>{{class.akts}}</td>
-                        <td><button class="btn btn-md btn-primary show_content_button" data-id="{{class.id}}" data-toggle="modal" data-target="#AdaptationClassContentModal">Ders İçeriğini Gör</button></td>
+                        <td class="align-middle">{{class.code}}</td>
+                        <td class="align-middle">{{class.class_name}}</td>
+                        <td class="align-middle">{{class.get_education_time_display}}</td>
+                        <td class="align-middle">{{class.teorical}}</td>
+                        <td class="align-middle">{{class.practical}}</td>
+                        <td class="align-middle">{{class.credit}}</td>
+                        <td class="align-middle">{{class.akts}}</td>
+                        <td class="align-middle"><button class="btn btn-md btn-primary show_content_button" data-id="{{class.id}}" data-toggle="modal" data-target="#AdaptationClassContentModal">Ders İçeriğini Gör</button></td>
                       </tr>
                       {% endfor %}
                       

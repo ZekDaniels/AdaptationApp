@@ -73,6 +73,7 @@ function clearAddClassForm() {
   $("#addClassForm input").val(''); 
   $("#addClassForm textarea").val(''); 
   $("#addClassForm select").val(''); 
+  add_class_button.html("Ders Ekle");
 }
 
 function getSelectionText() {
@@ -141,7 +142,11 @@ $('tbody').on("click", '.update_class_button', function (event) {
   updateable = true;
   let row = $(this).closest("tr");
   let data = table.row(row).data();
-  FillDataAddClassForm(data);
+  if (data){
+    add_class_button.html("Ders Güncelle");
+    FillDataAddClassForm(data);
+  }
+  
 });
 
 $(semester_dropdowns_selector).on("click", function(){
@@ -494,7 +499,7 @@ function DeleteStudentClass(_id, _url, _table = null) {
 }
 
 function FillDataAddClassForm(_data) {
-  _data['grade'] = _data['grade'].toFixed(1);
+  _data.grade = Number(_data.grade).toFixed(1);
   $.each( _data, function( key, value ) {     
     $(`#id_${key}`).val(value);
   });
