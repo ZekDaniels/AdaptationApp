@@ -1,0 +1,267 @@
+{% if adaptation_classes %}
+{% load filter_student_class_list %}
+
+
+<!-- Class List Modal -->
+<div
+  class="modal fade"
+  id="classListModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelClassList"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabelClassList">
+          Ders Listesi
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="classes">
+          {% for semester in '12345678'|make_list %}       
+          <div class="row">
+            <div class="btn-group btn-block mb-1">
+              <button class="btn btn-primary btn-lg btn-block dropdown-toggle toggle-semester-table m-3" type="button" data-semester="{{semester}}">
+                {{semester}}. Yarıyıl Dersleri
+              </button>
+            </div>
+          </div>
+          <div id="semester-table-{{semester}}" class="row semester-table">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                ></div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Kodu</th>
+                        <th>Dersin Adı</th>
+                        <th>Öğretim</th>
+                        <th>Teorik</th>
+                        <th>Lab. Uyg.</th>
+                        <th>Kredi</th>
+                        <th>AKTS</th>
+                        <th>İşlem</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for class in adaptation_classes|filter_student_class_list:semester %}
+                      <tr>
+                        <td class="align-middle">{{class.code}}</td>
+                        <td class="align-middle">{{class.class_name}}</td>
+                        <td class="align-middle">{{class.get_education_time_display}}</td>
+                        <td class="align-middle">{{class.teorical}}</td>
+                        <td class="align-middle">{{class.practical}}</td>
+                        <td class="align-middle">{{class.credit}}</td>
+                        <td class="align-middle">{{class.akts}}</td>
+                        <td class="align-middle"><button class="btn btn-md btn-primary show_content_button" data-id="{{class.id}}" data-toggle="modal" data-target="#AdaptationClassContentModal">Ders İçeriğini Gör</button></td>
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Show Class Content Modal -->
+<div
+  class="modal fade m-5"
+  id="AdaptationClassContentModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelshowClassContent"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleLabelLabelshowClassContent">Ders İçeriği</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="disable-content-form">
+          <form>
+            <div class="container">
+              <div class="row mb-3">
+                <div class="col-lg-12">
+                  <h6 class="modal-title mb-1">Türkçe İçerik</h6>
+                  <textarea id="turkish-content" class="form-control" cols="25" rows="10" disabled></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <h6 class="modal-title mb-1">İngilizce İçerik</h6>
+                  <textarea id="english-content" class="form-control"  cols="5" rows="10" disabled></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Class Modal -->
+<div
+  class="modal fade"
+  id="addClassModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelAddClass"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="AddClassModalLabel">Ders Ekle</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <form id="addClassForm" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              {% for field in class_form %}
+
+              <div
+                class="form-group {% if forloop.last %} col-lg-12 {% else %} col-lg-6 {% endif %} mx-auto mb-2"
+              >
+                <label>{{field.label}}</label>
+                {{ field }} {{ field.errors }}
+              </div>
+
+              {% endfor %}
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="add_class_button" type="button" class="btn btn-success">
+          Ders Ekle
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Compare Class Modal -->
+<div
+  class="modal fade"
+  id="compareClassModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelcompareClass"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="compareClassModalLabel">Ders Karşılaştır</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+            {% csrf_token %}
+            <div class="row">
+
+              <div class="table-responsive hide">
+                <table class="table table-compare align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr class="text-center">
+                            <th class="border border-white" colspan="1" scope="colgroup">Kaydedilen Ders</th>
+                            <th class="border border-white" colspan="2" scope="colgroup">Başvurulan Ders</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                      <tr class="border border-dark">
+                      <td class="border border-dark">
+                        {% for field in disable_student_class_form %}
+        
+                        <div
+                          class="form-group col-lg-12 mx-auto mb-2"
+                        >
+                          <label>{{field.label}}</label>
+                          {{ field }}
+                        </div>
+                        
+          
+                        {% endfor %}
+                      </td>
+
+
+                      <td class="border border-dark">
+                        {% for field in disable_adaptation_class_form %}
+        
+                        <div
+                          class="form-group col-lg-12 mx-auto mb-2"
+                        >
+                          <label>{{field.label}}</label>
+                          {{ field }}
+                        </div>
+          
+                        {% endfor %}
+                      </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+              
+              
+             
+              
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

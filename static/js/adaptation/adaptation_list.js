@@ -47,16 +47,17 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
       {
         data: null,
         render: function (data, type, row) {
-            if(data.is_closed)  return `<span class="badge badge-warning">Kapatıldı ama tamamlanmadı</span>`;
+            if(data.is_closed)  return `<span class="badge badge-warning">Tamamlandı ama onaylanmadı</span>`;
             else return `<span class="badge badge-danger">Tamamlanmadı</span>`;
         },
       },
       {
         data: null,
         render: function (data, type, row) {
+           button_url = adaptation_confirmation_url.replace("0", data.id);
           return `
             <div class="row">
-            <button class='btn btn-success compare_class_button mx-auto'  data-id="${data.id}"><i class='text-white fas fa-door-open'></i>&nbspBaşvuruya Git</button>
+            <a class='btn btn-success compare_class_button mx-auto'  href="${button_url}"><i class='text-white fas fa-door-open'></i>&nbspBaşvuruya Git</a>
             </div>
             `;
         },

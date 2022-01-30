@@ -5,7 +5,7 @@
 {% load get_max_grade %}
 
 {% endcomment %}
-{% block title %}İntibak Ders Seçim{% endblock %}
+{% block title %}İntibak Başvuruları{% endblock %}
 
 {% block plugins %}
 <script src="{% static 'lib/vendor/datatables/jquery.dataTables.min.js' %}"></script>
@@ -54,6 +54,7 @@
 <script>
    
    adaptations_list_api_url = "{% url 'adaptation:adaptations_list_api' %}"
+   adaptation_confirmation_url = "{% url 'adaptation:adaptation_confirmation' 0 %}"
    
 </script>
 
