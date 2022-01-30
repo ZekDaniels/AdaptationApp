@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load get_max_grade %}
+{% block title %}İntibak Ders Seçim{% endblock %}
+
+{% block plugins %}
+<script src="{% static 'lib/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'lib/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'lib/vendor/datatables/dataTables.rowsGroup.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-lg-12 mb-4">
+        <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">İntibak Bilgileri</h6>
+            </div>
+            <div class="card-body">
+                <form id="mainForm" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+
+                        {% for field in adaptation_create_form %}
+                        <div class="form-group col-lg-4">
+                            <label>{{field.label}}</label>
+                            {{ field }}
+                            {{ field.errors }}
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-footer">
+                <div class="row p-3">
+                    <button type="submit" id="main_submit_button" href="#" class="btn btn-success btn-icon-split ml-auto">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="text">Kaydet</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 mb-4">
+        <!-- Simple Tables -->
+        <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">İntibak Dersleri</h6>
+                <div class="buttons">
+                <button class="btn btn-secondary btn-icon-split" data-toggle="modal" data-target="#classListModal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-list"></i>
+                    </span>
+                    <span class="text">Ders İçeriği Listesi</span>    
+                </button>
+
+                <button class="btn btn-primary btn-icon-split" data-toggle="modal" data-target="#addClassModal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Yeni Ders Ekle</span>    
+                </button>
+            </div>
+            </div>
+            <div class="table-responsive hide">
+                <table id="class-datatable" class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr class="text-center">
+                            <th class="border border-white" colspan="6" scope="colgroup">Geldiği Kurumdan Aldığı Dersler
+                            </th>
+                            <th class="border border-white" colspan="6" scope="colgroup">Muaf Olduğu Dersler</th>
+                        </tr>
+
+                        <tr class="text-center">
+                            <th class="border border-white">Kodu</th>
+                            <th class="border border-white">Dersin Adı</th>
+                            <th class="border border-white">Dönem</th>
+                            <!-- <th class="border border-white">Teorik</th>
+                            <th class="border border-white">Lab.Uyg</th>  
+                            <th class="border border-white">Toplam</th> -->
+                            <th class="border border-white">Kredi</th>
+                            <th class="border border-white">AKTS</th>  
+                            <th class="border border-white">İşlem</th>
+
+                            <th class="border border-white">Kodu</th>
+                            <th class="border border-white">Dersin Adı</th>
+                            <th class="border border-white">Dönem</th>
+                            <!-- <th class="border border-white">Teorik</th>
+                            <th class="border border-white">Lab.Uyg</th>  
+                            <th class="border border-white">Toplam</th> -->
+                            <th class="border border-white">Kredi</th>
+                            <th class="border border-white">AKTS</th>
+                            <th class="border border-white">Başarı Notu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">            
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 mb-4 ">
+        <button id="finish_adaptation_button" class="btn btn-success btn-icon-split float-right" {% if adaptation.is_closed %}disabled{% endif %}>
+            <span class="icon text-white-50">
+                <i class="fas fa-flag-checkered"></i>
+            </span>
+            <span class="text">İntibak Kaydını Bitir</span>    
+        </button>
+    </div>
+</div>
+
+{% include "adaptation/student/components/modals.html" %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+    adaptation_id = {{adaptation.id}}
+    faculty_list_api_url = new URL(window.location.href)
+    faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
+    science_list_api_url = new URL(window.location.href)
+    science_list_api_url.pathname = "{% url 'adaptation:science_list_api' %}"
+
+    adaptation_update_api_url = "{% url 'adaptation:adaptation_update_api' 0 %}"
+
+    adaptation_class_detail_api_url = "{% url 'adaptation:adaptation_class_detail_api' 0 %}"
+    student_classes_list_api_url = "{% url 'adaptation:student_classes_list_api' %}?adaptation__user={{ request.user.id }}"
+    student_class_create_api_url = "{% url 'adaptation:student_class_create_api' %}"
+    student_class_update_api_url = "{% url 'adaptation:student_class_update_api' 0 %}"
+</script>
+
+<script src="{% static 'js/adaptation/adaptation_manage.js' %}"></script>
+{% endblock %}

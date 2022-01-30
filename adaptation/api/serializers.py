@@ -2,7 +2,8 @@ from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
 from django.forms.models import model_to_dict
-import numbers, decimal
+
+from user.api.serializers import UserListSerializer
 
 
 class ErrorNameMixin(serializers.Serializer):
@@ -38,6 +39,21 @@ class ScienceListSerializer(serializers.ModelSerializer):
         model = Science
         fields = "__all__"
 
+class AdaptationListSerializer(serializers.ModelSerializer):
+
+    username = serializers.SerializerMethodField(source="get_username")
+    name_surname = serializers.SerializerMethodField(source="get_name_surname")
+
+    def get_username(self, obj):
+        return obj.get_username()
+
+    def get_name_surname(self, obj):
+        return obj.get_name_surname()
+
+    class Meta:
+        model = Adaptation
+        exclude = ["user"]
+        
 class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
     
     class Meta:

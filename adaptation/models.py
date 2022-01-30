@@ -77,6 +77,13 @@ class Adaptation(models.Model):
     def __str__(self):
         return f"{self.user.profile.namesurname} {self.user.username}"
 
+
+    def get_username(self):
+        return self.user.username
+
+    def get_name_surname(self):
+        return self.user.profile.namesurname
+
 class AdapatationClass(models.Model):
     """
     The classes added in system,

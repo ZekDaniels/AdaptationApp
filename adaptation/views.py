@@ -11,7 +11,7 @@ class AdaptationCreateView(LoginRequiredMixin, View):
                 return redirect('adaptation:adaptation_manage', request.user.adaptation.get().id)
         except:
             context = {'adaptation_create_form': ProtoAdaptionForm()}
-            return render(request, 'adaptation/adaptation_create.html', context)
+            return render(request, 'adaptation/student/adaptation_create.html', context)
     
 class AdaptationManageView(LoginRequiredMixin, View):
     def get(self, request, id, *args, **kwargs):
@@ -33,4 +33,11 @@ class AdaptationManageView(LoginRequiredMixin, View):
             'adaptation':adaptation,
             'adaptation_classes':adaptation_classes,
             }
-        return render(request, 'adaptation/adaptation_manage.html', context)
+        return render(request, 'adaptation/student/adaptation_manage.html', context)
+
+
+class AdaptationList(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, 'adaptation/professor/adaptation_list.html', context)
+

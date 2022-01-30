@@ -4,8 +4,10 @@ from django.db.models import QuerySet, ForeignObjectRel, ForeignKey, Q
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework_datatables.filters import DatatablesFilterBackend, f_search_q
+from django.contrib.auth.models import User
 
-from adaptation.models import Faculty
+from user.api.serializers import UserListSerializer
+
 
 class CustomDatatablesFilterBackend(DatatablesFilterBackend):
 
@@ -72,78 +74,11 @@ class QueryListAPIView(generics.ListAPIView):
         return self._paginator
 
 
-class FacultyListView(QueryListAPIView):
-    
-    custom_related_fields = ["university"]
-    queryset = Faculty.objects.select_related(*custom_related_fields).all()
-    serializer_class = FacultyListSerializer
+class UserListView(QueryListAPIView):
+
+    # custom_related_fields = [""]
+    # queryset = User.objects.select_related(*custom_related_fields).all()
+    queryset = User.objects.all()
+    serializer_class = UserListSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = '__all__'
-
-class ScienceListView(QueryListAPIView):
-    
-    custom_related_fields = ["university"]
-    queryset = Science.objects.select_related(*custom_related_fields).all()
-    serializer_class = ScienceListSerializer
-    filter_backends = [OrderingFilter]
-    ordering_fields = '__all__'
-
-class AdaptationListView(QueryListAPIView):
-
-    custom_related_fields = ["user"]
-    queryset = Adaptation.objects.select_related(*custom_related_fields).all().order_by('-decision_date') 
-    serializer_class = AdaptationListSerializer
-    filter_backends = [OrderingFilter]
-    ordering_fields = '__all__'
-
-class AdaptationCreateAPIView(generics.CreateAPIView):
-   
-    queryset = Adaptation.objects.all()
-    serializer_class = AdaptationCreateSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-class AdaptationUpdateAPIView(generics.UpdateAPIView):
-   
-    queryset = Adaptation.objects.all()   
-    serializer_class = AdaptationCreateSerializer
-
-class AdaptationClassDetailAPIView(generics.RetrieveAPIView):
-
-    queryset = AdapatationClass.objects.all() 
-    serializer_class = AdaptationClassListSerializer
-    
-class StudentClassListAPIView(QueryListAPIView):
-   
-    custom_related_fields = ["adaptation", "adaptation_class"]
-    queryset = StudentClass.objects.select_related(*custom_related_fields).all().order_by('-adaptation_class__pk') 
-    serializer_class = StudentClassListSerializer
-    filter_backends = [OrderingFilter, SearchFilter]
-
-    ordering_fields = "__all__"
-    search_fields = ['code', 'class_name','adaptation_class__code', 'adaptation_class__class_name']
-
-
-class StudentClassCreateAPI(generics.CreateAPIView):
-    
-    queryset = StudentClass.objects.all()
-    serializer_class = StudentClassCreateSerializer
-
-class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
-    
-    queryset = StudentClass.objects.all()
-    serializer_class = StudentClassCreateSerializer
-
-    def destroy(self, request, *args, **kwargs):
-
-        
-        instance = self.get_object()
-
-        if instance.adaptation.is_closed:
-            raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
-          
-        if instance.adaptation.user != request.user:
-            raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
-            
-        return super().destroy(request, *args, **kwargs)

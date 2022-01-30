@@ -1,8 +1,10 @@
 
 from django.urls import path, include
-from adaptation.api.views import AdaptationClassDetailAPIView, AdaptationCreateAPIView, AdaptationUpdateAPIView, FacultyListView, ScienceListView, StudentClassCreateAPI, StudentClassListAPIView, StudentClassUpdateAPI
+from adaptation.api.views import *
 from adaptation.views import *
 urlpatterns = [
+     
+     path('adaptations_list', AdaptationListView.as_view(), name="adaptations_list_api"),
      path('adaptation', AdaptationCreateAPIView.as_view(), name="adaptation_create_api"),
      path('adaptation/<int:pk>', AdaptationUpdateAPIView.as_view(), name="adaptation_update_api"),
      

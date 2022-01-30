@@ -1,7 +1,10 @@
 {% extends 'layout.html' %}
 
 {% load static %}
+{% comment %}
 {% load get_max_grade %}
+
+{% endcomment %}
 {% block title %}İntibak Ders Seçim{% endblock %}
 
 {% block plugins %}
@@ -13,40 +16,6 @@
 
 {% block content %}
 <div class="row mb-3">
-    <div class="col-lg-12 mb-4">
-        <div class="card">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">İntibak Bilgileri</h6>
-            </div>
-            <div class="card-body">
-                <form id="mainForm" method="POST">
-                    {% csrf_token %}
-                    <div class="row">
-
-                        {% for field in adaptation_create_form %}
-                        <div class="form-group col-lg-4">
-                            <label>{{field.label}}</label>
-                            {{ field }}
-                            {{ field.errors }}
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </form>
-            </div>
-
-            <div class="card-footer">
-                <div class="row p-3">
-                    <button type="submit" id="main_submit_button" href="#" class="btn btn-success btn-icon-split ml-auto">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <span class="text">Kaydet</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="col-lg-12 mb-4">
         <!-- Simple Tables -->
         <div class="card">
@@ -118,12 +87,11 @@
     </div>
 </div>
 
-{% include "adaptation/components/modals.html" %}
+{% include "adaptation/professor/components/modals.html" %}
 {% endblock %}
 
 {% block javascript %}
 <script>
-    adaptation_id = {{adaptation.id}}
     faculty_list_api_url = new URL(window.location.href)
     faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
     science_list_api_url = new URL(window.location.href)

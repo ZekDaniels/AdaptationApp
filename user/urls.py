@@ -50,4 +50,6 @@ urlpatterns = [
         ),
         name="password_reset_complete",
     ),
+    # path('api/', include('user.api.urls')),
+
 ]
