@@ -1,6 +1,6 @@
 from django import forms
 import datetime
-from adaptation.models import Adaptation, Faculty, Science, StudentClass
+from adaptation.models import AdapatationClass, Adaptation, Faculty, Science, StudentClass
 
 STYLES = {
     "date-input":{
@@ -13,7 +13,7 @@ STYLES = {
 
 class DateInput(forms.DateInput):
     input_type = 'date'
-    
+
 class StyledFormMixin(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -28,6 +28,14 @@ class StyledFormMixin(forms.Form):
                 self.fields[name].widget.attrs.update(STYLES[self.fields[name].widget.__class__.__name__])
             else:
                 self.fields[name].widget.attrs.update(STYLES["else"])
+
+class DisableForm(forms.ModelForm, StyledFormMixin):
+    
+    def __init__(self, *args, **kwargs):    
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            self.fields[name].widget.attrs['disabled'] = True
+
                 
 class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
     NULL_TUPPLE =  [
@@ -68,6 +76,25 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
     class Meta:
         model = StudentClass
         exclude = ['adaptation', 'created_at', 'updated_at']
+
+
+class DisableStudentClassForm(DisableForm):
+   
+    class Meta:
+        model = StudentClass
+        exclude = ['adaptation', 'grade','adaptation_class', 'created_at', 'updated_at']
+
+class DisableAdaptationClassForm(DisableForm):
+   
+    def __init__(self, *args, **kwargs):    
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            self.fields[name].widget.attrs.update({'id':f"id_{name}_adaptation_class"})
+   
+    class Meta:
+        model = AdapatationClass
+        exclude = ['is_active', 'education_time', 'class_name_english','user','created_at', 'updated_at']
+
 
 
 

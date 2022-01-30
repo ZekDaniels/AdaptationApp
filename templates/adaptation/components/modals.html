@@ -144,7 +144,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabelAddClass">Ders Ekle</h5>
+        <h5 class="modal-title" id="AddClassModalLabel">Ders Ekle</h5>
         <button
           type="button"
           class="close"
@@ -177,6 +177,87 @@
         <button id="add_class_button" type="button" class="btn btn-success">
           Ders Ekle
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Compare Class Modal -->
+<div
+  class="modal fade"
+  id="compareClassModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabelcompareClass"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="compareClassModalLabel">Ders Karşılaştır</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+            {% csrf_token %}
+            <div class="row">
+
+              <div class="table-responsive hide">
+                <table class="table table-compare align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr class="text-center">
+                            <th class="border border-white" colspan="1" scope="colgroup">Kaydedilen Ders</th>
+                            <th class="border border-white" colspan="2" scope="colgroup">Başvurulan Ders</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                      <tr class="border border-dark">
+                      <td class="border border-dark">
+                        {% for field in disable_student_class_form %}
+        
+                        <div
+                          class="form-group col-lg-12 mx-auto mb-2"
+                        >
+                          <label>{{field.label}}</label>
+                          {{ field }}
+                        </div>
+                        
+          
+                        {% endfor %}
+                      </td>
+
+
+                      <td class="border border-dark">
+                        {% for field in disable_adaptation_class_form %}
+        
+                        <div
+                          class="form-group col-lg-12 mx-auto mb-2"
+                        >
+                          <label>{{field.label}}</label>
+                          {{ field }}
+                        </div>
+          
+                        {% endfor %}
+                      </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+              
+              
+             
+              
+            </div>
+        </div>
       </div>
     </div>
   </div>

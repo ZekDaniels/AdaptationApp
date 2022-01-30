@@ -9,6 +9,8 @@ const finish_adaptation_button_selector ="#finish_adaptation_button";
 
 const semester_dropdowns_selector = ".toggle-semester-table";
 
+const add_class_modal_label = $("#AddClassModalLabel");
+
 const university_input = $("#id_university");
 const faculty_input = $("#id_faculty");
 const science_input = $("#id_science");
@@ -74,6 +76,7 @@ function clearAddClassForm() {
   $("#addClassForm textarea").val(''); 
   $("#addClassForm select").val(''); 
   add_class_button.html("Ders Ekle");
+  add_class_modal_label.html("Ders Ekle");
 }
 
 function getSelectionText() {
@@ -144,7 +147,17 @@ $('tbody').on("click", '.update_class_button', function (event) {
   let data = table.row(row).data();
   if (data){
     add_class_button.html("Ders Güncelle");
+    add_class_modal_label.html("Ders Güncelle");
     FillDataAddClassForm(data);
+  }
+  
+});
+
+$('tbody').on("click", '.compare_class_button', function (event) {
+  let row = $(this).closest("tr");
+  let data = table.row(row).data();
+  if (data){
+    FillDataCompareClassModal(data);
   }
   
 });
@@ -325,6 +338,7 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
         "render": function ( data, type, row ) {
           return `
           <div class="row">
+          <button class='btn compare_class_button p-0 mx-auto'  data-toggle="modal" data-target="#compareClassModal" data-id="${data.id}"><i class='text-warning fas fa-copy'></i></button>
           <button class='btn update_class_button p-0 mx-auto'  data-toggle="modal" data-target="#addClassModal" data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
           <button class='btn delete_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
           </div>
@@ -499,9 +513,22 @@ function DeleteStudentClass(_id, _url, _table = null) {
 }
 
 function FillDataAddClassForm(_data) {
+  console.log(_data);
   _data.grade = Number(_data.grade).toFixed(1);
   $.each( _data, function( key, value ) {     
     $(`#id_${key}`).val(value);
+  });
+  $(`#id_adaptation_class`).val(_data.adaptation_class.id);
+}
+
+function FillDataCompareClassModal(_data) {
+  console.log(_data);
+  _data.grade = Number(_data.grade).toFixed(1);
+  $.each( _data, function( key, value ) {     
+    $(`.table-compare #id_${key}`).val(value);
+  });
+  $.each( _data.adaptation_class, function( key, value ) {     
+    $(`.table-compare #id_${key}_adaptation_class`).val(value);
   });
   $(`#id_adaptation_class`).val(_data.adaptation_class.id);
 }
