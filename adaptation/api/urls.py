@@ -14,6 +14,7 @@ urlpatterns = [
      path('student_classes_list', StudentClassListAPIView.as_view(), name="student_classes_list_api"),
      path('student_class', StudentClassCreateAPI.as_view(), name="student_class_create_api"),
      path('student_class/<int:pk>', StudentClassUpdateAPI.as_view(), name="student_class_update_api"),
+     path('student_class/<int:pk>/confirmation/', StudentClassConfirmationUpdateAPIView.as_view(), name="student_class_confirmation_api"),
      
      path('faculty_list', FacultyListView.as_view(), name="faculty_list_api"),
      path('science_list', ScienceListView.as_view(), name="science_list_api"),

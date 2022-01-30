@@ -147,3 +147,8 @@ class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
             raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
             
         return super().destroy(request, *args, **kwargs)
+
+class StudentClassConfirmationUpdateAPIView(generics.UpdateAPIView):
+    
+    queryset = StudentClass.objects.all()
+    serializer_class = StudentClassConfirmationUpdateSerializer

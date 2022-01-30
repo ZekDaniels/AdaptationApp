@@ -106,7 +106,7 @@ class StudentClassListSerializer(serializers.ModelSerializer):
         return obj.get_adaptation_class_sum()
 
     class Meta:
-        model=StudentClass
+        model = StudentClass
         exclude = ['created_at', 'updated_at']
 
 class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
@@ -175,4 +175,8 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         return data
         
 
-
+class StudentClassConfirmationUpdateSerializer(serializers.ModelSerializer, ErrorNameMixin):
+    
+    class Meta:
+        model = StudentClass
+        fields = ['is_confirmed']

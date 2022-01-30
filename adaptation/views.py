@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
-from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, StudentClassForm, ProtoAdaptionForm
+from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm
 from adaptation.models import AdapatationClass, Adaptation
 
 class AdaptationCreateView(LoginRequiredMixin, View):
@@ -48,11 +48,13 @@ class AdaptationConfirmationView(LoginRequiredMixin, View):
         adaptation_classes = AdapatationClass.objects.order_by("id")
         disable_student_class_form = DisableStudentClassForm()
         disable_adaptation_class_form = DisableAdaptationClassForm()
+        disable_adaptation_form = DisableAdaptationForm(instance=adaptation)
         context = {
             'adaptation': adaptation,
             'adaptation_classes':adaptation_classes,
             'disable_student_class_form': disable_student_class_form,
             'disable_adaptation_class_form': disable_adaptation_class_form,
+            'disable_adaptation_form': disable_adaptation_form,
         }
         return render(request, 'adaptation/professor/adaptation_confirmation.html', context)
 

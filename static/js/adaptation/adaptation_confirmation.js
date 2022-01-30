@@ -45,8 +45,6 @@ const fillOptions = function (select_input, data, callback = null) {
 
 // Variables
 var table = $("#class-datatable");
-let updateable_class_id = null;
-let updateable = false;
 
 init();
 
@@ -95,6 +93,26 @@ $('tbody').on("click", '.compare_class_button', function (event) {
   let data = table.row(row).data();
   if (data){
     FillDataCompareClassModal(data);
+  }
+  
+});
+
+$('tbody').on("click", '.confirm_class_button', function (event) {
+  let row = $(this).closest("tr");
+  let data = table.row(row).data();
+  if (data){
+    disconfirm_data = { 'is_confirmed': true };
+    updateStudentClass(data.id, disconfirm_data, student_class_confirmation_api_url, $(this), table);
+  }
+  
+});
+
+$('tbody').on("click", '.disconfirm_class_button', function (event) {
+  let row = $(this).closest("tr");
+  let data = table.row(row).data();
+  if (data){
+    disconfirm_data = { 'is_confirmed': false };
+    updateStudentClass(data.id, disconfirm_data, student_class_confirmation_api_url, $(this), table);
   }
   
 });
@@ -185,36 +203,6 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
     });
 }
 
-function finishAdaptation(_id,_data, _url, _button = null) {
-  sweetCombineDynamic(
-    "Emin misin?",
-    "Bu intibak başvurusunu bitirmek istediğine emin misin!",
-    "success",
-    "Başvuruyu bitir.",
-    "İptal et.",
-    () => {
-      request
-      .patch_r(_url.replace("0", _id), _data).then((response) => {
-        if (response.ok) {
-          response.json().then(data => {
-            _button.prop("disabled", true);
-          });
-        } else {
-          response.json().then(errors => {
-            console.log(errors);
-            fire_alert([{
-              message: errors,
-              icon: "error"
-            }]);
-          })
-          throw new Error('Something went wrong');
-        }
-      });
-    }
-    
-  );
-}
-
 
 //Classes Activies
 function initializeStudentClassDatatables(_table, _student_classes_list_api_url, _adaptation_id) {
@@ -273,16 +261,33 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
       {
         "data": null,
         "render": function ( data, type, row ) {
+            return `
+            <div class="row">
+             <button class='btn btn-primary compare_class_button mx-auto'  data-toggle="modal" data-target="#compareClassModal" data-id="${data.id}">Karşılaştır</button>
+            </div>
+          `;
+        }
+      },
+      {
+        "data": null,
+        "render": function ( data, type, row ) {
+          if(data.is_confirmed)
           return `
           <div class="row">
-          <button class='btn compare_class_button p-0 mx-auto'  data-toggle="modal" data-target="#compareClassModal" data-id="${data.id}"><i class='text-warning fas fa-copy'></i></button>
-          <button class='btn update_class_button p-0 mx-auto'  data-toggle="modal" data-target="#addClassModal" data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
-          <button class='btn delete_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
+            <button class='btn disconfirm_class_button p-0 mx-auto' "><i class='text-danger fas fa-times m-1'></i></button>
+            <button class='btn confirm_class_button p-0 mx-auto border border-success' " disabled><i class='text-success fas fa-check m-1'></i></button>
+          </div>
+          `;
+
+          else 
+          return `
+          <div class="row">
+            <button class='btn disconfirm_class_button p-0 mx-auto border border-danger' " disabled><i class='text-danger fas fa-times m-1'></i></button>
+            <button class='btn confirm_class_button p-0 mx-auto' "><i class='text-success fas fa-check m-1'></i></button>
           </div>
           `;
         }
       },
-          
     ],
   });
 }
@@ -311,7 +316,6 @@ function fillAdaptationClassContent(_data) {
 
 
 function updateStudentClass(_id, _data, _url, _button = null, _table = null, _modal = null) {
-
   let button_text = ""
   if (_button) {
     button_text = _button.html();
@@ -326,8 +330,8 @@ function updateStudentClass(_id, _data, _url, _button = null, _table = null, _mo
       }
       if (response.ok) {
         response.json().then(data => {
+          console.log(data);
           _table.ajax.reload();
-          clearAddClassForm();
           if (_modal) {
             _modal.modal('hide');
           }

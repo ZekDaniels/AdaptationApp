@@ -156,6 +156,8 @@ class StudentClass(models.Model):
 
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
 
+    is_confirmed = models.BooleanField("Onay Durumu", default=False)
+
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     

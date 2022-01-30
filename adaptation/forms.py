@@ -75,14 +75,14 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
     class Meta:
         model = StudentClass
-        exclude = ['adaptation', 'created_at', 'updated_at']
+        exclude = ['is_confirmed', 'adaptation', 'created_at', 'updated_at']
 
 
 class DisableStudentClassForm(DisableForm):
    
     class Meta:
         model = StudentClass
-        exclude = ['adaptation', 'grade','adaptation_class', 'created_at', 'updated_at']
+        exclude = ['is_confirmed','adaptation', 'grade','adaptation_class', 'created_at', 'updated_at']
 
 class DisableAdaptationClassForm(DisableForm):
    
@@ -96,5 +96,12 @@ class DisableAdaptationClassForm(DisableForm):
         exclude = ['is_active', 'education_time', 'class_name_english','user','created_at', 'updated_at']
 
 
+class DisableAdaptationForm(DisableForm):
 
+    class Meta:
+        model = Adaptation
+        exclude = ['is_closed','user','created_at','update_at']
+        widgets = {
+            'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
+        }
 
