@@ -83,6 +83,12 @@ class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
         return validated_data
 
+class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMixin):
+
+    class Meta:
+        model = Adaptation
+        fields = ["is_closed"]
+
 class AdaptationClassListSerializer(serializers.ModelSerializer):
 
     class Meta:

@@ -152,3 +152,8 @@ class StudentClassConfirmationUpdateAPIView(generics.UpdateAPIView):
     
     queryset = StudentClass.objects.all()
     serializer_class = StudentClassConfirmationUpdateSerializer
+    
+class AdaptationClosedUpdateAPIView(generics.UpdateAPIView):
+    
+    queryset = Adaptation.objects.all()
+    serializer_class = AdaptationClosedUpdateSerializer

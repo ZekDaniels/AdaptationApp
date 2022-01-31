@@ -4,6 +4,9 @@ const request = new Request(csrfToken);
 const show_content_button_selector =".show_content_button";
 const finish_adaptation_button_selector ="#finish_adaptation_button";
 
+const activate_button = $("#activate_button");
+const deactivate_button = $("#deactivate_button");
+
 const semester_dropdowns_selector = ".toggle-semester-table";
 
 const turkish_content = $("#turkish-content");
@@ -80,7 +83,6 @@ function getSelectionText() {
 }
 
 function setupListeners() {
-
  
 }
 
@@ -117,6 +119,16 @@ $('tbody').on("click", '.disconfirm_class_button', function (event) {
   
 });
 
+$(activate_button).on("click", function(){
+  data = { 'is_closed': false };
+  UpdateAdaptation(data, adaptation_closed_api_url, $(this));
+});
+
+$(deactivate_button).on("click", function(){
+  data = { 'is_closed': true };
+  UpdateAdaptation(data, adaptation_closed_api_url, $(this)); 
+});
+
 $(semester_dropdowns_selector).on("click", function(){
   let semester = $(this).data("semester");
   semesterTable = $(`#semester-table-${semester}`);
@@ -127,45 +139,7 @@ $(show_content_button_selector).on("click", function(){
   let id = $(this).data("id");
   getAdaptationClassContent(id, adaptation_class_detail_api_url, AdaptationClassContentModal)
 });
-$(finish_adaptation_button_selector).on("click", function(){
-  data = { 'is_closed': true };
-  finishAdaptation(adaptation_id, data, adaptation_update_api_url, finish_adaptation_button);
-});
 
-$(addClassModal).on('hidden.bs.modal', function () {
-  clearAddClassForm();
-});
-
-
-//Adaptation Activies
-function updateFaculties() {
-  new_value = getSelectionText(university_input)
-  if (!new_value) {
-    cleanOptions(faculty_input);
-  } else {
-    urlParams = new URLSearchParams();
-    urlParams.set("university", new_value);
-    faculty_list_api_url.search = urlParams;
-    fetch(faculty_list_api_url)
-      .then((response) => response.json())
-      .then((data) => fillOptions(faculty_input, data, cleanOptions(science_input)))
-  }
-}
-
-function updateSciences() {
-  new_value = getSelectionText(university_input)
-  new_value_faculty = getSelectionText(faculty_input)
-  if (!new_value) {
-    cleanOptions(science_input);
-  } else {
-    urlParams = new URLSearchParams();
-    urlParams.set("faculty", new_value);
-    science_list_api_url.search = urlParams;
-    fetch(science_list_api_url)
-      .then((response) => response.json())
-      .then((data) => fillOptions(science_input, data))
-  }
-}
 
 function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = null) {
   let button_text = ""
@@ -175,13 +149,14 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
     _button.html(`<i class="icon-spinner2 spinner"></i>`);
   }
   request
-    .put_r(_url.replace("0", adaptation_id), _data).then((response) => {
+    .patch_r(_url.replace("0", adaptation_id), _data).then((response) => {
       if (_button) {
         _button.html(button_text);
         _button.prop("disabled", false);
       }
       if (response.ok) {
         response.json().then(data => {
+          isClosedButtonControl(data.is_closed);
           fire_alert([{
             message: {message:"Kaydınız başarıyla güncellendi"},
             icon: "success"
@@ -330,7 +305,6 @@ function updateStudentClass(_id, _data, _url, _button = null, _table = null, _mo
       }
       if (response.ok) {
         response.json().then(data => {
-          console.log(data);
           _table.ajax.reload();
           if (_modal) {
             _modal.modal('hide');
@@ -349,8 +323,6 @@ function updateStudentClass(_id, _data, _url, _button = null, _table = null, _mo
     });
 }
 
-
-
 function FillDataCompareClassModal(_data) {
   _data.grade = Number(_data.grade).toFixed(1);
   $.each( _data, function( key, value ) {     
@@ -360,4 +332,9 @@ function FillDataCompareClassModal(_data) {
     $(`.table-compare #id_${key}_adaptation_class`).val(value);
   });
   $(`#id_adaptation_class`).val(_data.adaptation_class.id);
+}
+
+function isClosedButtonControl(is_closed) {
+  deactivate_button.prop("disabled", is_closed);
+  activate_button.prop("disabled", !(is_closed));
 }
