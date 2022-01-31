@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
 from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass, AdaptationClassConfirmation
 from django.forms.models import model_to_dict
-
+from django.db import transaction
 from user.api.serializers import UserListSerializer
 
 
@@ -88,6 +88,14 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
     class Meta:
         model = Adaptation
         fields = ["is_closed"]
+
+    def update(self, instance, validated_data):
+        with transaction.atomic():
+
+            data = super().update(instance, validated_data) 
+            if not instance.is_closed:
+                instance.confirmationsa.delete()
+        return data
 
 
 class AdaptationClassConfirmationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):

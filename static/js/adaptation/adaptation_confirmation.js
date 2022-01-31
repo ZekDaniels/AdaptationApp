@@ -118,8 +118,17 @@ $('tbody').on("click", '.disconfirm_class_button', function (event) {
 });
 
 $(activate_button).on("click", function(){
-  data = { 'is_closed': false };
-  UpdateAdaptation(data, adaptation_closed_api_url, $(this));
+  sweetCombineDynamic(
+    "Emin misin?",
+    "Bu intibak başvurusunu açmak ve tüm derslerin onaylarını silmek istediğine emin misin!",
+    "success",
+    "Başvuruyu aç.",
+    "İptal et.",
+    () =>{
+    data = { 'is_closed': false };
+    UpdateAdaptation(data, adaptation_closed_api_url, $(this), table);
+    }
+  );
 });
 
 $(deactivate_button).on("click", function(){
@@ -155,6 +164,9 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
       if (response.ok) {
         response.json().then(data => {
           isClosedButtonControl(data.is_closed);
+          if (_table) {
+            _table.ajax.reload()
+          }
           fire_alert([{
             message: {message:"Kaydınız başarıyla güncellendi"},
             icon: "success"

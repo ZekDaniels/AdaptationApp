@@ -182,7 +182,7 @@ class StudentClass(models.Model):
 class AdaptationClassConfirmation(models.Model):
 
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("confirmation"), verbose_name="İntibak Dersi")      
-    adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("confirmation"), verbose_name="İntibak")      
+    adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("confirmations"), verbose_name="İntibak")      
 
     class Meta:
         verbose_name = 'İntibak Dersi Onayı'
