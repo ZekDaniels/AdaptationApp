@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
 from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm
 from adaptation.models import AdapatationClass, Adaptation
+from django.contrib import messages
 
 class AdaptationCreateView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
@@ -63,7 +64,12 @@ class AdaptationResultView(LoginRequiredMixin, View):
         adaptation = None
         if not request.user.adaptation:
              return redirect('adaptation:adaptation_create')
+
         adaptation = get_object_or_404(Adaptation, user=request.user)
+
+        if not adaptation.is_closed:
+            messages.error(request, 'İntibak başvurunuz bitirilmemiş. Lütfen bitirip öyle kontrol ediniz.')
+            return redirect('adaptation:adaptation_create')
 
         disable_student_class_form = DisableStudentClassForm()
         disable_adaptation_class_form = DisableAdaptationClassForm()
