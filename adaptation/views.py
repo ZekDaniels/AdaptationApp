@@ -58,3 +58,18 @@ class AdaptationConfirmationView(LoginRequiredMixin, View):
         }
         return render(request, 'adaptation/professor/adaptation_confirmation.html', context)
 
+class AdaptationResultView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        adaptation = None
+        if not request.user.adaptation:
+             return redirect('adaptation:adaptation_create')
+        adaptation = get_object_or_404(Adaptation, user=request.user)
+
+        disable_student_class_form = DisableStudentClassForm()
+        disable_adaptation_class_form = DisableAdaptationClassForm()
+        context = {
+            "adaptation": adaptation,
+            'disable_student_class_form': disable_student_class_form,
+            'disable_adaptation_class_form': disable_adaptation_class_form,
+        }
+        return render(request, 'adaptation/student/adaptation_result.html', context)
