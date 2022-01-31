@@ -47,6 +47,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
       {
         data: null,
         render: function (data, type, row) {
+            if(data.is_closed && data.is_confirmated_all) return `<span class="badge badge-success">Tamamlandı ve onaylandı</span>`;
             if(data.is_closed)  return `<span class="badge badge-warning">Tamamlandı ama onaylanmadı</span>`;
             else return `<span class="badge badge-danger">Tamamlanmadı</span>`;
         },

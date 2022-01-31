@@ -83,6 +83,16 @@ class Adaptation(models.Model):
     def get_name_surname(self):
         return self.user.profile.namesurname
 
+    def get_is_confirmated_all(self):
+        if self.student_classes.exists():
+            for student_class in self.student_classes.all():
+                if not student_class.get_confirmation():
+                    return False
+            return True 
+        else:    
+            return False       
+       
+
 class AdapatationClass(models.Model):
     """
     The classes added in system,
@@ -175,7 +185,10 @@ class StudentClass(models.Model):
 
     def get_confirmation(self):
         if self.adaptation_class.confirmation.exists():
-            return {"exists":True, "id": self.adaptation_class.confirmation.get().id}
+            if self.adaptation_class.confirmation.filter(adaptation=self.adaptation).first() is not None:
+                return {"exists":True, "id": self.adaptation_class.confirmation.filter(adaptation=self.adaptation).first().id}
+            else:
+                return False
         else:
             return False
 
