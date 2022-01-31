@@ -98,7 +98,7 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
 
             data = super().update(instance, validated_data) 
             if not instance.is_closed:
-                instance.confirmationsa.delete()
+                instance.confirmations.all().delete()
         return data
 
 
