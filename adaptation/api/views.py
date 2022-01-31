@@ -91,7 +91,7 @@ class ScienceListView(QueryListAPIView):
 class AdaptationListView(QueryListAPIView):
 
     custom_related_fields = ["user"]
-    queryset = Adaptation.objects.select_related(*custom_related_fields).all().order_by('-decision_date', 'is_closed') 
+    queryset = Adaptation.objects.select_related(*custom_related_fields).all().order_by('-decision_date') 
     serializer_class = AdaptationListSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = '__all__'
@@ -148,12 +148,18 @@ class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
             
         return super().destroy(request, *args, **kwargs)
 
-class StudentClassConfirmationUpdateAPIView(generics.UpdateAPIView):
-    
-    queryset = StudentClass.objects.all()
-    serializer_class = StudentClassConfirmationUpdateSerializer
-    
 class AdaptationClosedUpdateAPIView(generics.UpdateAPIView):
     
     queryset = Adaptation.objects.all()
     serializer_class = AdaptationClosedUpdateSerializer
+
+
+class AdaptationClassConfirmationCreateAPIView(generics.CreateAPIView):
+    
+    queryset = AdaptationClassConfirmation.objects.all()
+    serializer_class = AdaptationClassConfirmationCreateSerializer
+
+class AdaptationClassConfirmationDestroyAPIView(generics.DestroyAPIView):
+    
+    queryset = AdaptationClassConfirmation.objects.all()
+    serializer_class = AdaptationClassConfirmationCreateSerializer

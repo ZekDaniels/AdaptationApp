@@ -77,7 +77,6 @@ class Adaptation(models.Model):
     def __str__(self):
         return f"{self.user.profile.namesurname} {self.user.username}"
 
-
     def get_username(self):
         return self.user.username
 
@@ -153,10 +152,7 @@ class StudentClass(models.Model):
     turkish_content = models.TextField("Türkçe İçerik")
     english_content = models.TextField("İngilizce İçerik", null=True, blank=True)
 
-
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
-
-    is_confirmed = models.BooleanField("Onay Durumu", default=False)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
@@ -174,6 +170,24 @@ class StudentClass(models.Model):
     def get_sum(self):
             return self.teorical + self.practical
        
-
     def get_adaptation_class_sum(self):
         return self.adaptation_class.get_sum()
+
+    def get_confirmation(self):
+        if self.adaptation_class.confirmation.exists():
+            return {"exists":True, "id": self.adaptation_class.confirmation.get().id}
+        else:
+            return False
+
+class AdaptationClassConfirmation(models.Model):
+
+    adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("confirmation"), verbose_name="İntibak Dersi")      
+    adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("confirmation"), verbose_name="İntibak")      
+
+    class Meta:
+        verbose_name = 'İntibak Dersi Onayı'
+        verbose_name_plural = 'İntibak Dersi Onayları'
+        unique_together = (("adaptation"), ("adaptation_class") )
+
+    def __str__(self):
+        return f"{self.adaptation_class} {self.adaptation.user.profile}"

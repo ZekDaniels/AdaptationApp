@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
-from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass
+from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass, AdaptationClassConfirmation
 from django.forms.models import model_to_dict
 
 from user.api.serializers import UserListSerializer
@@ -89,6 +89,13 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
         model = Adaptation
         fields = ["is_closed"]
 
+
+class AdaptationClassConfirmationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
+
+    class Meta:
+        model = AdaptationClassConfirmation
+        fields = "__all__"
+
 class AdaptationClassListSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -101,7 +108,11 @@ class StudentClassListSerializer(serializers.ModelSerializer):
     max_grade = SerializerMethodField(source='get_max_grade', read_only=True)
     sum = SerializerMethodField(source='get_sum', read_only=True)
     adaptation_class_sum = SerializerMethodField(source='get_adaptation_class_sum', read_only=True)
+    confirmation = SerializerMethodField(source='get_confirmation', read_only=True)
 
+    def get_confirmation(self, obj):
+        return obj.get_confirmation()
+    
     def get_max_grade(self, obj):
         return obj.get_max_grade()
 
@@ -181,8 +192,3 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         return data
         
 
-class StudentClassConfirmationUpdateSerializer(serializers.ModelSerializer, ErrorNameMixin):
-    
-    class Meta:
-        model = StudentClass
-        fields = ['is_confirmed']

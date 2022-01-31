@@ -110,8 +110,10 @@
     adaptation_closed_api_url = "{% url 'adaptation:adaptation_closed_api' 0 %}"
     adaptation_class_detail_api_url = "{% url 'adaptation:adaptation_class_detail_api' 0 %}"
 
+    adaptation_class_confirmation_api_url = "{% url 'adaptation:adaptation_class_confirmation_api' %}"
+    adaptation_class_confirmation_delete_api_url = "{% url 'adaptation:adaptation_class_confirmation_delete_api' 0 %}"
+
     student_classes_list_api_url = "{% url 'adaptation:student_classes_list_api' %}?adaptation="+adaptation_id
-    student_class_confirmation_api_url = "{% url 'adaptation:student_class_confirmation_api' 0 %}"
 </script>
 
 <script src="{% static 'js/adaptation/adaptation_confirmation.js' %}"></script>

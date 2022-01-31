@@ -75,14 +75,14 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
     class Meta:
         model = StudentClass
-        exclude = ['is_confirmed', 'adaptation', 'created_at', 'updated_at']
+        exclude = ['adaptation', 'created_at', 'updated_at']
 
 
 class DisableStudentClassForm(DisableForm):
    
     class Meta:
         model = StudentClass
-        exclude = ['is_confirmed','adaptation', 'grade','adaptation_class', 'created_at', 'updated_at']
+        exclude = ['adaptation', 'grade','adaptation_class', 'created_at', 'updated_at']
 
 class DisableAdaptationClassForm(DisableForm):
    
