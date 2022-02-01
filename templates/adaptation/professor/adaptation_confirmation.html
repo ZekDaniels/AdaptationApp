@@ -95,6 +95,30 @@
             </div>
         </div>
     </div>
+
+    <div class="col-lg-12 mb-4">
+        <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">İntibak Sonuç Bilgisi Ekle</h6>
+            </div>
+            <div class="card-body">
+             
+            </div>
+
+            <div class="card-footer">
+                <div class="row p-3">     
+                    <div class="ml-auto">
+                        <button type="submit" id="save_result_note_button" href="#" class="btn btn-success btn-icon-split" {% if not adaptation.is_closed %}disabled{% endif %}>
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">Kaydet</span>
+                        </button>
+                    </div>   
+                </div>               
+            </div>             
+        </div>
+    </div>
 </div>
 
 {% include "adaptation/professor/components/modals.html" %}

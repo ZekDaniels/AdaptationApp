@@ -6,6 +6,9 @@ const finish_adaptation_button_selector ="#finish_adaptation_button";
 
 const activate_button = $("#activate_button");
 const deactivate_button = $("#deactivate_button");
+const save_result_note_button = $("#save_result_note_button");
+
+const resultNoteForm = $("#resultNoteForm")
 
 const semester_dropdowns_selector = ".toggle-semester-table";
 
@@ -83,7 +86,15 @@ function getSelectionText() {
 }
 
 function setupListeners() {
- 
+  save_result_note_button.click(function (event) {
+    resultNoteForm.submit();
+  });
+  resultNoteForm.submit(function name(event) {
+    event.preventDefault();
+    let formData = new FormData(this);
+    let data = Object.fromEntries(formData.entries());
+    UpdateAdaptation(data, adaptation_closed_api_url, save_result_note_button);
+  });
 }
 
 
@@ -163,7 +174,7 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
       }
       if (response.ok) {
         response.json().then(data => {
-          isClosedButtonControl(data.is_closed);
+          if (data.is_closed) isClosedButtonControl(data.is_closed);        
           if (_table) {
             _table.ajax.reload()
           }

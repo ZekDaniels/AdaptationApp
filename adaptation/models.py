@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
-from django.core.validators import MinValueValidator
 
 STYLES = {
      "else": {
@@ -68,12 +67,13 @@ class Adaptation(models.Model):
     adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES)
     decision_date = models.DateField("Karar Tarihi", null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True, null=True, blank=False)      
+      
+    is_closed =  models.BooleanField(("Kapalı mı?"), default=False)
+    result_note = models.TextField("Sonuç Bilgisi", null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-    
-    is_closed =  models.BooleanField(("Kapalı mı?"), default=False)
 
-    
     def __str__(self):
         return f"{self.user.profile.namesurname} {self.user.username}"
 

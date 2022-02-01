@@ -55,7 +55,7 @@ class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
 
     class Meta:
        model = Adaptation
-       exclude = ['is_closed','user','created_at','update_at']
+       exclude = ['result_note','is_closed','user','created_at','update_at']
        widgets = {
             'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
         }
@@ -70,6 +70,28 @@ class AdaptationUpdateForm(ProtoAdaptionForm, StyledFormMixin):
        
         self.fields['faculty'].choices += [(faculty.id, faculty.name) for faculty in self.instance.university.faculties.all()]
         self.fields['science'].choices += [(science.id, science.name) for science in self.instance.faculty.sciences.all()]
+
+
+class DisableAdaptationForm(DisableForm):
+
+    class Meta:
+        model = Adaptation
+        exclude = ['result_note','is_closed','user','created_at','update_at']
+        widgets = {
+            'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
+        }
+
+class AdaptationResultNoteForm(forms.ModelForm, StyledFormMixin):
+
+    class Meta:
+        model = Adaptation
+        fields = ['id', 'result_note']
+
+class AdaptationResultNoteForm(DisableForm):
+
+    class Meta:
+        model = Adaptation
+        fields = ['result_note']       
 
 class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
@@ -94,14 +116,3 @@ class DisableAdaptationClassForm(DisableForm):
     class Meta:
         model = AdapatationClass
         exclude = ['is_active', 'education_time', 'class_name_english','user','created_at', 'updated_at']
-
-
-class DisableAdaptationForm(DisableForm):
-
-    class Meta:
-        model = Adaptation
-        exclude = ['is_closed','user','created_at','update_at']
-        widgets = {
-            'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
-        }
-

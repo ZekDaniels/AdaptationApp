@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
-from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm
+from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
 from adaptation.models import AdapatationClass, Adaptation
 from django.contrib import messages
 
@@ -50,12 +50,16 @@ class AdaptationConfirmationView(LoginRequiredMixin, View):
         disable_student_class_form = DisableStudentClassForm()
         disable_adaptation_class_form = DisableAdaptationClassForm()
         disable_adaptation_form = DisableAdaptationForm(instance=adaptation)
+        adaptation_result_note_form = AdaptationResultNoteForm(instance=adaptation)
+
+
         context = {
             'adaptation': adaptation,
             'adaptation_classes':adaptation_classes,
             'disable_student_class_form': disable_student_class_form,
             'disable_adaptation_class_form': disable_adaptation_class_form,
             'disable_adaptation_form': disable_adaptation_form,
+            'adaptation_result_note_form': adaptation_result_note_form,
         }
         return render(request, 'adaptation/professor/adaptation_confirmation.html', context)
 
@@ -73,9 +77,12 @@ class AdaptationResultView(LoginRequiredMixin, View):
 
         disable_student_class_form = DisableStudentClassForm()
         disable_adaptation_class_form = DisableAdaptationClassForm()
+        adaptation_result_note_form = AdaptationResultNoteForm(instance=adaptation)
+
         context = {
             "adaptation": adaptation,
             'disable_student_class_form': disable_student_class_form,
             'disable_adaptation_class_form': disable_adaptation_class_form,
+            'adaptation_result_note_form': adaptation_result_note_form,
         }
         return render(request, 'adaptation/student/adaptation_result.html', context)
