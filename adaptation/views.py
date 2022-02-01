@@ -4,6 +4,7 @@ from django.views.generic.base import View
 from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
 from adaptation.models import AdapatationClass, Adaptation
 from django.contrib import messages
+from utilities.render_pdf import render_to_pdf
 
 class AdaptationCreateView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
