@@ -16,10 +16,12 @@ Including another URLconf
 import os
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path(os.getenv('SECRET_ADMIN_URL')+'/admin/', admin.site.urls),
     path('', include('user.urls')),
     path('intibak/', include('adaptation.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

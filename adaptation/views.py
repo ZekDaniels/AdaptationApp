@@ -1,3 +1,4 @@
+from user.models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
@@ -6,6 +7,8 @@ from adaptation.models import AdapatationClass, Adaptation
 from django.contrib import messages
 from utilities.render_pdf import render_to_pdf
 
+from io import BytesIO
+from django.core.files import File
 class AdaptationCreateView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         try:
@@ -87,3 +90,20 @@ class AdaptationResultView(LoginRequiredMixin, View):
             'adaptation_result_note_form': adaptation_result_note_form,
         }
         return render(request, 'adaptation/student/adaptation_result.html', context)
+
+class AdaptationBasicPDFView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        adaptation = get_object_or_404(Adaptation, user=request.user)
+        response = render_to_pdf("adaptation/pdf/adaptation_basic/adaptation_basic.html", {
+            'adaptation': adaptation,
+        })
+        filename = f"tester.pdf"
+        content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
+        response['Content-Disposition'] = content
+
+        defaults = {'file': File(file=BytesIO(response.content),name=filename), 'adaptation': adaptation}          
+       
+                              
+        return response
+

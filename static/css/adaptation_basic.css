@@ -1,0 +1,16 @@
+     /* Normal */
+     @font-face {
+      font-family: "Times New Roman";
+      src: url('../static/lib/font/TIMES.ttf');
+  }
+
+
+  /* Bold */
+  @font-face {
+      font-family: "Times New Roman Bold";
+      src: url('../static/lib/font/TIMESBD.ttf');
+  }
+
+  body {
+      font-family: "Times New Roman";
+  }  

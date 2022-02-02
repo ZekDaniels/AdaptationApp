@@ -146,6 +146,8 @@ class StudentClass(models.Model):
         verbose_name = 'Öğrenicin Dersi'
         verbose_name_plural = 'Öğrencinin Dersleri'
         unique_together = (("code"), ("adaptation_class") )
+        ordering = ['adaptation_class', 'semester', 'code']
+
         
         
     code = models.CharField("Ders Kodu", max_length=20)

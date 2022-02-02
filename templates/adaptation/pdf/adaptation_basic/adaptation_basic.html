@@ -1,0 +1,388 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Order PDF</title>
+    <style>
+        @page {
+            size: a4 portrait;
+
+            @frame header_frame {
+                /* Static frame */
+                -pdf-frame-content: wrap;
+                -pdf-keep-with-next:false;
+            }
+
+            @frame content_frame {
+                /* Content Frame */
+                left: 25pt;
+                right: 25pt;    
+                top: 25pt;
+            }
+        }
+        
+      /* Normal */
+      @font-face {
+         font-family: "Times New Roman";
+        src: url('../static/lib/font/TIMES.ttf');
+      }
+
+
+      /* Bold */
+      @font-face {
+          font-family: "Times New Roman Bold";
+          src: url('../static/lib/font/TIMESBD.ttf');
+      }
+
+        /* Italic */
+        @font-face {
+          font-family: "Times New Roman Italic";
+          src: url('../static/lib/font/TIMESI.ttf');
+      }
+
+      @font-face {
+          font-family: "Times New Roman Bold New";
+          src: url('../static/lib/font/TIMESBI.ttf');
+      }
+
+      table, th, td{
+        border-collapse: collapse;
+        
+      }
+
+      body {
+        font-family: "Times New Roman";
+        font-size: 12px;
+      }  
+
+      .boldheader{
+        font-family: "Times New Roman Bold"
+      }
+      .bolditalicheader{
+        font-family: "Times New Roman Bold New";
+      }
+        .table1 h1 {
+            margin-right: 0;
+            padding-right: 0;
+            font-size: 5em;
+            font-weight: 400;
+            letter-spacing: 5px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .table1 h5 {
+            color: gray;
+            padding-top: 0;
+            margin-top: 0;
+            font-weight: 400;
+            letter-spacing: 4.5px;
+        }
+
+
+
+
+        .date {
+            margin-right: 0;
+            margin-top: 0;
+            padding-top: 0;
+            width: 25%;
+
+        }
+
+        .stageheadline {
+            text-align: center;
+            font-weight: 400;
+            color: #000;
+            font-size: 2em;
+        }
+
+        .table3data {
+            vertical-align: middle;
+        }
+        .table3data1 {
+            vertical-align: middle;
+            border: gray 1px solid;
+        }
+
+
+        .table3data2 {
+            vertical-align: middle;
+            padding-left: 1em;
+        }
+
+        .table4 {
+            border: gray 1px solid;
+            vertical-align: middle;
+        }
+
+        .table3row {
+            padding-top: 3px;
+        }
+
+        .table5row {
+            padding-top: 3px;
+            padding-left: 3px;
+        }
+
+        .table3row1 {
+            padding-left: 5px;
+        }
+
+
+
+        .table3dt {
+            background-color: #D3D3D3;
+        }
+
+        .table5dt {
+            background-color: #D3D3D3;
+        }
+
+        .table5 {
+            margin-top: 0;
+        }
+
+        .table7 {
+            border: gray 1px solid;
+        }
+
+        .table7row1 {
+            padding-top: 3px;
+            text-align: center;
+        }
+
+        .table7row2 {
+            padding-top: 3px;
+            margin-left: 4px;
+            text-align: left;
+        }
+
+        .table7row3 {
+            padding-top: 3px;
+            text-align: center;
+        }
+
+        .table8tdright {
+
+            padding-left: -140px;
+        }
+
+
+        .table9 {
+            width:300px;
+            margin-top: 15px;
+        }
+
+        .table9tdright{
+            padding: 3px;
+            border: gray 1px solid;
+            padding-left: 1em;
+        }
+         
+        .table9tdleft{
+            padding: 3px;
+            border: gray 1px solid;
+            
+        }
+
+
+
+
+        .table10tdleft {
+            padding-left: -65px;
+        }
+
+        .table10tdright {
+            padding-left: -55px;
+
+        }
+
+        .table13tdright {
+            text-align: right;
+        }
+
+        .table10row {
+            padding-top: 0;
+
+        }
+
+        .table10headline {
+            padding-bottom: -20px;
+        }
+
+        .table15td {
+            background-color: #D3D3D3;
+            padding-left: 3px;
+        }
+
+        .table15tdright {
+            text-align: right;
+            padding-right: 2px;
+        }
+
+        .table3data1right{
+            padding-left: -60px;
+        }
+        .certificate{
+            display:flex;
+            justify-content:flex-end;
+            height:50px;
+        }
+        .responsivecell{
+            max-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height:40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header_content">
+        <table class="table1" style="margin-bottom: 0;padding-bottom: 0; height:1px">
+            <tr>
+                <td class="logo">
+                    &nbsp;
+                </td>
+
+                <td class="date">
+                    <table class="table2">
+                        <tr>
+
+                            <td>
+                              Form03:Ders Muafiyet / İntibak
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        
+        <table style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;">
+            <tbody>    
+                <tr class="table7row1" style="padding: 20px;">
+                    <td></td>
+                    <td>
+                        <h1 class="stageheadline boldheader" style="margin-right: 0; padding-right: 0;">SELÇUK ÜNİVERSİTESİ <br>
+                            TEKNOLOJİ FAKÜLTESİ DEKANLIĞI
+                        </h1> 
+                    </td>
+                    <td style="width:17%; margin-left: 0; padding-left: 0; margin-right: 0; padding-right: 0;">  <img  src="../static/img/logo/selcuk-logo_ccexpress.png"></td>
+                </tr>          
+            </tbody>
+            
+        </table>
+
+    
+        <table class="table7" style="margin-top: 0;padding-top: 0;">
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:70%">Konu: İntibak / Ders Muafiyeti Talebi</td>          
+                    <td>Tarih: {{adaptation.decision_date}}</td>
+                </tr>          
+            </tbody>
+
+        </table>
+    
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:15%">Adı Soyadı</td>          
+                    <td>{{adaptation.user.profile.namesurname}}</td>
+                    <td style="width:15%">T.C. Kimlik No</td>          
+                    <td></td>
+                </tr>          
+            </tbody>
+
+        </table>
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:15%">Öğrenci No</td>          
+                    <td>{{adaptation.user.profile.student_number}}</td>
+                    <td style="width:15%">Cep Tel No</td>          
+                    <td>{{adaptation.user.profile.phone_number}}</td>
+                </tr>          
+            </tbody>
+
+        </table>
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="margin-left: 4px;">Önceki Üniversite/Fakülte/Bölüm: {{adaptation.university}} / {{adaptation.faculty}} / {{adaptation.science}} <br> <br> </td>          
+                </tr>          
+            </tbody>
+
+        </table>
+
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:15%">Kayıt Şekli </td>          
+                    <td style="margin-left: 4px;">Notla Yatay Geçiş &#x25A1; &#9632; &nbsp; Ek Madde 1 Yatay Geçiş &#x25A1; &nbsp;  Dikey Geçiş &#x25A1; &nbsp; Diğer: ______</td>
+                </tr>          
+            </tbody>
+
+        </table>
+
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row1">
+                    <td style="margin-left: 100px;"> İmza:</td>          
+                </tr>          
+            </tbody>
+
+        </table>
+
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row1" style="padding-top: 10px; padding-bottom: 5px; margin-bottom: 0;">
+                    <td> <h1 class="bolditalicheader"> ALDIĞIM VE MUAF OLMAK İSTEDİĞİM DERSLER</h1> </td>
+                </tr>          
+            </tbody>
+            
+        </table>
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row1" style="padding-top: 10px; padding-bottom: 5px; margin-bottom: 0;">
+                    <th> <h2 class="boldheader" style="padding-top: 1px; padding-bottom: 0;">DAHA ÖNCEKİ YÜKSEKÖĞRETİM KURUMLARINDA ALIP BAŞARMIŞ OLDUĞUM DERSLER</h2> </th>
+                    <th> <h2 class="boldheader" style="padding-top: 1px; padding-bottom: 0;">FAKÜLTEMİZDE MUAF OLMAK İSTEDİĞİM DERSLER</h2> </th>
+                </tr> 
+                {% for student_class in adaptation.student_classes.all %}
+                <tr class="table7row1" style="font-size:14px">
+                    <td class="responsivecell">{{student_class.class_name}}</td>
+                    <td class="responsivecell">{{student_class.adaptation_class.class_name}}</td>
+                </tr> 
+                {% endfor %}
+                
+               
+            </tbody>
+            
+        </table>
+        <table style="margin-top: 15px;">
+            <tbody>    
+                <tr class="table7row1" style="padding: 30px">
+                    <td style="width:25%"> <h1>&nbsp</h1> </td>
+                    <td> <h1 style= "border: gray 1px solid; padding-top: 2px;">EVRAK KAYIT <br> <br><br></h1> </td>
+                    <td style="width:25%"> <h1>&nbsp</h1> </td>
+                </tr>          
+            </tbody>
+            
+        </table>
+
+        <p style="margin-bottom: 0;">EKLER: TRANSKRİPT ve DERS İÇERİKLERİ </p>
+        <p style="margin-bottom: 0; margin-top: 0;">NOT: İntibak ve Muafiyet İşlemleri Selçuk Üniversitesi Teknoloji Fakültesi Muafiyet ve İntibak İşlemleri Yönergesi esaslarına
+göre yapılır. </p>  
+
+    </div>
+</body>
+
+
+</html>
