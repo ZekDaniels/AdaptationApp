@@ -244,7 +244,7 @@
 
 <body>
     <div id="header_content">
-        <table class="table1" style="margin-bottom: 0;padding-bottom: 0; height:1px">
+        <table class="table1" style="margin-bottom: 0;padding-bottom: 0;">
             <tr>
                 <td class="logo">
                     &nbsp;
@@ -297,7 +297,7 @@
                     <td style="width:15%">Adı Soyadı</td>          
                     <td>{{adaptation.user.profile.namesurname}}</td>
                     <td style="width:15%">T.C. Kimlik No</td>          
-                    <td></td>
+                    <td>{{adaptation.user.profile.identification_number}}</td>
                 </tr>          
             </tbody>
 
@@ -321,12 +321,19 @@
             </tbody>
 
         </table>
+        <table class="table7">
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="margin-left: 4px;">Ekte sunduğum belgelere göre aşağıda belirttiğim derslerden muaf olmak istiyorum. <br> Gereğini saygılarımla arz ederim.</td>          
+                </tr>          
+            </tbody>
 
+        </table>
         <table class="table7">
             <tbody>    
                 <tr class="table7row2">
                     <td style="width:15%">Kayıt Şekli </td>          
-                    <td style="margin-left: 4px;">Notla Yatay Geçiş &#x25A1; &#9632; &nbsp; Ek Madde 1 Yatay Geçiş &#x25A1; &nbsp;  Dikey Geçiş &#x25A1; &nbsp; Diğer: ______</td>
+                    <td style="margin-left: 4px;"> Notla Yatay Geçiş {% if adaptation.reason_for_coming == "nyg" %} &#9632; {% else %} &#x25A1; {% endif %} &nbsp; Ek Madde 1 Yatay Geçiş {% if adaptation.reason_for_coming == "eyg" %} &#9632; {% else %} &#x25A1; {% endif %} &nbsp;  Dikey Geçiş {% if adaptation.reason_for_coming == "dg" %} &#9632; {% else %} &#x25A1; {% endif %} &nbsp; Diğer:{% if adaptation.reason_for_coming == "yo" or adaptation.reason_for_coming == "mt" %} {{adaptation.get_reason_for_coming_display}} {% else %} _____ {% endif %}</td>
                 </tr>          
             </tbody>
 
