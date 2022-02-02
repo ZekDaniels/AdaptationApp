@@ -47,13 +47,15 @@ class Adaptation(models.Model):
         verbose_name_plural = 'İntibaklar'
     
     DG = 'dg'
-    YG = 'yg'
+    NYG = 'nyg'
+    EYG = 'eyg'
     YO = 'yo'
     MT = 'mt'
     
     REASON_CHOCIES = (
         (DG, ("Dikey Geçiş")),
-        (YG, ("Yatay Geçiş")),
+        (NYG, ("Notla Yatay Geçiş")),
+        (EYG, ("Ek Madde 1 Yatay Geçiş")),
         (YO, ("Yaz Okulu")),
         (MT, ("Mühendislik Tamamlama")),
     )
@@ -62,7 +64,7 @@ class Adaptation(models.Model):
     university = models.ForeignKey(University, on_delete=models.DO_NOTHING, verbose_name="Üniversite")    
     faculty = models.ForeignKey(Faculty, on_delete=models.DO_NOTHING, verbose_name="Fakülte")
     science = models.ForeignKey(Science, on_delete=models.DO_NOTHING, verbose_name="Bölüm")
-    reason_for_coming = models.CharField("Geliş Nedeni", max_length=2, choices=REASON_CHOCIES)
+    reason_for_coming = models.CharField("Geliş Nedeni", max_length=3, choices=REASON_CHOCIES)
     adaptation_year = models.IntegerField("İntibak Sınıfı", choices=YEAR_CHOICES)
     adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES)
     decision_date = models.DateField("Karar Tarihi", null=True)
@@ -137,10 +139,6 @@ class StudentClass(models.Model):
         (3.0, ("BB")),
         (2.5, ("CB")),
         (2.0, ("CC")),
-        (1.5, ("DC")),
-        (1.0, ("DD")),
-        (0.5, ("FD")),
-        (0, ("FF")),
     )
     class Meta:
         verbose_name = 'Öğrenicin Dersi'
@@ -158,7 +156,7 @@ class StudentClass(models.Model):
     practical = models.PositiveIntegerField("Pratik", default = 0)
     credit = models.FloatField("Kredi", null=True, blank=True)
     akts = models.PositiveIntegerField("AKTS", null=True, blank=True)
-    grade = models.FloatField("Not", choices=GRADE_CHOICES, default=4.0)
+    grade = models.FloatField("Not", choices=GRADE_CHOICES, default=2.0)
     adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
 
     turkish_content = models.TextField("Türkçe İçerik")
