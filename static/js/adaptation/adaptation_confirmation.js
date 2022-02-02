@@ -174,7 +174,7 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
       }
       if (response.ok) {
         response.json().then(data => {
-          if (data.is_closed) isClosedButtonControl(data.is_closed);        
+          if (data.is_closed !== undefined) isClosedButtonControl(data.is_closed);        
           if (_table) {
             _table.ajax.reload()
           }

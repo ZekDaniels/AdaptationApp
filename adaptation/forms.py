@@ -87,7 +87,7 @@ class AdaptationResultNoteForm(forms.ModelForm, StyledFormMixin):
         model = Adaptation
         fields = ['id', 'result_note']
 
-class AdaptationResultNoteForm(DisableForm):
+class DisableAdaptationResultNoteForm(DisableForm):
 
     class Meta:
         model = Adaptation

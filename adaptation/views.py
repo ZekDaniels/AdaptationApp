@@ -2,7 +2,7 @@ from user.models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
-from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
+from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableAdaptationResultNoteForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
 from adaptation.models import AdapatationClass, Adaptation
 from django.contrib import messages
 from utilities.render_pdf import render_to_pdf
@@ -81,7 +81,7 @@ class AdaptationResultView(LoginRequiredMixin, View):
 
         disable_student_class_form = DisableStudentClassForm()
         disable_adaptation_class_form = DisableAdaptationClassForm()
-        adaptation_result_note_form = AdaptationResultNoteForm(instance=adaptation)
+        adaptation_result_note_form = DisableAdaptationResultNoteForm(instance=adaptation)
 
         context = {
             "adaptation": adaptation,
