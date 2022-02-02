@@ -25,6 +25,7 @@ class Profile(models.Model):
     address = models.TextField(("Adres"), blank=True, null=True)
     user_role = models.CharField(("Kullanıcı Rolü"), max_length=7, choices=USER_ROLE_CHOICES, default=student)
     student_number = models.CharField(("Okul Numarası"), max_length=9, blank=True, null=True)
+    identification_number = models.CharField(("TC Kimlik No"), max_length=11, blank=True, null=True)
     education_time = models.CharField(("Öğretim"), max_length=4, choices=EDUCATION_TIME_CHOICES, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)

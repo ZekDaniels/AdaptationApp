@@ -56,17 +56,33 @@ class NewUserForm(UserCreationForm, StyledFormMixin):
 
 class NewProfileForm(forms.ModelForm, StyledFormMixin):
     
-    student_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'type':'number'}) )
     
     def clean_student_number(self):
         student_number = self.cleaned_data['student_number']
+
+        if not student_number.isdigit():
+            raise ValidationError('Sadece numerik karakter girebilirsiniz.')
+
         if len(student_number) != 9:
-            raise ValidationError('Eksik veya fazla karakter girdiniz..')
+            raise ValidationError('Eksik veya fazla karakter girdiniz.')
         
         if Profile.objects.filter(student_number=student_number).count() > 0:
-            raise ValidationError('Bu numara ile daha önce kayıt olunmuş..')
+            raise ValidationError('Bu numara ile daha önce kayıt olunmuş.')
         return student_number
     
+    def clean_identification_number(self):
+        identification_number = self.cleaned_data['identification_number']
+
+        if not identification_number.isdigit():
+            raise ValidationError('Sadece numerik karakter girebilirsiniz.')
+
+        if len(identification_number) != 11:
+            raise ValidationError('Eksik veya fazla karakter girdiniz.')
+        
+        if Profile.objects.filter(identification_number=identification_number).count() > 0:
+            raise ValidationError('Bu numara ile daha önce kayıt olunmuş.')
+        return identification_number
+
     class Meta:
         model = Profile
-        fields = ['namesurname', 'student_number', 'education_time', 'phone_number']
+        fields = ['namesurname', 'identification_number', 'student_number', 'education_time', 'phone_number']

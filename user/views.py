@@ -51,9 +51,7 @@ class RegisterView(View):
                 profileform = NewProfileForm(request.POST or None, instance=user.profile)
                 profileform.save()
                 login(request, user)
-                messages.success(request, "Registration successful.")
                 return redirect("dashboard")
         else:
-            messages.error(request, "Kayıt Başarısız.")
             return render (request, "registration/register.html", context={"userform":userform, "profileform":profileform})
 
