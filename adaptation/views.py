@@ -83,7 +83,7 @@ class AdaptationConfirmationView(LoginRequiredMixin, View):
         return render(request, 'adaptation/professor/adaptation_confirmation.html', context)
 
 class AdaptationResultView(LoginRequiredMixin, View):
-    def get(self, request, id=None, *args, **kwargs):
+    def get(self, request, pk=None, *args, **kwargs):
         adaptation = None
         if not request.user.profile.is_allowed_user():
             if not request.user.adaptation:
@@ -96,7 +96,7 @@ class AdaptationResultView(LoginRequiredMixin, View):
                 messages.error(request, 'İntibak başvurunuz bitirilmemiş. Lütfen bitirip öyle kontrol ediniz.')
                 return redirect('adaptation:adaptation_create')
         else:
-            adaptation = get_object_or_404(Adaptation, user=request.user)
+            adaptation = get_object_or_404(Adaptation, pk=pk)
 
 
 
