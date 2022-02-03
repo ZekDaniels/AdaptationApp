@@ -31,10 +31,10 @@ class AdaptationManageView(LoginRequiredMixin, View):
             adaptation = get_object_or_404(Adaptation, pk=id)    
 
         adaptation_create_form = AdaptationUpdateForm(instance=adaptation)
-        adaptation_classes = AdapatationClass.objects.filter(education_time=request.user.profile.education_time).order_by("id")
+        adaptation_classes = AdapatationClass.objects.filter(education_time=adaptation.user.profile.education_time).order_by("id")
         
-        class_form = StudentClassForm(user=request.user)
-        disable_student_class_form = DisableStudentClassForm(user=request.user)
+        class_form = StudentClassForm(user=adaptation.user)
+        disable_student_class_form = DisableStudentClassForm(user=adaptation.user)
         disable_adaptation_class_form = DisableAdaptationClassForm()
 
         context = {
@@ -65,9 +65,9 @@ class AdaptationConfirmationView(LoginRequiredMixin, View):
             return redirect('dashboard')
 
         adaptation = get_object_or_404(Adaptation, pk=id)
-        adaptation_classes = AdapatationClass.objects.filter(education_time=request.user.profile.education_time).order_by("id")
-        disable_student_class_form = DisableStudentClassForm(user=request.user)
-        disable_adaptation_class_form = DisableAdaptationClassForm(user=request.user)
+        adaptation_classes = AdapatationClass.objects.filter(education_time=adaptation.user.profile.education_time).order_by("id")
+        disable_student_class_form = DisableStudentClassForm(user=adaptation.user)
+        disable_adaptation_class_form = DisableAdaptationClassForm(user=adaptation.user)
         disable_adaptation_form = DisableAdaptationForm(instance=adaptation)
         adaptation_result_note_form = AdaptationResultNoteForm(instance=adaptation)
 

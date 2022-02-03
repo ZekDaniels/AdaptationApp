@@ -61,3 +61,8 @@ class Profile(models.Model):
         allowed_user_roles = (Profile.admin, Profile.teacher)
         is_allowed_user = self.user_role in allowed_user_roles
         return is_allowed_user
+
+    def is_allowed_simple(self):
+        allowed_simple_roles = (Profile.admin, Profile.student)
+        is_allowed_simple = self.user_role in allowed_simple_roles
+        return is_allowed_simple

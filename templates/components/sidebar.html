@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load permission_tags %}
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'dashboard'%}">
         <div class="sidebar-brand-icon">
@@ -19,18 +19,23 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseApply"
             aria-expanded="true" aria-controls="collapseApply">
             <i class="fa fa-tasks"></i>
-            <span>Sistem</span>
+            <span>Otomasyon</span>
         </a>
         <div id="collapseApply" class="collapse" aria-labelledby="headingApply"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
+                {% if request.user.profile|is_allowed_simple %}
                 <h6 class="collapse-header">Başvuru Sayfaları</h6>
                
                 <a class="collapse-item" href=" {% url 'adaptation:adaptation_create' %}">Ders Seçim</a>
-                <!-- <a class="collapse-item" href="buttons.html">Ders Seçim Detay</a> -->
                 <a class="collapse-item" href="{% url 'adaptation:adaptation_result' %}">Ders Seçim Onay/Takip</a>
+                {% endif %}
+
+                {% if request.user.profile|is_allowed_user %}
                 <h6 class="collapse-header">Komisyon</h6>
                 <a class="collapse-item" href="{% url 'adaptation:adaptation_list' %}">Ders Seçim Listesi</a>
+                {% endif %}
+                           
             </div>
         </div>
     </li>
