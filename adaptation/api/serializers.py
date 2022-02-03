@@ -4,6 +4,7 @@ from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, Stu
 from django.forms.models import model_to_dict
 from django.db import transaction
 from user.api.serializers import UserListSerializer
+from user.models import Profile
 
 
 class ErrorNameMixin(serializers.Serializer):
@@ -68,16 +69,19 @@ class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         validated_data = super().validate(data)
 
         if self.instance:
-            if self.instance.is_closed:
-                raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))       
-
+           
+           
             request_owner = None
             request = self.context.get("request")
             if request and hasattr(request, "user"):
                 request_owner = request.user
 
-            if self.instance.user != request_owner:
-                raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+            if not request_owner.profile.is_allowed_user():
+                if self.instance.is_closed:
+                    raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))       
+
+                if self.instance.user != request_owner:
+                    raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
 
     
 
@@ -157,28 +161,27 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         return model_to_dict(obj.adaptation_class)
 
     def validate(self, data): 
-         
+
         credit = data.get('credit')        
         akts = data.get('akts')    
         
         validated_data = super().validate(data)
 
-        adaptation = validated_data.get('adaptation', None)
-        adaptation_class = validated_data.get('adaptation_class', None)
-        if adaptation.is_closed:
-            raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
-
         request_owner = None
         request = self.context.get("request")
         if request and hasattr(request, "user"):
             request_owner = request.user
-            
-        if adaptation.user != request_owner:
-            raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
 
-        if adaptation.user.profile.education_time != adaptation_class.education_time:
-            raise serializers.ValidationError({"adaptation_class": ("Bu öğretimin dersi size uygun değil.")})
+        if not request_owner.profile.is_allowed_user():
 
+            adaptation = validated_data.get('adaptation', None)
+            if adaptation.is_closed:
+                raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
+       
+            if adaptation.user != request_owner:
+                raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+
+      
         try:
             validated_data['credit'] = float(credit)
         except:

@@ -97,6 +97,7 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user',None)
+
         super().__init__(*args, **kwargs)
         for name in self.fields:
             if name == "adaptation_class":
@@ -124,8 +125,13 @@ class DisableStudentClassForm(DisableForm):
 class DisableAdaptationClassForm(DisableForm):
    
     def __init__(self, *args, **kwargs):    
+        user = kwargs.pop('user',None)
+        
         super().__init__(*args, **kwargs)
         for name in self.fields:
+            if name == "adaptation_class":
+                self.fields[name].queryset = AdapatationClass.objects.filter(education_time=user.profile.education_time)
+
             self.fields[name].widget.attrs.update({'id':f"id_{name}_adaptation_class"})
    
     class Meta:

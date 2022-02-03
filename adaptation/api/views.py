@@ -4,8 +4,17 @@ from django.db.models import QuerySet, ForeignObjectRel, ForeignKey, Q
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework_datatables.filters import DatatablesFilterBackend, f_search_q
+from rest_framework.permissions import BasePermission
 
 from adaptation.models import Faculty
+from user.models import Profile
+
+class AdminsPermissions(BasePermission):
+    allowed_user_roles = (Profile.admin, Profile.teacher)
+
+    def has_permission(self, request, view):
+        is_allowed_user = request.user.profile.user_role in self.allowed_user_roles
+        return is_allowed_user
 
 class CustomDatatablesFilterBackend(DatatablesFilterBackend):
 
@@ -90,6 +99,7 @@ class ScienceListView(QueryListAPIView):
 
 class AdaptationListView(QueryListAPIView):
 
+    permission_classes = [AdminsPermissions, ]
     custom_related_fields = ["user"]
     queryset = Adaptation.objects.select_related(*custom_related_fields).all().order_by('-decision_date') 
     serializer_class = AdaptationListSerializer
@@ -105,7 +115,7 @@ class AdaptationCreateAPIView(generics.CreateAPIView):
         serializer.save(user=self.request.user)
 
 class AdaptationUpdateAPIView(generics.UpdateAPIView):
-   
+       
     queryset = Adaptation.objects.all()   
     serializer_class = AdaptationCreateSerializer
 
@@ -139,27 +149,30 @@ class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
 
         
         instance = self.get_object()
-
-        if instance.adaptation.is_closed:
-            raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
-          
-        if instance.adaptation.user != request.user:
-            raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+        if not request.user.profile.is_allowed_user():
+            if instance.adaptation.is_closed:
+                raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
+            
+            if instance.adaptation.user != request.user:
+                raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
             
         return super().destroy(request, *args, **kwargs)
 
 class AdaptationClosedUpdateAPIView(generics.UpdateAPIView):
     
+    permission_classes = [AdminsPermissions, ]
     queryset = Adaptation.objects.all()
     serializer_class = AdaptationClosedUpdateSerializer
 
 
 class AdaptationClassConfirmationCreateAPIView(generics.CreateAPIView):
     
+    permission_classes = [AdminsPermissions, ]
     queryset = AdaptationClassConfirmation.objects.all()
     serializer_class = AdaptationClassConfirmationCreateSerializer
 
 class AdaptationClassConfirmationDestroyAPIView(generics.DestroyAPIView):
     
+    permission_classes = [AdminsPermissions, ]
     queryset = AdaptationClassConfirmation.objects.all()
     serializer_class = AdaptationClassConfirmationCreateSerializer

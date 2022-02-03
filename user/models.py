@@ -18,7 +18,7 @@ class Profile(models.Model):
     USER_ROLE_CHOICES = ((student, ('Öğrenci')), (teacher, ('İntibak Komisyonu Üyesi')),(admin,("Yönetici")))
        
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=False,
+    image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
                               help_text=("Lütfen kare profil resminizi kare olacak şekilde yükleyin, yoksa fotoğrafınız kırpılacaktır."))
     namesurname = models.CharField(("Ad Soyad"), max_length=200, default="")
     phone_number = models.CharField(("Telefon Numarası"), max_length=50, blank=False, null=True)
@@ -56,3 +56,8 @@ class Profile(models.Model):
     @staticmethod
     def get_read_only_fields():
         return ['student_number','birthday']
+
+    def is_allowed_user(self):
+        allowed_user_roles = (Profile.admin, Profile.teacher)
+        is_allowed_user = self.user_role in allowed_user_roles
+        return is_allowed_user

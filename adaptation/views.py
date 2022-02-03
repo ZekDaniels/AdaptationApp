@@ -21,9 +21,15 @@ class AdaptationCreateView(LoginRequiredMixin, View):
     
 class AdaptationManageView(LoginRequiredMixin, View):
     def get(self, request, id, *args, **kwargs):
-        if not request.user.adaptation:
-             return redirect('adaptation:adaptation_create')
-        adaptation = get_object_or_404(Adaptation, pk=id, user=request.user)
+        adaptation = None
+        if not request.user.profile.is_allowed_user():
+            if not request.user.adaptation:
+                messages.error(request, 'Önce intibak başvurusu oluşturun.')
+                return redirect('adaptation:adaptation_create')
+            adaptation = get_object_or_404(Adaptation, pk=id, user=request.user)
+        else:
+            adaptation = get_object_or_404(Adaptation, pk=id)    
+
         adaptation_create_form = AdaptationUpdateForm(instance=adaptation)
         adaptation_classes = AdapatationClass.objects.filter(education_time=request.user.profile.education_time).order_by("id")
         
@@ -45,11 +51,19 @@ class AdaptationManageView(LoginRequiredMixin, View):
 class AdaptationList(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         context = {}
+
+        if not request.user.profile.is_allowed_user():
+            messages.error(request, 'Bu işlemi yapmak için izniniz bulunmuyor.')
+            return redirect('dashboard')
         return render(request, 'adaptation/professor/adaptation_list.html', context)
 
 
 class AdaptationConfirmationView(LoginRequiredMixin, View):
     def get(self, request, id, *args, **kwargs):
+        if not request.user.profile.is_allowed_user():
+            messages.error(request, 'Bu işlemi yapmak için izniniz bulunmuyor.')
+            return redirect('dashboard')
+
         adaptation = get_object_or_404(Adaptation, pk=id)
         adaptation_classes = AdapatationClass.objects.filter(education_time=request.user.profile.education_time).order_by("id")
         disable_student_class_form = DisableStudentClassForm(user=request.user)
@@ -71,14 +85,20 @@ class AdaptationConfirmationView(LoginRequiredMixin, View):
 class AdaptationResultView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         adaptation = None
-        if not request.user.adaptation:
-             return redirect('adaptation:adaptation_create')
+        if not request.user.profile.is_allowed_user():
+            if not request.user.adaptation:
+                messages.error(request, 'Önce intibak başvurusu oluşturun.')
+                return redirect('adaptation:adaptation_create')
 
-        adaptation = get_object_or_404(Adaptation, user=request.user)
+            adaptation = get_object_or_404(Adaptation, user=request.user)
 
-        if not adaptation.is_closed:
-            messages.error(request, 'İntibak başvurunuz bitirilmemiş. Lütfen bitirip öyle kontrol ediniz.')
+            if not adaptation.is_closed:
+                messages.error(request, 'İntibak başvurunuz bitirilmemiş. Lütfen bitirip öyle kontrol ediniz.')
+                return redirect('adaptation:adaptation_create')
+        else:
+            messages.error(request, 'Bu sayfa sadece öğrencilere açıktır.')
             return redirect('adaptation:adaptation_create')
+
 
         disable_student_class_form = DisableStudentClassForm(user=request.user)
         disable_adaptation_class_form = DisableAdaptationClassForm(user=request.user)
