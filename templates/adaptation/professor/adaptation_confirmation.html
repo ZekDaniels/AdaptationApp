@@ -9,6 +9,13 @@
 <script src="{% static 'lib/vendor/datatables/dataTables.rowsGroup.js' %}"></script>
 {% endblock %}
 
+{% block mainRouteUrl %}{% url 'dashboard' %}{% endblock %}
+{% block href %} 
+#
+{% endblock %}
+{% block mainRoute %}Anasayfa{% endblock %}
+{% block childRoute %}İntibak Ders Onay{% endblock %}
+{% block head %}İntibak Ders Onay{% endblock %}
 
 {% block content %}
 <div class="row mb-3">
