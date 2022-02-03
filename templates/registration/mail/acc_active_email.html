@@ -1,0 +1,6 @@
+{% autoescape off %}  
+Merhaba {{ user.profile.namesurname }},  
+Lütfen linke tıklayarak aktivasyonunuzu gerçekleştirin
+http://{{ domain }}{% url 'activate_user' uidb64=uid token=token %}  
+Bu mailin sizin ile alakası yoksa, umursamayın
+{% endautoescape %}

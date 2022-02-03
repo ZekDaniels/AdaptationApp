@@ -50,6 +50,8 @@ urlpatterns = [
         ),
         name="password_reset_complete",
     ),
+    path('activate/<uidb64>/<token>/',ActivationView.as_view(), name='activate_user'),  
+
     # path('api/', include('user.api.urls')),
 
 ]

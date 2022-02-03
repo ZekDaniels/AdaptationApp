@@ -1,0 +1,22 @@
+{% extends 'registration/login_register_layout.html' %} {% load static %}
+{%block title %} Aktivasyon {% endblock title %} {% block content %}
+<div class="login-form">
+  <div class="text-center">
+    <h1 class="h4 text-gray-900 mb-4">Hesabınız Aktif</h1>
+  </div>
+  <div>
+    <div class="modal-dialog" role="document">
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <br />
+        <div class="container">
+          <h4 class="modalText p-auto">Hesabınız Aktif edilmiştir, giriş yapabilirsiniz.</h4>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group ml-auto"> 
+    <a href="{% url 'dashboard' %}">Giriş Sayfasına Dön</a>
+ </div>
+</div>
+{% endblock content %}
