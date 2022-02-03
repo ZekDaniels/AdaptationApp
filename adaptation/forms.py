@@ -95,6 +95,13 @@ class DisableAdaptationResultNoteForm(DisableForm):
 
 class StudentClassForm(forms.ModelForm, StyledFormMixin):
     
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user',None)
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            if name == "adaptation_class":
+                self.fields[name].queryset = AdapatationClass.objects.filter(education_time=user.profile.education_time)
+
     class Meta:
         model = StudentClass
         exclude = ['adaptation', 'created_at', 'updated_at']
@@ -102,6 +109,14 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
 
 class DisableStudentClassForm(DisableForm):
    
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user',None)
+
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            if name == "adaptation_class":
+                self.fields[name].queryset = AdapatationClass.objects.filter(education_time=user.profile.education_time)
+
     class Meta:
         model = StudentClass
         exclude = ['adaptation', 'grade','adaptation_class', 'created_at', 'updated_at']

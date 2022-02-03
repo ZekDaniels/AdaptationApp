@@ -164,6 +164,7 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         validated_data = super().validate(data)
 
         adaptation = validated_data.get('adaptation', None)
+        adaptation_class = validated_data.get('adaptation_class', None)
         if adaptation.is_closed:
             raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))
 
@@ -175,6 +176,8 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         if adaptation.user != request_owner:
             raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
 
+        if adaptation.user.profile.education_time != adaptation_class.education_time:
+            raise serializers.ValidationError({"adaptation_class": ("Bu öğretimin dersi size uygun değil.")})
 
         try:
             validated_data['credit'] = float(credit)
@@ -198,6 +201,7 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
 
         if validated_data['akts'] is not None and validated_data['akts'] < 1:
             raise serializers.ValidationError({"akts": ("Bu alan 1 veya 1'den büyük olmalı.")}) 
+        
 
         return validated_data
         

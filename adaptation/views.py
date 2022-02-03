@@ -25,10 +25,10 @@ class AdaptationManageView(LoginRequiredMixin, View):
              return redirect('adaptation:adaptation_create')
         adaptation = get_object_or_404(Adaptation, pk=id, user=request.user)
         adaptation_create_form = AdaptationUpdateForm(instance=adaptation)
-        adaptation_classes = AdapatationClass.objects.order_by("id")
+        adaptation_classes = AdapatationClass.objects.filter(education_time=request.user.profile.education_time).order_by("id")
         
-        class_form = StudentClassForm()
-        disable_student_class_form = DisableStudentClassForm()
+        class_form = StudentClassForm(user=request.user)
+        disable_student_class_form = DisableStudentClassForm(user=request.user)
         disable_adaptation_class_form = DisableAdaptationClassForm()
 
         context = {
@@ -51,9 +51,9 @@ class AdaptationList(LoginRequiredMixin, View):
 class AdaptationConfirmationView(LoginRequiredMixin, View):
     def get(self, request, id, *args, **kwargs):
         adaptation = get_object_or_404(Adaptation, pk=id)
-        adaptation_classes = AdapatationClass.objects.order_by("id")
-        disable_student_class_form = DisableStudentClassForm()
-        disable_adaptation_class_form = DisableAdaptationClassForm()
+        adaptation_classes = AdapatationClass.objects.filter(education_time=request.user.profile.education_time).order_by("id")
+        disable_student_class_form = DisableStudentClassForm(user=request.user)
+        disable_adaptation_class_form = DisableAdaptationClassForm(user=request.user)
         disable_adaptation_form = DisableAdaptationForm(instance=adaptation)
         adaptation_result_note_form = AdaptationResultNoteForm(instance=adaptation)
 
@@ -80,8 +80,8 @@ class AdaptationResultView(LoginRequiredMixin, View):
             messages.error(request, 'İntibak başvurunuz bitirilmemiş. Lütfen bitirip öyle kontrol ediniz.')
             return redirect('adaptation:adaptation_create')
 
-        disable_student_class_form = DisableStudentClassForm()
-        disable_adaptation_class_form = DisableAdaptationClassForm()
+        disable_student_class_form = DisableStudentClassForm(user=request.user)
+        disable_adaptation_class_form = DisableAdaptationClassForm(user=request.user)
         adaptation_result_note_form = DisableAdaptationResultNoteForm(instance=adaptation)
 
         context = {

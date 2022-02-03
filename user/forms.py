@@ -85,4 +85,4 @@ class NewProfileForm(forms.ModelForm, StyledFormMixin):
 
     class Meta:
         model = Profile
-        fields = ['namesurname', 'identification_number', 'student_number', 'education_time', 'phone_number']
+        fields = ['namesurname', 'identification_number', 'student_number', 'education_time', 'phone_number', 'education_time']

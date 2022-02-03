@@ -18,15 +18,15 @@ class Profile(models.Model):
     USER_ROLE_CHOICES = ((student, ('Öğrenci')), (teacher, ('İntibak Komisyonu Üyesi')),(admin,("Yönetici")))
        
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
+    image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=False,
                               help_text=("Lütfen kare profil resminizi kare olacak şekilde yükleyin, yoksa fotoğrafınız kırpılacaktır."))
     namesurname = models.CharField(("Ad Soyad"), max_length=200, default="")
     phone_number = models.CharField(("Telefon Numarası"), max_length=50, blank=False, null=True)
-    address = models.TextField(("Adres"), blank=True, null=True)
+    address = models.TextField(("Adres"), blank=False, null=True)
     user_role = models.CharField(("Kullanıcı Rolü"), max_length=7, choices=USER_ROLE_CHOICES, default=student)
-    student_number = models.CharField(("Okul Numarası"), max_length=9, blank=True, null=True)
-    identification_number = models.CharField(("TC Kimlik No"), max_length=11, blank=True, null=True)
-    education_time = models.CharField(("Öğretim"), max_length=4, choices=EDUCATION_TIME_CHOICES, blank=True, null=True)
+    student_number = models.CharField(("Okul Numarası"), max_length=9, blank=False, null=True)
+    identification_number = models.CharField(("TC Kimlik No"), max_length=11, blank=False, null=True)
+    education_time = models.CharField(("Öğretim"), max_length=4, choices=EDUCATION_TIME_CHOICES, blank=False, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
