@@ -102,6 +102,11 @@ class StudentClassForm(forms.ModelForm, StyledFormMixin):
         for name in self.fields:
             if name == "adaptation_class":
                 self.fields[name].queryset = AdapatationClass.objects.filter(education_time=user.profile.education_time)
+            if name == "credit":
+                self.fields[name].widget.attrs['placeholder'] = "Sadece tam veya virgüllü sayı girebilirsiniz."
+            if name == "akts":
+                self.fields[name].widget.attrs['placeholder'] = "Sadece tam sayı girebilirsiniz."
+
 
     class Meta:
         model = StudentClass

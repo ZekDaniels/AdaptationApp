@@ -191,21 +191,30 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
         except:
             validated_data['akts'] = None
         
-        # if validated_data['credit'] is not None and not akts.isdigit():
-        #     raise serializers.ValidationError({"akts": ("Bu alan tamsayı olmalı")})
-        # if validated_data['akts'] is not None and not credit.replace(".", "", 1).isdigit():
-        #     raise serializers.ValidationError({"credit": ("Bu alan tamsayı veya virgüllü sayı olmalı.")}) 
+        adaptation_class = validated_data.get('adaptation_class')
 
         if validated_data['credit'] is None and validated_data['akts'] is None:
             raise serializers.ValidationError(("Kredi tamsayı veya virgüllü sayı olmalı, AKTS tam sayı olmalı. Her iki değerden birisi mutlaka girilmeli.")) 
 
         if validated_data['credit'] is not None and validated_data['credit']  < 1:
             raise serializers.ValidationError({"credit": ("Bu alan 1 veya 1'den büyük olmalı.")}) 
-
+        
         if validated_data['akts'] is not None and validated_data['akts'] < 1:
             raise serializers.ValidationError({"akts": ("Bu alan 1 veya 1'den büyük olmalı.")}) 
-        
 
+        if validated_data['credit'] is None:
+            try:
+                validated_data['akts'] = int(akts)
+            except:
+                raise serializers.ValidationError({"akts": ("Lütfen bir tamsayı giriniz.")}) 
+
+        if validated_data['credit'] is None and validated_data['akts'] is not None:
+            if validated_data['akts'] < adaptation_class.akts:
+                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden büyük olmalı ve AKTS tam sayı olmalı.")) 
+
+        if validated_data['akts'] is None and validated_data['credit'] is not None:
+            if validated_data['credit'] < adaptation_class.credit:
+                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden büyük olmalı ve AKTS tam sayı olmalı.")) 
         return validated_data
         
     def create(self, validated_data):
