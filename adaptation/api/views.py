@@ -155,8 +155,14 @@ class StudentClassUpdateAPI(generics.RetrieveUpdateDestroyAPIView):
             
             if instance.adaptation.user != request.user:
                 raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
-            
-        return super().destroy(request, *args, **kwargs)
+        with transaction.atomic(): 
+            try:
+                confirmation = instance.adaptation.confirmations.get(adaptation_class=instance.adaptation_class)  
+            except:
+                confirmation = None
+            if confirmation:
+                instance.adaptation.confirmations.get(adaptation_class=instance.adaptation_class).delete()
+            return super().destroy(request, *args, **kwargs)
 
 class AdaptationClosedUpdateAPIView(generics.UpdateAPIView):
     
