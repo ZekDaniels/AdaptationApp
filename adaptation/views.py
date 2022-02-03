@@ -114,20 +114,30 @@ class AdaptationResultView(LoginRequiredMixin, View):
 
 class AdaptationBasicPDFView(LoginRequiredMixin, View):
 
-    def get(self, request, *args, **kwargs):
-        adaptation = get_object_or_404(Adaptation, user=request.user)
-        response = render_to_pdf("adaptation/pdf/adaptation_basic/adaptation_basic.html", {
-            'adaptation': adaptation,
-        })
-        filename = f"tester.pdf"
-        content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
-        response['Content-Disposition'] = content
+    def get(self, request, pk=None, *args, **kwargs):
+        adaptation = None
+        if not request.user.profile.is_allowed_user():
+            adaptation = get_object_or_404(Adaptation, user=request.user)
+        else:
+            adaptation = get_object_or_404(Adaptation, pk=pk)
+            
+        if adaptation.is_closed and adaptation.get_is_confirmated_all(): 
 
-        defaults = {'file': File(file=BytesIO(response.content),name=filename), 'adaptation': adaptation}          
-       
-                              
-        return response
+            response = render_to_pdf("adaptation/pdf/adaptation_basic/adaptation_basic.html", {
+                'adaptation': adaptation,
+            })
+            filename = f"tester.pdf"
+            content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
+            response['Content-Disposition'] = content
 
+            defaults = {'file': File(file=BytesIO(response.content),name=filename), 'adaptation': adaptation}          
+        
+                                
+            return response
+        else:
+            messages.error(request, 'İntbak kaydınızın ve tüm derslerinizin onaylanmış olması gereklidir.')
+            return redirect('dashboard')
+            
 class AdaptationComplexPDFView(LoginRequiredMixin, View):
     
     def tr_upper(self, text):
@@ -151,24 +161,33 @@ class AdaptationComplexPDFView(LoginRequiredMixin, View):
         text = text.lower() # for the rest use default lower
         return text
         
-    def get(self, request, *args, **kwargs):
-        adaptation = get_object_or_404(Adaptation, user=request.user)
-        adaptation_classes = adaptation.get_adaptation_class_list()
-        # translationTable = str.maketrans("ğıiöüşŞç", "ĞIİOuUsScC")
+    def get(self, request, pk=None, *args, **kwargs):
+        adaptation = None
+        if not request.user.profile.is_allowed_user():
+            adaptation = get_object_or_404(Adaptation, user=request.user)
+        else:
+            adaptation = get_object_or_404(Adaptation, pk=pk)
 
-        upper = self.tr_upper(adaptation.user.profile.namesurname)
+        if adaptation.is_closed and adaptation.get_is_confirmated_all(): 
+            adaptation_classes = adaptation.get_adaptation_class_list()
+            # translationTable = str.maketrans("ğıiöüşŞç", "ĞIİOuUsScC")
 
-        response = render_to_pdf("adaptation/pdf/adaptation_complex/adaptation_complex.html", {
-            'adaptation': adaptation,
-            'adaptation_classes':adaptation_classes,
-            'upper':upper,
-        })
-        filename = f"Form107 Öğrenci İntibak Formu.pdf"
-        content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
-        response['Content-Disposition'] = content
+            upper = self.tr_upper(adaptation.user.profile.namesurname)
 
-        defaults = {'file': File(file=BytesIO(response.content),name=filename), 'adaptation': adaptation}          
-       
-                              
-        return response
+            response = render_to_pdf("adaptation/pdf/adaptation_complex/adaptation_complex.html", {
+                'adaptation': adaptation,
+                'adaptation_classes':adaptation_classes,
+                'upper':upper,
+            })
+            filename = f"form107_öğrenci_intibak_formu_{{adaptation.user.profile.student_number}}.pdf"
+            content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
+            response['Content-Disposition'] = content
+
+            defaults = {'file': File(file=BytesIO(response.content),name=filename), 'adaptation': adaptation}          
+                          
+            return response
+
+        else:
+            messages.error(request, 'İntbak kaydınızın ve tüm derslerinizin onaylanmış olması gereklidir.')
+            return redirect('dashboard')
 

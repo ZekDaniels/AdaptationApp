@@ -57,8 +57,8 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         render: function (data, type, row) {
            button_url = adaptation_result_url.replace("0", data.id);
           return `
-            <div class="row al">
-            <a class='btn btn-primary col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-list-alt'></i>&nbspSonuç</a>
+            <div class="row">
+            <a class='btn btn-primary col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-list-alt'></i><br>Sonuç</a>
             </div>
             `;
         },
@@ -66,10 +66,38 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
       {
         data: null,
         render: function (data, type, row) {
+            button_url = adaptation_basic_pdf_admin_url.replace("0", data.id);
+            if(data.is_closed && data.is_confirmated_all) 
+            return `<div class="row">
+            <a class='btn btn-secondary col-lg-12 mx-auto'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
+            </div>`;
+            else
+             return `<div class="row">
+             <a class='btn btn-secondary col-lg-12 mx-auto disabled'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
+             </div>`;
+        },
+      },
+      {
+        data: null,
+        render: function (data, type, row) {
+            button_url = adaptation_complex_pdf_admin_url.replace("0", data.id);
+            if(data.is_closed && data.is_confirmated_all) 
+            return `<div class="row">
+            <a class='btn btn-secondary col-lg-12 mx-auto'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
+            </div>`;
+            else
+             return `<div class="row">
+             <a class='btn btn-secondary col-lg-12 mx-auto disabled'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
+             </div>`;
+        },
+      },
+      {
+        data: null,
+        render: function (data, type, row) {
            button_url = adaptation_manage_url.replace("0", data.id);
           return `
-            <div class="row al">
-            <a class='btn btn-warning col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-edit'></i>&nbspDüzenle</a>
+            <div class="row">
+            <a class='btn btn-warning col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-edit'></i><br> Düzenle</a>
             </div>
             `;
         },
@@ -79,8 +107,8 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         render: function (data, type, row) {
            button_url = adaptation_confirmation_url.replace("0", data.id);
           return `
-            <div class="row al">
-            <a class='btn btn-success col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-check'></i>&nbspOnay</a>
+            <div class="row">
+            <a class='btn btn-success col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-check'></i><br> Onay</a>
             </div>
             `;
         },
