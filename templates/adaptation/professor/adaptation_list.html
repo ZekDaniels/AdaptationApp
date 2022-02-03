@@ -32,7 +32,9 @@
                             <th class="border border-white">Geldiği Üniversite</th>
                             <th class="border border-white">Karar Tarihi</th>
                             <th class="border border-white">Başvuru Durumu</th>
-                            <th class="border border-white">Başvuru Onay Sayfası</th>  
+                            <th class="border border-white">Başvuru Sonuçları</th>  
+                            <th class="border border-white">Başvuru Düzenle</th>  
+                            <th class="border border-white">Başvuru Onay</th>  
                         </tr>
                     </thead>
                     <tbody>
@@ -54,6 +56,8 @@
 <script>
    
    adaptations_list_api_url = "{% url 'adaptation:adaptations_list_api' %}"
+   adaptation_result_url = "{% url 'adaptation:adaptation_result' 0 %}"
+   adaptation_manage_url = "{% url 'adaptation:adaptation_manage' 0 %}"
    adaptation_confirmation_url = "{% url 'adaptation:adaptation_confirmation' 0 %}"
    
 </script>

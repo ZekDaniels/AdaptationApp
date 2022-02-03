@@ -55,10 +55,32 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
       {
         data: null,
         render: function (data, type, row) {
+           button_url = adaptation_result_url.replace("0", data.id);
+          return `
+            <div class="row al">
+            <a class='btn btn-primary col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-list-alt'></i>&nbspSonuç</a>
+            </div>
+            `;
+        },
+      },
+      {
+        data: null,
+        render: function (data, type, row) {
+           button_url = adaptation_manage_url.replace("0", data.id);
+          return `
+            <div class="row al">
+            <a class='btn btn-warning col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-edit'></i>&nbspDüzenle</a>
+            </div>
+            `;
+        },
+      },
+      {
+        data: null,
+        render: function (data, type, row) {
            button_url = adaptation_confirmation_url.replace("0", data.id);
           return `
-            <div class="row">
-            <a class='btn btn-success compare_class_button mx-auto'  href="${button_url}"><i class='text-white fas fa-door-open'></i>&nbspBaşvuruya Git</a>
+            <div class="row al">
+            <a class='btn btn-success col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-check'></i>&nbspOnay</a>
             </div>
             `;
         },

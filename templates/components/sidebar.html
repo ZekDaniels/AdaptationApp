@@ -24,14 +24,12 @@
         <div id="collapseApply" class="collapse" aria-labelledby="headingApply"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                {% if request.user.profile|is_allowed_simple %}
+                {% if not request.user.profile|is_allowed_user %}
                 <h6 class="collapse-header">Başvuru Sayfaları</h6>
                
                 <a class="collapse-item" href=" {% url 'adaptation:adaptation_create' %}">Ders Seçim</a>
                 <a class="collapse-item" href="{% url 'adaptation:adaptation_result' %}">Ders Seçim Onay/Takip</a>
-                {% endif %}
-
-                {% if request.user.profile|is_allowed_user %}
+                {% else %}
                 <h6 class="collapse-header">Komisyon</h6>
                 <a class="collapse-item" href="{% url 'adaptation:adaptation_list' %}">Ders Seçim Listesi</a>
                 {% endif %}
