@@ -6,6 +6,7 @@ from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, D
 from adaptation.models import AdapatationClass, Adaptation, StudentClass
 from django.contrib import messages
 from utilities.render_pdf import render_to_pdf
+import re
 
 from io import BytesIO
 from django.core.files import File
@@ -108,20 +109,39 @@ class AdaptationBasicPDFView(LoginRequiredMixin, View):
         return response
 
 class AdaptationComplexPDFView(LoginRequiredMixin, View):
+    
+    def tr_upper(self, text):
+        text = re.sub(r"i", "İ", text)
+        text = re.sub(r"ı", "I", text)
+        text = re.sub(r"ç", "Ç", text)
+        text = re.sub(r"ş", "Ş", text)
+        text = re.sub(r"ü", "Ü", text)
+        text = re.sub(r"ğ", "Ğ", text)
+        text = text.upper() # for the rest use default upper
+        return text
 
+
+    def tr_lower(self, text):
+        text = re.sub(r"İ", "i", text)
+        text = re.sub(r"I", "ı", text)
+        text = re.sub(r"Ç", "ç", text)
+        text = re.sub(r"Ş", "ş", text)
+        text = re.sub(r"Ü", "ü", text)
+        text = re.sub(r"Ğ", "ğ", text)
+        text = text.lower() # for the rest use default lower
+        return text
+        
     def get(self, request, *args, **kwargs):
         adaptation = get_object_or_404(Adaptation, user=request.user)
         adaptation_classes = adaptation.get_adapatation_class_list()
+        # translationTable = str.maketrans("ğıiöüşŞç", "ĞIİOuUsScC")
 
-        for adaptation_class in adaptation_classes:
-            print(adaptation_class.get_own_student_classes(adaptation=adaptation).count())
+        upper = self.tr_upper(adaptation.user.profile.namesurname)
 
-        student_classes =  StudentClass.objects.filter(adaptation_class__in=adaptation_classes, adaptation=adaptation).order_by("adaptation_class")
-        
         response = render_to_pdf("adaptation/pdf/adaptation_complex/adaptation_complex.html", {
             'adaptation': adaptation,
             'adaptation_classes':adaptation_classes,
-            'student_classes':student_classes,
+            'upper':upper,
         })
         filename = f"Form107 Öğrenci İntibak Formu.pdf"
         content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"

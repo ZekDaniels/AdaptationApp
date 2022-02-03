@@ -23,6 +23,7 @@
                 left: 25pt;
                 right: 25pt;    
                 top: 25pt;
+                bottom : 15pt;
             }
         }
         
@@ -383,10 +384,8 @@
                 </thead>
                 <tbody>
                     {% for adaptation_class in adaptation_classes %}
-
                         {% for student_class in adaptation_class.student_classes.all|dictsort:"pk" %}
                         {% if student_class.adaptation == adaptation %}
-
                         
                         <tr>
                             {% if adaptation_class|get_own_student_classes:adaptation > 1 and forloop.first %}
@@ -425,94 +424,29 @@
 
                         </tr>
 
-
                         {% endif %}
-
                         {% endfor %}
-
-
                     {% endfor %}
+                    
                 </tbody>    
 
         </table>
-
+    
+        <p style="margin-bottom: 0;margin-left: 50px;">D: Dönem. K: Kredi, Başarı Notu: Harf notu olarak yazıalcaktır. </p>
+        <p style="margin-bottom: 15px;margin-left: 50px; margin-top: 0;">Muaf tutulan dersler dışındaki müfredatta uygulanan bütün derslerden sorumludur.</p> 
        
-
-      
-   
-        <table class="table10" style="margin-top: 20px;">
-
-            <tr class="table10row">
-                <td>
-                    <table>
-                        <h3 class="table10headline">{{company.name}}</h3>
-                        <tr>
-                            <td><b>Office:</b> </td>
-                            <td class="table10tdleft">{{company.address}}</td>
-                        </tr>
-                        <tr>
-                            <td><b>Tel:</b> </td>
-                            <td class="table10tdleft">{{company.phone_number}}</td>
-                        </tr>
-                        <tr>
-                            <td><b>Fax:</b></td>
-                            <td class="table10tdleft">{{company.fax_number}}</td>
-                        </tr>
-                    </table>
-
-                </td>
-
-                <td style="margin-left:70px;">
-                    <table class="table11" >
-                        <tr>
-                            <td><b>Workshop:</b></td>
-                            <td class="table10tdright">{{company.address_2}}</td>
-                        </tr>
-                        <tr>
-                            <td><b>Tel:</b></td>
-                            <td class="table10tdright">{{company.phone_number_2}}</td>
-                        </tr>
-                        <tr>
-                            <td><b>Fax:</b></td>
-                            <td class="table10tdright">{{company.fax_number_2}}</td>
-                        </tr>
-                    </table>
-                </td>
-
-            </tr>
+        <p class="boldheader" style="margin-bottom: 30px; margin-left: 10px; margin-top: 0;  text-indent: 25px; text-align: justify; text-justify: inter-word;">   Yapılan dosya incelemesinde {{upper}} intibakı yapılarak muafiyeti uygun bulunan dersler yukarıda verilmiştir. Öğrencinin muaf olduğu ders kredilerinin toplamı 37 AKTS olup Selçuk Üniversitesi Senatosunun 30/05/2013 tarihli toplantısında alınan 2013-87 nolu kararına göre mevcut öğrenim planında {{adaptation.adaptation_year}}. sınıf için krediler toplamının yarısından en az bir fazla olduğu  (31 AKTS) durumu sağladığından öğrencinin {{adaptation.adaptation_year}}. sınıfa intibakının yapılması uygun görülmüştür.</p> 
+       
+        <table>
+            <tbody>    
+                <tr class="table7row1">
+                    <td style="width:33%" class="boldheader">Arş. Gör. Musa DOĞAN <br> Komisyon Üyesi</td>          
+                    <td style="width:33%" class="boldheader">Dr. Öğretim Üyesi Kübra KÖKLÜ <br> Komisyon Başkanı</td>
+                    <td style="width:33%" class="boldheader">Arş. Gör. Kübra UYAR <br> Komisyon Üyesi</td>          
+                </tr>          
+            </tbody>
         </table>
-
-
-    <table style="text-align: right;" class="table12">
-        <tr>
-            <td>
-                <img  class="certificate" src="../static/images/pdfcert/certificate.jpeg"></img>
-            
-            </td>
-        </tr>
-    </table>
-
-
-
-
-
-
-        <hr>
-
-        <table class="table13">
-            <tr>
-                <td>
-                    <h5>{{responsible.first_name}} {{responsible.last_name}}/ {{responsible.profile.employee_type}}</h5>
-                </td>
-                <td class="table13tdright">
-                    <h5>{{date}} - {{time}}</h5>
-                </td>
-
-            </tr>
-        </table>
-
-
-
+    
 
     </div>
 </body>
