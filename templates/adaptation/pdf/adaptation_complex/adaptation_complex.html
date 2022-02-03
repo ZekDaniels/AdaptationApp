@@ -384,15 +384,15 @@
                 </thead>
                 <tbody>
                     {% for adaptation_class in adaptation_classes %}
-                        {% for student_class in adaptation_class.student_classes.all|dictsort:"pk" %}
+                        {% for student_class in adaptation_class|get_own_student_classes:adaptation %}
                         {% if student_class.adaptation == adaptation %}
                         
                         <tr>
-                            {% if adaptation_class|get_own_student_classes:adaptation > 1 and forloop.first %}
-                            <td class="responsivecell" rowspan="2" style="width:4%; text-align: center;"> {{ forloop.parentloop.counter}} </td>
+                            {% if adaptation_class|get_own_student_classes_count:adaptation > 1 and forloop.first %}
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="width:4%; text-align: center;"> {{ forloop.parentloop.counter}} </td>
                             {% endif %}
                             
-                            {% if adaptation_class|get_own_student_classes:adaptation == 1 %}    
+                            {% if adaptation_class|get_own_student_classes_count:adaptation == 1 %}    
                             <td class="responsivecell" rowspan="1" style="width:4%; text-align: center;">{{ forloop.parentloop.counter}}</td>                              
                             {% endif %}
 
@@ -402,17 +402,17 @@
                             <td class="responsivecell" style="width:4%; text-align: center;">{{student_class.credit}}</td>
                             <td class="responsivecell" style="width:6%; text-align: center;">{{student_class.akts}}</td>
 
-                            {% if adaptation_class|get_own_student_classes:adaptation > 1 and forloop.first %}
+                            {% if adaptation_class|get_own_student_classes_count:adaptation > 1 and forloop.first %}
 
-                            <td class="responsivecell" rowspan="2" style="padding-left: 2px;" >{{adaptation_class.code}}</td>
-                            <td class="responsivecell" rowspan="2" style="padding-left: 2px;" >{{adaptation_class.class_name}}</td>
-                            <td class="responsivecell" rowspan="2" style="width:2%; text-align: center;">{{adaptation_class.semester}}</td>
-                            <td class="responsivecell" rowspan="2" style="width:4%; text-align: center;">{{adaptation_class.credit}}</td>
-                            <td class="responsivecell" rowspan="2" style="width:6%; text-align: center;">{{adaptation_class.akts}}</td>     
-                            <td class="responsivecell" rowspan="2" style="width:6%; text-align: center;">{{ student_class|get_max_grade }}</td> 
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="padding-left: 2px;" >{{adaptation_class.code}}</td>
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="padding-left: 2px;" >{{adaptation_class.class_name}}</td>
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="width:2%; text-align: center;">{{adaptation_class.semester}}</td>
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="width:4%; text-align: center;">{{adaptation_class.credit}}</td>
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="width:6%; text-align: center;">{{adaptation_class.akts}}</td>     
+                            <td class="responsivecell" rowspan="{{adaptation_class|get_own_student_classes_count:adaptation}}" style="width:6%; text-align: center;">{{ student_class|get_max_grade }}</td> 
                             {% endif %}
 
-                            {% if adaptation_class|get_own_student_classes:adaptation == 1 %}                                  
+                            {% if adaptation_class|get_own_student_classes_count:adaptation == 1 %}                                  
                             <td class="responsivecell" rowspan="1"  style="padding-left: 2px; padding-top: 2px;">{{adaptation_class.code}}</td>
                             <td class="responsivecell" rowspan="1"  style="padding-left: 2px; padding-top: 2px;">{{adaptation_class.class_name}}</td>
                             <td class="responsivecell" rowspan="1" style="width:4%; text-align: center;">{{adaptation_class.semester}}</td>
