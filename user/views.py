@@ -77,7 +77,7 @@ class RegisterView(View):
         else:
             return render (request, "registration/register.html", context={"userform":userform, "profileform":profileform})
 
-class RegisterView(View):
+class ProfileUpdateView(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect('dashboard')
