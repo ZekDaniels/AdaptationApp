@@ -94,13 +94,21 @@ class Adaptation(models.Model):
         else:    
             return False  
             
-    def get_adapatation_class_list(self):
+    def get_adaptation_class_list(self):
 
         adaptation_class_list = []
         for student_class in self.student_classes.all():
             if not student_class.adaptation_class in adaptation_class_list:
                 adaptation_class_list.append(student_class.adaptation_class)
-        return adaptation_class_list     
+        return adaptation_class_list 
+
+    def get_adaptation_class_list_akts_sum(self):
+
+        sum = 0
+        for adaptation_class in self.get_adaptation_class_list():
+            sum += adaptation_class.akts
+
+        return sum
        
 
 class AdapatationClass(models.Model):

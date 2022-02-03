@@ -153,7 +153,7 @@ class AdaptationComplexPDFView(LoginRequiredMixin, View):
         
     def get(self, request, *args, **kwargs):
         adaptation = get_object_or_404(Adaptation, user=request.user)
-        adaptation_classes = adaptation.get_adapatation_class_list()
+        adaptation_classes = adaptation.get_adaptation_class_list()
         # translationTable = str.maketrans("ğıiöüşŞç", "ĞIİOuUsScC")
 
         upper = self.tr_upper(adaptation.user.profile.namesurname)
