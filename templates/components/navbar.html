@@ -161,8 +161,14 @@
         <div class="topbar-divider d-none d-sm-block"></div>
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+               {% if user.profile.user_image %}
+               <img class="img-profile rounded-circle" src="{{user.profile.user_image.url}}" style="max-width: 60px">
+
+                {% else %}
                 <img class="img-profile rounded-circle" src="{% static 'img/boy.png' %}" style="max-width: 60px">
+
+               {% endif %}
                 <span class="ml-2 d-none d-lg-inline text-white small">{{request.user.profile.namesurname}}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

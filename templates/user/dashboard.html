@@ -7,7 +7,30 @@
 {% block content %}
 
 <div class="row mb-3">
- 
+    <div class="col-xl-12 col-md-12 mb-4">
+        <div class="card h-100">
+          <div class="card-body p-5">
+            <div class="row align-items-center">
+              <div class="col-sm-2 mb-2">
+                <div class="text-xs font-weight-bold text-uppercase mb-1">
+                {% if user.profile.user_image %}
+               <img class="img-profile rounded-circle" src="{{user.profile.user_image.url}}" style="max-width: 100px">
+
+                {% else %}
+                <img class="img-profile rounded-circle" src="{% static 'img/boy.png' %}" style="max-width: 100px">
+
+               {% endif %}
+                </div>
+               
+              </div>
+              <div class="col-sm-10 mb-auto">
+                <h4>İntibak Otomasyonu: Kontrol Paneli </h4>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
  
 </div>
 

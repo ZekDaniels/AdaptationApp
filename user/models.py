@@ -18,7 +18,7 @@ class Profile(models.Model):
     USER_ROLE_CHOICES = ((student, ('Öğrenci')), (teacher, ('İntibak Komisyonu Üyesi')),(admin,("Yönetici")))
        
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
+    user_image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
                               help_text=("Lütfen kare profil resminizi kare olacak şekilde yükleyin, yoksa fotoğrafınız kırpılacaktır."))
     namesurname = models.CharField(("Ad Soyad"), max_length=200, default="")
     phone_number = models.CharField(("Telefon Numarası"), max_length=50, blank=False, null=True)
@@ -30,14 +30,14 @@ class Profile(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-
+    __image=None
     class Meta:
         verbose_name = 'Profil'
         verbose_name_plural = 'Profiller'
 
     def __init_(self, *args, **kwargs):
         super().__init_(*args, **kwargs)
-        self.__image = self.image
+        self.__image = self.user_image
 
     def __str__(self):
         return f"{self.namesurname} | {self.user.username}"
@@ -49,8 +49,8 @@ class Profile(models.Model):
         https://bhch.github.io/posts/2018/12/django-how-to-editmanipulate-uploaded-images-on-the-fly-before-saving/
         """
         # check if the image field is changed
-        if self.image and self.image != self.__image:
-            self.image = resize_image(self.image, 512, 512)
+        if self.user_image and self.user_image != self.__image:
+            self.user_image = resize_image(self.user_image, 512, 512)
         super().save(*args, **kwargs)
 
     @staticmethod
