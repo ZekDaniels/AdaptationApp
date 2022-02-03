@@ -14,7 +14,7 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from user.tokens import account_activation_token
-from user.forms import NewUserForm, NewProfileForm, UserLoginForm
+from user.forms import NewUserForm, NewProfileForm, ProfileUpdateForm, UserLoginForm
 
 # Create your views here.
 
@@ -76,6 +76,15 @@ class RegisterView(View):
             return render (request, "registration/register_done.html")
         else:
             return render (request, "registration/register.html", context={"userform":userform, "profileform":profileform})
+
+class RegisterView(View):
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('dashboard')
+        userform = NewUserForm()
+        profileform = ProfileUpdateForm()
+        context = {'userform':userform, 'profileform':profileform}
+        return render(request, 'registration/register.html', context)
 
 class ActivationView(View):
     def get(self, request, uidb64,token,*args, **kwargs):

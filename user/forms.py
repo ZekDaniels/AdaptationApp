@@ -1,3 +1,4 @@
+from pyexpat import model
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
@@ -56,7 +57,11 @@ class NewUserForm(UserCreationForm, StyledFormMixin):
 
 class NewProfileForm(forms.ModelForm, StyledFormMixin):
     
-    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            self.fields[name].required = True
+
     def clean_student_number(self):
         student_number = self.cleaned_data['student_number']
 
@@ -86,3 +91,9 @@ class NewProfileForm(forms.ModelForm, StyledFormMixin):
     class Meta:
         model = Profile
         fields = ['namesurname', 'identification_number', 'student_number', 'education_time', 'phone_number', 'education_time']
+
+class ProfileUpdateForm(NewProfileForm):
+
+    class Meta:
+        model=Profile
+        exclude = ['namesurname', 'phone_number','address','identification_number','student_number','user_image']
