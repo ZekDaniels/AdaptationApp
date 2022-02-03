@@ -92,7 +92,15 @@ class Adaptation(models.Model):
                     return False
             return True 
         else:    
-            return False       
+            return False  
+            
+    def get_adapatation_class_list(self):
+
+        adaptation_class_list = []
+        for student_class in self.student_classes.all():
+            if not student_class.adaptation_class in adaptation_class_list:
+                adaptation_class_list.append(student_class.adaptation_class)
+        return adaptation_class_list     
        
 
 class AdapatationClass(models.Model):
@@ -125,6 +133,9 @@ class AdapatationClass(models.Model):
 
     def get_sum(self):
         return self.teorical + self.practical
+
+    def get_own_student_classes(self, adaptation):
+        return self.student_classes.filter(adaptation=adaptation)
 
 class StudentClass(models.Model):
     """

@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
 from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableAdaptationResultNoteForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
-from adaptation.models import AdapatationClass, Adaptation
+from adaptation.models import AdapatationClass, Adaptation, StudentClass
 from django.contrib import messages
 from utilities.render_pdf import render_to_pdf
 
@@ -99,6 +99,31 @@ class AdaptationBasicPDFView(LoginRequiredMixin, View):
             'adaptation': adaptation,
         })
         filename = f"tester.pdf"
+        content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
+        response['Content-Disposition'] = content
+
+        defaults = {'file': File(file=BytesIO(response.content),name=filename), 'adaptation': adaptation}          
+       
+                              
+        return response
+
+class AdaptationComplexPDFView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        adaptation = get_object_or_404(Adaptation, user=request.user)
+        adaptation_classes = adaptation.get_adapatation_class_list()
+
+        for adaptation_class in adaptation_classes:
+            print(adaptation_class.get_own_student_classes(adaptation=adaptation).count())
+
+        student_classes =  StudentClass.objects.filter(adaptation_class__in=adaptation_classes, adaptation=adaptation).order_by("adaptation_class")
+        
+        response = render_to_pdf("adaptation/pdf/adaptation_complex/adaptation_complex.html", {
+            'adaptation': adaptation,
+            'adaptation_classes':adaptation_classes,
+            'student_classes':student_classes,
+        })
+        filename = f"Form107 Öğrenci İntibak Formu.pdf"
         content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"
         response['Content-Disposition'] = content
 

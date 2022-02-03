@@ -1,0 +1,521 @@
+{% load static %}
+{% load get_own_student_classes %}
+{% load get_max_grade %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Order PDF</title>
+    <style>
+        @page {
+            size: a4 portrait;
+
+            @frame header_frame {
+                /* Static frame */
+                -pdf-frame-content: wrap;
+                -pdf-keep-with-next:false;
+            }
+
+            @frame content_frame {
+                /* Content Frame */
+                left: 25pt;
+                right: 25pt;    
+                top: 25pt;
+            }
+        }
+        
+      /* Normal */
+      @font-face {
+         font-family: "Times New Roman";
+        src: url('../static/lib/font/TIMES.ttf');
+      }
+
+
+      /* Bold */
+      @font-face {
+          font-family: "Times New Roman Bold";
+          src: url('../static/lib/font/TIMESBD.ttf');
+      }
+
+        /* Italic */
+        @font-face {
+          font-family: "Times New Roman Italic";
+          src: url('../static/lib/font/TIMESI.ttf');
+      }
+
+      @font-face {
+          font-family: "Times New Roman Bold New";
+          src: url('../static/lib/font/TIMESBI.ttf');
+      }
+
+      table, th, td{
+        border-collapse: collapse;
+        
+      }
+
+      table, tr, td, th, tbody, thead, tfoot {
+        page-break-inside: avoid !important;
+    }
+
+
+      body {
+        font-family: "Times New Roman";
+        font-size: 12px;
+      }  
+
+      .boldheader{
+        font-family: "Times New Roman Bold"
+      }
+      .bolditalicheader{
+        font-family: "Times New Roman Bold New";
+      }
+        .table1 h1 {
+            margin-right: 0;
+            padding-right: 0;
+            font-size: 5em;
+            font-weight: 400;
+            letter-spacing: 5px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .table1 h5 {
+            color: gray;
+            padding-top: 0;
+            margin-top: 0;
+            font-weight: 400;
+            letter-spacing: 4.5px;
+        }
+
+        .date {
+            margin-right: 0;
+            margin-top: 0;
+            padding-top: 0;
+            width: 25%;
+
+        }
+
+        .stageheadline {
+            text-align: center;
+            font-weight: 400;
+            color: #000;
+            font-size: 2em;
+        }
+
+        .table3data {
+            vertical-align: middle;
+        }
+        .table3data1 {
+            vertical-align: middle;
+            border: gray 1px solid;
+        }
+
+
+        .table3data2 {
+            vertical-align: middle;
+            padding-left: 1em;
+        }
+
+        .table4 {
+            border: gray 1px solid;
+            vertical-align: middle;
+        }
+
+        .table3row {
+            padding-top: 3px;
+        }
+
+        .table5row {
+            padding-top: 3px;
+            padding-left: 3px;
+        }
+
+        .table3row1 {
+            padding-left: 5px;
+        }
+
+
+
+        .table3dt {
+            background-color: #D3D3D3;
+        }
+
+        .table5dt {
+            background-color: #D3D3D3;
+        }
+
+        .table5 {
+            margin-top: 0;
+        }
+
+        .table7 {
+            border: gray 1px solid;
+        }
+
+        .table7row1 {
+            padding-top: 3px;
+            text-align: center;
+        }
+
+        .table7row2 {
+            padding-top: 3px;
+            margin-left: 4px;
+            text-align: left;
+        }
+
+        .table7row3 {
+            padding-top: 3px;
+            text-align: center;
+        }
+
+        .table8tdright {
+
+            padding-left: -140px;
+        }
+
+
+        .table9 {
+            width:300px;
+            margin-top: 15px;
+        }
+
+        .table9tdright{
+            padding: 3px;
+            border: gray 1px solid;
+            padding-left: 1em;
+        }
+         
+        .table9tdleft{
+            padding: 3px;
+            border: gray 1px solid;
+            
+        }
+
+
+
+
+        .table10tdleft {
+            padding-left: -65px;
+        }
+
+        .table10tdright {
+            padding-left: -55px;
+
+        }
+
+        .table13tdright {
+            text-align: right;
+        }
+
+        .table10row {
+            padding-top: 0;
+
+        }
+
+        .table10headline {
+            padding-bottom: -20px;
+        }
+
+        .table15td {
+            background-color: #D3D3D3;
+            padding-left: 3px;
+        }
+
+        .table15tdright {
+            text-align: right;
+            padding-right: 2px;
+        }
+
+        .table3data1right{
+            padding-left: -60px;
+        }
+        .certificate{
+            display:flex;
+            justify-content:flex-end;
+            height:50px;
+        }
+        .responsivecell{
+            max-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height:40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header_content">
+        <table class="table1" style="margin-bottom: 0;padding-bottom: 0;">
+            <tr>
+                <td class="logo">
+                    &nbsp;
+                </td>
+
+                <td class="date">
+                    <table class="table2">
+                        <tr>
+
+                            <td>
+                                Form107: Öğrenci İntibak Formu
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        <table style="margin-top: 20px; margin-bottom: 0; padding-top: 0; padding-bottom: 0;">
+            <tbody>    
+                <tr class="table7row1" style="padding: 5px">
+                    <td style="width:15%;">  <img  src="../static/img/logo/selcuk-logo_ccexpress.png"></td>
+                    <td>
+                        <h1 class="stageheadline boldheader" style="margin-right: 0; padding-right: 0;">SELÇUK ÜNİVERSİTESİ <br>
+                            TEKNOLOJİ FAKÜLTESİ DEKANLIĞI <br>
+                            ÖĞRENCİ İNTİBAK FORMU
+                        </h1> 
+                    </td>
+                </tr>          
+            </tbody>            
+        </table>
+    
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Adı Soyadı</td>          
+                    <td>: {{adaptation.user.profile.namesurname}}</td>
+                    <td style="width:20%" class="boldheader">Karar Tarihi</td>          
+                    <td>: {{adaptation.decision_date}}</td>
+                </tr>          
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Numarası</td>          
+                    <td>: {{adaptation.user.profile.student_number}}</td>
+                    <td style="width:20%" class="boldheader">İntibak Sınıfı</td>          
+                    <td>: {{adaptation.adaptation_year}}</td>
+                </tr>          
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Bölümü</td>          
+                    <td>: Bilgisayar Mühendisliği</td>
+                    <td style="width:20%" class="boldheader">İntibak Yarıyılı</td>          
+                    <td>: {{adaptation.adaptation_semester}}</td>
+                </tr>          
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Geliş Nedeni</td>          
+                    <td>: {{adaptation.get_reason_for_coming_display}}</td>
+                    <td style="width:20%" class="boldheader">&nbsp</td>          
+                    <td>&nbsp</td>
+                </tr>          
+            </tbody>
+        </table>
+        
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Geldiği Üniversite</td>          
+                    <td>: {{adaptation.university}}</td>
+                    <td style="width:20%" class="boldheader">&nbsp</td>          
+                    <td>&nbsp</td>
+                </tr>          
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Geldiği Fakülte/Bölüm</td>          
+                    <td>: {{adaptation.faculty}}/{{adaptation.sciene}}</td>
+                    <td style="width:20%" class="boldheader">&nbsp</td>          
+                    <td>&nbsp</td>
+                </tr>          
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>    
+                <tr class="table7row2">
+                    <td style="width:20%" class="boldheader">Durumu</td>          
+                    <td>&nbsp</td>
+                    <td style="width:20%" class="boldheader">&nbsp</td>          
+                    <td>&nbsp</td>
+                </tr>          
+            </tbody>
+        </table>
+
+        <table class="table7">
+                <thead class="thead-light">
+                        <tr class="text-center">
+                            <th class="boldheader" colspan="6" scope="colgroup"> <h4 class="boldheader" style="padding: 5px; text-align: center;"> GELDİĞİ KURUMDAN ALDIĞI DERSLER </h4></th>
+                            <th class="boldheader" colspan="6" scope="colgroup"> <h4 class="boldheader" style="padding: 5px; text-align: center;"> MUAF OLDUĞU DERSLER </h4></th>
+                        </tr>
+                    <tr class="table7row1">
+                        <th> <h5 class="boldheader" style="padding-left: 3px; text-align: left;"> Sıra </h5> </th>
+                        <th> <h5 class="boldheader" style="padding-left: 3px; text-align: left;"> Kodu </h5> </th>
+                        <th> <h5 class="boldheader" style="padding-left: 3px; text-align: left;"> Dersin Adı </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> D </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> K </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> AKTS </h5> </th>
+
+                        <th> <h5 class="boldheader" style="padding-left: 3px; text-align: left;"> Kodu </h5> </th>
+                        <th> <h5 class="boldheader" style="padding-left: 3px; text-align: left;"> Dersin Adı </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> D </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> K </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> AKTS </h5> </th>
+                        <th> <h5 class="boldheader" style="text-align: center;"> Başarı Notu </h5> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adaptation_class in adaptation_classes %}
+
+                        {% for student_class in adaptation_class.student_classes.all|dictsort:"pk" %}
+                        {% if student_class.adaptation == adaptation %}
+
+                        
+                        <tr>
+                            {% if adaptation_class|get_own_student_classes:adaptation > 1 and forloop.first %}
+                            <td class="responsivecell" rowspan="2" style="width:4%; text-align: center;"> {{ forloop.parentloop.counter}} </td>
+                            {% endif %}
+                            
+                            {% if adaptation_class|get_own_student_classes:adaptation == 1 %}    
+                            <td class="responsivecell" rowspan="1" style="width:4%; text-align: center;">{{ forloop.parentloop.counter}}</td>                              
+                            {% endif %}
+
+                            <td class="responsivecell" style="padding-left: 2px;">{{student_class.code}}</td>
+                            <td class="responsivecell" style="padding-left: 2px; padding-top: 2px;">{{student_class.class_name}}</td>
+                            <td class="responsivecell" style="width:2%; text-align: center;">{{student_class.semester}}</td>
+                            <td class="responsivecell" style="width:4%; text-align: center;">{{student_class.credit}}</td>
+                            <td class="responsivecell" style="width:6%; text-align: center;">{{student_class.akts}}</td>
+
+                            {% if adaptation_class|get_own_student_classes:adaptation > 1 and forloop.first %}
+
+                            <td class="responsivecell" rowspan="2" style="padding-left: 2px;" >{{adaptation_class.code}}</td>
+                            <td class="responsivecell" rowspan="2" style="padding-left: 2px;" >{{adaptation_class.class_name}}</td>
+                            <td class="responsivecell" rowspan="2" style="width:2%; text-align: center;">{{adaptation_class.semester}}</td>
+                            <td class="responsivecell" rowspan="2" style="width:4%; text-align: center;">{{adaptation_class.credit}}</td>
+                            <td class="responsivecell" rowspan="2" style="width:6%; text-align: center;">{{adaptation_class.akts}}</td>     
+                            <td class="responsivecell" rowspan="2" style="width:6%; text-align: center;">{{ student_class|get_max_grade }}</td> 
+                            {% endif %}
+
+                            {% if adaptation_class|get_own_student_classes:adaptation == 1 %}                                  
+                            <td class="responsivecell" rowspan="1"  style="padding-left: 2px; padding-top: 2px;">{{adaptation_class.code}}</td>
+                            <td class="responsivecell" rowspan="1"  style="padding-left: 2px; padding-top: 2px;">{{adaptation_class.class_name}}</td>
+                            <td class="responsivecell" rowspan="1" style="width:4%; text-align: center;">{{adaptation_class.semester}}</td>
+                            <td class="responsivecell" rowspan="1" style="width:4%; text-align: center;">{{adaptation_class.credit}}</td>
+                            <td class="responsivecell" rowspan="1" style="width:6%; text-align: center;">{{adaptation_class.akts}}</td>     
+                            <td class="responsivecell" rowspan="1" style="width:6%; text-align: center;">{{ student_class|get_max_grade }}</td> 
+                            {% endif %}
+
+
+                        </tr>
+
+
+                        {% endif %}
+
+                        {% endfor %}
+
+
+                    {% endfor %}
+                </tbody>    
+
+        </table>
+
+       
+
+      
+   
+        <table class="table10" style="margin-top: 20px;">
+
+            <tr class="table10row">
+                <td>
+                    <table>
+                        <h3 class="table10headline">{{company.name}}</h3>
+                        <tr>
+                            <td><b>Office:</b> </td>
+                            <td class="table10tdleft">{{company.address}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tel:</b> </td>
+                            <td class="table10tdleft">{{company.phone_number}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fax:</b></td>
+                            <td class="table10tdleft">{{company.fax_number}}</td>
+                        </tr>
+                    </table>
+
+                </td>
+
+                <td style="margin-left:70px;">
+                    <table class="table11" >
+                        <tr>
+                            <td><b>Workshop:</b></td>
+                            <td class="table10tdright">{{company.address_2}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tel:</b></td>
+                            <td class="table10tdright">{{company.phone_number_2}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fax:</b></td>
+                            <td class="table10tdright">{{company.fax_number_2}}</td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+
+
+    <table style="text-align: right;" class="table12">
+        <tr>
+            <td>
+                <img  class="certificate" src="../static/images/pdfcert/certificate.jpeg"></img>
+            
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+        <hr>
+
+        <table class="table13">
+            <tr>
+                <td>
+                    <h5>{{responsible.first_name}} {{responsible.last_name}}/ {{responsible.profile.employee_type}}</h5>
+                </td>
+                <td class="table13tdright">
+                    <h5>{{date}} - {{time}}</h5>
+                </td>
+
+            </tr>
+        </table>
+
+
+
+
+    </div>
+</body>
+
+
+</html>
