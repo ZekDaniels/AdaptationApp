@@ -19,9 +19,20 @@
 .datatable-header{
     display: none;
 }
+
+.buttons{   
+    display: flex;
+    justify-content: space-between;
+}
+.class-datatable_filter{
+ margin-left: auto;
+}
+.dataTables_length{
+    margin-left: auto;
+   }
 .datatable-footer{
     display: none;
-}
+} 
 .semester-table{
     display:none;
 }
