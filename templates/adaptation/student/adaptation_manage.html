@@ -2,6 +2,8 @@
 
 {% load static %}
 {% load get_max_grade %}
+{% load permission_tags %}
+
 {% block title %}İntibak Ders Seçim{% endblock %}
 
 {% block plugins %}
@@ -29,14 +31,24 @@
                 <form id="mainForm" method="POST">
                     {% csrf_token %}
                     <div class="row">
-
-                        {% for field in adaptation_create_form %}
+                        {% if not request.user.profile|is_allowed_user %}
+                        {% for field in adaptation_update_form %}
                         <div class="form-group col-lg-4">
                             <label>{{field.label}}</label>
                             {{ field }}
                             {{ field.errors }}
                         </div>
                         {% endfor %}
+                        {% else %}
+                        {% for field in admin_adaptation_update_form %}
+                        <div class="form-group col-lg-4">
+                            <label>{{field.label}}</label>
+                            {{ field }}
+                            {{ field.errors }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        
 
                     </div>
                 </form>

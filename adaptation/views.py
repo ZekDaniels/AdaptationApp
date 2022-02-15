@@ -2,7 +2,7 @@ from user.models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
-from adaptation.forms import AdaptationUpdateForm, DisableAdaptationClassForm, DisableAdaptationResultNoteForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
+from adaptation.forms import AdaptationUpdateForm, AdminAdaptationUpdateForm, DisableAdaptationClassForm, DisableAdaptationResultNoteForm, DisableStudentClassForm, DisableAdaptationForm, StudentClassForm, ProtoAdaptionForm, AdaptationResultNoteForm
 from adaptation.models import AdapatationClass, Adaptation, StudentClass
 from django.contrib import messages
 from utilities.render_pdf import render_to_pdf
@@ -12,6 +12,9 @@ from io import BytesIO
 from django.core.files import File
 class AdaptationCreateView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
+        if request.user.profile.is_allowed_user():
+            messages.error(request, 'İntibak başvurusu oluşturamazsınız.')
+            return redirect('dashboard')
         try:
             if request.user.adaptation is not None:
                 return redirect('adaptation:adaptation_manage', request.user.adaptation.get().id)
@@ -30,7 +33,8 @@ class AdaptationManageView(LoginRequiredMixin, View):
         else:
             adaptation = get_object_or_404(Adaptation, pk=id)    
 
-        adaptation_create_form = AdaptationUpdateForm(instance=adaptation)
+        adaptation_update_form = AdaptationUpdateForm(instance=adaptation)
+        admin_adaptation_update_form = AdminAdaptationUpdateForm(instance=adaptation)
         adaptation_classes = AdapatationClass.objects.filter(education_time=adaptation.user.profile.education_time).order_by("id")
         
         class_form = StudentClassForm(user=adaptation.user)
@@ -38,7 +42,8 @@ class AdaptationManageView(LoginRequiredMixin, View):
         disable_adaptation_class_form = DisableAdaptationClassForm()
 
         context = {
-            'adaptation_create_form': adaptation_create_form,
+            'adaptation_update_form': adaptation_update_form,
+            'admin_adaptation_update_form': admin_adaptation_update_form,
             'class_form': class_form,
             'disable_student_class_form': disable_student_class_form,
             'disable_adaptation_class_form': disable_adaptation_class_form,

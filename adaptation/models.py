@@ -65,9 +65,9 @@ class Adaptation(models.Model):
     faculty = models.ForeignKey(Faculty, on_delete=models.DO_NOTHING, verbose_name="Fakülte")
     science = models.ForeignKey(Science, on_delete=models.DO_NOTHING, verbose_name="Bölüm")
     reason_for_coming = models.CharField("Geliş Nedeni", max_length=3, choices=REASON_CHOCIES)
-    adaptation_year = models.IntegerField("İntibak Sınıfı", choices=YEAR_CHOICES)
-    adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES)
-    decision_date = models.DateField("Karar Tarihi", null=True)
+    adaptation_year = models.IntegerField("İntibak Sınıfı", choices=YEAR_CHOICES, default=1)
+    adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES, default=1)
+    decision_date = models.DateField("Karar Tarihi", blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True, null=True, blank=False)      
       
     is_closed =  models.BooleanField(("Kapalı mı?"), default=False)

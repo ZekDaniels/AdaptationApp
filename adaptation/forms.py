@@ -44,21 +44,11 @@ class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
     faculty = forms.ChoiceField(choices=NULL_TUPPLE, required=True, label="Fakülte")
     science = forms.ChoiceField(choices=NULL_TUPPLE, required=True, label="Bölüm")
 
-    FIELDS = {
-        'decision_date':{
-            'id':"decision_date",
-            'value':"01/01/2021",
-        },
-        
-    }
-    
 
     class Meta:
        model = Adaptation
-       exclude = ['result_note','is_closed','user','created_at','update_at']
-       widgets = {
-            'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
-        }
+       exclude = ['decision_date', 'adaptation_year', 'adaptation_semester','result_note','is_closed','user','created_at','update_at']
+      
 
 
 class AdaptationUpdateForm(ProtoAdaptionForm, StyledFormMixin):
@@ -71,6 +61,22 @@ class AdaptationUpdateForm(ProtoAdaptionForm, StyledFormMixin):
         self.fields['faculty'].choices += [(faculty.id, faculty.name) for faculty in self.instance.university.faculties.all()]
         self.fields['science'].choices += [(science.id, science.name) for science in self.instance.faculty.sciences.all()]
 
+class AdminAdaptationUpdateForm(AdaptationUpdateForm):
+
+    FIELDS = {
+        'decision_date':{
+            'id':"decision_date",
+            'value':"01/01/2021",
+        },
+        
+    }
+    
+    class Meta:
+       model = Adaptation
+       exclude = ['result_note','is_closed','user','created_at','update_at']
+       widgets = {
+            'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
+        }
 
 class DisableAdaptationForm(DisableForm):
 

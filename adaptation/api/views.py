@@ -119,6 +119,13 @@ class AdaptationUpdateAPIView(generics.UpdateAPIView):
     queryset = Adaptation.objects.all()   
     serializer_class = AdaptationCreateSerializer
 
+
+class AdaptationAdminUpdateAPIView(generics.UpdateAPIView):
+       
+    permission_classes = [AdminsPermissions, ]
+    queryset = Adaptation.objects.all()   
+    serializer_class = AdaptationCreateSerializer
+
 class AdaptationClassDetailAPIView(generics.RetrieveAPIView):
 
     queryset = AdapatationClass.objects.all() 

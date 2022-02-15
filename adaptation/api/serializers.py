@@ -63,14 +63,13 @@ class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
     
     class Meta:
         model = Adaptation
-        exclude = ['created_at', 'updated_at']
+        exclude = ['decision_date', 'adaptation_year', 'adaptation_semester','created_at','updated_at']
     
     def validate(self, data):
         validated_data = super().validate(data)
 
         if self.instance:
-           
-           
+             
             request_owner = None
             request = self.context.get("request")
             if request and hasattr(request, "user"):
@@ -83,13 +82,25 @@ class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
                 if self.instance.user != request_owner:
                     raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
 
-    
+        return validated_data
+
+class AdaptationAdminUpdateSerializer(AdaptationCreateSerializer):
+
+    class Meta:
+        model = Adaptation
+        exclude = ['created_at','updated_at']
+
+    def validate(self, data):
+        validated_data = super().validate(data)
 
         adaptation_year = validated_data.get('adaptation_year', 0)        
         adaptation_semester = validated_data.get('adaptation_semester', 0)    
+
         if (adaptation_semester != adaptation_year * 2) and (adaptation_semester != ((adaptation_year * 2) - 1) ):
             raise serializers.ValidationError({"adaptation_semester": ("İntibak yarıyılı hatalı seçilmiş, lütfen intibak yılı ve yarıyılı tekrar gözden geçirin.")})
+
         return validated_data
+
 
 class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMixin):
 
