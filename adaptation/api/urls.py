@@ -7,6 +7,7 @@ urlpatterns = [
      path('adaptations_list', AdaptationListView.as_view(), name="adaptations_list_api"),
      path('adaptation', AdaptationCreateAPIView.as_view(), name="adaptation_create_api"),
      path('adaptation/<int:pk>', AdaptationUpdateAPIView.as_view(), name="adaptation_update_api"),
+     path('adaptation/admin/<int:pk>', AdaptationAdminUpdateAPIView.as_view(), name="adaptation_admin_update_api"),
      path('adaptation/<int:pk>/closed', AdaptationClosedUpdateAPIView.as_view(), name="adaptation_closed_api"),
      
      path('adaptation_class/<int:pk>', AdaptationClassDetailAPIView.as_view(), name="adaptation_class_detail_api"),
