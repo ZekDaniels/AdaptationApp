@@ -13,7 +13,6 @@ const resultNoteForm = $("#resultNoteForm")
 const semester_dropdowns_selector = ".toggle-semester-table";
 
 const turkish_content = $("#turkish-content");
-const english_content = $("#english-content");
 
 const AdaptationClassContentModal = $("#AdaptationClassContentModal");
 
@@ -239,15 +238,6 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
         "data": "semester"
       },
       {
-        "data": "teorical"
-      },
-      {
-        "data": "practical"
-      },
-      {
-        "data": "sum"
-      },
-      {
         "data": "credit"
       },
       
@@ -312,7 +302,6 @@ function getAdaptationClassContent(_id, _url, _modal = null) {
 
 function fillAdaptationClassContent(_data) {
   turkish_content.html(_data.turkish_content);
-  english_content.html(_data.english_content);
 }
 
 function addAdaptationClassConfirmation(_id, _data, _url, _button = null, _table = null, _modal = null) {
