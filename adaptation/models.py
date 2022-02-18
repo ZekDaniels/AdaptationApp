@@ -134,9 +134,6 @@ class AdapatationClass(models.Model):
     def __str__(self):
         return self.code+" - "+self.class_name+" - "+ self.get_education_time_display()
 
-    def get_sum(self):
-        return self.teorical + self.practical
-
     def get_own_student_classes(self, adaptation):
         return self.student_classes.filter(adaptation=adaptation)
 
@@ -188,12 +185,6 @@ class StudentClass(models.Model):
         candidate_classes.aggregate(Max('grade'))
         max_grade_class = candidate_classes.order_by('-grade').first()
         return max_grade_class.get_grade_display()
-
-    def get_sum(self):
-            return self.teorical + self.practical
-       
-    def get_adaptation_class_sum(self):
-        return self.adaptation_class.get_sum()
 
     def get_confirmation(self):
         if self.adaptation_class.confirmation.exists():

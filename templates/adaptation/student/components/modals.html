@@ -51,8 +51,6 @@
                         <th>Kodu</th>
                         <th>Dersin Adı</th>
                         <th>Öğretim</th>
-                        <th>Teorik</th>
-                        <th>Lab. Uyg.</th>
                         <th>Kredi</th>
                         <th>AKTS</th>
                         <th>İşlem</th>
@@ -64,8 +62,6 @@
                         <td class="align-middle">{{class.code}}</td>
                         <td class="align-middle">{{class.class_name}}</td>
                         <td class="align-middle">{{class.get_education_time_display}}</td>
-                        <td class="align-middle">{{class.teorical}}</td>
-                        <td class="align-middle">{{class.practical}}</td>
                         <td class="align-middle">{{class.credit}}</td>
                         <td class="align-middle">{{class.akts}}</td>
                         <td class="align-middle"><button class="btn btn-md btn-primary show_content_button" data-id="{{class.id}}" data-toggle="modal" data-target="#AdaptationClassContentModal">Ders İçeriğini Gör</button></td>
@@ -118,12 +114,6 @@
                 <div class="col-lg-12">
                   <h6 class="modal-title mb-1">Türkçe İçerik</h6>
                   <textarea id="turkish-content" class="form-control" cols="25" rows="10" disabled></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <h6 class="modal-title mb-1">İngilizce İçerik</h6>
-                  <textarea id="english-content" class="form-control"  cols="5" rows="10" disabled></textarea>
                 </div>
               </div>
             </div>

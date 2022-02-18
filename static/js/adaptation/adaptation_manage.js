@@ -15,7 +15,6 @@ const university_input = $("#id_university");
 const faculty_input = $("#id_faculty");
 const science_input = $("#id_science");
 const turkish_content = $("#turkish-content");
-const english_content = $("#english-content");
 
 const mainForm = $("#mainForm");
 const addClassForm = $("#addClassForm");
@@ -317,15 +316,6 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
       {
         "data": "semester"
       },
-      // {
-      //   "data": "teorical"
-      // },
-      // {
-      //   "data": "practical"
-      // },
-      // {
-      //   "data": "sum"
-      // },
       {
         "data": "credit"
       },
@@ -357,15 +347,6 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
         "name":"semester",
         "data":"adaptation_class.semester"
       },  
-      // {
-      //   "data": "adaptation_class.teorical"
-      // },
-      // {
-      //   "data": "adaptation_class.practical"
-      // },
-      // {
-      //   "data": "adaptation_class_sum"
-      // },
       {
         "name":"credit",
         "data":"adaptation_class.credit"
@@ -411,7 +392,6 @@ function getAdaptationClassContent(_id, _url, _modal = null) {
 
 function fillAdaptationClassContent(_data) {
   turkish_content.html(_data.turkish_content);
-  english_content.html(_data.english_content);
 }
 
 function addStudentClass(_data, _url, _button = null, _table = null, _modal = null) {
