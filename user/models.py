@@ -11,11 +11,12 @@ class Profile(models.Model):
     normal_education = 'n.ö'
     secondary_education = 'i.ö'
     student = "student"
-    teacher = "teacher"
+    commission_member = "commission_member"
+    commission_lead = "commission_lead"
     admin = "admin"
     
     EDUCATION_TIME_CHOICES = ((normal_education, ('Normal Öğretim')), (secondary_education, ('İkinci Öğretim')))
-    USER_ROLE_CHOICES = ((student, ('Öğrenci')), (teacher, ('İntibak Komisyonu Üyesi')),(admin,("Yönetici")))
+    USER_ROLE_CHOICES = ((student, ('Öğrenci')), (commission_member, ('İntibak Komisyonu Üyesi')), (commission_lead, ('İntibak Komisyonu Üyesi')),(admin,("Yönetici")))
        
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     user_image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,
@@ -23,7 +24,7 @@ class Profile(models.Model):
     namesurname = models.CharField(("Ad Soyad"), max_length=200, default="")
     phone_number = models.CharField(("Telefon Numarası"), max_length=50, blank=False, null=True)
     address = models.TextField(("Adres"), blank=True, null=True)
-    user_role = models.CharField(("Kullanıcı Rolü"), max_length=7, choices=USER_ROLE_CHOICES, default=student)
+    user_role = models.CharField(("Kullanıcı Rolü"), max_length=17, choices=USER_ROLE_CHOICES, default=student)
     student_number = models.CharField(("Okul Numarası"), max_length=9, blank=True, null=True)
     identification_number = models.CharField(("TC Kimlik No"), max_length=11, blank=True, null=True)
     education_time = models.CharField(("Öğretim"), max_length=4, choices=EDUCATION_TIME_CHOICES, blank=True, null=True)
@@ -58,7 +59,7 @@ class Profile(models.Model):
         return ['student_number','birthday']
 
     def is_allowed_user(self):
-        allowed_user_roles = (Profile.admin, Profile.teacher)
+        allowed_user_roles = (Profile.admin, Profile.commission_member, Profile.commission_lead)
         is_allowed_user = self.user_role in allowed_user_roles
         return is_allowed_user
 

@@ -10,7 +10,7 @@ from adaptation.models import Faculty
 from user.models import Profile
 
 class AdminsPermissions(BasePermission):
-    allowed_user_roles = (Profile.admin, Profile.teacher)
+    allowed_user_roles = (Profile.admin, Profile.commission_member, Profile.commission_lead)
 
     def has_permission(self, request, view):
         is_allowed_user = request.user.profile.user_role in self.allowed_user_roles
