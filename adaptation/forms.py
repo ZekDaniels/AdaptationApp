@@ -147,4 +147,4 @@ class DisableAdaptationClassForm(DisableForm):
    
     class Meta:
         model = AdapatationClass
-        exclude = ['is_active', 'education_time', 'class_name_english','user','created_at', 'updated_at']
+        exclude = ['is_active', 'education_time','user','created_at', 'updated_at']

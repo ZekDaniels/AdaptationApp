@@ -49,14 +49,12 @@ class Adaptation(models.Model):
     DG = 'dg'
     NYG = 'nyg'
     EYG = 'eyg'
-    YO = 'yo'
     MT = 'mt'
     
     REASON_CHOCIES = (
         (DG, ("Dikey Geçiş")),
         (NYG, ("Notla Yatay Geçiş")),
         (EYG, ("Ek Madde 1 Yatay Geçiş")),
-        (YO, ("Yaz Okulu")),
         (MT, ("Mühendislik Tamamlama")),
     )
     SEMESETER_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"), (6, "6"), (7, "7"), (8, "8"), )
@@ -124,17 +122,14 @@ class AdapatationClass(models.Model):
     
     code = models.CharField("Ders Kodu", max_length=20, unique=True)
     class_name = models.CharField("Dersin Adı", max_length=255)
-    class_name_english = models.CharField("Dersin İngilizce Adı", max_length=255, null=True, blank=True)
     semester = models.IntegerField("Dönem", choices= SEMESETER_CHOICES)
-    teorical = models.PositiveIntegerField("Teorik", default = 0)
-    practical = models.PositiveIntegerField("Pratik", default = 0)
+
     credit = models.FloatField("Kredi")
     akts = models.PositiveIntegerField("AKTS")
     education_time = models.CharField("Öğretim", max_length=3, default="n.ö", choices=EDUCATION_TIME_CHOICES)
     is_active = models.BooleanField(("Aktif mi?"), default=True)
 
     turkish_content = models.TextField("Türkçe İçerik")
-    english_content = models.TextField("İngilizce İçerik", null=True, blank=True)
     
     def __str__(self):
         return self.code+" - "+self.class_name+" - "+ self.get_education_time_display()
@@ -171,15 +166,13 @@ class StudentClass(models.Model):
     class_name = models.CharField("Dersin Adı", max_length=255)
     semester = models.PositiveIntegerField("Dönem", choices= SEMESETER_CHOICES, default=1)
    
-    teorical = models.PositiveIntegerField("Teorik", default = 0)
-    practical = models.PositiveIntegerField("Pratik", default = 0)
+
     credit = models.FloatField("Kredi", null=True, blank=True)
     akts = models.PositiveIntegerField("AKTS", null=True, blank=True)
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=2.0)
     adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
 
     turkish_content = models.TextField("Türkçe İçerik")
-    english_content = models.TextField("İngilizce İçerik", null=True, blank=True)
 
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
 
