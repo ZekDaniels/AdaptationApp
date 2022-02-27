@@ -47,7 +47,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
       {
         data: null,
         render: function (data, type, row) {
-            if(data.is_closed && data.is_confirmated_all) return `<span class="badge badge-success">Tamamlandı ve onaylandı</span>`;
+            if(data.is_closed && data.is_confirmated) return `<span class="badge badge-success">Tamamlandı ve onaylandı</span>`;
             if(data.is_closed)  return `<span class="badge badge-warning">Tamamlandı ama onaylanmadı</span>`;
             else return `<span class="badge badge-danger">Tamamlanmadı</span>`;
         },
@@ -67,7 +67,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         data: null,
         render: function (data, type, row) {
             button_url = adaptation_basic_pdf_admin_url.replace("0", data.id);
-            if(data.is_closed && data.is_confirmated_all) 
+            if(data.is_closed && data.is_confirmated) 
             return `<div class="row">
             <a class='btn btn-secondary col-lg-12 mx-auto'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
             </div>`;
@@ -81,7 +81,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         data: null,
         render: function (data, type, row) {
             button_url = adaptation_complex_pdf_admin_url.replace("0", data.id);
-            if(data.is_closed && data.is_confirmated_all) 
+            if(data.is_closed && data.is_confirmated) 
             return `<div class="row">
             <a class='btn btn-secondary col-lg-12 mx-auto'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
             </div>`;

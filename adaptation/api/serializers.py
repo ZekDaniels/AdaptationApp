@@ -44,7 +44,7 @@ class AdaptationListSerializer(serializers.ModelSerializer):
 
     username = serializers.SerializerMethodField(source="get_username")
     name_surname = serializers.SerializerMethodField(source="get_name_surname")
-    is_confirmated_all = serializers.SerializerMethodField(source="get_is_confirmated_all")
+    is_confirmated = serializers.SerializerMethodField(source="get_is_confirmated")
 
     def get_username(self, obj):
         return obj.get_username()
@@ -52,8 +52,8 @@ class AdaptationListSerializer(serializers.ModelSerializer):
     def get_name_surname(self, obj):
         return obj.get_name_surname()
 
-    def get_is_confirmated_all(self, obj):
-        return obj.get_is_confirmated_all()
+    def get_is_confirmated(self, obj):
+        return obj.is_confirmated
 
     class Meta:
         model = Adaptation

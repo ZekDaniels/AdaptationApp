@@ -69,6 +69,7 @@ class Adaptation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=("adaptation"), verbose_name="Öğrenci", unique=True, null=True, blank=False)      
       
     is_closed =  models.BooleanField(("Kapalı mı?"), default=False)
+    is_confirmated =  models.BooleanField(("Onaylandı mı?"), default=False)
     result_note = models.TextField("Sonuç Bilgisi", null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)

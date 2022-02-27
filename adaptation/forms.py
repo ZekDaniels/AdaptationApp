@@ -47,7 +47,7 @@ class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
 
     class Meta:
        model = Adaptation
-       exclude = ['decision_date', 'adaptation_year', 'adaptation_semester','result_note','is_closed','user','created_at','update_at']
+       exclude = ['is_confirmated', 'decision_date', 'adaptation_year', 'adaptation_semester','result_note','is_closed','user','created_at','update_at']
       
 
 
@@ -73,7 +73,7 @@ class AdminAdaptationUpdateForm(AdaptationUpdateForm):
     
     class Meta:
        model = Adaptation
-       exclude = ['result_note','is_closed','user','created_at','update_at']
+       exclude = ['is_confirmated', 'result_note','is_closed','user','created_at','update_at']
        widgets = {
             'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
         }
@@ -82,7 +82,7 @@ class DisableAdaptationForm(DisableForm):
 
     class Meta:
         model = Adaptation
-        exclude = ['result_note','is_closed','user','created_at','update_at']
+        exclude = ['is_confirmated', 'result_note','is_closed','user','created_at','update_at']
         widgets = {
             'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
         }

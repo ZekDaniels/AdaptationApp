@@ -126,7 +126,7 @@ class AdaptationBasicPDFView(LoginRequiredMixin, View):
         else:
             adaptation = get_object_or_404(Adaptation, pk=pk)
             
-        if adaptation.is_closed and adaptation.get_is_confirmated_all(): 
+        if adaptation.is_closed and adaptation.is_confirmated: 
 
             response = render_to_pdf("adaptation/pdf/adaptation_basic/adaptation_basic.html", {
                 'adaptation': adaptation,
@@ -176,7 +176,7 @@ class AdaptationComplexPDFView(LoginRequiredMixin, View):
         commission_members = User.objects.filter(profile__user_role=Profile.commission_member)
         commission_lead = User.objects.filter(profile__user_role=Profile.commission_lead).first()
 
-        if adaptation.is_closed and adaptation.get_is_confirmated_all(): 
+        if adaptation.is_closed and adaptation.is_confirmated: 
             adaptation_classes = adaptation.get_adaptation_class_list()
             # translationTable = str.maketrans("ğıiöüşŞç", "ĞIİOuUsScC")
 
