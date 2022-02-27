@@ -97,3 +97,28 @@ class ProfileUpdateForm(NewProfileForm):
     class Meta:
         model=Profile
         exclude = ['namesurname', 'phone_number','address','identification_number','student_number','user_image']
+
+class ProfileAdminForm(forms.ModelForm):
+    
+    class Meta:
+        model = Profile
+        exclude = ("created_at", "updated_at")
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['namesurname'].widget.attrs['placeholder'] = "Komisyon üyelerini unvan ile beraber giriniz."
+
+    def clean(self):
+        cleaned_data = super(ProfileAdminForm, self).clean()
+        user_role = cleaned_data.get('user_role')
+        
+        if user_role == Profile.commission_lead:
+            count = Profile.objects.filter(user_role=Profile.commission_lead).count()
+            if count > 0:
+                raise ValidationError('Birden fazla Komisyon Başkanı giremezsiniz.')
+        if user_role == Profile.commission_member:
+            count = Profile.objects.filter(user_role=Profile.commission_member).count()
+            if count > 1:
+                raise ValidationError('ikiden fazla Komisyon Üyesi giremezsiniz.')
+             
+        return cleaned_data

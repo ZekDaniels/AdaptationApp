@@ -16,7 +16,7 @@ class Profile(models.Model):
     admin = "admin"
     
     EDUCATION_TIME_CHOICES = ((normal_education, ('Normal Öğretim')), (secondary_education, ('İkinci Öğretim')))
-    USER_ROLE_CHOICES = ((student, ('Öğrenci')), (commission_member, ('İntibak Komisyonu Üyesi')), (commission_lead, ('İntibak Komisyonu Üyesi')),(admin,("Yönetici")))
+    USER_ROLE_CHOICES = ((student, ('Öğrenci')), (commission_member, ('İntibak Komisyonu Üyesi')), (commission_lead, ('İntibak Komisyonu Lideri')),(admin,("Yönetici")))
        
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     user_image = models.ImageField(("Profil Resmi"), upload_to='images/profiles/', null=True, blank=True,

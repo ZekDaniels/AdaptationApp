@@ -1,4 +1,4 @@
-from user.models import Profile
+from user.models import Profile, User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.base import View
@@ -173,6 +173,9 @@ class AdaptationComplexPDFView(LoginRequiredMixin, View):
         else:
             adaptation = get_object_or_404(Adaptation, pk=pk)
 
+        commission_members = User.objects.filter(profile__user_role=Profile.commission_member)
+        commission_lead = User.objects.filter(profile__user_role=Profile.commission_lead).first()
+
         if adaptation.is_closed and adaptation.get_is_confirmated_all(): 
             adaptation_classes = adaptation.get_adaptation_class_list()
             # translationTable = str.maketrans("ğıiöüşŞç", "ĞIİOuUsScC")
@@ -183,6 +186,8 @@ class AdaptationComplexPDFView(LoginRequiredMixin, View):
                 'adaptation': adaptation,
                 'adaptation_classes':adaptation_classes,
                 'upper':upper,
+                'commission_members':commission_members,
+                'commission_lead':commission_lead,
             })
             filename = f"form107_öğrenci_intibak_formu_{{adaptation.user.profile.student_number}}.pdf"
             content = f"attachment; filename={filename}" if request.GET.get("download") else f"inline; filename={filename}"

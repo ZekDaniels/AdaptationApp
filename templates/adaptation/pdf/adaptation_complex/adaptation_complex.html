@@ -436,17 +436,21 @@
         <p style="margin-bottom: 15px;margin-left: 50px; margin-top: 0;">Muaf tutulan dersler dışındaki müfredatta uygulanan bütün derslerden sorumludur.</p> 
        
         <p class="boldheader" style="margin-bottom: 30px; margin-left: 10px; margin-top: 0;  text-indent: 25px; text-align: justify; text-justify: inter-word;">   Yapılan dosya incelemesinde {{upper}} intibakı yapılarak muafiyeti uygun bulunan dersler yukarıda verilmiştir. Öğrencinin muaf olduğu ders kredilerinin toplamı {{adaptation|get_adaptation_class_list_akts_sum}} AKTS olup Selçuk Üniversitesi Senatosunun 30/05/2013 tarihli toplantısında alınan 2013-87 nolu kararına göre mevcut öğrenim planında {{adaptation.adaptation_year}}. sınıf için krediler toplamının yarısından en az bir fazla olduğu  (31 AKTS) durumu sağladığından öğrencinin {{adaptation.adaptation_year}}. sınıfa intibakının yapılması uygun görülmüştür.</p> 
-       
+      
         <table>
             <tbody>    
                 <tr class="table7row1">
-                    <td style="width:33%" class="boldheader">Arş. Gör. Musa DOĞAN <br> Komisyon Üyesi</td>          
-                    <td style="width:33%" class="boldheader">Dr. Öğretim Üyesi Murat KÖKLÜ <br> Komisyon Başkanı</td>
-                    <td style="width:33%" class="boldheader">Arş. Gör. Kübra UYAR <br> Komisyon Üyesi</td>          
+                    {% for member in commission_members %}
+                    <td style="width:33%" class="boldheader">{{member.profile.namesurname}}<br> Komisyon Üyesi</td>          
+                    
+                    {% if forloop.first %}
+                    <td style="width:33%" class="boldheader">{{commission_lead.profile.namesurname}}<br> Komisyon Başkanı</td>                           
+                    {% endif %}
+                        
+                    {% endfor %}
                 </tr>          
             </tbody>
         </table>
-    
 
     </div>
 </body>
