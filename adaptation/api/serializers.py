@@ -106,16 +106,11 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
 
     class Meta:
         model = Adaptation
-        fields = ['is_closed', 'result_note']
+        fields = ['is_confirmated']
 
     def update(self, instance, validated_data):
-        with transaction.atomic():
-            is_closed = validated_data.get('is_closed', None)
-            if is_closed is not None:
-                if not instance.is_closed:
-                    instance.confirmations.all().delete()
-            data = super().update(instance, validated_data) 
-            print(data)
+        
+        data = super().update(instance, validated_data) 
         return data
 
 

@@ -26,6 +26,8 @@ const AdaptationClassContentModal = $("#AdaptationClassContentModal");
 const main_submit_button = $("#main_submit_button");
 const add_class_button = $("#add_class_button");
 const finish_adaptation_button = $(finish_adaptation_button_selector);
+const activate_button = $("#activate_button");
+const deactivate_button = $("#deactivate_button");
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -219,7 +221,7 @@ function UpdateAdaptation(_data, _url, _button = null, _table = null, _modal = n
     _button.html(`<i class="icon-spinner2 spinner"></i>`);
   }
   request
-    .put_r(_url.replace("0", adaptation_id), _data).then((response) => {
+    .patch_r(_url.replace("0", adaptation_id), _data).then((response) => {
       if (_button) {
         _button.html(button_text);
         _button.prop("disabled", false);
@@ -511,4 +513,67 @@ function FillDataCompareClassModal(_data) {
     $(`.table-compare #id_${key}_adaptation_class`).val(value);
   });
   $(`#id_adaptation_class`).val(_data.adaptation_class.id);
+}
+
+$(activate_button).on("click", function(){
+  sweetCombineDynamic(
+    "Emin misin?",
+    "Bu intibak başvurusunu onaylamak istediğine emin misin!",
+    "success",
+    "Başvuruyu onayını aç.",
+    "İptal et.",
+    () =>{
+    data = { 'is_confirmated': true };
+    UpdateAdaptationConfirmation(data, adaptation_closed_api_url, $(this), table);
+    }
+  );
+});
+
+$(deactivate_button).on("click", function(){
+  sweetCombineDynamic(
+    "Emin misin?",
+    "Bu intibak başvurusunu onayını kaldırmak istediğine emin misin!",
+    "danger",
+    "Başvuru onayını sil.",
+    "İptal et.",
+    () =>{
+    data = { 'is_confirmated': false };
+    UpdateAdaptationConfirmation(data, adaptation_closed_api_url, $(this), table);
+    }
+  );
+});
+
+function UpdateAdaptationConfirmation(_data, _url, _button = null, _table = null, _modal = null) {
+  request
+    .patch_r(_url.replace("0", adaptation_id), _data).then((response) => {
+      if (response.ok) {
+        response.json().then(data => {
+          if (data.is_confirmated !== undefined) isClosedButtonControl(data.is_confirmated);        
+          if (_table) {
+            _table.ajax.reload()
+          }
+          fire_alert([{
+            message: {message:"Kaydınız başarıyla güncellendi"},
+            icon: "success"
+          }]);
+          if (_modal) {
+            _modal.modal('hide');
+          }
+        })
+      } else {
+        response.json().then(errors => {
+          console.log(errors);
+          fire_alert([{
+            message: errors,
+            icon: "error"
+          }]);
+        })
+        throw new Error('Something went wrong');
+      }
+    });
+}
+
+function isClosedButtonControl(is_closed) {
+  activate_button.prop("disabled", is_closed);
+  deactivate_button.prop("disabled", !(is_closed));
 }
