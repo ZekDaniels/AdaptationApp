@@ -109,9 +109,17 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
         fields = ['is_confirmated']
 
     def update(self, instance, validated_data):
-        
-        data = super().update(instance, validated_data) 
-        return data
+        with transaction.atomic():
+            updated_instance = super().update(instance, validated_data) 
+            array = [1, 2, 3]
+            if updated_instance.is_confirmated:
+                updated_instance.adaptation_year = 1
+                for item in array:
+                    if updated_instance.get_adaptation_class_list_akts_sum() > ((30*item) + 1):
+                        updated_instance.adaptation_year = (item + 1)
+                updated_instance.save()
+            
+            return updated_instance
 
 
 class AdaptationClassConfirmationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
