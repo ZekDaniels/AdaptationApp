@@ -74,13 +74,18 @@ class AdaptationCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
             request = self.context.get("request")
             if request and hasattr(request, "user"):
                 request_owner = request.user
+            is_closed = validated_data.get('is_closed')
 
             if not request_owner.profile.is_allowed_user():
-                if self.instance.is_closed:
-                    raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))       
-
                 if self.instance.user != request_owner:
                     raise serializers.ValidationError(("Bu kullanıcının intibak başvurusunu değiştiremezsiniz."))
+
+                if self.instance.is_closed:
+                    raise serializers.ValidationError(("Bu intibak başvurusu kapatılmış, değiştirmek istediğinize eminseniz tekrar hocanıza başvurun."))       
+              
+            if is_closed:
+                if not self.instance.student_classes.exists():
+                    raise serializers.ValidationError(("Başvuruyu onaya göndermek için en az bir ders ekleyin."))
 
         return validated_data
 
@@ -104,9 +109,26 @@ class AdaptationAdminUpdateSerializer(AdaptationCreateSerializer):
 
 class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMixin):
 
+    adaptation_year = serializers.IntegerField(read_only=True, required=False)
+    adaptation_semester = serializers.IntegerField(read_only=True, required=False)
+
     class Meta:
         model = Adaptation
-        fields = ['is_confirmated']
+        fields = ['adaptation_year','adaptation_semester','is_confirmated']
+
+
+    def validate(self, data):
+        validated_data = super().validate(data)
+        is_confirmated = validated_data.get('is_confirmated')  
+
+        if is_confirmated:
+            if not self.instance.is_closed:
+                raise serializers.ValidationError(("Kapalı olmayan başvuruyu onaylayamazsınız."))
+
+            if not self.instance.student_classes.exists():
+                raise serializers.ValidationError(("Başvuruyu onaylamak için en az bir ders ekleyin."))
+
+        return validated_data
 
     def update(self, instance, validated_data):
         with transaction.atomic():
@@ -114,9 +136,11 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
             array = [1, 2, 3]
             if updated_instance.is_confirmated:
                 updated_instance.adaptation_year = 1
+                updated_instance.adaptation_semester = 1
                 for item in array:
                     if updated_instance.get_adaptation_class_list_akts_sum() > ((30*item) + 1):
                         updated_instance.adaptation_year = (item + 1)
+                        updated_instance.adaptation_semester = (item + updated_instance.adaptation_year)
                 updated_instance.save()
             
             return updated_instance

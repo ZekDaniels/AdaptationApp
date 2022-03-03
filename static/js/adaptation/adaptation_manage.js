@@ -533,7 +533,7 @@ $(deactivate_button).on("click", function(){
   sweetCombineDynamic(
     "Emin misin?",
     "Bu intibak başvurusunu onayını kaldırmak istediğine emin misin!",
-    "danger",
+    "error",
     "Başvuru onayını sil.",
     "İptal et.",
     () =>{
@@ -551,6 +551,10 @@ function UpdateAdaptationConfirmation(_data, _url, _button = null, _table = null
           if (data.is_confirmated !== undefined) isClosedButtonControl(data.is_confirmated);        
           if (_table) {
             _table.ajax.reload()
+          }       
+          if (data.is_confirmated){
+            $('#id_adaptation_semester').val(data.adaptation_semester).change()
+            $('#id_adaptation_year').val(data.adaptation_year).change()
           }
           fire_alert([{
             message: {message:"Kaydınız başarıyla güncellendi"},
