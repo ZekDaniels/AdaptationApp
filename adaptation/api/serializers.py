@@ -131,17 +131,24 @@ class AdaptationClosedUpdateSerializer(serializers.ModelSerializer, ErrorNameMix
         return validated_data
 
     def update(self, instance, validated_data):
+        array = [1, 2, 3]
         with transaction.atomic():
             updated_instance = super().update(instance, validated_data) 
-            array = [1, 2, 3]
             if updated_instance.is_confirmated:
+                old_year = updated_instance.adaptation_year
                 updated_instance.adaptation_year = 1
                 updated_instance.adaptation_semester = 1
+                sum_of_akts = updated_instance.get_adaptation_class_list_akts_sum()
+
                 for item in array:
-                    if updated_instance.get_adaptation_class_list_akts_sum() > ((30*item) + 1):
+                    if sum_of_akts > ((30*item) + 1):
                         updated_instance.adaptation_year = (item + 1)
                         updated_instance.adaptation_semester = (item + updated_instance.adaptation_year)
-                updated_instance.save()
+
+                if old_year == updated_instance.adaptation_year:       
+                    return Adaptation.objects.get(pk=instance.pk)
+                else: 
+                    updated_instance.save()
             
             return updated_instance
 
