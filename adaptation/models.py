@@ -46,6 +46,7 @@ class Adaptation(models.Model):
     class Meta:
         verbose_name = 'İntibak'
         verbose_name_plural = 'İntibaklar'
+        ordering = ['is_confirmated','is_closed', 'decision_date']
     
     DG = 'dg'
     NYG = 'nyg'

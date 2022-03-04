@@ -102,17 +102,6 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
             `;
         },
       },
-      {
-        data: null,
-        render: function (data, type, row) {
-           button_url = adaptation_confirmation_url.replace("0", data.id);
-          return `
-            <div class="row">
-            <a class='btn btn-success col-lg-12 mx-auto'  href="${button_url}"><i class='text-white fas fa-check'></i><br> Onay</a>
-            </div>
-            `;
-        },
-      },
     ],
   });
 }

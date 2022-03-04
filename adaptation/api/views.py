@@ -101,7 +101,7 @@ class AdaptationListView(QueryListAPIView):
 
     permission_classes = [AdminsPermissions, ]
     custom_related_fields = ["user"]
-    queryset = Adaptation.objects.select_related(*custom_related_fields).all().order_by('-decision_date') 
+    queryset = Adaptation.objects.select_related(*custom_related_fields).all()
     serializer_class = AdaptationListSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = '__all__'
