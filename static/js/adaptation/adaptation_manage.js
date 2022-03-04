@@ -78,6 +78,8 @@ function clearAddClassForm() {
   $("#addClassForm select").val(''); 
   add_class_button.html("Ders Ekle");
   add_class_modal_label.html("Ders Ekle");
+  updateable_class_id = null;
+  updateable = false;
 }
 
 function getSelectionText() {
@@ -127,8 +129,6 @@ function setupListeners() {
     updateStudentClass(updateable_class_id, data, student_class_update_api_url, add_class_button, table, addClassModal);
     else
     addStudentClass(data, student_class_create_api_url, add_class_button, table, addClassModal);
-
-    updateable = false;
   });
  
 }

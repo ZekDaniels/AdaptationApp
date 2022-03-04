@@ -247,11 +247,16 @@ class StudentClassCreateSerializer(serializers.ModelSerializer, ErrorNameMixin):
 
         if validated_data['credit'] is None and validated_data['akts'] is not None:
             if validated_data['akts'] < adaptation_class.akts:
-                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden büyük olmalı ve AKTS tam sayı olmalı.")) 
+                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden eşit veya büyük olmalı ve AKTS tam sayı olmalı.")) 
 
         if validated_data['akts'] is None and validated_data['credit'] is not None:
             if validated_data['credit'] < adaptation_class.credit:
-                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden büyük olmalı ve AKTS tam sayı olmalı.")) 
+                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden eşit veya büyük olmalı ve AKTS tam sayı olmalı.")) 
+
+        if validated_data['akts'] is not None and validated_data['credit'] is not None:
+            if validated_data['credit'] < adaptation_class.credit and validated_data['akts'] < adaptation_class.akts:
+                raise serializers.ValidationError(("Seçtiğiniz dersin kredi veya akts alanlarından biri alınan dersin kredi veya akts alanlarından birinden eşit veya büyük olmalı ve AKTS tam sayı olmalı.")) 
+           
         return validated_data
         
     def create(self, validated_data):
