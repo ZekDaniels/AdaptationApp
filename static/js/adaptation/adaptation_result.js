@@ -165,10 +165,10 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
         "name":"confirmation",
         "data": "adaptation_class.code",
         "render": function ( data, type, row ) {
-          if(row.confirmation.exists)
+          if(row.confirmation)
           return `<span class="badge badge-success">Onaylandı</span>`;
           else 
-          return `<span class="badge badge-danger">Reddedildi</span>`;
+          return `<span class="badge badge-warning">Beklemede</span>`;
         }
       },
     ],

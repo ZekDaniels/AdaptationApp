@@ -172,7 +172,7 @@ class StudentClassListSerializer(serializers.ModelSerializer):
     confirmation = SerializerMethodField(source='get_confirmation', read_only=True)
 
     def get_confirmation(self, obj):
-        return obj.get_confirmation()
+        return obj.adaptation.is_confirmated
     
     def get_max_grade(self, obj):
         return obj.get_max_grade()

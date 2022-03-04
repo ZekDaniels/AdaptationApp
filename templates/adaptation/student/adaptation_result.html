@@ -30,12 +30,12 @@
                     {% csrf_token %}
                     <div class="row">
 
-                        {% for field in adaptation_result_note_form %}
-                        <div class="form-group col-lg-11 mx-auto">
+                        {% for field in disable_adaptation_form %}
+                        <div class="form-group col-lg-4">
                             <label>{{field.label}}</label>
                             {{ field }}
                             {{ field.errors }}
-                        </div>  
+                        </div>
                         {% endfor %}
 
                     </div>
@@ -45,18 +45,23 @@
             <div class="card-footer">
                 <div class="row p-3">     
                     <div class="ml-auto">
-                        <button type="" id="download_basic_pdf_button" class="btn btn-success btn-icon-split" {% if not adaptation|is_confirmated_all %}disabled{% endif %}>
-                            <span class="icon text-white-50">
-                                <i class="fas fa-download"></i>
-                            </span>
-                            <span class="text">Form03 PDF'i indir</span>
-                        </button>
-                        <button type="" id="download_compplex_pdf_button" class="btn btn-success btn-icon-split" {% if not adaptation|is_confirmated_all %}disabled{% endif %}>
-                            <span class="icon text-white-50">
-                                <i class="fas fa-download"></i>
-                            </span>
-                            <span class="text">Form107 PDF'i indir</span>
-                        </button>
+                        <a href="{% url 'adaptation:adaptation_basic_pdf_admin' adaptation.id %}">
+                            <button type="" id="download_basic_pdf_button" class="btn btn-success btn-icon-split" {% if not adaptation.is_closed %}disabled{% endif %}>
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-download"></i>
+                                </span>
+                                <span class="text">Form03 PDF'i indir</span>
+                            </button>
+                        </a>
+                        <a href="{% url 'adaptation:adaptation_complex_pdf_admin' adaptation.id %}">
+                            <button type="" id="download_compplex_pdf_button" class="btn btn-success btn-icon-split" {% if not adaptation.is_confirmated %}disabled{% endif %}>
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-download"></i>
+                                </span>
+                                <span class="text">Form107 PDF'i indir</span>
+                            </button>
+                        </a>
+
                     </div>   
                 </div>               
             </div>             

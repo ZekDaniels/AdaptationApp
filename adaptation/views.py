@@ -104,13 +104,14 @@ class AdaptationResultView(LoginRequiredMixin, View):
             adaptation = get_object_or_404(Adaptation, pk=pk)
 
 
-
+        disable_adaptation_form = DisableAdaptationForm(instance=adaptation)
         disable_student_class_form = DisableStudentClassForm(user=request.user)
         disable_adaptation_class_form = DisableAdaptationClassForm(user=request.user)
         adaptation_result_note_form = DisableAdaptationResultNoteForm(instance=adaptation)
 
         context = {
             "adaptation": adaptation,
+            'disable_adaptation_form': disable_adaptation_form,
             'disable_student_class_form': disable_student_class_form,
             'disable_adaptation_class_form': disable_adaptation_class_form,
             'adaptation_result_note_form': adaptation_result_note_form,
@@ -126,7 +127,7 @@ class AdaptationBasicPDFView(LoginRequiredMixin, View):
         else:
             adaptation = get_object_or_404(Adaptation, pk=pk)
             
-        if adaptation.is_closed and adaptation.is_confirmated: 
+        if adaptation.is_closed: 
 
             response = render_to_pdf("adaptation/pdf/adaptation_basic/adaptation_basic.html", {
                 'adaptation': adaptation,
