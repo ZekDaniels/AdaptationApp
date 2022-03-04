@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
@@ -127,6 +128,8 @@ class AdapatationClass(models.Model):
 
     credit = models.FloatField("Kredi")
     akts = models.PositiveIntegerField("AKTS")
+    link = models.URLField("Ders İçeriği Linki", max_length=500, default="https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans")
+
     education_time = models.CharField("Öğretim", max_length=3, default="n.ö", choices=EDUCATION_TIME_CHOICES)
     is_active = models.BooleanField(("Aktif mi?"), default=True)
 
@@ -170,6 +173,7 @@ class StudentClass(models.Model):
     grade = models.FloatField("Not", choices=GRADE_CHOICES, default=2.0)
     adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
 
+    link = models.URLField("Ders İçeriği Linki", max_length=500, null=True, blank=True)
     turkish_content = models.TextField("Türkçe İçerik")
 
     adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
@@ -182,7 +186,7 @@ class StudentClass(models.Model):
     
     
     def get_max_grade(self):
-        candidate_classes = StudentClass.objects.filter(adaptation_class=self.adaptation_class)
+        candidate_classes = self.adaptation.student_classes.filter(adaptation_class=self.adaptation_class)
         candidate_classes.aggregate(Max('grade'))
         max_grade_class = candidate_classes.order_by('-grade').first()
         return max_grade_class.get_grade_display()
