@@ -330,7 +330,17 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
         "render": function ( data, type, row ) {
           return `
           <div class="row">
-          <button class='btn compare_class_button p-0 mx-auto'  data-toggle="modal" data-target="#compareClassModal" data-id="${data.id}"><i class='text-warning fas fa-copy'></i></button>
+          <button class='btn compare_class_button p-0 mx-auto'  data-toggle="modal" data-target="#compareClassModal" data-id="${data.id}"><i class='text-secondary fas fa-copy'></i></button>
+          <a href="${data.link}" target="_blank" class='btn compare_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-primary fas fa-link'></i></a>
+          </div>
+          `;
+        }
+      },
+      {
+        "data": null,
+        "render": function ( data, type, row ) {
+          return `
+          <div class="row">
           <button class='btn update_class_button p-0 mx-auto'  data-toggle="modal" data-target="#addClassModal" data-id="${data.id}"><i class='text-warning fas fa-edit'></i></button>
           <button class='btn delete_class_button p-0 mx-auto' data-id="${data.id}"><i class='text-danger fas fa-trash'></i></button>
           </div>
@@ -513,6 +523,11 @@ function FillDataCompareClassModal(_data) {
     $(`.table-compare #id_${key}_adaptation_class`).val(value);
   });
   $(`#id_adaptation_class`).val(_data.adaptation_class.id);
+  $(`#sc_content_link`).html(_data.link);
+  $(`#sc_content_link`).prop("href", _data.link);
+  if (_data.link) $(`#sc_content_link_label`).removeClass("d-none");
+  else $(`#sc_content_link_label`).addClass("d-none");
+  
 }
 
 $(activate_button).on("click", function(){

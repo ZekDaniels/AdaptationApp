@@ -143,16 +143,7 @@ function initializeStudentClassDatatables(_table, _student_classes_list_api_url,
       {
         "data": "class_name"
       },    
-      {
-        "data": null,
-        "render": function ( data, type, row ) {
-            return `
-            <div class="row">
-             <button class='btn btn-primary compare_class_button mx-auto'  data-toggle="modal" data-target="#compareClassModal" data-id="${data.id}">Karşılaştır</button>
-            </div>
-          `;
-        }
-      },
+
       {
         "name":"code",
         "data": "adaptation_class.code"

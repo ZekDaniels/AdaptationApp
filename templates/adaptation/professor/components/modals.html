@@ -220,11 +220,14 @@
                       <td class="border border-dark">
                         {% for field in disable_student_class_form %}
         
-                        <div
-                          class="form-group col-lg-12 mx-auto mb-2"
-                        >
-                          <label>{{field.label}}</label>
+                        <div class="form-group col-lg-12 mx-auto mb-2">
+                          <label {% if field.name == 'link' %} id="sc_content_link_label" class="d-none" {% endif %}>{{field.label}}</label>
+                          
+                          {% if field.name == 'link' %}
+                          <p><a id="sc_content_link" href="{{field.value}}" target="_blank">{{field.value}}</a></p>
+                          {% else %}
                           {{ field }}
+                          {% endif %}                          
                         </div>
                         
           
@@ -235,11 +238,15 @@
                       <td class="border border-dark">
                         {% for field in disable_adaptation_class_form %}
         
-                        <div
-                          class="form-group col-lg-12 mx-auto mb-2"
-                        >
+                        <div class="form-group col-lg-12 mx-auto mb-2">
                           <label>{{field.label}}</label>
+                          
+                          {% if field.name == 'link' %}
+                          <p><a href="{{field.value}}" target="_blank">{{field.value}}</a></p>
+                          {% else %}
                           {{ field }}
+                          {% endif %}
+                            
                         </div>
           
                         {% endfor %}
