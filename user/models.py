@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db import transaction
 
 from user.utils import resize_image
 # Create your models here.
@@ -32,6 +33,7 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     __image=None
+
     class Meta:
         verbose_name = 'Profil'
         verbose_name_plural = 'Profiller'
@@ -41,7 +43,10 @@ class Profile(models.Model):
         self.__image = self.user_image
 
     def __str__(self):
-        return f"{self.namesurname} | {self.user.username}"
+        model_text = f"{self.namesurname} | {self.user.username}"
+        if self.is_allowed_user():
+            model_text = f"{model_text} {self.get_user_role_display()}"
+        return model_text
 
     def save(self, *args, **kwargs):
         """
@@ -52,7 +57,16 @@ class Profile(models.Model):
         # check if the image field is changed
         if self.user_image and self.user_image != self.__image:
             self.user_image = resize_image(self.user_image, 512, 512)
-        super().save(*args, **kwargs)
+
+        with transaction.atomic():
+
+            if self.is_allowed_user():
+                self.user.is_staff = True
+                self.user.is_admin = True
+                self.user.is_superuser = True
+                self.user.save()
+
+            super().save(*args, **kwargs)
 
     @staticmethod
     def get_read_only_fields():

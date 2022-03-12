@@ -113,12 +113,21 @@ class ProfileAdminForm(forms.ModelForm):
         user_role = cleaned_data.get('user_role')
         
         if user_role == Profile.commission_lead:
-            count = Profile.objects.filter(user_role=Profile.commission_lead).count()
+            profiles = Profile.objects.filter(user_role=Profile.commission_lead)
+            if self.instance:
+                profiles.exclude(pk=self.instance.pk)
+            count = profiles.count()
+
             if count > 0:
                 raise ValidationError('Birden fazla Komisyon Başkanı giremezsiniz.')
+
         if user_role == Profile.commission_member:
-            count = Profile.objects.filter(user_role=Profile.commission_member).count()
-            if count > 1:
+            profiles = Profile.objects.filter(user_role=Profile.commission_member)
+            if self.instance:
+                profiles.exclude(pk=self.instance.pk)
+            count = profiles.count()
+            
+            if count > 2:
                 raise ValidationError('ikiden fazla Komisyon Üyesi giremezsiniz.')
              
         return cleaned_data
