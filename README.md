@@ -33,7 +33,7 @@
 
       python manage.py makemigrations
       python manage.py migrate
-      python manage.py loaddata university faculty science
+      python manage.py loaddata university faculty science adaptation_class
       python manage.py createsuperuser
       python manage.py runserver
 - If you encountered any problem during the instructions, please restart from top

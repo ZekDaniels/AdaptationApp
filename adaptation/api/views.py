@@ -125,6 +125,13 @@ class AdaptationAdminUpdateAPIView(generics.UpdateAPIView):
     queryset = Adaptation.objects.all()   
     serializer_class = AdaptationAdminUpdateSerializer
 
+class AdaptationClassListAPIView(QueryListAPIView):
+
+    queryset = AdapatationClass.objects.all()
+    serializer_class = AdaptationClassListSerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = '__all__'
+
 class AdaptationClassDetailAPIView(generics.RetrieveAPIView):
 
     queryset = AdapatationClass.objects.all() 

@@ -10,6 +10,7 @@ urlpatterns = [
      path('adaptation/admin/<int:pk>', AdaptationAdminUpdateAPIView.as_view(), name="adaptation_admin_update_api"),
      path('adaptation/<int:pk>/closed', AdaptationClosedUpdateAPIView.as_view(), name="adaptation_closed_api"),
      
+     path('adaptation_classes_list', AdaptationClassListAPIView.as_view(), name="adaptation_classes_list_api"),
      path('adaptation_class/<int:pk>', AdaptationClassDetailAPIView.as_view(), name="adaptation_class_detail_api"),
      
      path('adaptation_class_confirmation', AdaptationClassConfirmationCreateAPIView.as_view(), name="adaptation_class_confirmation_api"),

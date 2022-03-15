@@ -1,0 +1,3002 @@
+[
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 11,
+    "fields": {
+      "code": "3301154",
+      "class_name": "ATATÜRK İLKELERİ ve İNKILAP TARİHİ-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Osmanlı imparatorluğunun son yıllarındaki savaşları, antlaşmalar, konferanslar ve bunların iş ve dış sebepleri. Yapılan işgaller ve bunlara\r\ngösterilen reaksiyonlar. Osmanlının son dönemlerinde meydana gelen olaylar, bunların sebepleri ve sonuçları. I. Dünya Savaşı ve Türk milletine\r\netkileri. Meclisin kuruluşu ve yapmış olduğu faaliyetler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 12,
+    "fields": {
+      "code": "3311154",
+      "class_name": "ATATÜRK İLKELERİ ve İNKILAP TARİHİ-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Osmanlı imparatorluğunun son yıllarındaki savaşları, antlaşmalar, konferanslar ve bunların iş ve dış sebepleri. Yapılan işgaller ve bunlara\r\ngösterilen reaksiyonlar. Osmanlının son dönemlerinde meydana gelen olaylar, bunların sebepleri ve sonuçları. I. Dünya Savaşı ve Türk milletine\r\netkileri. Meclisin kuruluşu ve yapmış olduğu faaliyetler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 15,
+    "fields": {
+      "code": "3301156",
+      "class_name": "BİLGİSAYAR MÜHENDİSLİĞİNE GİRİŞ",
+      "semester": 1,
+      "credit": 3.0,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayarın gelişimi ve bilgisayar mühendisliğinin genel tanıtımı. Bilgi Teknolojilerine ait temel kavramların tanıtımı. Bilgisayarın Temel\r\nBileşenlerinin tanıtımı. Sayı sistemleri hakkında bilgiler. Sayı sistemleri ile aritmetiksel işlemler ve sistemler arası dönüşümler. Programlama\r\nDilleri. İşletim Sistemleri. Bilgisayar Ağları. İnternet ve Web Teknolojileri. Mühendislik uygulamalarında etik, müşteriye ve işverene karşı mesleki\r\nsorumluluk, etik kuralları, kanuni zorunluluklar kapsamında etik kavramları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 16,
+    "fields": {
+      "code": "3311156",
+      "class_name": "BİLGİSAYAR MÜHENDİSLİĞİNE GİRİŞ",
+      "semester": 1,
+      "credit": 3.0,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayarın gelişimi ve bilgisayar mühendisliğinin genel tanıtımı. Bilgi Teknolojilerine ait temel kavramların tanıtımı. Bilgisayarın Temel\r\nBileşenlerinin tanıtımı. Sayı sistemleri hakkında bilgiler. Sayı sistemleri ile aritmetiksel işlemler ve sistemler arası dönüşümler. Programlama\r\nDilleri. İşletim Sistemleri. Bilgisayar Ağları. İnternet ve Web Teknolojileri. Mühendislik uygulamalarında etik, müşteriye ve işverene karşı mesleki\r\nsorumluluk, etik kuralları, kanuni zorunluluklar kapsamında etik kavramları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 7,
+    "fields": {
+      "code": "3301152",
+      "class_name": "FİZİK -1",
+      "semester": 1,
+      "credit": 3.5,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Fizik ve ölçme, boyut analizi ile formüllerin test edilmesi. Bir boyutta hareket, yer değiştirme hız ve sürat kavramları. Ani hız ve sürat. Bir boyuıtta\r\nsabit ivmeli hareket. Vektörler, vektörel ve skaler nicelikler. İki boyutta hareket ve düzlemde hareket örnekler: yatay ve eğik atış hareketleri.\r\nHareket kanunları: Newton un I. II. Ve III kanunu ve bir boyutta ve düzlemde hareket örnekleri. Sürtünme kuvveti tanımı, özellikleri ve 1&2\r\nboyutta hareketlerde sürtünmeli yüzeylerde örnek problemler. İş ve kinetik enerji: Sabit ve değişken kuvvetlerin iş hesabı. Potansiyel enerji ve\r\nenerji korunumu. Korunumlu ve korunumsuz kuvvetler, mekanik enerji korunumu. Korunumsuz kuvvetlerin yaptığı iş. Katı cismin sabit bir eksen\r\nüzerinde dönmesi: Dönme kinematiği ve dönme enerjisi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 8,
+    "fields": {
+      "code": "3311152",
+      "class_name": "FİZİK -1",
+      "semester": 1,
+      "credit": 3.5,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Fizik ve ölçme, boyut analizi ile formüllerin test edilmesi. Bir boyutta hareket, yer değiştirme hız ve sürat kavramları. Ani hız ve sürat. Bir boyuıtta\r\nsabit ivmeli hareket. Vektörler, vektörel ve skaler nicelikler. İki boyutta hareket ve düzlemde hareket örnekler: yatay ve eğik atış hareketleri.\r\nHareket kanunları: Newton un I. II. Ve III kanunu ve bir boyutta ve düzlemde hareket örnekleri. Sürtünme kuvveti tanımı, özellikleri ve 1&2\r\nboyutta hareketlerde sürtünmeli yüzeylerde örnek problemler. İş ve kinetik enerji: Sabit ve değişken kuvvetlerin iş hesabı. Potansiyel enerji ve\r\nenerji korunumu. Korunumlu ve korunumsuz kuvvetler, mekanik enerji korunumu. Korunumsuz kuvvetlerin yaptığı iş. Katı cismin sabit bir eksen\r\nüzerinde dönmesi: Dönme kinematiği ve dönme enerjisi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 17,
+    "fields": {
+      "code": "3301157",
+      "class_name": "İŞ SAĞLIĞI VE GÜVENLİĞİ-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İşçi sağlığı ve iş güvenliğinin tarihi gelişimi. Genel bilgiler. İş güvenliği kavramı. İş kazalarının tanımı, nedenleri ve önleme yöntemleri. İş güvenliği\r\nçalışmalarının iş gücü verimliliği açısından önemi. İş güvenliği çalışmalarının ekonomik açıdan önemi. İş kazalarının oluşumu ve\r\nsınıflandırılması. Tehlikeler ve tehlike çeşitleri. Kaza araştırmalarında yöntem ve çözümler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 18,
+    "fields": {
+      "code": "3311157",
+      "class_name": "İŞ SAĞLIĞI VE GÜVENLİĞİ-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İşçi sağlığı ve iş güvenliğinin tarihi gelişimi. Genel bilgiler. İş güvenliği kavramı. İş kazalarının tanımı, nedenleri ve önleme yöntemleri. İş güvenliği\r\nçalışmalarının iş gücü verimliliği açısından önemi. İş güvenliği çalışmalarının ekonomik açıdan önemi. İş kazalarının oluşumu ve\r\nsınıflandırılması. Tehlikeler ve tehlike çeşitleri. Kaza araştırmalarında yöntem ve çözümler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 19,
+    "fields": {
+      "code": "3301158",
+      "class_name": "LİNEER CEBİR",
+      "semester": 1,
+      "credit": 3.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Matrisler, matris çarpımı, matris işlemlerinin cebirsel özellikleri. Bir matrisin eşelon şekli, elementer satır ve sütun işlemleri. Rank Kavramı ve\r\nelementer satır işlemleri (e.s.i.) yardımıyla Lineer denklem sistemlerinin(l.d.s.)) çözümlerinin analizi. N=PAQ ve A=LU ayrışımı ve l.d.s. ne\r\nuygulanması. Determinantlar ve özellikleri, kofaktör açılımı. Gauss eliminasyon yöntemi ile determinant hesabı. Matris tersleri. Vektörler, Vektör\r\nuzayları, germe, lineer bağımsızlık. Vektör uzaylarında taban ve boyut. İç çarpım uzayları. Lineer denklem sistemleri. Lineer dönüşümler.\r\nÖzdeğer ve özvektörler. Köşegenleştirme ve benzer matrisler. Simetrik matrislerin köşegenleştirilmesi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 20,
+    "fields": {
+      "code": "3311158",
+      "class_name": "LİNEER CEBİR",
+      "semester": 1,
+      "credit": 3.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Matrisler, matris çarpımı, matris işlemlerinin cebirsel özellikleri. Bir matrisin eşelon şekli, elementer satır ve sütun işlemleri. Rank Kavramı ve\r\nelementer satır işlemleri (e.s.i.) yardımıyla Lineer denklem sistemlerinin(l.d.s.)) çözümlerinin analizi. N=PAQ ve A=LU ayrışımı ve l.d.s. ne\r\nuygulanması. Determinantlar ve özellikleri, kofaktör açılımı. Gauss eliminasyon yöntemi ile determinant hesabı. Matris tersleri. Vektörler, Vektör\r\nuzayları, germe, lineer bağımsızlık. Vektör uzaylarında taban ve boyut. İç çarpım uzayları. Lineer denklem sistemleri. Lineer dönüşümler.\r\nÖzdeğer ve özvektörler. Köşegenleştirme ve benzer matrisler. Simetrik matrislerin köşegenleştirilmesi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 21,
+    "fields": {
+      "code": "3301151",
+      "class_name": "MATEMATİK-1",
+      "semester": 1,
+      "credit": 4.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Fonksiyonlar. Fonksiyon Çeşitleri: Üstel, Logaritmik Fonksiyonlar ve Parçalı fonksiyonlar. Limitler ve Süreklilik. Türev. Rolle ve Ortalama Değer\r\nTürevleri. Yüksek Dereceden Türevler. Türev İçin Leibnitz Formülü. LHospital Kuralı. Asimptotlar. Çok Değişkenli Fonksiyonlar. Çok Değişkenli\r\nFonksiyonların Türevleri. Kısmi Türev Kavramı. Diferansiyel. Belirsiz İntegral. İntegralde değişken dönüşümü. Kısımlara Ayırma Yöntemi. Belirli\r\nIntregral. İntegralde Alan. Değişken Dönüşümü ve Eğriler Arasındaki Alanlar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 22,
+    "fields": {
+      "code": "3311151",
+      "class_name": "MATEMATİK-1",
+      "semester": 1,
+      "credit": 4.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Fonksiyonlar. Fonksiyon Çeşitleri: Üstel, Logaritmik Fonksiyonlar ve Parçalı fonksiyonlar. Limitler ve Süreklilik. Türev. Rolle ve Ortalama Değer\r\nTürevleri. Yüksek Dereceden Türevler. Türev İçin Leibnitz Formülü. LHospital Kuralı. Asimptotlar. Çok Değişkenli Fonksiyonlar. Çok Değişkenli\r\nFonksiyonların Türevleri. Kısmi Türev Kavramı. Diferansiyel. Belirsiz İntegral. İntegralde değişken dönüşümü. Kısımlara Ayırma Yöntemi. Belirli\r\nIntregral. İntegralde Alan. Değişken Dönüşümü ve Eğriler Arasındaki Alanlar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 9,
+    "fields": {
+      "code": "3301153",
+      "class_name": "TÜRK DİLİ-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Dil nedir? Dilin sosyal bir kurum olarak millet hayatındaki yeri önemi, dil-kültür ilişkisi. Türk dilinin gelişim evreleri. Yayılma alanları ve bugünkü\r\ndurumu. Türkçede sesler ve ses özellikleri, İmla ve noktalama. Yazılı anlatım. Kompozisyonla ilgili bilgiler (Konu, buluş, düşünme, plan, paragraf\r\nvb)."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 10,
+    "fields": {
+      "code": "3311153",
+      "class_name": "TÜRK DİLİ-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Dil nedir? Dilin sosyal bir kurum olarak millet hayatındaki yeri önemi, dil-kültür ilişkisi. Türk dilinin gelişim evreleri. Yayılma alanları ve bugünkü\r\ndurumu. Türkçede sesler ve ses özellikleri, İmla ve noktalama. Yazılı anlatım. Kompozisyonla ilgili bilgiler (Konu, buluş, düşünme, plan, paragraf\r\nvb)."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 13,
+    "fields": {
+      "code": "3301155",
+      "class_name": "YABANCI DİL-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Selamlaşma, isimler, yaşlar. Numaralar, günler, aylar ve mevsimler. Wh soruları. Günlük alışkanlıklar, fikirler, düşünceler. Propositions. Takvim\r\nve planlama. Yetenekler, yapabilme, edebilme. Soy ağacı. Possessive Pronouns. Aile üyeleri. Must, mustn’t, don’t, doesn’t kuralları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 14,
+    "fields": {
+      "code": "3311155",
+      "class_name": "YABANCI DİL-1",
+      "semester": 1,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Selamlaşma, isimler, yaşlar. Numaralar, günler, aylar ve mevsimler. Wh soruları. Günlük alışkanlıklar, fikirler, düşünceler. Propositions. Takvim\r\nve planlama. Yetenekler, yapabilme, edebilme. Soy ağacı. Possessive Pronouns. Aile üyeleri. Must, mustn’t, don’t, doesn’t kuralları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 29,
+    "fields": {
+      "code": "3301254",
+      "class_name": "ATATÜRK İLKELERİ ve İNKİLAP TARİHİ-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Siyasi alanda yapılan inkilaplar. Hukuk alanındaki gelişmeler. Çok partili hayata geçiş. Türkiye’nin Nato’ya girişi. Türkiye’de iç siyasi gelişmeler.\r\nTürkiye’nin dış politikası. Soğuk savaş süreci. Avrupa birliği ile gelişmeler. Kıbrıs Barış Harekatı.Türkiye’nin komşularıyla münasebetleri.\r\nTürkiye’nin jeopolitik konumu ve bundan kaynaklanan tehditler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 30,
+    "fields": {
+      "code": "3311254",
+      "class_name": "ATATÜRK İLKELERİ ve İNKİLAP TARİHİ-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Siyasi alanda yapılan inkilaplar. Hukuk alanındaki gelişmeler. Çok partili hayata geçiş. Türkiye’nin Nato’ya girişi. Türkiye’de iç siyasi gelişmeler.\r\nTürkiye’nin dış politikası. Soğuk savaş süreci. Avrupa birliği ile gelişmeler. Kıbrıs Barış Harekatı.Türkiye’nin komşularıyla münasebetleri.\r\nTürkiye’nin jeopolitik konumu ve bundan kaynaklanan tehditler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 35,
+    "fields": {
+      "code": "3301258",
+      "class_name": "AYRIK MATEMATİK",
+      "semester": 2,
+      "credit": 3.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Önerme Mantığı. Doğruluk Tabloları. Totoloji ve Çelişki. Boole Cebri. Önermeler Cebri. Kümeler. Küme Cebiri. Sayma Teknikleri. Bağıntılar ve\r\nGösterimleri. Fonksiyonlar. Ters Fonksiyonlar. İkili İşlemler ve özellikleri. Tümevarım. Özyineleme ve özyinelemeli ilişkiler. Düzlemsel graflar.\r\nAğaçlar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 36,
+    "fields": {
+      "code": "3311258",
+      "class_name": "AYRIK MATEMATİK",
+      "semester": 2,
+      "credit": 3.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Önerme Mantığı. Doğruluk Tabloları. Totoloji ve Çelişki. Boole Cebri. Önermeler Cebri. Kümeler. Küme Cebiri. Sayma Teknikleri. Bağıntılar ve\r\nGösterimleri. Fonksiyonlar. Ters Fonksiyonlar. İkili İşlemler ve özellikleri. Tümevarım. Özyineleme ve özyinelemeli ilişkiler. Düzlemsel graflar.\r\nAğaçlar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 25,
+    "fields": {
+      "code": "3301252",
+      "class_name": "FİZİK-2",
+      "semester": 2,
+      "credit": 3.5,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Yük ve madde konuları, Elektrik alanı tanıtımı ve Gauss kanunu eşliğinde uygulamalar. Elektrik potansiyeli, Kapasitörler, dielektrik, akım ve\r\ndirenç. Manyetik alan, amper kanunu-manyetik alan bağıntısı, Faraday kanunu, indüktans. Maddenin manyetik özellikleri, alternatif akımlar.\r\nMaxwell denklemleri ve Elektromanyetik dalgalar"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 26,
+    "fields": {
+      "code": "3311252",
+      "class_name": "FİZİK-2",
+      "semester": 2,
+      "credit": 3.5,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Yük ve madde konuları, Elektrik alanı tanıtımı ve Gauss kanunu eşliğinde uygulamalar. Elektrik potansiyeli, Kapasitörler, dielektrik, akım ve\r\ndirenç. Manyetik alan, amper kanunu-manyetik alan bağıntısı, Faraday kanunu, indüktans. Maddenin manyetik özellikleri, alternatif akımlar.\r\nMaxwell denklemleri ve Elektromanyetik dalgalar"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 33,
+    "fields": {
+      "code": "3301257",
+      "class_name": "İŞ SAĞLIĞI VE GÜVENLİĞİ-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İş Sağlığı ve Güvenliği Hukuku. Risk Yönetimi ve Değerlendirmesi. Endüstriyel Hijyen ve Ortam Gözetimi. Endüstriyel Ergonomi. Risk Etmenleri.\r\nÖrgütsel Davranış ve Çalışma Psikolojisi. İş Sağlığı ve Güvenliğinde Uygulamalı İstatistik. İş Kollarına Özel Sağlık ve Güvenlik. İSG Alanında\r\nÖzel Konular I-IX."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 34,
+    "fields": {
+      "code": "3311257",
+      "class_name": "İŞ SAĞLIĞI VE GÜVENLİĞİ-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İş Sağlığı ve Güvenliği Hukuku. Risk Yönetimi ve Değerlendirmesi. Endüstriyel Hijyen ve Ortam Gözetimi. Endüstriyel Ergonomi. Risk Etmenleri.\r\nÖrgütsel Davranış ve Çalışma Psikolojisi. İş Sağlığı ve Güvenliğinde Uygulamalı İstatistik. İş Kollarına Özel Sağlık ve Güvenlik. İSG Alanında\r\nÖzel Konular I-IX."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 23,
+    "fields": {
+      "code": "3301251",
+      "class_name": "MATEMATİK-2",
+      "semester": 2,
+      "credit": 4.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Belirli İntegralin Uygulamaları Dik-Kesitler kullanarak (Dilimleyerek) Hacim Bulmak, Silindirik Kabuklarla Hacim Bulmak, Yay Uzunluğu. Çok\r\nKatlı İntegral ve Uygulamaları. Dizi ve Seri Kavramları. Serilerde Yakınsama Özellikleri. Sonsuz Diziler, Sonsuz Seriler, İntegral Testi,\r\nKarşılaştırma Testleri, Oran ve Kök Testleri. Alterne Seriler, Mutlak ve Şartlı Yakınsaklık, Fonksiyonların Serilere Açılımı. Kuvvet Serileri, Taylor\r\nve Maclaurin Serileri, Taylor Serisinin Yakınsaklığı, Binom Serisi ve Taylor Serilerinin Uygulamaları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 24,
+    "fields": {
+      "code": "3311251",
+      "class_name": "MATEMATİK-2",
+      "semester": 2,
+      "credit": 4.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Belirli İntegralin Uygulamaları Dik-Kesitler kullanarak (Dilimleyerek) Hacim Bulmak, Silindirik Kabuklarla Hacim Bulmak, Yay Uzunluğu. Çok\r\nKatlı İntegral ve Uygulamaları. Dizi ve Seri Kavramları. Serilerde Yakınsama Özellikleri. Sonsuz Diziler, Sonsuz Seriler, İntegral Testi,\r\nKarşılaştırma Testleri, Oran ve Kök Testleri. Alterne Seriler, Mutlak ve Şartlı Yakınsaklık, Fonksiyonların Serilere Açılımı. Kuvvet Serileri, Taylor\r\nve Maclaurin Serileri, Taylor Serisinin Yakınsaklığı, Binom Serisi ve Taylor Serilerinin Uygulamaları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 5,
+    "fields": {
+      "code": "3301256",
+      "class_name": "PROGRAMLAMA DİLİ-1",
+      "semester": 2,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "C++ programlama dilinin tarihçesi ve sürümleri. C++ programının temel yapısı, veri tipleri. Değişkenler, operatörler ve sabitler. Program kontrol\r\nyapıları (if else, for, while, do-while, switch-case). Standard C++ kütüphanesi. Önişlemci yönergeleri. C tipi diziler ve stringler. Fonksiyon\r\nprototipleri, fonksiyonların aşırı yüklenmesi ve özyinelemeli fonksiyonlar. Dosya okuma ve yazma operasyonları. Dinamik bellek kullanımı ve\r\nyönetimi. İşaretçiler, bellek adresleri ve referanslar. Sınıf yapısı, yapıcılar ve yıkıcılar, üye fonksiyonlar ve operatörlerin aşırı yüklenmesi. C++\r\ndizi ve string sınıfları. Standard şablon kütüphanesi. Konteyner sınıfları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 6,
+    "fields": {
+      "code": "3311256",
+      "class_name": "PROGRAMLAMA DİLİ-1",
+      "semester": 2,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "C++ programlama dilinin tarihçesi ve sürümleri. C++ programının temel yapısı, veri tipleri. Değişkenler, operatörler ve sabitler. Program kontrol\r\nyapıları (if else, for, while, do-while, switch-case). Standard C++ kütüphanesi. Önişlemci yönergeleri. C tipi diziler ve stringler. Fonksiyon\r\nprototipleri, fonksiyonların aşırı yüklenmesi ve özyinelemeli fonksiyonlar. Dosya okuma ve yazma operasyonları. Dinamik bellek kullanımı ve\r\nyönetimi. İşaretçiler, bellek adresleri ve referanslar. Sınıf yapısı, yapıcılar ve yıkıcılar, üye fonksiyonlar ve operatörlerin aşırı yüklenmesi. C++\r\ndizi ve string sınıfları. Standard şablon kütüphanesi. Konteyner sınıfları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 27,
+    "fields": {
+      "code": "3301253",
+      "class_name": "TÜRK DİLİ-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Cümle. Cümlenin unsurları. Uygulama. Cümle ve anlatım bozuklukları. Yazılı kompozisyon türleri. Etkili konuşma tekniği ve uygulaması.\r\nEdebiyat ve düşünce dünyası ile ilgili örnek metinlerin okunması ve incelenmesi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 28,
+    "fields": {
+      "code": "3311253",
+      "class_name": "TÜRK DİLİ-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Cümle. Cümlenin unsurları. Uygulama. Cümle ve anlatım bozuklukları. Yazılı kompozisyon türleri. Etkili konuşma tekniği ve uygulaması.\r\nEdebiyat ve düşünce dünyası ile ilgili örnek metinlerin okunması ve incelenmesi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 31,
+    "fields": {
+      "code": "3301255",
+      "class_name": "YABANCI DİL-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Sıfatlar ve zarflar ile karşılaştırmalar. To be going to. The Present Perfect Tense. The Past Continuous Tense."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 32,
+    "fields": {
+      "code": "3311255",
+      "class_name": "YABANCI DİL-2",
+      "semester": 2,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Sıfatlar ve zarflar ile karşılaştırmalar. To be going to. The Present Perfect Tense. The Past Continuous Tense."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 45,
+    "fields": {
+      "code": "3301355",
+      "class_name": "ELEKTRONİK DEVRE ELEMANLARI VE ÖLÇME",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Elektrik devresi, akım, gerilim, güç ve enerji kavramları. Direnç yapısı ve çeşitleri, renk kodları. Direnç bağlantıları, paralel-seri-karışık bağlantı.\r\nOhm-Kirşof kanunu. Çevre akımları yöntemi ile devre analizi. Düğüm gerilimleri yöntemi ile devre analizi. Çevre akımları ve düğüm gerilimleri\r\nyöntemi ile ilgili örnek problem çözümü. Thevenin ve norton teoremleri. Kondansatör yapısı ve çeşitleri, paralel-seri bağlantıları. Bobin yapısı\r\nve çeşitleri, paralel-seri bağlantıları. RLC devreler. Diyotların yapısı, özellikleri, uygulamaları. Opampların yapısı, özellikleri, uygulamaları.\r\nTransistörün yapısı, polarması ve uygulamaları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 46,
+    "fields": {
+      "code": "3311355",
+      "class_name": "ELEKTRONİK DEVRE ELEMANLARI VE ÖLÇME",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Elektrik devresi, akım, gerilim, güç ve enerji kavramları. Direnç yapısı ve çeşitleri, renk kodları. Direnç bağlantıları, paralel-seri-karışık bağlantı.\r\nOhm-Kirşof kanunu. Çevre akımları yöntemi ile devre analizi. Düğüm gerilimleri yöntemi ile devre analizi. Çevre akımları ve düğüm gerilimleri\r\nyöntemi ile ilgili örnek problem çözümü. Thevenin ve norton teoremleri. Kondansatör yapısı ve çeşitleri, paralel-seri bağlantıları. Bobin yapısı\r\nve çeşitleri, paralel-seri bağlantıları. RLC devreler. Diyotların yapısı, özellikleri, uygulamaları. Opampların yapısı, özellikleri, uygulamaları.\r\nTransistörün yapısı, polarması ve uygulamaları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 49,
+    "fields": {
+      "code": "3301357",
+      "class_name": "İSTATİSTİK VE OLASILIK",
+      "semester": 3,
+      "credit": 3.0,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Olasılık teorisine giriş. Rastgele değişkenler, beklenti, varyans ve moment üreten fonksiyonlar. Dağılımlar: Bernoulli, binom, üniforma, Gauss,\r\nüstel, Poisson, gama. İstatistiksel kavramlara giriş. Örnekleme ve örnekleme istatistikleri. Nokta ve aralık kestirimi. Hipotez testi. Regresyon.\r\nRastgele değişken üretme, örnekleme ve kestirimin sayısal ve hesaplamalı yönleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 50,
+    "fields": {
+      "code": "3311357",
+      "class_name": "İSTATİSTİK VE OLASILIK",
+      "semester": 3,
+      "credit": 3.0,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Olasılık teorisine giriş. Rastgele değişkenler, beklenti, varyans ve moment üreten fonksiyonlar. Dağılımlar: Bernoulli, binom, üniforma, Gauss,\r\nüstel, Poisson, gama. İstatistiksel kavramlara giriş. Örnekleme ve örnekleme istatistikleri. Nokta ve aralık kestirimi. Hipotez testi. Regresyon.\r\nRastgele değişken üretme, örnekleme ve kestirimin sayısal ve hesaplamalı yönleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 39,
+    "fields": {
+      "code": "3301352",
+      "class_name": "İŞLETİM SİSTEMLERİ",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Sanal olarak Windows İşletim sistemi Kurma (ve MAC, IOS) .İşletim sisteminin yapısı ve dizinlerinin özellikleri. İşletim Sistemi ayarları ,\r\nkomutlar ve görevleri. Kullanıcı ayarları ve yetkileri ve tanımlamaları. Dosya sistemleri ve sürücüleri yönetmek (HDD, RAID,NAS). Grup ilkeleri\r\nve Yönetimi, DC kavramı ve yapısı. Ağ üzerinden dosya ve yazıcı paylaşımları. IIS Sunucu kurum ve yapısı yetkileri. Linux( ve Android) İşletim\r\nSistemi Kurulumu ve yapısı, dizin özellikleri. Kullanıcı ayarları ve yetkileri ve tanımlamaları. Apache kurumu ve yapısı yetkileri, MySQL kurulum\r\nve ayarları. Virüs, Trojen gibi zararlı içeriklerin temizlenmesi. İşletim Sistemi yedekleme ve bakım. İşletim Sistemi problem giderme."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 40,
+    "fields": {
+      "code": "3311352",
+      "class_name": "İŞLETİM SİSTEMLERİ",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Sanal olarak Windows İşletim sistemi Kurma (ve MAC, IOS) .İşletim sisteminin yapısı ve dizinlerinin özellikleri. İşletim Sistemi ayarları ,\r\nkomutlar ve görevleri. Kullanıcı ayarları ve yetkileri ve tanımlamaları. Dosya sistemleri ve sürücüleri yönetmek (HDD, RAID,NAS). Grup ilkeleri\r\nve Yönetimi, DC kavramı ve yapısı. Ağ üzerinden dosya ve yazıcı paylaşımları. IIS Sunucu kurum ve yapısı yetkileri. Linux( ve Android) İşletim\r\nSistemi Kurulumu ve yapısı, dizin özellikleri. Kullanıcı ayarları ve yetkileri ve tanımlamaları. Apache kurumu ve yapısı yetkileri, MySQL kurulum\r\nve ayarları. Virüs, Trojen gibi zararlı içeriklerin temizlenmesi. İşletim Sistemi yedekleme ve bakım. İşletim Sistemi problem giderme."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 42,
+    "fields": {
+      "code": "3301353",
+      "class_name": "MANTIK DEVRELERİ-1",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Analog ve sayısal kavramlar. İkili, sekizli, onlu, onaltılı sayı sistemleri ve dönüşümleri. Sayısal kodlar ve kodlama çeşitleri (BCD Kodu, Gray\r\nKodu, 3 Fazlalık Kodu). Boolean Cebri, De Morgan kuralı. Temel mantık kavramları; VE, VEYA, DEĞİL, özel mantık kapıları, kapıların yapısı.\r\nMantık fonksiyonlarının oluşturulması, tarifi, doğruluk tablosu. Karnaugh haritası (K-map) yöntemi ile fonksiyon sadeleştirme, K-map diyagramı\r\nçıkarılması, karnaugh haritaları ile lojik devrelerin tasarımı. Quine McCluskey Metodu ile fonksiyon sadeleştirme, asal implicantların bulunması,\r\nbelirsiz terimlerin kullanılması. Bileşik mantık devrelerinin genel yapısı, tasarımı. Kodlayıcılar, kod çözücüler, kod çeviriciler, Multiplexer ve\r\nDemultiplexer, karşılaştırıcılar ve aritmetik işlemlerle ilgili işlemler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 41,
+    "fields": {
+      "code": "3311353",
+      "class_name": "MANTIK DEVRELERİ-1",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Analog ve sayısal kavramlar. İkili, sekizli, onlu, onaltılı sayı sistemleri ve dönüşümleri. Sayısal kodlar ve kodlama çeşitleri (BCD Kodu, Gray\r\nKodu, 3 Fazlalık Kodu). Boolean Cebri, De Morgan kuralı. Temel mantık kavramları; VE, VEYA, DEĞİL, özel mantık kapıları, kapıların yapısı.\r\nMantık fonksiyonlarının oluşturulması, tarifi, doğruluk tablosu. Karnaugh haritası (K-map) yöntemi ile fonksiyon sadeleştirme, K-map diyagramı\r\nçıkarılması, karnaugh haritaları ile lojik devrelerin tasarımı. Quine McCluskey Metodu ile fonksiyon sadeleştirme, asal implicantların bulunması,\r\nbelirsiz terimlerin kullanılması. Bileşik mantık devrelerinin genel yapısı, tasarımı. Kodlayıcılar, kod çözücüler, kod çeviriciler, Multiplexer ve\r\nDemultiplexer, karşılaştırıcılar ve aritmetik işlemlerle ilgili işlemler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 37,
+    "fields": {
+      "code": "3301351",
+      "class_name": "NESNEYE YÖNELİK PROGRAMLAMA DİLİ",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Java Programlama Dilinin temelleri. Java dili elemanları. Operatörler ve ifadeler. Dallanma ifadeleri. Döngüler. Diziler. Metot tanımlama, metot\r\nparametreleri ve Java Uygulamaları. Nesneye Yönelik Programlama (NYP) Kavramı. Sınıf ve Nesne tanımlama ilkeleri. Java ile sınıf tanımlama.\r\nSınıf bileşenleri. Kurucu ve yıkıcı fonksiyonlar. Fonksiyon ve operatörlerin aşırı yüklenmesi. This operatörü. Set-get metotları. Üye değişkenler.\r\nÜye fonksiyonlar. Yapıcılar. Değişik sınıflar. Sanal fonksiyonların tanımlanması. Özet (abstract) fonksiyon. İstisnai durum yönetimi (exception\r\nhandling) ve I/O akışları. Paketleme (encapsulation). Kalıtım (interitance). Arayüzler (interface). Veri yapıları. Çok biçimlilik (polymorphism).\r\nUML diyagramları. Swing aracı. Thread. Nesneye Yönelik Programlama Dili ders içeriği destekli öğrencinin bu konuda kendini geliştirmesini\r\nsağlayacak uygulamalar ve projeler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 38,
+    "fields": {
+      "code": "3311351",
+      "class_name": "NESNEYE YÖNELİK PROGRAMLAMA DİLİ",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Java Programlama Dilinin temelleri. Java dili elemanları. Operatörler ve ifadeler. Dallanma ifadeleri. Döngüler. Diziler. Metot tanımlama, metot\r\nparametreleri ve Java Uygulamaları. Nesneye Yönelik Programlama (NYP) Kavramı. Sınıf ve Nesne tanımlama ilkeleri. Java ile sınıf tanımlama.\r\nSınıf bileşenleri. Kurucu ve yıkıcı fonksiyonlar. Fonksiyon ve operatörlerin aşırı yüklenmesi. This operatörü. Set-get metotları. Üye değişkenler.\r\nÜye fonksiyonlar. Yapıcılar. Değişik sınıflar. Sanal fonksiyonların tanımlanması. Özet (abstract) fonksiyon. İstisnai durum yönetimi (exception\r\nhandling) ve I/O akışları. Paketleme (encapsulation). Kalıtım (interitance). Arayüzler (interface). Veri yapıları. Çok biçimlilik (polymorphism).\r\nUML diyagramları. Swing aracı. Thread. Nesneye Yönelik Programlama Dili ders içeriği destekli öğrencinin bu konuda kendini geliştirmesini\r\nsağlayacak uygulamalar ve projeler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 47,
+    "fields": {
+      "code": "3301356",
+      "class_name": "SAYISAL YÖNTEMLER",
+      "semester": 3,
+      "credit": 3.0,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Hata analizi, doğrusal denklem çözümleri, Denklem sistemlerinin çözümü, doğrusal olmayan denklem çözümleri, enterpolasyon, eğri uydurma,\r\nintegrallarin sayısal hesaplanması yöntemleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 48,
+    "fields": {
+      "code": "3311356",
+      "class_name": "SAYISAL YÖNTEMLER",
+      "semester": 3,
+      "credit": 3.0,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Hata analizi, doğrusal denklem çözümleri, Denklem sistemlerinin çözümü, doğrusal olmayan denklem çözümleri, enterpolasyon, eğri uydurma,\r\nintegrallarin sayısal hesaplanması yöntemleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 43,
+    "fields": {
+      "code": "3301354",
+      "class_name": "VERİ YAPILARI VE UYGULAMALARI",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Veri yapılarının sınıflandırılması, algoritma ve karmaşıklığa giriş, Algoritma karmaşıklığının hesaplanması ve algoritma etkinliği, Rekürsif\r\nalgoritmalar, İşaretçi ve dinamik bellek kullanımı. Karakter veri gösterimi. Bağlantılı listeler ve bağlantılı liste uygulamaları. Yığın yapıları, dizi\r\nve bağlı liste şeklinde yığın yapıları, Yığın yapıları ile ilgili uygulamalar, Kuyruk yapıları, dairesel kuyruk yapısı, bağlı liste ile kuyruk yapıları,\r\nYığın tasarımı (FILO). Kuyruk tasarımı (FIFO). Ağaç türleri ve ağaç üzerindeki işlemler. İkili ağaçlar. Bağıntı ağaçları. Ağaç düğüm işlemleri.\r\nİkili Arama ağaçları, Ağaçların taranması, Dengeli ağaç yapıları. Sıralama algoritmaları; araya sokma sıralaması, seçmeli sıralama, kabarcık,\r\nbirleşmeli ve hızlı sıralama. Arama algoritmaları; ardışıl ve doğrusal arama, ikili arama, ağaç üzerinde ikili arama. Hashing tekniği ve\r\nuygulaması. Graf yapıları,yönlü graflar, graf algoritmaları. Doğru veri yapısı seçiminde stratejiler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 44,
+    "fields": {
+      "code": "3311354",
+      "class_name": "VERİ YAPILARI VE UYGULAMALARI",
+      "semester": 3,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Veri yapılarının sınıflandırılması, algoritma ve karmaşıklığa giriş, Algoritma karmaşıklığının hesaplanması ve algoritma etkinliği, Rekürsif\r\nalgoritmalar, İşaretçi ve dinamik bellek kullanımı. Karakter veri gösterimi. Bağlantılı listeler ve bağlantılı liste uygulamaları. Yığın yapıları, dizi\r\nve bağlı liste şeklinde yığın yapıları, Yığın yapıları ile ilgili uygulamalar, Kuyruk yapıları, dairesel kuyruk yapısı, bağlı liste ile kuyruk yapıları,\r\nYığın tasarımı (FILO). Kuyruk tasarımı (FIFO). Ağaç türleri ve ağaç üzerindeki işlemler. İkili ağaçlar. Bağıntı ağaçları. Ağaç düğüm işlemleri.\r\nİkili Arama ağaçları, Ağaçların taranması, Dengeli ağaç yapıları. Sıralama algoritmaları; araya sokma sıralaması, seçmeli sıralama, kabarcık,\r\nbirleşmeli ve hızlı sıralama. Arama algoritmaları; ardışıl ve doğrusal arama, ikili arama, ağaç üzerinde ikili arama. Hashing tekniği ve\r\nuygulaması. Graf yapıları,yönlü graflar, graf algoritmaları. Doğru veri yapısı seçiminde stratejiler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 77,
+    "fields": {
+      "code": "3301468",
+      "class_name": "ÇEVRE VE EKOLOJİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Çevre ve Ekoloji Tanımları, Doğal Dengenin Bozulması, Ekolojik Dengenin Bozulması, Ekolojik Dengenin Bozulmasına Etki Eden Faktörler\r\n(Kent Ekolojisi, Nüfus Artışı,..), Çevre Kirliliği ve Sınıflandırılması, Hava Kirleticileri ve Hava Kirliliği, Hava kirleticilerinin Ozon Tabakası Üzerine\r\nEtkisi ve Sera Etkisi, Su Kirleticileri ve Su Kirliliği, Atıksu Tayininde Önemli Parametreler, Toprak Kirliliği, Gürültü Kirliliği ve Önlenmesi, Diğer\r\nKirletici Türlerinin Çevreye Etkisi, Sanayileşme ve Ekolojik İlişkiler, Diğer Kirlilik Çeşitleri ve ÇED Raporları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 97,
+    "fields": {
+      "code": "3311468",
+      "class_name": "ÇEVRE VE EKOLOJİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Çevre ve Ekoloji Tanımları, Doğal Dengenin Bozulması, Ekolojik Dengenin Bozulması, Ekolojik Dengenin Bozulmasına Etki Eden Faktörler\r\n(Kent Ekolojisi, Nüfus Artışı,..), Çevre Kirliliği ve Sınıflandırılması, Hava Kirleticileri ve Hava Kirliliği, Hava kirleticilerinin Ozon Tabakası Üzerine\r\nEtkisi ve Sera Etkisi, Su Kirleticileri ve Su Kirliliği, Atıksu Tayininde Önemli Parametreler, Toprak Kirliliği, Gürültü Kirliliği ve Önlenmesi, Diğer\r\nKirletici Türlerinin Çevreye Etkisi, Sanayileşme ve Ekolojik İlişkiler, Diğer Kirlilik Çeşitleri ve ÇED Raporları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 71,
+    "fields": {
+      "code": "3301465",
+      "class_name": "ETKİLİ İLETİŞİM VE BEDEN DİLİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Kültür ve kültürel farklılıkların beden diline etkisi, baş hareketleri, ayak ve bacaklar, Kol kavuşturmalar, jest ve mimikler, Güvenlik alanları,\r\noturma düzenleri, Yalan, Protokol kuralları, Adab-ı muaşeret kuralları ve telefonla görüşme, İş görüşmelerinde beden dili kullanımında dikkat\r\nedilmesi gerekenler"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 72,
+    "fields": {
+      "code": "3311465",
+      "class_name": "ETKİLİ İLETİŞİM VE BEDEN DİLİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Kültür ve kültürel farklılıkların beden diline etkisi, baş hareketleri, ayak ve bacaklar, Kol kavuşturmalar, jest ve mimikler, Güvenlik alanları,\r\noturma düzenleri, Yalan, Protokol kuralları, Adab-ı muaşeret kuralları ve telefonla görüşme, İş görüşmelerinde beden dili kullanımında dikkat\r\nedilmesi gerekenler"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 67,
+    "fields": {
+      "code": "3301463",
+      "class_name": "İLETİŞİM BECERİLERİ VE AKADEMİK RAPORLAMA (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Akademik dil öğrenme yöntemlerini örneklerle tanıtmak, akademik İngilizce kullanımının temellerini aktarmak, akademik dil kullanımını\r\nörneklerle açıklamak, sonuçları ve yorumları akademik bir üslupta ve biçimde raporlamak"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 68,
+    "fields": {
+      "code": "3311463",
+      "class_name": "İLETİŞİM BECERİLERİ VE AKADEMİK RAPORLAMA (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Akademik dil öğrenme yöntemlerini örneklerle tanıtmak, akademik İngilizce kullanımının temellerini aktarmak, akademik dil kullanımını\r\nörneklerle açıklamak, sonuçları ve yorumları akademik bir üslupta ve biçimde raporlamak"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 81,
+    "fields": {
+      "code": "3301470",
+      "class_name": "İLETİŞİM VE STRES YÖNETİMİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İletişimin tanımları ve ilişkili olduğu kavramlar, stresin tanımları ve ilişkili olduğu kavramlar, stres ve psikolojik özelliklerle ilişkisi, stres türleri ve\r\ngelişimsel stres, stresin bedensel, psikolojik ve davranışsal sonuçları ve depresyonla ilişkisi, savunma mekanizmaları, örgütsel değişim,\r\nhedefleri, değişime direnç, iş stresi ve kaynakları, stresle başa çıkma yollarından bedensel ve zihinsel teknikler, zaman yönetimi, iş yaşam\r\nkalitesi ve stresle ilişkisi"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 82,
+    "fields": {
+      "code": "3311470",
+      "class_name": "İLETİŞİM VE STRES YÖNETİMİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İletişimin tanımları ve ilişkili olduğu kavramlar, stresin tanımları ve ilişkili olduğu kavramlar, stres ve psikolojik özelliklerle ilişkisi, stres türleri ve\r\ngelişimsel stres, stresin bedensel, psikolojik ve davranışsal sonuçları ve depresyonla ilişkisi, savunma mekanizmaları, örgütsel değişim,\r\nhedefleri, değişime direnç, iş stresi ve kaynakları, stresle başa çıkma yollarından bedensel ve zihinsel teknikler, zaman yönetimi, iş yaşam\r\nkalitesi ve stresle ilişkisi"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 66,
+    "fields": {
+      "code": "3301462",
+      "class_name": "İŞ HUKUKU VE ETİK (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İş hukukuna giriş. İş hukukunun önemli yasaları. İş hukukunun temel kavramları. İş kanununun uygulama alanları. İş sözleşmesi türleri. İşçi ve\r\nişverenin iş sözleşmesinden doğan hak ve borçları. İş sözleşmesinin feshi. Sosyal güvenlik kavramı. Sendikalar hukuku. Toplu iş sözleşmesi\r\nhukuku. Grev. Lokavt. Hak ve menfaat uyuşmazlıkları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 65,
+    "fields": {
+      "code": "3311462",
+      "class_name": "İŞ HUKUKU VE ETİK (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İş hukukuna giriş. İş hukukunun önemli yasaları. İş hukukunun temel kavramları. İş kanununun uygulama alanları. İş sözleşmesi türleri. İşçi ve\r\nişverenin iş sözleşmesinden doğan hak ve borçları. İş sözleşmesinin feshi. Sosyal güvenlik kavramı. Sendikalar hukuku. Toplu iş sözleşmesi\r\nhukuku. Grev. Lokavt. Hak ve menfaat uyuşmazlıkları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 55,
+    "fields": {
+      "code": "3301453",
+      "class_name": "MANTIK DEVRELERİ-2",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Flip-Flop kavramları, çeşitleri; RS, JK, D,T, master/slave RS Flip-Floplar, Flip-Flop dönüşümleri, Flip-Flop’larda asenkron girişler. Ardışıl mantık\r\ndevreleri, analizi ve tasarımı. Senkron ve asenkron ardışıl devre tasarımı. Sayıcılar; asenkron sayıcılar, senkron sayıcılar, ripple, ring, ardışık\r\nsayıcılar, yukarı ve aşağı sayıcılar, sayıcı uygulamaları. Kaydediciler, kaymalı ve bilgi giriş-çıkışına göre kaydedici uygulamaları. Bellek\r\nelemanları ve programlanabilir mantık elemanları, programlanabilir mantık ve lojik elemanların sınıflandırılması. Dönüştürücüler, analog dijital\r\nçeviriciler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 56,
+    "fields": {
+      "code": "3311453",
+      "class_name": "MANTIK DEVRELERİ-2",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Flip-Flop kavramları, çeşitleri; RS, JK, D,T, master/slave RS Flip-Floplar, Flip-Flop dönüşümleri, Flip-Flop’larda asenkron girişler. Ardışıl mantık\r\ndevreleri, analizi ve tasarımı. Senkron ve asenkron ardışıl devre tasarımı. Sayıcılar; asenkron sayıcılar, senkron sayıcılar, ripple, ring, ardışık\r\nsayıcılar, yukarı ve aşağı sayıcılar, sayıcı uygulamaları. Kaydediciler, kaymalı ve bilgi giriş-çıkışına göre kaydedici uygulamaları. Bellek\r\nelemanları ve programlanabilir mantık elemanları, programlanabilir mantık ve lojik elemanların sınıflandırılması. Dönüştürücüler, analog dijital\r\nçeviriciler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 73,
+    "fields": {
+      "code": "3301466",
+      "class_name": "MEDYA OKUR YAZARLIĞI (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Medya ve gerçeklik, Medya iletilerinin içeriği, Medya ve temsil, Medya ve kültür, Medya ve önyargı, Medya ve gündem belirleme, Medya ve\r\nşiddet, Medya okur-yazarlığında eleştirel yaklaşımlar, Neden medya okur-yazarlığı?, Vize, Medyaya güven ve etik, Medyayı takip, Dünyada ve\r\nTürkiyede medya okur-yazarlığı"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 74,
+    "fields": {
+      "code": "3311466",
+      "class_name": "MEDYA OKUR YAZARLIĞI (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Medya ve gerçeklik, Medya iletilerinin içeriği, Medya ve temsil, Medya ve kültür, Medya ve önyargı, Medya ve gündem belirleme, Medya ve\r\nşiddet, Medya okur-yazarlığında eleştirel yaklaşımlar, Neden medya okur-yazarlığı?, Vize, Medyaya güven ve etik, Medyayı takip, Dünyada ve\r\nTürkiyede medya okur-yazarlığı"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 61,
+    "fields": {
+      "code": "3301456",
+      "class_name": "MOBİL PROGRAMLAMA",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Mobil Programlamaya genel bakış, özellikler, giriş. Geliştirme ortamının gereksinimleri ve kurulumlar (Android Studio-GenyMotion-API vb.).\r\nAndroid uygulamalarının temelleri (klasör yapısı, manifest dosyası, temel android kütüphanesi vb.). Genel bileşenler. Android uygulamalarının\r\nyaşam döngüsü. Komponentler (Buton, TextView, EditText, ListView, Event Yöntemleri, Toast Penceleri vb.). Android ile kullanıcı arayüzü\r\ntasarlamak, (View, Menu, Layout, Fragment, Intents, Activity Intent İlişkisi, Intent Filters, Broadcasts, BroadReceivers). Tercihler (prefences)\r\nve dosya yönetimi. Veritabanı yönetimi ve içerik sağlayıcılar. İnternet Erişimi. Arka plan işlemleri. Servis ve alarm kavramları. Konumlandırma\r\nve harita yönetimi. Uygulamayı Android markete yükleme (Deployment to Market). Ders ile ilgili öğrencinin kendisini geliştirebileceği uygulama\r\nve projelerin yapılması."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 62,
+    "fields": {
+      "code": "3311456",
+      "class_name": "MOBİL PROGRAMLAMA",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Mobil Programlamaya genel bakış, özellikler, giriş. Geliştirme ortamının gereksinimleri ve kurulumlar (Android Studio-GenyMotion-API vb.).\r\nAndroid uygulamalarının temelleri (klasör yapısı, manifest dosyası, temel android kütüphanesi vb.). Genel bileşenler. Android uygulamalarının\r\nyaşam döngüsü. Komponentler (Buton, TextView, EditText, ListView, Event Yöntemleri, Toast Penceleri vb.). Android ile kullanıcı arayüzü\r\ntasarlamak, (View, Menu, Layout, Fragment, Intents, Activity Intent İlişkisi, Intent Filters, Broadcasts, BroadReceivers). Tercihler (prefences)\r\nve dosya yönetimi. Veritabanı yönetimi ve içerik sağlayıcılar. İnternet Erişimi. Arka plan işlemleri. Servis ve alarm kavramları. Konumlandırma\r\nve harita yönetimi. Uygulamayı Android markete yükleme (Deployment to Market). Ders ile ilgili öğrencinin kendisini geliştirebileceği uygulama\r\nve projelerin yapılması."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 51,
+    "fields": {
+      "code": "3301451",
+      "class_name": "MÜHENDİSLİK MATEMATİĞİ",
+      "semester": 4,
+      "credit": 3.0,
+      "akts": 7,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Tam Diferansiyel Denklemler. Değişkelerine ayrılabilen Diferansiyel Denklemler. Homojen Diferansiyel Denklemler. Birinci mertebeden lineer\r\ndiferansiyel Denklemler. Bernoulli, Riccati, Clairaut denklemleri. Yüksek mertebeden diferensiyel denklemler, Belirsiz katsayılar yöntemi,\r\nParametrelerin değişimi yöntemi. Kuvvet Serileriyle diferensiyel denklemlerin çözümleri. Fourier Serisi ile diferensiyel denklemlerin çözümleri,\r\nLaplace dönüşümleriyle diferensiyel denklemlerin çözümleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 52,
+    "fields": {
+      "code": "3311451",
+      "class_name": "MÜHENDİSLİK MATEMATİĞİ",
+      "semester": 4,
+      "credit": 3.0,
+      "akts": 7,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Tam Diferansiyel Denklemler. Değişkelerine ayrılabilen Diferansiyel Denklemler. Homojen Diferansiyel Denklemler. Birinci mertebeden lineer\r\ndiferansiyel Denklemler. Bernoulli, Riccati, Clairaut denklemleri. Yüksek mertebeden diferensiyel denklemler, Belirsiz katsayılar yöntemi,\r\nParametrelerin değişimi yöntemi. Kuvvet Serileriyle diferensiyel denklemlerin çözümleri. Fourier Serisi ile diferensiyel denklemlerin çözümleri,\r\nLaplace dönüşümleriyle diferensiyel denklemlerin çözümleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 53,
+    "fields": {
+      "code": "3301452",
+      "class_name": "PROGRAMLAMA DİLİ-2",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "C# programlama diline giriş. Veri türleri. Değişkenler. Operatörler. Kontrol ve döngü yapıları. Diziler. Metotlar ve uygulamaları. Sınıf ve nesne\r\nkavramı. Static üyeler ve harici sınıflar. Metot ve operatörlerin yeniden yüklenmesi. String veri türü. C# ile nesneye yönelik programlama.\r\nDelegeler ve olaylar. . NET’te giriş ve çıkış kullanımı. .NET’te koleksiyon nesneleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 54,
+    "fields": {
+      "code": "3311452",
+      "class_name": "PROGRAMLAMA DİLİ-2",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "C# programlama diline giriş. Veri türleri. Değişkenler. Operatörler. Kontrol ve döngü yapıları. Diziler. Metotlar ve uygulamaları. Sınıf ve nesne\r\nkavramı. Static üyeler ve harici sınıflar. Metot ve operatörlerin yeniden yüklenmesi. String veri türü. C# ile nesneye yönelik programlama.\r\nDelegeler ve olaylar. . NET’te giriş ve çıkış kullanımı. .NET’te koleksiyon nesneleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 69,
+    "fields": {
+      "code": "3301464",
+      "class_name": "SOSYAL SORUMLULUK VE DEĞERLER EĞİTİMİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilim ve sanat disiplinleri arasında işbirliği sağlanarak kampus dışındaki gerçek yaşam ortamında saptanmış sorunların çözümü için ortak\r\nçalışmalar yapma; bu sorunların çözümünde alan birikimlerini diğerleri ile eşgüdümlü olarak işe koşma; uzmanlık donanımlarını diğer uzmanlık\r\nalanları ile uygun kompozisyonlar oluşturarak belirli bir amaca yönelik olarak proje bağlamı içinde kullanma; meslek dışında çevre duyarlılığının\r\ngereği sivil toplum duyarlılığını geliştirerek yaşama yansıtma."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 70,
+    "fields": {
+      "code": "3311464",
+      "class_name": "SOSYAL SORUMLULUK VE DEĞERLER EĞİTİMİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilim ve sanat disiplinleri arasında işbirliği sağlanarak kampus dışındaki gerçek yaşam ortamında saptanmış sorunların çözümü için ortak\r\nçalışmalar yapma; bu sorunların çözümünde alan birikimlerini diğerleri ile eşgüdümlü olarak işe koşma; uzmanlık donanımlarını diğer uzmanlık\r\nalanları ile uygun kompozisyonlar oluşturarak belirli bir amaca yönelik olarak proje bağlamı içinde kullanma; meslek dışında çevre duyarlılığının\r\ngereği sivil toplum duyarlılığını geliştirerek yaşama yansıtma."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 63,
+    "fields": {
+      "code": "3301461",
+      "class_name": "TEKNOLOJİ TARİHİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilim. Bazı bilim alanlarının gelişim tarihçesi. Bazı teknolojik gelişmelerin tarihi. Cumhuriyet Türkiye’sinde bilimsel gelişmeler. Bilimden\r\nteknolojiye uzanan yol."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 64,
+    "fields": {
+      "code": "3311461",
+      "class_name": "TEKNOLOJİ TARİHİ (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilim. Bazı bilim alanlarının gelişim tarihçesi. Bazı teknolojik gelişmelerin tarihi. Cumhuriyet Türkiye’sinde bilimsel gelişmeler. Bilimden\r\nteknolojiye uzanan yol."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 57,
+    "fields": {
+      "code": "3301454",
+      "class_name": "VERİ TABANI YÖNETİM SİSTEMLERİ",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Veritabanı sistemlerinin bileşenleri, veritabanı yönetim sistemi, (DBMS) fonksiyonları, mimarisi, veri bağımsızlığı, veri modelleri, kavramsal\r\nmodeller, nesne yönelimli modeller ve ilişkisel veri modeli. Kavramsal şemaların ilişkisel şemalara çevrilmesi, ilişkisel cebir ve ilişkisel\r\nhesaplama, bağlar, anahtar tipleri, fonksiyonel bağımlılık, normal formlar, çok-değerli bağımlılık ve veritabanı tasarımı. SQL de; veri tanımlama,\r\nilişkisel sorgulama, veri düzenleme, uygulamalarda SQL kullanımı ve tasarlanmış veri tabanı güncellemesi. Veritabanı Mimarileri, Veritabanı\r\nYönetimi ve Güvenlik, Görünüm, tetikleyiciler, saklı yordamlar, T-SQL programlama"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 58,
+    "fields": {
+      "code": "3311454",
+      "class_name": "VERİ TABANI YÖNETİM SİSTEMLERİ",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Veritabanı sistemlerinin bileşenleri, veritabanı yönetim sistemi, (DBMS) fonksiyonları, mimarisi, veri bağımsızlığı, veri modelleri, kavramsal\r\nmodeller, nesne yönelimli modeller ve ilişkisel veri modeli. Kavramsal şemaların ilişkisel şemalara çevrilmesi, ilişkisel cebir ve ilişkisel\r\nhesaplama, bağlar, anahtar tipleri, fonksiyonel bağımlılık, normal formlar, çok-değerli bağımlılık ve veritabanı tasarımı. SQL de; veri tanımlama,\r\nilişkisel sorgulama, veri düzenleme, uygulamalarda SQL kullanımı ve tasarlanmış veri tabanı güncellemesi. Veritabanı Mimarileri, Veritabanı\r\nYönetimi ve Güvenlik, Görünüm, tetikleyiciler, saklı yordamlar, T-SQL programlama"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 79,
+    "fields": {
+      "code": "3301469",
+      "class_name": "YAŞAM BOYU ÖĞRENME (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Yaşam Boyu Öğrenmenin tanımı ve amacı, kapsam ve ilkeleri, dünyadaki tarihi gelişimi, Türkiye’deki tarihi gelişimi. Yaşam Boyu Öğrenmede\r\naile ve toplumun rolü. Türk eğitim sisteminde hayat boyu öğrenme uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 80,
+    "fields": {
+      "code": "3311469",
+      "class_name": "YAŞAM BOYU ÖĞRENME (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Yaşam Boyu Öğrenmenin tanımı ve amacı, kapsam ve ilkeleri, dünyadaki tarihi gelişimi, Türkiye’deki tarihi gelişimi. Yaşam Boyu Öğrenmede\r\naile ve toplumun rolü. Türk eğitim sisteminde hayat boyu öğrenme uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 59,
+    "fields": {
+      "code": "3301455",
+      "class_name": "YAZILIM MÜHENDİSLİĞİ",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Müşteri ve yönetici ilişkisi. Yazılım ve donanım ihtiyaçları. İhtiyaç belirleme. Yazılım gereksinimleri. Modelleme ve prototip. Deneme.\r\nOptimizasyon. Standartlar. Yazılım kurulumu ve uygulama. Proje yönetimi. Zaman planlaması. Belgelendirme. Görev dağılımı. İnsan kaynakları\r\nyönetimi. Maliyet hesabı. Değerlendirme prensipleri. Kayıt tutma. Yapısal test. Risk analizi. Kalite güvencesi. Yazılım bakımı."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 60,
+    "fields": {
+      "code": "3311455",
+      "class_name": "YAZILIM MÜHENDİSLİĞİ",
+      "semester": 4,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Müşteri ve yönetici ilişkisi. Yazılım ve donanım ihtiyaçları. İhtiyaç belirleme. Yazılım gereksinimleri. Modelleme ve prototip. Deneme.\r\nOptimizasyon. Standartlar. Yazılım kurulumu ve uygulama. Proje yönetimi. Zaman planlaması. Belgelendirme. Görev dağılımı. İnsan kaynakları\r\nyönetimi. Maliyet hesabı. Değerlendirme prensipleri. Kayıt tutma. Yapısal test. Risk analizi. Kalite güvencesi. Yazılım bakımı."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 75,
+    "fields": {
+      "code": "3301467",
+      "class_name": "YÖNETİM VE ORGANİZASYON (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Yönetim kavramı ve tarihçesi, yönetim ve yönetici kavramlarının analizi, liderlik ve yöneticilik arasındaki farklar, organizasyon kavramı ve\r\norganizasyon ilkeleri, Yönetim düşüncesinin tarihi, yönetim düşüncesinin gelişimi, klasik yönetim yaklaşımları ve temel varsayımlar, Bilimsel\r\nyönetim yaklaşımı, yönetim süreci yaklaşımı, bürokrasi yaklaşımı, Neo-klasik yönetim yaklaşımı ve temel varsayımları, Modern yönetim\r\nyaklaşımları, sistem yaklaşımı, Durumsallık yaklaşımı, post-modern yönetim düşüncesi, Yönetim fonksiyonları, planlama ve organizasyon"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 76,
+    "fields": {
+      "code": "3311467",
+      "class_name": "YÖNETİM VE ORGANİZASYON (4. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 4,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Yönetim kavramı ve tarihçesi, yönetim ve yönetici kavramlarının analizi, liderlik ve yöneticilik arasındaki farklar, organizasyon kavramı ve\r\norganizasyon ilkeleri, Yönetim düşüncesinin tarihi, yönetim düşüncesinin gelişimi, klasik yönetim yaklaşımları ve temel varsayımlar, Bilimsel\r\nyönetim yaklaşımı, yönetim süreci yaklaşımı, bürokrasi yaklaşımı, Neo-klasik yönetim yaklaşımı ve temel varsayımları, Modern yönetim\r\nyaklaşımları, sistem yaklaşımı, Durumsallık yaklaşımı, post-modern yönetim düşüncesi, Yönetim fonksiyonları, planlama ve organizasyon"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 109,
+    "fields": {
+      "code": "3301569",
+      "class_name": "ADLİ BİLİŞİM (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilişim suçlarına giriş, Adli bilişim teknolojileri, Disk ve dosya sistemlerinden veri kurtarma, Delil toplama, sahiplik doğrulama, veri doğrulaması,\r\nsaklama ve koruma, tanıma ve kimliklendirme, Windows, Linux, Mac-OS mimarleri, Dosya yapılarının analizi, ağ analizi, otonom sistem analizi,\r\nAdli bilişim metodolojisi, algoritma, protokol ve araçlar, Adli bilişimdeki güncel gelişmeler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 110,
+    "fields": {
+      "code": "3311569",
+      "class_name": "ADLİ BİLİŞİM (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilişim suçlarına giriş, Adli bilişim teknolojileri, Disk ve dosya sistemlerinden veri kurtarma, Delil toplama, sahiplik doğrulama, veri doğrulaması,\r\nsaklama ve koruma, tanıma ve kimliklendirme, Windows, Linux, Mac-OS mimarleri, Dosya yapılarının analizi, ağ analizi, otonom sistem analizi,\r\nAdli bilişim metodolojisi, algoritma, protokol ve araçlar, Adli bilişimdeki güncel gelişmeler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 103,
+    "fields": {
+      "code": "3301566",
+      "class_name": "BİLGİSAYAR DONANIMI (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar, server, notebook, tabet, vb. cihazların mimarisi, CPU ve çeşitleri, teknik özellikleri. Ana kart ve çeşitleri. Teknik Özellikleri. Hafıza\r\nçeşitleri ve teknik özellikleri. Veri yolları çeşitleri ve teknik özellikleri. Bilgisayar kasaları ve güç kaynakları. Disk ve disket sürücüler, optik\r\nsürücülerin çeşitleri ve teknik özellikleri. Görüntü kartları ve Monitörler çeşitleri ve teknik özellikleri. Ses kartları ve tv kartları çeşitleri ve teknik\r\nözellikleri. Modemler ve Ağ bağdaştırıcıları çeşitleri ve teknik özellikleri. Bilgisayar çevre birimleri ve teknik özellikleri. Bilgisayar montajı ve\r\ndikkat edilmesi gereken kısımlar. Bilgisayar Arızaları ve çözüm yolları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 104,
+    "fields": {
+      "code": "3311566",
+      "class_name": "BİLGİSAYAR DONANIMI (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar, server, notebook, tabet, vb. cihazların mimarisi, CPU ve çeşitleri, teknik özellikleri. Ana kart ve çeşitleri. Teknik Özellikleri. Hafıza\r\nçeşitleri ve teknik özellikleri. Veri yolları çeşitleri ve teknik özellikleri. Bilgisayar kasaları ve güç kaynakları. Disk ve disket sürücüler, optik\r\nsürücülerin çeşitleri ve teknik özellikleri. Görüntü kartları ve Monitörler çeşitleri ve teknik özellikleri. Ses kartları ve tv kartları çeşitleri ve teknik\r\nözellikleri. Modemler ve Ağ bağdaştırıcıları çeşitleri ve teknik özellikleri. Bilgisayar çevre birimleri ve teknik özellikleri. Bilgisayar montajı ve\r\ndikkat edilmesi gereken kısımlar. Bilgisayar Arızaları ve çözüm yolları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 98,
+    "fields": {
+      "code": "3301564",
+      "class_name": "BİYOMEDİKAL SİSTEMLER (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Biyomedikal ölçme sistemlerinin genel prensipleri ve bioelektrik işaretlerin oluşumu. Fizyolojik ve biyolojik işaret işleme. Fizyolojik sistemlerin\r\nzaman ve frekans düzleminde analizi. Tıbbi elektronik cihazlara genel bakış. Tıp Teknolojilerinde Elektrik Güvenliği. İş sağlığı ve güvenliği, iş\r\nsağlığına etkileri açısından biyomedikal sistemler. Sınıflandırmaları. Kliniklerde bulunan teşhis ve tedaviye yönelik cihazlar. Algılayıcı ve\r\ndönüştürücüler: tipik fizyolojik işaretler, basınç ve akış dönüştürücüleri, sıcaklık, soluma ve nabız algılayıcıları. Biyoelektrotlar. Elektrot çeşitleri.\r\nBiomedikal kaydediciler. ECG, EEG ve EMG cihazlarının blok şema tanıtımı ve yoğun bakım odalarında bulunan cihazlar. Kalp atışı, nabız ve\r\nkan basınç ölçme. Biyomedikal sinyallerin analizi, biyomedikal sinyal işleme yöntemleri. Biyoistatistiğe giriş. Tıbbi görüntüleme teknolojileri.\r\nTıbbi Karar Destek Sistemleri, Sağlıkta Bilişim Uygulamaları (Yapay Zeka, Bulut Bilişim, Büyük Veri,Sibier Güvenlik, Blok Zincir, Mobil Sağlık)"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 78,
+    "fields": {
+      "code": "3311564",
+      "class_name": "BİYOMEDİKAL SİSTEMLER (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Biyomedikal ölçme sistemlerinin genel prensipleri ve bioelektrik işaretlerin oluşumu. Fizyolojik ve biyolojik işaret işleme. Fizyolojik sistemlerin\r\nzaman ve frekans düzleminde analizi. Tıbbi elektronik cihazlara genel bakış. Tıp Teknolojilerinde Elektrik Güvenliği. İş sağlığı ve güvenliği, iş\r\nsağlığına etkileri açısından biyomedikal sistemler. Sınıflandırmaları. Kliniklerde bulunan teşhis ve tedaviye yönelik cihazlar. Algılayıcı ve\r\ndönüştürücüler: tipik fizyolojik işaretler, basınç ve akış dönüştürücüleri, sıcaklık, soluma ve nabız algılayıcıları. Biyoelektrotlar. Elektrot çeşitleri.\r\nBiomedikal kaydediciler. ECG, EEG ve EMG cihazlarının blok şema tanıtımı ve yoğun bakım odalarında bulunan cihazlar. Kalp atışı, nabız ve\r\nkan basınç ölçme. Biyomedikal sinyallerin analizi, biyomedikal sinyal işleme yöntemleri. Biyoistatistiğe giriş. Tıbbi görüntüleme teknolojileri.\r\nTıbbi Karar Destek Sistemleri, Sağlıkta Bilişim Uygulamaları (Yapay Zeka, Bulut Bilişim, Büyük Veri,Sibier Güvenlik, Blok Zincir, Mobil Sağlık)"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 95,
+    "fields": {
+      "code": "3301563",
+      "class_name": "İNSAN BİLGİSAYAR ETKİLEŞİMİ (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İnsan bilgisayar etkileşimine giriş, İnsan ve etkileşim kapasitesi ve görsel, işitsel dokunsal algılama, Hafıza, öğrenme kabiliyeti, Kullanıcı ara\r\nyüzlerini tasarlama ve değerlendirme ile ilgili konular, Kullanıcı ara yüzlerini tasarlama ve değerlendirme ile ilgili konular, İnsanları anlamak için\r\ngerekli bazı psikolojik altyapı, Etkileşim için paradigmalar, Etkileşim tasarımı temelleri, Ara Sınav, Yazılım sürecinde insan bilgisayar etkileşimi,\r\nDeğerlendirme teknikleri, Sosyo-örgütsel sorunlar ve paydaş gereksinimleri, İnsan teknolojik cihaz etkileşimi, Modern ve gelecekteki\r\nuygulamalar, Modern Uygulama Örnekleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 96,
+    "fields": {
+      "code": "3311563",
+      "class_name": "İNSAN BİLGİSAYAR ETKİLEŞİMİ (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İnsan bilgisayar etkileşimine giriş, İnsan ve etkileşim kapasitesi ve görsel, işitsel dokunsal algılama, Hafıza, öğrenme kabiliyeti, Kullanıcı ara\r\nyüzlerini tasarlama ve değerlendirme ile ilgili konular, Kullanıcı ara yüzlerini tasarlama ve değerlendirme ile ilgili konular, İnsanları anlamak için\r\ngerekli bazı psikolojik altyapı, Etkileşim için paradigmalar, Etkileşim tasarımı temelleri, Ara Sınav, Yazılım sürecinde insan bilgisayar etkileşimi,\r\nDeğerlendirme teknikleri, Sosyo-örgütsel sorunlar ve paydaş gereksinimleri, İnsan teknolojik cihaz etkileşimi, Modern ve gelecekteki\r\nuygulamalar, Modern Uygulama Örnekleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 83,
+    "fields": {
+      "code": "3301551",
+      "class_name": "MİKROİŞLEMCİLER VE MİKRODENETLEYİCİLER",
+      "semester": 5,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Mikroişlemci, tarihçesi ve sınıflandırılması. Temel tanımlar, yapısı, mimariler. 80X86 İşlemci Ailesi. 16-32 bit mikroişlemci yapısı. Adresleme\r\nyöntemleri. Assembly dili esasları ve komutları. Kesmeler (interrupt) ve değişik örnekler. Assembly ile uygulama geliştirme. Mikrobilgisayar\r\ntabanlı sistem tasarımına giriş. Mikrodenetleyicilere genel bakış. Değişik mimaride mikrodenetleyiciler. Mikroişlemci ile farkları.\r\nMikrokontrollerler, gelişmesi ve yapısı. Mikrodenetleyici sistemler, donanımsal yapısı ve programlama kartı. Mikrokontrollerlerde adresleme\r\nmetodları. Komutlar. Değişik arayüzler ile mikrodenetleyici programla ortamları. Program geliştirme (veri transferi, karar işlemleri, döngü,\r\ngeciktirme, alt programlar, aritmetik, kaydırma vb. işlemler). Derleme. Port işlemleri. Konularla ilgili değişik örnekler ve çalışmalar. Bir\r\nmikroişlemci sistemi tasarımı örneği. Değişik örnekler ve proje uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 84,
+    "fields": {
+      "code": "3311551",
+      "class_name": "MİKROİŞLEMCİLER VE MİKRODENETLEYİCİLER",
+      "semester": 5,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Mikroişlemci, tarihçesi ve sınıflandırılması. Temel tanımlar, yapısı, mimariler. 80X86 İşlemci Ailesi. 16-32 bit mikroişlemci yapısı. Adresleme\r\nyöntemleri. Assembly dili esasları ve komutları. Kesmeler (interrupt) ve değişik örnekler. Assembly ile uygulama geliştirme. Mikrobilgisayar\r\ntabanlı sistem tasarımına giriş. Mikrodenetleyicilere genel bakış. Değişik mimaride mikrodenetleyiciler. Mikroişlemci ile farkları.\r\nMikrokontrollerler, gelişmesi ve yapısı. Mikrodenetleyici sistemler, donanımsal yapısı ve programlama kartı. Mikrokontrollerlerde adresleme\r\nmetodları. Komutlar. Değişik arayüzler ile mikrodenetleyici programla ortamları. Program geliştirme (veri transferi, karar işlemleri, döngü,\r\ngeciktirme, alt programlar, aritmetik, kaydırma vb. işlemler). Derleme. Port işlemleri. Konularla ilgili değişik örnekler ve çalışmalar. Bir\r\nmikroişlemci sistemi tasarımı örneği. Değişik örnekler ve proje uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 85,
+    "fields": {
+      "code": "3301552",
+      "class_name": "PROGRAMLAMA DİLİ-3",
+      "semester": 5,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "stisnai durum yönetimi. Throw. Catch. Try Finally blokları. Birden fazla catch blokları. İç-içe geçmiş try blokları. Standart istisnai durum sınıfları.\r\nİstisnai durum sınıfları oluşturma. Temsilciler. Çoklu temsilciler. Olaylar. Olay tabanlı programlama. Add ve remove erişimcileri. Çoklu dil\r\ndesteğine sahip uygulamalar geliştirmek. Kurulum dosyaları hazırlamak. C#'ta önişlemci komutları. Genel türler. İterators. Anonim metotlar.\r\nKısmi türler. “var” tipinde yerel değişkenler. Nesnelere ve koleksiyonlara ilk değer ataması. İsimsiz veri tipleri. Genişletme metotları. Lambda\r\nifadeleri. Sorgu ifadeleri. ADO.NET. LINQ TO SQL. İlişkisel veri tabanı modeli. Ado.net kütüphanesi. ADO.NET nesne modeli. Veritabanlarına\r\nerişim. Oledbcommand ve Oladbdatareader. Bağlantısız veri erişimi ve dataset modeli. LINQ TO SQL ile veritabanına erişim. Select, insert,\r\nupdate, delete işlemleri. Stored procedure kullanımı. Transaction yönetimi. Null değerler ile çalışma."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 86,
+    "fields": {
+      "code": "3311552",
+      "class_name": "PROGRAMLAMA DİLİ-3",
+      "semester": 5,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "stisnai durum yönetimi. Throw. Catch. Try Finally blokları. Birden fazla catch blokları. İç-içe geçmiş try blokları. Standart istisnai durum sınıfları.\r\nİstisnai durum sınıfları oluşturma. Temsilciler. Çoklu temsilciler. Olaylar. Olay tabanlı programlama. Add ve remove erişimcileri. Çoklu dil\r\ndesteğine sahip uygulamalar geliştirmek. Kurulum dosyaları hazırlamak. C#'ta önişlemci komutları. Genel türler. İterators. Anonim metotlar.\r\nKısmi türler. “var” tipinde yerel değişkenler. Nesnelere ve koleksiyonlara ilk değer ataması. İsimsiz veri tipleri. Genişletme metotları. Lambda\r\nifadeleri. Sorgu ifadeleri. ADO.NET. LINQ TO SQL. İlişkisel veri tabanı modeli. Ado.net kütüphanesi. ADO.NET nesne modeli. Veritabanlarına\r\nerişim. Oledbcommand ve Oladbdatareader. Bağlantısız veri erişimi ve dataset modeli. LINQ TO SQL ile veritabanına erişim. Select, insert,\r\nupdate, delete işlemleri. Stored procedure kullanımı. Transaction yönetimi. Null değerler ile çalışma."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 101,
+    "fields": {
+      "code": "3301565",
+      "class_name": "SİMÜLASYON VE MODELLEME (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Dinamik Benzetim. Benzetimde kullanıcı veri tipleri. Operatörler. Kontrol yapıları. Model Üreteçleri. Benzetim Programlama. Benzetim\r\nProblemleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 102,
+    "fields": {
+      "code": "3311565",
+      "class_name": "SİMÜLASYON VE MODELLEME (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Dinamik Benzetim. Benzetimde kullanıcı veri tipleri. Operatörler. Kontrol yapıları. Model Üreteçleri. Benzetim Programlama. Benzetim\r\nProblemleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 91,
+    "fields": {
+      "code": "3301561",
+      "class_name": "SİNYAL İŞLEME (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Giriş, sürekli zaman sinyal ve sistem konularını gözden geçirme. Ayrık Zamanlı Sinyaller ve Sistemler evrişim. Fark denklemleri ve ayrık zamanlı\r\nFourier dönüşümleri. Dönemli ve örneklenmiş sinyallerin Ayrık Zamanlı ve Sürekli Zamanlı Fourier Dönüşümleri. Katlı DSP ye giriş: ayıklama\r\n& aradeğerleme Z dönüşümlerine giriş. Z dönüşümü özellikleri ve ters dönüşümleri Z dönüşümleri ve LSI sistemlerin frekans tepkisi. Ayrık\r\nFourier dizileri ve ayrık Fourier dönüşümüne giriş. DFT ve dairesel evrişim. Ara Sınav. Hızlı Fourier dönüşüm algoritmalarına giriş FFT yapıları.\r\nAlgoritmaları ve hesaplama düşünceleri. Sayısal süzgeç gerçeklenmesine giriş IIR süzgeç yapıları ve gerçeklenmesi. FIR yapıları ve\r\ngerçeklenmesi IIR süzgeç tasarımı analog ilkörneklerin kullanımı IIR tasarımı örnekleri. Pencereleme ile FIR tasarımı bilgisayardestekli FIR\r\ntasarımı. Sistem frekans tepkisi sistem fonksiyonu kararlılık sistem örnekleri. Sistem frekans tepkisi sistem fonksiyonu kararlılık sistem örnekleri"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 92,
+    "fields": {
+      "code": "3311561",
+      "class_name": "SİNYAL İŞLEME (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Giriş, sürekli zaman sinyal ve sistem konularını gözden geçirme. Ayrık Zamanlı Sinyaller ve Sistemler evrişim. Fark denklemleri ve ayrık zamanlı\r\nFourier dönüşümleri. Dönemli ve örneklenmiş sinyallerin Ayrık Zamanlı ve Sürekli Zamanlı Fourier Dönüşümleri. Katlı DSP ye giriş: ayıklama\r\n& aradeğerleme Z dönüşümlerine giriş. Z dönüşümü özellikleri ve ters dönüşümleri Z dönüşümleri ve LSI sistemlerin frekans tepkisi. Ayrık\r\nFourier dizileri ve ayrık Fourier dönüşümüne giriş. DFT ve dairesel evrişim. Ara Sınav. Hızlı Fourier dönüşüm algoritmalarına giriş FFT yapıları.\r\nAlgoritmaları ve hesaplama düşünceleri. Sayısal süzgeç gerçeklenmesine giriş IIR süzgeç yapıları ve gerçeklenmesi. FIR yapıları ve\r\ngerçeklenmesi IIR süzgeç tasarımı analog ilkörneklerin kullanımı IIR tasarımı örnekleri. Pencereleme ile FIR tasarımı bilgisayardestekli FIR\r\ntasarımı. Sistem frekans tepkisi sistem fonksiyonu kararlılık sistem örnekleri. Sistem frekans tepkisi sistem fonksiyonu kararlılık sistem örnekleri"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 93,
+    "fields": {
+      "code": "3301562",
+      "class_name": "TASARIM DESENLERİ (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Nesneye yönelik programlama (NYP) kavramları. Kalıtım. Çok-biçimlilik. Compositon. is-a ve has-a ilişkileri. NYP Mimarilerinin Başarısı. Nesne\r\nYönelimli Programlama Disiplinleri (Single Responsibility Principle, Open Closed Principle, Liskov Substitution Principle, Dependency Inversion\r\nPrinciple, Interface Segregation Principle, Reuse Release Equivalency Principle, Common Closure Principle, Common Reuse Principle, Acyclic\r\nDependencies Principle, Stable Dependencies Principle, Stable Abstractions Principle). Tasarım Desenleri. Pattern ve Anti Pattern Kavramları.\r\nGoF (Gangs of Four) Desenleri: Yaratımsal desenler (Abstract Factory, Builder, Factory Method, Prototype), Davranışsal Desenler (Chain of\r\nresponsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template method, Visitor), Yapısal Desenler\r\n(Adapter, Bridge, Composite, Decorator, Flyweight, Proxy)."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 94,
+    "fields": {
+      "code": "3311562",
+      "class_name": "TASARIM DESENLERİ (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Nesneye yönelik programlama (NYP) kavramları. Kalıtım. Çok-biçimlilik. Compositon. is-a ve has-a ilişkileri. NYP Mimarilerinin Başarısı. Nesne\r\nYönelimli Programlama Disiplinleri (Single Responsibility Principle, Open Closed Principle, Liskov Substitution Principle, Dependency Inversion\r\nPrinciple, Interface Segregation Principle, Reuse Release Equivalency Principle, Common Closure Principle, Common Reuse Principle, Acyclic\r\nDependencies Principle, Stable Dependencies Principle, Stable Abstractions Principle). Tasarım Desenleri. Pattern ve Anti Pattern Kavramları.\r\nGoF (Gangs of Four) Desenleri: Yaratımsal desenler (Abstract Factory, Builder, Factory Method, Prototype), Davranışsal Desenler (Chain of\r\nresponsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template method, Visitor), Yapısal Desenler\r\n(Adapter, Bridge, Composite, Decorator, Flyweight, Proxy)."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 89,
+    "fields": {
+      "code": "3301554",
+      "class_name": "TEKNİK İNGİLİZCE",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar mühendisliğinin farklı konuları hakkında metin okuma, yazma ve tartışmalarını içerir. Anadili İngilizce olanları, profesyonelleri ve\r\nöğrencileri anlamak, çalışmaları hakkında konuşmak, Bilgisayar kavramları hakkında gayri resmi konuşan uzmanları anlamak; Diyagramlar,\r\ntablolar, grafikler ve iş ilanları dahil olmak üzere çok çeşitli metinleri anlayabilmek, Yazılı ve sözlü farklı bilgi kaynaklarını karşılaştırabilmek"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 90,
+    "fields": {
+      "code": "3311554",
+      "class_name": "TEKNİK İNGİLİZCE",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar mühendisliğinin farklı konuları hakkında metin okuma, yazma ve tartışmalarını içerir. Anadili İngilizce olanları, profesyonelleri ve\r\nöğrencileri anlamak, çalışmaları hakkında konuşmak, Bilgisayar kavramları hakkında gayri resmi konuşan uzmanları anlamak; Diyagramlar,\r\ntablolar, grafikler ve iş ilanları dahil olmak üzere çok çeşitli metinleri anlayabilmek, Yazılı ve sözlü farklı bilgi kaynaklarını karşılaştırabilmek"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 87,
+    "fields": {
+      "code": "3301553",
+      "class_name": "VERİ HABERLEŞMESİ VE AĞLAR",
+      "semester": 5,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Veri İletişimi ve bilgisayar ağları dersleri arasında entegrasyonu sağlar. Veri haberleşmesinin temelleri , çoğullama, analog ve dijital veri iletişimi,\r\nfiziksel veri iletişimi ortamı, bilgisayar ağları mimarileri, ISO OSI referans modeli, LAN-Ethernet protokolü (gelişimi, ortam erişim yöntemi), LANEthernet protokolü (türevleri, RJ45 bağlantısı, POE), ortam ulaşım kontrolü (MAC) protokolleri, WAN-ATM protokolleri, ara bağlantı cihazları\r\n(Tekrarlayıcı, HUB, Köprü, Anahtar), ağ seviyesi adresleme, TCP/IP protokol mimarisi, TCP ve UDP protokolleri, IP Alt ağ oluşturma,\r\nyönlendiriciler(Router), yönlendirme algoritmaları, yol bulma algoritmaları ve protokolleri, yönlendirici konfigürasyonu, sanallaştırma yazılımı,\r\nağ simülatörü kullanarak örnek bir ağ ortamı oluşturma konuların kapsar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 88,
+    "fields": {
+      "code": "3311553",
+      "class_name": "VERİ HABERLEŞMESİ VE AĞLAR",
+      "semester": 5,
+      "credit": 3.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Veri İletişimi ve bilgisayar ağları dersleri arasında entegrasyonu sağlar. Veri haberleşmesinin temelleri , çoğullama, analog ve dijital veri iletişimi,\r\nfiziksel veri iletişimi ortamı, bilgisayar ağları mimarileri, ISO OSI referans modeli, LAN-Ethernet protokolü (gelişimi, ortam erişim yöntemi), LANEthernet protokolü (türevleri, RJ45 bağlantısı, POE), ortam ulaşım kontrolü (MAC) protokolleri, WAN-ATM protokolleri, ara bağlantı cihazları\r\n(Tekrarlayıcı, HUB, Köprü, Anahtar), ağ seviyesi adresleme, TCP/IP protokol mimarisi, TCP ve UDP protokolleri, IP Alt ağ oluşturma,\r\nyönlendiriciler(Router), yönlendirme algoritmaları, yol bulma algoritmaları ve protokolleri, yönlendirici konfigürasyonu, sanallaştırma yazılımı,\r\nağ simülatörü kullanarak örnek bir ağ ortamı oluşturma konuların kapsar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 107,
+    "fields": {
+      "code": "3301568",
+      "class_name": "VERİ MADENCİLİĞİ (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Veri madenciliğine giriş. Veri ön işleme. Sınıflandırma. Sınıflandırma yöntemleri. Entropiye dayalı algoritmalar. Sınıflandırma ve regresyon\r\nağaçları. Bellek tabanlı algoritmalar. Kümeleme. Birliktelik kuralları. Metin madenciliği. Web madenciliği. Veri madenciliği yazılımları. Veri\r\nmadenciliği uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 108,
+    "fields": {
+      "code": "3311568",
+      "class_name": "VERİ MADENCİLİĞİ (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Veri madenciliğine giriş. Veri ön işleme. Sınıflandırma. Sınıflandırma yöntemleri. Entropiye dayalı algoritmalar. Sınıflandırma ve regresyon\r\nağaçları. Bellek tabanlı algoritmalar. Kümeleme. Birliktelik kuralları. Metin madenciliği. Web madenciliği. Veri madenciliği yazılımları. Veri\r\nmadenciliği uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 105,
+    "fields": {
+      "code": "3301567",
+      "class_name": "WEB TASARIMI (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Web sayfasının hiyerarşik organizasyonu, biçimi, sayfa geçişleri, hedef kitle, kapsam, nitelik, renk uyumu, yerleşim, etkileşim, doküman\r\nhazırlığı, kullanıcı merkezli tasarım. Web editörü. HTML. Çerçeveler. Tablolar. Listeler. Formlar. Görsel öğelerin yerleşimi. Script ve applet\r\nyerleşimi. Bağlantılar. Yazı ve çizgi türleri. Menüler. Çoklu ortam içeriği ile tasarım: Dreamweaver, Silverlight, Flash. CSS’e giriş, CSS sözdizimi,\r\nCSS ile biçem oluşturma. İstemci taraflı betik programlama, Javascript, Vbscript. Tarayıcı bağımsız web tasarımı. XML ile platform bağımsız\r\nveri iletimi. XML şeması ve kullanımı. RSS kullanımı. JSON formatı ve kullanımı."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 106,
+    "fields": {
+      "code": "3311567",
+      "class_name": "WEB TASARIMI (5. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 5,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Web sayfasının hiyerarşik organizasyonu, biçimi, sayfa geçişleri, hedef kitle, kapsam, nitelik, renk uyumu, yerleşim, etkileşim, doküman\r\nhazırlığı, kullanıcı merkezli tasarım. Web editörü. HTML. Çerçeveler. Tablolar. Listeler. Formlar. Görsel öğelerin yerleşimi. Script ve applet\r\nyerleşimi. Bağlantılar. Yazı ve çizgi türleri. Menüler. Çoklu ortam içeriği ile tasarım: Dreamweaver, Silverlight, Flash. CSS’e giriş, CSS sözdizimi,\r\nCSS ile biçem oluşturma. İstemci taraflı betik programlama, Javascript, Vbscript. Tarayıcı bağımsız web tasarımı. XML ile platform bağımsız\r\nveri iletimi. XML şeması ve kullanımı. RSS kullanımı. JSON formatı ve kullanımı."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 139,
+    "fields": {
+      "code": "3301671",
+      "class_name": "BİLGİSAYAR BİLİMLERİNDE İNOVASYON VE ARAŞTIRMA TEKNİKLERİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İnovasyon nedir? Bilgisayar bilimlerinde inovasyon neden gereklidir? Bilgisayar bilimlerinde araştırma türlerinin incelenmesi ve planlama,\r\naraştırma süreç ve teknikleri, problem kaynakları, problem seçimi, genel ve özel ölçütler, değişkenler ve problem tanımlanmasındaki önemi,\r\nyöntem araştırma modellerinin tanıtılması, evren ve örneklem hakkında bilgi verilmesi, araştırmada bulguların sunumu (tablo, grafik vs)"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 140,
+    "fields": {
+      "code": "3311671",
+      "class_name": "BİLGİSAYAR BİLİMLERİNDE İNOVASYON VE ARAŞTIRMA TEKNİKLERİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İnovasyon nedir? Bilgisayar bilimlerinde inovasyon neden gereklidir? Bilgisayar bilimlerinde araştırma türlerinin incelenmesi ve planlama,\r\naraştırma süreç ve teknikleri, problem kaynakları, problem seçimi, genel ve özel ölçütler, değişkenler ve problem tanımlanmasındaki önemi,\r\nyöntem araştırma modellerinin tanıtılması, evren ve örneklem hakkında bilgi verilmesi, araştırmada bulguların sunumu (tablo, grafik vs)"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 121,
+    "fields": {
+      "code": "3301662",
+      "class_name": "BİLGİSAYAR ve AĞ GÜVENLİĞİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Güvenlik testlerinde bilgi toplama, TCP/IP İletişiminde oturuma müdahale, güvenlik duvarları(Firewall), saldırı tespit ve engelleme sistemleri,\r\nIDS/IPS ve içerik filtreleme sistemleri ve Atlatma yöntemleri, Host/Ağ/Port Keşif ve tarama araçları kullanımı, VPN ve Şifreleme teknolojileri,\r\nzafiyet tarama ve bulma sistemleri, Exploit çeşitleri ve metasploit kullanım, DOS/DDOS saldırıları ve korunma yöntemleri, kablosuz ağlar ve\r\ngüvenlik, IIS, apache üzerinde web uygulama güvenliği, hacking yöntemleri, son kullanıcıya yönelik saldırı çeşitleri ve yöntemleri, güvenlik\r\namaçlı Kullanılan tarayıcı eklentileri, Linux sistem yönetimi ve güvenliği (Self Study), TCP/IP Protokol Ailesi Zafiyet Analizleri, KVKK ve 5156\r\nsayılı kanun ve gereklerini bilir."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 122,
+    "fields": {
+      "code": "3311662",
+      "class_name": "BİLGİSAYAR ve AĞ GÜVENLİĞİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Güvenlik testlerinde bilgi toplama, TCP/IP İletişiminde oturuma müdahale, güvenlik duvarları(Firewall), saldırı tespit ve engelleme sistemleri,\r\nIDS/IPS ve içerik filtreleme sistemleri ve Atlatma yöntemleri, Host/Ağ/Port Keşif ve tarama araçları kullanımı, VPN ve Şifreleme teknolojileri,\r\nzafiyet tarama ve bulma sistemleri, Exploit çeşitleri ve metasploit kullanım, DOS/DDOS saldırıları ve korunma yöntemleri, kablosuz ağlar ve\r\ngüvenlik, IIS, apache üzerinde web uygulama güvenliği, hacking yöntemleri, son kullanıcıya yönelik saldırı çeşitleri ve yöntemleri, güvenlik\r\namaçlı Kullanılan tarayıcı eklentileri, Linux sistem yönetimi ve güvenliği (Self Study), TCP/IP Protokol Ailesi Zafiyet Analizleri, KVKK ve 5156\r\nsayılı kanun ve gereklerini bilir."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 141,
+    "fields": {
+      "code": "3301672",
+      "class_name": "DİSİPLİNLERARASI ÇALIŞMA (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Disiplin nedir, disiplinlerarası kavramı ifade ettikleri, disiplinlerarası çalışmanın tarihteki yeri, disiplinlerarası çalışmanın esasları, disiplinler arası\r\nyaklaşımının sorunlara getirdiği çözümler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 142,
+    "fields": {
+      "code": "3311672",
+      "class_name": "DİSİPLİNLERARASI ÇALIŞMA (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Disiplin nedir, disiplinlerarası kavramı ifade ettikleri, disiplinlerarası çalışmanın tarihteki yeri, disiplinlerarası çalışmanın esasları, disiplinler arası\r\nyaklaşımının sorunlara getirdiği çözümler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 143,
+    "fields": {
+      "code": "3301673",
+      "class_name": "GERÇEKÇİ MODELLEME VE SİMÜLASYON TASARIMI (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Sistem modelleme ve simülasyon alanında temel kavram ve prensiplerin tanıtılması, Modelleme kavram ve bileşenlerinin öğrenilmesi,-Benzetim\r\nyöntemleri ile model yapabilme yeteneğinin öğretilmesi"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 144,
+    "fields": {
+      "code": "3311673",
+      "class_name": "GERÇEKÇİ MODELLEME VE SİMÜLASYON TASARIMI (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Sistem modelleme ve simülasyon alanında temel kavram ve prensiplerin tanıtılması, Modelleme kavram ve bileşenlerinin öğrenilmesi,-Benzetim\r\nyöntemleri ile model yapabilme yeteneğinin öğretilmesi"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 123,
+    "fields": {
+      "code": "3301663",
+      "class_name": "GÖMÜLÜ SİSTEMLER (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Gömülü Sistemler Giriş. Gömülü Sistem Platformları. Donanım tanımlama dilleri. VHDL, FPGA lere genel bir bakış. Intel Quartus, SOPC, Temel\r\nVHDL Bileşenleri (Kütüphane, Varlık, Mimari), VHDL operatörleri, VHDL veri nesneleri, Port map, eş zamanlı işlemler, sıralı işlemler, benzetim\r\nuygulamaları, VHDL dili ile FPGA tabanlı proje uygulamaları geliştirme"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 124,
+    "fields": {
+      "code": "3311663",
+      "class_name": "GÖMÜLÜ SİSTEMLER (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Gömülü Sistemler Giriş. Gömülü Sistem Platformları. Donanım tanımlama dilleri. VHDL, FPGA lere genel bir bakış. Intel Quartus, SOPC, Temel\r\nVHDL Bileşenleri (Kütüphane, Varlık, Mimari), VHDL operatörleri, VHDL veri nesneleri, Port map, eş zamanlı işlemler, sıralı işlemler, benzetim\r\nuygulamaları, VHDL dili ile FPGA tabanlı proje uygulamaları geliştirme"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 115,
+    "fields": {
+      "code": "3301653",
+      "class_name": "GÖRÜNTÜ İŞLEME",
+      "semester": 6,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Görüntü işleme temelleri. Kavramlar. Görüntü. Işığın özellikleri. Renk bilgisi. İnsan görme sistemi. Kameralar. Bilgisayar görme sistemleri.\r\nSiyah- beyaz-gri görüntü. Histogram. Renkli görüntü. Renk modelleri. Sayısal görüntü. Temel görüntü işleme teknikleri. Kenar bulma.\r\nOperatörler. Görüntü iyileştirme ve zenginleştirme. Görüntü restorasyonu. Onarma ve segmentasyon işlemleri. Görüntü dönüştürme. Morfolojik\r\nişlemler. Görüntüde alçak ve yüksek frekanslı filtreleme işlemleri. Dönüşüm işlemleri ve özellik çıkarma teknikleri. Matlab ve görüntü işleme\r\nuygulamaları. Ders ile ilgili öğrencinin kendisini geliştirebileceği uygulama ve projelerin yapılması."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 116,
+    "fields": {
+      "code": "3311653",
+      "class_name": "GÖRÜNTÜ İŞLEME",
+      "semester": 6,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Görüntü işleme temelleri. Kavramlar. Görüntü. Işığın özellikleri. Renk bilgisi. İnsan görme sistemi. Kameralar. Bilgisayar görme sistemleri.\r\nSiyah- beyaz-gri görüntü. Histogram. Renkli görüntü. Renk modelleri. Sayısal görüntü. Temel görüntü işleme teknikleri. Kenar bulma.\r\nOperatörler. Görüntü iyileştirme ve zenginleştirme. Görüntü restorasyonu. Onarma ve segmentasyon işlemleri. Görüntü dönüştürme. Morfolojik\r\nişlemler. Görüntüde alçak ve yüksek frekanslı filtreleme işlemleri. Dönüşüm işlemleri ve özellik çıkarma teknikleri. Matlab ve görüntü işleme\r\nuygulamaları. Ders ile ilgili öğrencinin kendisini geliştirebileceği uygulama ve projelerin yapılması."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 125,
+    "fields": {
+      "code": "3301664",
+      "class_name": "İŞ ZEKASI (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgi sistemlerine giriş. İş zekâsı ve karar süreci. Veri ambarı tasarlamak. Boyutsal veri modeli. Veri ambarı mimarileri. Veri ambarı kavramsal\r\nmodeli. Veri küpleri. Veri ambarında sorgulama. Veri madenciğine giriş."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 126,
+    "fields": {
+      "code": "3311664",
+      "class_name": "İŞ ZEKASI (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgi sistemlerine giriş. İş zekâsı ve karar süreci. Veri ambarı tasarlamak. Boyutsal veri modeli. Veri ambarı mimarileri. Veri ambarı kavramsal\r\nmodeli. Veri küpleri. Veri ambarında sorgulama. Veri madenciğine giriş."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 129,
+    "fields": {
+      "code": "3301666",
+      "class_name": "İŞLETİM SİSTEMLERİ YÖNETİMİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "İşletim sistemlerine giriş. Bilgisayar sistemlerinin yapısı. Senkronizasyon. Kritik bölge problemleri. Semaforlar. Monitörler ve uygulamaları.\r\nKilitlenmeler. CPU planlama algoritmaları. Bellek yönetimi. Sayfalama. Segmentasyon sanal bellek. Dosya sistemi, erişim ve koruma\r\nmekanizmaları. Giriş çıkış sistemi. Disk planlaması ve yönetimi. Linux komutları ve görevleri. Linux uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 130,
+    "fields": {
+      "code": "3311666",
+      "class_name": "İŞLETİM SİSTEMLERİ YÖNETİMİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "İşletim sistemlerine giriş. Bilgisayar sistemlerinin yapısı. Senkronizasyon. Kritik bölge problemleri. Semaforlar. Monitörler ve uygulamaları.\r\nKilitlenmeler. CPU planlama algoritmaları. Bellek yönetimi. Sayfalama. Segmentasyon sanal bellek. Dosya sistemi, erişim ve koruma\r\nmekanizmaları. Giriş çıkış sistemi. Disk planlaması ve yönetimi. Linux komutları ve görevleri. Linux uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 137,
+    "fields": {
+      "code": "3301670",
+      "class_name": "KRİPTOLOJİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Temel güvenlik ve bilgi kavramları, Kriptografiye giriş, tarihçesi, Substitution and transposition ciphers, one-time pads, tek alfabeli yerine koyma\r\ntekniği, çok alfabeli yerine koyma tekniği, Hashing (bozma), bozulmuş mesaj doğrulama kodu, Simetrik algoritmalar (DES, AES,RC4, Cipher\r\nmodları), Anahtar dağıtımı ve anahtar değişimi, Asimetrik algoritmalar (RSA,ElGamal,ECC), Sertifikalar (Sertifika zincirleri, PKI,Trust and public\r\nkey rings), İmza şemaları (Simetrik ve asimetrik imzalama, gökkü şağı tabloları, Doğum günü saldırısı)\r\nDoğrulama Protokolleri (Paylaşımlı sırla doğrulama, anahtar dağıtım merkeziyle doğrulama, Kerberos ile doğrulama, Asimetrik algoritmalarla\r\ndoğrulama), rastgele sayı ve asal sayı üreten algoritmalar. Asallık testleri konuları kapsar. Bu konuların bilgisayar iletişim sistemlerinde kullanım\r\nyöntemlerini öğrenir.\r\nHaberleşme Güvenliği (Kesme Prensibi, IPSec), Ağ Koruması (Güvenlik Duvarları, IDS), Ağ Koruması (VPN, kablosuz güvenlik, DoS, Email\r\ngüvenliği (PGP, PEM, S/MIME), Web Güvenliği, Tehditler, Güvenli isimlendirme, TLS, mobil kod güvenliği, Ağda gizlilik ( Web bugs, Cookieler),\r\nYönetmelikler, yasalar ve gizlilik, Güvenli Programlama, Programlama dilleri için güvenlik mimarileri, Güvenli Programlama Prensipleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 138,
+    "fields": {
+      "code": "3311670",
+      "class_name": "KRİPTOLOJİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Temel güvenlik ve bilgi kavramları, Kriptografiye giriş, tarihçesi, Substitution and transposition ciphers, one-time pads, tek alfabeli yerine koyma\r\ntekniği, çok alfabeli yerine koyma tekniği, Hashing (bozma), bozulmuş mesaj doğrulama kodu, Simetrik algoritmalar (DES, AES,RC4, Cipher\r\nmodları), Anahtar dağıtımı ve anahtar değişimi, Asimetrik algoritmalar (RSA,ElGamal,ECC), Sertifikalar (Sertifika zincirleri, PKI,Trust and public\r\nkey rings), İmza şemaları (Simetrik ve asimetrik imzalama, gökkü şağı tabloları, Doğum günü saldırısı)\r\nDoğrulama Protokolleri (Paylaşımlı sırla doğrulama, anahtar dağıtım merkeziyle doğrulama, Kerberos ile doğrulama, Asimetrik algoritmalarla\r\ndoğrulama), rastgele sayı ve asal sayı üreten algoritmalar. Asallık testleri konuları kapsar. Bu konuların bilgisayar iletişim sistemlerinde kullanım\r\nyöntemlerini öğrenir.\r\nHaberleşme Güvenliği (Kesme Prensibi, IPSec), Ağ Koruması (Güvenlik Duvarları, IDS), Ağ Koruması (VPN, kablosuz güvenlik, DoS, Email\r\ngüvenliği (PGP, PEM, S/MIME), Web Güvenliği, Tehditler, Güvenli isimlendirme, TLS, mobil kod güvenliği, Ağda gizlilik ( Web bugs, Cookieler),\r\nYönetmelikler, yasalar ve gizlilik, Güvenli Programlama, Programlama dilleri için güvenlik mimarileri, Güvenli Programlama Prensipleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 135,
+    "fields": {
+      "code": "3301669",
+      "class_name": "MESLEKİ İNGİLİZCE (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Dijital çağda yaşamak. Bilgisayar temelleri. Sistemlerin içi. Bilgisayar alımı. Yazmak tıklamak ve konuşmak. Anın fotoğrafını yakalamak. Görüntü\r\nekranları ve ergonomisi. Yazıcı seçimi. Engelliler için cihazlar. Manyetik hafıza. Optik hafıza. flash hafıza. İşletim sistemleri. Kelime işleme.\r\nHesap tablosu ve veritabanları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 136,
+    "fields": {
+      "code": "3311669",
+      "class_name": "MESLEKİ İNGİLİZCE (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Dijital çağda yaşamak. Bilgisayar temelleri. Sistemlerin içi. Bilgisayar alımı. Yazmak tıklamak ve konuşmak. Anın fotoğrafını yakalamak. Görüntü\r\nekranları ve ergonomisi. Yazıcı seçimi. Engelliler için cihazlar. Manyetik hafıza. Optik hafıza. flash hafıza. İşletim sistemleri. Kelime işleme.\r\nHesap tablosu ve veritabanları"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 133,
+    "fields": {
+      "code": "3301668",
+      "class_name": "MİKROBİLGİSAYARLI SİSTEM TASARIMI (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Mikrobilgisayar tabanlı sistem tasarımına giriş. Sistemde giriş-çıkış organizasyonu, kesmeler. Mikro denetleyiciler, gelişmesi ve yapısı. Mikro\r\ndenetleyicilerde programlama (8051 üzerinde). Konularla ilgili deneysel çalışmalar yapılması ve rapor biçiminde belgelenmesi. Mikrobilgisayar\r\ngeliştirme ortamı tanıtımı, proje oluşturma ve assembly dili ile kod yazma, program derleme, benzetime tabi tutma. Program geliştirme ve sistem\r\nbenzetimi basamaklarında ortaya çıkan hataları bulma ve düzeltme yöntemleri, analiz yöntemleri, durak noktaları, adım adım çalıştırma. Bir\r\nmikroişlemci sistemi tasarımı örneği. Örnek uygulamalar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 134,
+    "fields": {
+      "code": "3311668",
+      "class_name": "MİKROBİLGİSAYARLI SİSTEM TASARIMI (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Mikrobilgisayar tabanlı sistem tasarımına giriş. Sistemde giriş-çıkış organizasyonu, kesmeler. Mikro denetleyiciler, gelişmesi ve yapısı. Mikro\r\ndenetleyicilerde programlama (8051 üzerinde). Konularla ilgili deneysel çalışmalar yapılması ve rapor biçiminde belgelenmesi. Mikrobilgisayar\r\ngeliştirme ortamı tanıtımı, proje oluşturma ve assembly dili ile kod yazma, program derleme, benzetime tabi tutma. Program geliştirme ve sistem\r\nbenzetimi basamaklarında ortaya çıkan hataları bulma ve düzeltme yöntemleri, analiz yöntemleri, durak noktaları, adım adım çalıştırma. Bir\r\nmikroişlemci sistemi tasarımı örneği. Örnek uygulamalar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 117,
+    "fields": {
+      "code": "3301654",
+      "class_name": "MÜHENDİSLİK TASARIMI",
+      "semester": 6,
+      "credit": 2.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Aktif öğrenmeye giriş: takım çalışması iletişim, etkin toplantıları hazırlama ve kalite değerlendirme. İnovatif Problem çözme yöntemleri: problem\r\ntanıma/tanımlama, çözüm üretme, çözüm seçme yöntemleri, seçim metodolojisi, çözüm uygulama, uygulamanın değerlendirilmesi. Öğrenme\r\nseviyeleri ve içselleştirmenin dereceleri. Etik kararlar. İş ve tasarım günlüğü organizasyonu. Tersine mühendislik ve tasarım projeleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 118,
+    "fields": {
+      "code": "3311654",
+      "class_name": "MÜHENDİSLİK TASARIMI",
+      "semester": 6,
+      "credit": 2.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Aktif öğrenmeye giriş: takım çalışması iletişim, etkin toplantıları hazırlama ve kalite değerlendirme. İnovatif Problem çözme yöntemleri: problem\r\ntanıma/tanımlama, çözüm üretme, çözüm seçme yöntemleri, seçim metodolojisi, çözüm uygulama, uygulamanın değerlendirilmesi. Öğrenme\r\nseviyeleri ve içselleştirmenin dereceleri. Etik kararlar. İş ve tasarım günlüğü organizasyonu. Tersine mühendislik ve tasarım projeleri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 113,
+    "fields": {
+      "code": "3301652",
+      "class_name": "OTOMATA TEORİSİ VE BİÇİMSEL DİLLER",
+      "semester": 6,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Sonlu durum makineleri, deterministik sonlu durum makineleri, deterministik olmayan sonlu durum makineleri, düzenli ifadeler, düzenli diller,\r\nDiller ve sonlu durum makineleri arasındaki ilişkiler, bağlamdan bağımsız gramerler, itmeli makinalar, Turing Makinaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 114,
+    "fields": {
+      "code": "3311652",
+      "class_name": "OTOMATA TEORİSİ VE BİÇİMSEL DİLLER",
+      "semester": 6,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Sonlu durum makineleri, deterministik sonlu durum makineleri, deterministik olmayan sonlu durum makineleri, düzenli ifadeler, düzenli diller,\r\nDiller ve sonlu durum makineleri arasındaki ilişkiler, bağlamdan bağımsız gramerler, itmeli makinalar, Turing Makinaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 127,
+    "fields": {
+      "code": "3301665",
+      "class_name": "ROBOTİK (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Robotiğe giriş. Tarihsel gelişim ve temel kavramlar. Otomasyon sistemlerinde robotlar. Grup teknolojisi. Robotlarda eksenler. Koordinat\r\nsistemleri. Robot çeşitleri ve kullanım yerleri. Robot hareket ettirme sistemleri. Robot dinamiği. Robot kinematiği. Kinematik analizi. Kinematik\r\ndenklemleri. Ters kinematik problemi ve çözüm yöntemleri. Yörünge planlaması. Konum ve hız eğrilerinin elde edilmesi. Robotlarda uç\r\nelemanları. Robot simülasyon yazılımları. Endüstriyel robotik uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 128,
+    "fields": {
+      "code": "3311665",
+      "class_name": "ROBOTİK (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Robotiğe giriş. Tarihsel gelişim ve temel kavramlar. Otomasyon sistemlerinde robotlar. Grup teknolojisi. Robotlarda eksenler. Koordinat\r\nsistemleri. Robot çeşitleri ve kullanım yerleri. Robot hareket ettirme sistemleri. Robot dinamiği. Robot kinematiği. Kinematik analizi. Kinematik\r\ndenklemleri. Ters kinematik problemi ve çözüm yöntemleri. Yörünge planlaması. Konum ve hız eğrilerinin elde edilmesi. Robotlarda uç\r\nelemanları. Robot simülasyon yazılımları. Endüstriyel robotik uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 119,
+    "fields": {
+      "code": "3301661",
+      "class_name": "SİSTEM PROGRAMLAMA (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar sistemleri ve C programlama dili hakkında bazı temel bilgiler. Arşivleme. Libc. Dosyalar ve dizin dosyaları. Bağlantılar. Dosyadan\r\nokuma/yazma. Sistem çağrıları ve tampon bellek (buffer) kullanımı. Sistem çağrıları ve giriş çıkış. Simgesel dil -1 (yerel değişkenler ve\r\nfonksiyonlar). Simgesel dil -2 (dallanma). Bellek erişimi ile ilgili uygulamalar. Ara Sınav. Süreçler ve süreç yönetimi (fork, dup, pipe). Sinyaller.\r\nSüreçler arası iletişim. Soket arabirimi ile iletişim. Sunucu-istemci modelinde uygulama geliştirme. İplik (thread) programlama modeli"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 120,
+    "fields": {
+      "code": "3311661",
+      "class_name": "SİSTEM PROGRAMLAMA (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar sistemleri ve C programlama dili hakkında bazı temel bilgiler. Arşivleme. Libc. Dosyalar ve dizin dosyaları. Bağlantılar. Dosyadan\r\nokuma/yazma. Sistem çağrıları ve tampon bellek (buffer) kullanımı. Sistem çağrıları ve giriş çıkış. Simgesel dil -1 (yerel değişkenler ve\r\nfonksiyonlar). Simgesel dil -2 (dallanma). Bellek erişimi ile ilgili uygulamalar. Ara Sınav. Süreçler ve süreç yönetimi (fork, dup, pipe). Sinyaller.\r\nSüreçler arası iletişim. Soket arabirimi ile iletişim. Sunucu-istemci modelinde uygulama geliştirme. İplik (thread) programlama modeli"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 145,
+    "fields": {
+      "code": "3301674",
+      "class_name": "WEB PROGRAMLAMA (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Etkileşimli web sayfası. Bilgi girme/sorgulama, alışveriş ve üyelik kaydı vb. Web sunucu ve programlama için gerekli yazılımları (IIS, Apache,\r\nvb) kurma. Sunucu tabanlı programlamaya giriş. Web programlama dilleri (PHP, ASP, CGI, JAVA vb) yapısal farklılıklar, karşılaştırma, atama,\r\ndöngü, dizi işlemleri, değişkenler, sabitler ve java uygulamaları (applet). Oturumlar, Çerez, web güvenliği. Veritabanı hazırlama, veritabanı\r\nsorgulama (SQL, MYSQL vb.) ve veritabanı bağlantıları (ODBC, JDBC vb.). Etkileşimli web sayfası yönetme, veri arşivleme, güncelleme,\r\nveritabanı düzenleme ve yayın sürekliliği."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 146,
+    "fields": {
+      "code": "3311674",
+      "class_name": "WEB PROGRAMLAMA (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Etkileşimli web sayfası. Bilgi girme/sorgulama, alışveriş ve üyelik kaydı vb. Web sunucu ve programlama için gerekli yazılımları (IIS, Apache,\r\nvb) kurma. Sunucu tabanlı programlamaya giriş. Web programlama dilleri (PHP, ASP, CGI, JAVA vb) yapısal farklılıklar, karşılaştırma, atama,\r\ndöngü, dizi işlemleri, değişkenler, sabitler ve java uygulamaları (applet). Oturumlar, Çerez, web güvenliği. Veritabanı hazırlama, veritabanı\r\nsorgulama (SQL, MYSQL vb.) ve veritabanı bağlantıları (ODBC, JDBC vb.). Etkileşimli web sayfası yönetme, veri arşivleme, güncelleme,\r\nveritabanı düzenleme ve yayın sürekliliği."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 131,
+    "fields": {
+      "code": "3301667",
+      "class_name": "WEB SERVİSLERİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "XML nedir web servis nedir. Servise yönelik ve P2P model. SOAP nedir hangi bileşenlerden oluşur. WSDL ve kullanımı. UDDI nedir, nasıl\r\nprogramlanır ve WSDL ile nasıl kullanılır. Java’nın XML mesajlaşma araçları. SOAP element API si. J2EE ve web servisleri. JWS standardı.\r\nWeb servislerin birlikte çalışabilirliği. Web servis güvenliği. XML sayısal imzaları. XML şifreleme. SOAP güvenlik eklentileri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 132,
+    "fields": {
+      "code": "3311667",
+      "class_name": "WEB SERVİSLERİ (6. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 6,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "XML nedir web servis nedir. Servise yönelik ve P2P model. SOAP nedir hangi bileşenlerden oluşur. WSDL ve kullanımı. UDDI nedir, nasıl\r\nprogramlanır ve WSDL ile nasıl kullanılır. Java’nın XML mesajlaşma araçları. SOAP element API si. J2EE ve web servisleri. JWS standardı.\r\nWeb servislerin birlikte çalışabilirliği. Web servis güvenliği. XML sayısal imzaları. XML şifreleme. SOAP güvenlik eklentileri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 111,
+    "fields": {
+      "code": "3301651",
+      "class_name": "YAPAY ZEKA",
+      "semester": 6,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Yapay zekaya giriş. Yapay zeka kavramları. Yapay zeka dillerinin genel tanıtımı Bilgi tabanları ve bilginin sunulması yöntemleri. Bilgi\r\nmühendisliği. Uzman sistemler ve onların tasarlanması yöntemleri. Yapay sinir ağları ve temel öğrenme kuralları. Tek katmanlı ağlar. Çok\r\nkatmanlı ağlar. Bulanık mantık ve bulanık sistemler. Genetik algoritmalar. Veri madenciliği. Doğal dil işleme. İleri yapay zeka uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 112,
+    "fields": {
+      "code": "3311651",
+      "class_name": "YAPAY ZEKA",
+      "semester": 6,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Yapay zekaya giriş. Yapay zeka kavramları. Yapay zeka dillerinin genel tanıtımı Bilgi tabanları ve bilginin sunulması yöntemleri. Bilgi\r\nmühendisliği. Uzman sistemler ve onların tasarlanması yöntemleri. Yapay sinir ağları ve temel öğrenme kuralları. Tek katmanlı ağlar. Çok\r\nkatmanlı ağlar. Bulanık mantık ve bulanık sistemler. Genetik algoritmalar. Veri madenciliği. Doğal dil işleme. İleri yapay zeka uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 200,
+    "fields": {
+      "code": "3301788",
+      "class_name": "ARAŞTIRMA VE RAPOR YAZMA TEKNİKLERİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Araştırma Etiği kavramı. İlgili alt ve üst kavramlar. Günümüzde en çok tartışılan araştırma etiği konuları. Klinik araştırmalar. Girişimsel olmayan\r\nklinik araştırmalar. Bilimsel geçerlik ve güvenilirliğin nasıl sağlanabileceği. En sık görülen araştırma etiği ihlalleri ve bunları önleme yöntemleri.\r\nİhlal tespiti durumunda izlenecek yolların neler olduğu hakkında bilgi ve farkındalık kazandırmaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 201,
+    "fields": {
+      "code": "3311788",
+      "class_name": "ARAŞTIRMA VE RAPOR YAZMA TEKNİKLERİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Araştırma Etiği kavramı. İlgili alt ve üst kavramlar. Günümüzde en çok tartışılan araştırma etiği konuları. Klinik araştırmalar. Girişimsel olmayan\r\nklinik araştırmalar. Bilimsel geçerlik ve güvenilirliğin nasıl sağlanabileceği. En sık görülen araştırma etiği ihlalleri ve bunları önleme yöntemleri.\r\nİhlal tespiti durumunda izlenecek yolların neler olduğu hakkında bilgi ve farkındalık kazandırmaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 161,
+    "fields": {
+      "code": "3301764",
+      "class_name": "BİLGİSAYAR DESTEKLİ TASARIM (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar destekli tasarım sistemleri. Bilgisayar destekli tasarım temelleri. Bilgisayar destekli tasarım mimarisi ve donanımı. Geometrik\r\nmodelleme teorisi temelleri. Modelleme ve bilgisayar destekli tasarım yazılımları tanıtımı ve işlevleri. Eğriler ve eğrisel yüzeyler. Katı Modelleme.\r\nBilgisayar destekli çizimin elemanları. Geometrik konstrüksiyonlar. Ortografik çizimler. Genel mühendislik uygulamaları. Sanal gerçeklik ve\r\nsanal gerçeklik modelleme dili."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 162,
+    "fields": {
+      "code": "3311764",
+      "class_name": "BİLGİSAYAR DESTEKLİ TASARIM (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar destekli tasarım sistemleri. Bilgisayar destekli tasarım temelleri. Bilgisayar destekli tasarım mimarisi ve donanımı. Geometrik\r\nmodelleme teorisi temelleri. Modelleme ve bilgisayar destekli tasarım yazılımları tanıtımı ve işlevleri. Eğriler ve eğrisel yüzeyler. Katı Modelleme.\r\nBilgisayar destekli çizimin elemanları. Geometrik konstrüksiyonlar. Ortografik çizimler. Genel mühendislik uygulamaları. Sanal gerçeklik ve\r\nsanal gerçeklik modelleme dili."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 171,
+    "fields": {
+      "code": "3301769",
+      "class_name": "BİLGİSAYAR GRAFİKLERİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Grafik sistemleri genel tanıtımı. Grafik donanımları. CRT, LCD prensipleri. Çıkış bileşenleri ve oluşturulması. Çizme algoritmaları. Doldurma\r\nalgoritmaları. DDA ve Bresenham Algoritmaları. 2 Boyutlu transformasyonlar. 2 Boyutlu kesme algoritmaları. 3 Boyutlu kavramlar. 3 Boyutlu\r\nnesne tanımlamasına giriş. 3 Boyutlu Geometrik modelleme ve dönüşümler. 3 Boyutlu Görüntüleme. Görünür Yüzey metotları. Aydınlanma\r\nmodelleri. Phong aydınlanma modeli. Lambert kanunu. Texture Map ve Bump Map uygulamaları. Görüntü uzayında görüntü oluşturma\r\nalgoritmaları. Raying ve Raytracing algoritması. Radiosity. Renk Kavramları. Bilgisayarla Animasyon."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 172,
+    "fields": {
+      "code": "3311769",
+      "class_name": "BİLGİSAYAR GRAFİKLERİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Grafik sistemleri genel tanıtımı. Grafik donanımları. CRT, LCD prensipleri. Çıkış bileşenleri ve oluşturulması. Çizme algoritmaları. Doldurma\r\nalgoritmaları. DDA ve Bresenham Algoritmaları. 2 Boyutlu transformasyonlar. 2 Boyutlu kesme algoritmaları. 3 Boyutlu kavramlar. 3 Boyutlu\r\nnesne tanımlamasına giriş. 3 Boyutlu Geometrik modelleme ve dönüşümler. 3 Boyutlu Görüntüleme. Görünür Yüzey metotları. Aydınlanma\r\nmodelleri. Phong aydınlanma modeli. Lambert kanunu. Texture Map ve Bump Map uygulamaları. Görüntü uzayında görüntü oluşturma\r\nalgoritmaları. Raying ve Raytracing algoritması. Radiosity. Renk Kavramları. Bilgisayarla Animasyon."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 149,
+    "fields": {
+      "code": "3301752",
+      "class_name": "BİLGİSAYAR MİMARİSİ ve ORGANİZASYONU",
+      "semester": 7,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Organizasyon ve mimari nedir? Farkları. En çok yaygın olan mimariler. Bilgisayar hızı nasıl ölçülür? Paralel işlem sistemleri. CISC mimari yapılı\r\nbir işlemci. RISC mimari yapılı bir işlemci, Diğer mimari yapılı işlemciler (VLIW, Çok çekirdekli vs.). Bellek hiyerarşisi. Ön bellek yapısı. Belleğin\r\nsayfalarla organizasyonu. Belleğin segmentlerle organizasyonu. Sanal bellek ve organizasyonu. Asosiatif bellek organizasyonu. Girdi-çıktı\r\norganizasyonu. Belleğe direk erişim. Bilgisayar yazılımı organizasyonu."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 150,
+    "fields": {
+      "code": "3311752",
+      "class_name": "BİLGİSAYAR MİMARİSİ ve ORGANİZASYONU",
+      "semester": 7,
+      "credit": 3.5,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Organizasyon ve mimari nedir? Farkları. En çok yaygın olan mimariler. Bilgisayar hızı nasıl ölçülür? Paralel işlem sistemleri. CISC mimari yapılı\r\nbir işlemci. RISC mimari yapılı bir işlemci, Diğer mimari yapılı işlemciler (VLIW, Çok çekirdekli vs.). Bellek hiyerarşisi. Ön bellek yapısı. Belleğin\r\nsayfalarla organizasyonu. Belleğin segmentlerle organizasyonu. Sanal bellek ve organizasyonu. Asosiatif bellek organizasyonu. Girdi-çıktı\r\norganizasyonu. Belleğe direk erişim. Bilgisayar yazılımı organizasyonu."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 147,
+    "fields": {
+      "code": "3301751",
+      "class_name": "BİTİRME PROJESİ",
+      "semester": 7,
+      "credit": 2.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar yazılımı ve donanımı konularında, öğrencinin tanımlanmış bir proje kapsamında tasarım ve gerçekleştirim çalışmalarını\r\ntamamlayarak sonuçlarını bir raporla sunduğu ve öğrencinin mühendisçe davranışını geliştirmesinin amaçlandığı proje dersidir. Proje yönetimi\r\n(planlama, öneri, zaman yönetimi, maliyet). Proje çalışması, rapor yazım çalışması, sunum ve savunma."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 148,
+    "fields": {
+      "code": "3311751",
+      "class_name": "BİTİRME PROJESİ",
+      "semester": 7,
+      "credit": 2.5,
+      "akts": 5,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bilgisayar yazılımı ve donanımı konularında, öğrencinin tanımlanmış bir proje kapsamında tasarım ve gerçekleştirim çalışmalarını\r\ntamamlayarak sonuçlarını bir raporla sunduğu ve öğrencinin mühendisçe davranışını geliştirmesinin amaçlandığı proje dersidir. Proje yönetimi\r\n(planlama, öneri, zaman yönetimi, maliyet). Proje çalışması, rapor yazım çalışması, sunum ve savunma."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 167,
+    "fields": {
+      "code": "3301767",
+      "class_name": "BULUT BİLİŞİM (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bulut bilişime giriş. Bulut bilişimin temelleri. Bulut bilişimin iş dünyası için önemi. Bulut bilişim hizmet modelleri. Bulut bilişimin dağıtım modelleri.\r\nBulut bilişimin avantajları. Bulut bilişimin unsurları. Bulut bilişimin teknik temeli. Güncel bulut bilişim uygulamaları. Bulut bilişim kullanım alanları.\r\nBulutta veri yönetimi. Standartlar. Mobil bulut uygulamaları. Bulut servislerinin yönetimi ve güvenliği. Sanallaştırma. Hizmet tabanlı mimari. Bulut\r\nortamının yönetimi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 168,
+    "fields": {
+      "code": "3311767",
+      "class_name": "BULUT BİLİŞİM (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bulut bilişime giriş. Bulut bilişimin temelleri. Bulut bilişimin iş dünyası için önemi. Bulut bilişim hizmet modelleri. Bulut bilişimin dağıtım modelleri.\r\nBulut bilişimin avantajları. Bulut bilişimin unsurları. Bulut bilişimin teknik temeli. Güncel bulut bilişim uygulamaları. Bulut bilişim kullanım alanları.\r\nBulutta veri yönetimi. Standartlar. Mobil bulut uygulamaları. Bulut servislerinin yönetimi ve güvenliği. Sanallaştırma. Hizmet tabanlı mimari. Bulut\r\nortamının yönetimi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 186,
+    "fields": {
+      "code": "3301776",
+      "class_name": "ÇEVRE VE ENERJİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Enerjinin Temelleri. Endüstriyel Toplumunda Enerji Kullanımı. Fosil Yakıtlar. Isı Motorları. Yenilenebilir Enerji Kaynakları I: Güneş Enerjisi.\r\nYenilenebilir Enerji Kaynakları II: Alternatifler. Nükleer Enerjinin Vaatleri ve Sorunları. Enerji tasarrufu. Ulaştırma. Hava kirliliği. Global Etkiler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 187,
+    "fields": {
+      "code": "3311776",
+      "class_name": "ÇEVRE VE ENERJİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Enerjinin Temelleri. Endüstriyel Toplumunda Enerji Kullanımı. Fosil Yakıtlar. Isı Motorları. Yenilenebilir Enerji Kaynakları I: Güneş Enerjisi.\r\nYenilenebilir Enerji Kaynakları II: Alternatifler. Nükleer Enerjinin Vaatleri ve Sorunları. Enerji tasarrufu. Ulaştırma. Hava kirliliği. Global Etkiler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 194,
+    "fields": {
+      "code": "3301785",
+      "class_name": "DIŞ TİCARET (7.YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Dış ticarette temel kavramlar, Dış ticarette kullanılan belgeler, Dış ticarette kullanılan belgeler, Dış ticarette Teslim Şeeri, Dış ticarette Teslim\r\nŞeeri, Dış ticarette Ödeme Şeeri, Kambiyo Mevzuatı, Kambiyo Mevzuatı Temel Kavramları, İhracat bedelinin tahsili işlemleri, Kambiyo\r\nMevzuatında Kullanılan Belgeler, Kambiyo Senetleri"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 195,
+    "fields": {
+      "code": "3311785",
+      "class_name": "DIŞ TİCARET (7.YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Dış ticarette temel kavramlar, Dış ticarette kullanılan belgeler, Dış ticarette kullanılan belgeler, Dış ticarette Teslim Şeeri, Dış ticarette Teslim\r\nŞeeri, Dış ticarette Ödeme Şeeri, Kambiyo Mevzuatı, Kambiyo Mevzuatı Temel Kavramları, İhracat bedelinin tahsili işlemleri, Kambiyo\r\nMevzuatında Kullanılan Belgeler, Kambiyo Senetleri"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 177,
+    "fields": {
+      "code": "3301772",
+      "class_name": "E-TİCARET VE UYGULAMALARI (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Elektronik Ticaretin Tanımı, amaçları ve araçları. Elektronik Ticaretin Türleri, boyutu, getirdiği değişimler. Elektronik ticarette dikkat edilecek\r\nnoktalar. Elektronik Ticarette Ödeme Araçları. Elektronik ticaretin Tarafları ve Elektronik ticarette müşteri Kavramı. Elektronik Ticarette\r\ntüketicilerin Korunması sorunu ve Türkiye’deki durum. Elektronik ticaretin olumlu ve olumsuz etkileri. Güvenlik Sistemleri. Elektronik Ticarette\r\nHukuki düzenlemeler. Belge Düzeni ve Muhasebe İşlemleri. Tahsil Çeşitlerine Göre Satışlar ve Muhasebe Kayıtları. E-Ticaret sitelerinde\r\nuygulama ve Örnekler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 179,
+    "fields": {
+      "code": "3311772",
+      "class_name": "E-TİCARET VE UYGULAMALARI (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Elektronik Ticaretin Tanımı, amaçları ve araçları. Elektronik Ticaretin Türleri, boyutu, getirdiği değişimler. Elektronik ticarette dikkat edilecek\r\nnoktalar. Elektronik Ticarette Ödeme Araçları. Elektronik ticaretin Tarafları ve Elektronik ticarette müşteri Kavramı. Elektronik Ticarette\r\ntüketicilerin Korunması sorunu ve Türkiye’deki durum. Elektronik ticaretin olumlu ve olumsuz etkileri. Güvenlik Sistemleri. Elektronik Ticarette\r\nHukuki düzenlemeler. Belge Düzeni ve Muhasebe İşlemleri. Tahsil Çeşitlerine Göre Satışlar ve Muhasebe Kayıtları. E-Ticaret sitelerinde\r\nuygulama ve Örnekler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 153,
+    "fields": {
+      "code": "3301754",
+      "class_name": "GİRİŞİMCİLİK VE PROJE YÖNETİMİ",
+      "semester": 7,
+      "credit": 2.5,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Girişimciliğe dair temel kavramlar, girişimcinin özellikleri ve gerekli beceriler, Girişimcilik türleri, girişimcilik kültürü, motivasyon, aile işletmeciliği,\r\nKadın girişimciliği, Türkiye’de girişimcilik etiği, Örgüt kültürü, iletişim ve girişimcilik ağı, Girişimcilik ve imtiyaz hakkı, Yerel girişimcilik, Girişimcilik\r\nfinansmanı, İş planı kavramı ve öğeleri, Projenin tanımı, özellikleri ve sınıflandırılması, Proje yönetimi ve organizasyonu, Takım çalışması (Farklı\r\ndisiplinlerin birlikte proje yazma kültürü ), Mantıksal çerçeve yaklaşımı, Proje yönetiminde bütçeleme, Proje yönetiminde kontrol ve raporlama,\r\nProje risk yönetimi, Öğrenci sunumları (iş planı sunumları)"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 154,
+    "fields": {
+      "code": "3311754",
+      "class_name": "GİRİŞİMCİLİK VE PROJE YÖNETİMİ",
+      "semester": 7,
+      "credit": 2.5,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Girişimciliğe dair temel kavramlar, girişimcinin özellikleri ve gerekli beceriler, Girişimcilik türleri, girişimcilik kültürü, motivasyon, aile işletmeciliği,\r\nKadın girişimciliği, Türkiye’de girişimcilik etiği, Örgüt kültürü, iletişim ve girişimcilik ağı, Girişimcilik ve imtiyaz hakkı, Yerel girişimcilik, Girişimcilik\r\nfinansmanı, İş planı kavramı ve öğeleri, Projenin tanımı, özellikleri ve sınıflandırılması, Proje yönetimi ve organizasyonu, Takım çalışması (Farklı\r\ndisiplinlerin birlikte proje yazma kültürü ), Mantıksal çerçeve yaklaşımı, Proje yönetiminde bütçeleme, Proje yönetiminde kontrol ve raporlama,\r\nProje risk yönetimi, Öğrenci sunumları (iş planı sunumları)"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 192,
+    "fields": {
+      "code": "3301784",
+      "class_name": "İŞARET DİLİ (7.YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Türk işaret dili. Türk işaret dilinin genel özellikleri. Türk işaret dili alfabesi. Aile ve çevresi. Vücudumuz. Sağlık. Fiiller. Sıfatlar. Zıt Anlamlı\r\nKelimeler. Sayılar. Matematik işaretleri ve ölçüleri. Duygular. Zaman Dilimleri. Taşıtlar ve trafik. Renkler. Okul ve eğitim. Isıtma araçları ve\r\nyakacaklar. Giyecek ve takılar. Yiyecek ve içecekler. Ev ve ev eşyaları. Meslekler. Müzik ve müzik aletleri. El takımları ve makineler. Bitkiler ve\r\nhayvanlar. Spor ve spor kulüpleri. Yönler. Hava ve coğrafi terimler. İsimler. Deyimler. Türkiye’nin illeri ve ülkeler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 193,
+    "fields": {
+      "code": "3311784",
+      "class_name": "İŞARET DİLİ (7.YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Türk işaret dili. Türk işaret dilinin genel özellikleri. Türk işaret dili alfabesi. Aile ve çevresi. Vücudumuz. Sağlık. Fiiller. Sıfatlar. Zıt Anlamlı\r\nKelimeler. Sayılar. Matematik işaretleri ve ölçüleri. Duygular. Zaman Dilimleri. Taşıtlar ve trafik. Renkler. Okul ve eğitim. Isıtma araçları ve\r\nyakacaklar. Giyecek ve takılar. Yiyecek ve içecekler. Ev ve ev eşyaları. Meslekler. Müzik ve müzik aletleri. El takımları ve makineler. Bitkiler ve\r\nhayvanlar. Spor ve spor kulüpleri. Yönler. Hava ve coğrafi terimler. İsimler. Deyimler. Türkiye’nin illeri ve ülkeler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 165,
+    "fields": {
+      "code": "3301766",
+      "class_name": "KABLOSUZ AĞLAR (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Internetin yapısı. Uç ağlar. Çekirdek ağlar. Protokol katmanları. Kablosuz ağ terminolojisi. Kablosuz ağ MAC (WMAC) katmanı. Kablosuz ağ\r\nfiziksel (PHY) katmanı. Taşıyıcı sinyal algılama mekanizması (CSMA). Sinyaller, radyo dalgaları ve dalgaboyu. Sinyal modülasyonu ve\r\ndemodülasyonu. Sinyal spectrumunun yayılımı. Multiplexing ve çoklu erişim. OFDM ve QAM. 5G teknolojisi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 166,
+    "fields": {
+      "code": "3311766",
+      "class_name": "KABLOSUZ AĞLAR (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Internetin yapısı. Uç ağlar. Çekirdek ağlar. Protokol katmanları. Kablosuz ağ terminolojisi. Kablosuz ağ MAC (WMAC) katmanı. Kablosuz ağ\r\nfiziksel (PHY) katmanı. Taşıyıcı sinyal algılama mekanizması (CSMA). Sinyaller, radyo dalgaları ve dalgaboyu. Sinyal modülasyonu ve\r\ndemodülasyonu. Sinyal spectrumunun yayılımı. Multiplexing ve çoklu erişim. OFDM ve QAM. 5G teknolojisi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 188,
+    "fields": {
+      "code": "3301782",
+      "class_name": "KALİTE ve GÜVENCE SİSTEMLERİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Kalite kavramı. Standart ve Standardizasyon. Standardın üretim ve hizmet sektöründe önemi. Yönetim kalitesi ve standartları. Kalite yönetim\r\nsistemi modelleri. Stratejik yönetim. Yönetime katılma. Süreç yönetim sistemi. Kaynak yönetimi sistemi. EFQM modeli. Üretimde kalite kontrolü.\r\nMuayene ve örnekleme. Toplam kalite ve kontrol. Kontrol diyagramları. Kontrol diyagramlarının incelenmesi ve örneklerle açıklanması."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 189,
+    "fields": {
+      "code": "3311782",
+      "class_name": "KALİTE ve GÜVENCE SİSTEMLERİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Kalite kavramı. Standart ve Standardizasyon. Standardın üretim ve hizmet sektöründe önemi. Yönetim kalitesi ve standartları. Kalite yönetim\r\nsistemi modelleri. Stratejik yönetim. Yönetime katılma. Süreç yönetim sistemi. Kaynak yönetimi sistemi. EFQM modeli. Üretimde kalite kontrolü.\r\nMuayene ve örnekleme. Toplam kalite ve kontrol. Kontrol diyagramları. Kontrol diyagramlarının incelenmesi ve örneklerle açıklanması."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 159,
+    "fields": {
+      "code": "3301763",
+      "class_name": "KONTROL SİSTEMLERİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Açık çevrim ve kapalı çevrim kontrol sistemlerinin yapıları ve özellikleri. Laplas dönüşümleri. Kontrol sistemlerinin matematiksel modelleri ve\r\ntransfer fonksiyonlarının çıkartılması. Blok diyagramları ve işaret akış diyagramlarının çizilmesi. DC servomotor sisteminin analizi. Kontrolörlerin\r\nincelenmesi. Kontrol sistemlerinin geçici durum ve sürekli durum cevap analizi. Örnek sistem uygulamaları. Blok diyagramlarda sadeleştirme\r\nyöntemleri. MATLAB komutları ile blok diyagramların sadeleştirilmesi. İşaret akış diyagramlarının özellikleri. Mason kazanç formülü ile transfer\r\nfonksiyonu hesabı ve örnek uygulamalar. Sistemlerin durum-uzay formunda ifade edilmesi, durum değişkenlerinin tespiti ve faz değişim blok\r\ndiyagramlarının çıkarılması. Model kavramı ve çeşitleri. Sistemlerdeki statik ve dinamik elemanlar. Sistemlerdeki elemanların incelenmesi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 160,
+    "fields": {
+      "code": "3311763",
+      "class_name": "KONTROL SİSTEMLERİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Açık çevrim ve kapalı çevrim kontrol sistemlerinin yapıları ve özellikleri. Laplas dönüşümleri. Kontrol sistemlerinin matematiksel modelleri ve\r\ntransfer fonksiyonlarının çıkartılması. Blok diyagramları ve işaret akış diyagramlarının çizilmesi. DC servomotor sisteminin analizi. Kontrolörlerin\r\nincelenmesi. Kontrol sistemlerinin geçici durum ve sürekli durum cevap analizi. Örnek sistem uygulamaları. Blok diyagramlarda sadeleştirme\r\nyöntemleri. MATLAB komutları ile blok diyagramların sadeleştirilmesi. İşaret akış diyagramlarının özellikleri. Mason kazanç formülü ile transfer\r\nfonksiyonu hesabı ve örnek uygulamalar. Sistemlerin durum-uzay formunda ifade edilmesi, durum değişkenlerinin tespiti ve faz değişim blok\r\ndiyagramlarının çıkarılması. Model kavramı ve çeşitleri. Sistemlerdeki statik ve dinamik elemanlar. Sistemlerdeki elemanların incelenmesi."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 190,
+    "fields": {
+      "code": "3301783",
+      "class_name": "MÜHENDİSLİK EKONOMİSİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Ekonomiye giriş. Konusu ve tanımı. Ekonomik problemler. Ekonomik seçim ve üretim imkanları eğrisi. İhtiyaçlar-mal-hizmet-fayda ilişkisi.\r\nEkonomik sistemler. Nüfus problemleri. Ekonomik büyüme. Fiyat teorisi ve fiyat mekanizmasının işleyiş mantığı. Fiyat ve piyasa çeşitleri.\r\nTalebin tanımı. Talep kanunu. Tüketici talebi ve marjinal fayda. Arz. Arz esnekliği ve arz-talep dengesi. Piyasa dengesi. Rekabet piyasaları.\r\nPiyasa dengesini etkileyen faktörler ve müdahaleler. Üretim faktörleri. Emek. Sermaye. Teşebbüs. Özel-kamu teşebbüsleri. İşgücü ve işsizlik\r\nsorunları. Uluslararası işgücü akımları. Bankalar ve bankacılık. Para. Parasal fonksiyonlar. Para ile ilgili olaylar. Enflasyon. Deflasyon.\r\nDevalüasyon. Uluslararası iktisat. Yabancı sermaye ve çok uluslu şirketler. Borsa. Elektronik ticaret ve etkileri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 191,
+    "fields": {
+      "code": "3311783",
+      "class_name": "MÜHENDİSLİK EKONOMİSİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Ekonomiye giriş. Konusu ve tanımı. Ekonomik problemler. Ekonomik seçim ve üretim imkanları eğrisi. İhtiyaçlar-mal-hizmet-fayda ilişkisi.\r\nEkonomik sistemler. Nüfus problemleri. Ekonomik büyüme. Fiyat teorisi ve fiyat mekanizmasının işleyiş mantığı. Fiyat ve piyasa çeşitleri.\r\nTalebin tanımı. Talep kanunu. Tüketici talebi ve marjinal fayda. Arz. Arz esnekliği ve arz-talep dengesi. Piyasa dengesi. Rekabet piyasaları.\r\nPiyasa dengesini etkileyen faktörler ve müdahaleler. Üretim faktörleri. Emek. Sermaye. Teşebbüs. Özel-kamu teşebbüsleri. İşgücü ve işsizlik\r\nsorunları. Uluslararası işgücü akımları. Bankalar ve bankacılık. Para. Parasal fonksiyonlar. Para ile ilgili olaylar. Enflasyon. Deflasyon.\r\nDevalüasyon. Uluslararası iktisat. Yabancı sermaye ve çok uluslu şirketler. Borsa. Elektronik ticaret ve etkileri."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 151,
+    "fields": {
+      "code": "3301753",
+      "class_name": "MÜHENDİSLİK İSTATİSTİĞİ",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Temel Kavramlar, Sıklık(Frekans) Dağılımları, İstatistiksel Seriler, Merkezi Eğilim ve Dağılım Ölçüleri, Histogram, Olasılık, Rasgele değişken\r\nkavramı, Rasgele değişkenlerin olasılık dağılımları, Kesikli dağılımlar, Sürekli Normal Dağılım ve geniş uygulamaları, Örnekleme ve örneklem\r\ndağılımları, İstatistik tahmin ve güven kavramı"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 152,
+    "fields": {
+      "code": "3311753",
+      "class_name": "MÜHENDİSLİK İSTATİSTİĞİ",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 4,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Temel Kavramlar, Sıklık(Frekans) Dağılımları, İstatistiksel Seriler, Merkezi Eğilim ve Dağılım Ölçüleri, Histogram, Olasılık, Rasgele değişken\r\nkavramı, Rasgele değişkenlerin olasılık dağılımları, Kesikli dağılımlar, Sürekli Normal Dağılım ve geniş uygulamaları, Örnekleme ve örneklem\r\ndağılımları, İstatistik tahmin ve güven kavramı"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 182,
+    "fields": {
+      "code": "3301774",
+      "class_name": "MVC TABANLI WEB MİMARİSİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "MVC Tasarım Desenini anlamak, Razor ve diğer front end teknolojileri ile çalışmak URL Routing, Model, View, Controller ve Action'lar, Action\r\nFiltreleri, Yardımcı Methodlar, URL ve Ajax Yardımcı Methodlar, Model Bağlama, VERİ TABANI ve ORM (Object Relation Mapping) Güvenlik\r\n(Otantikasyon ve Otorizasyon), Front End Teknolojileri (CSS, Bootstrap, Ajax, Juery, Javascript etc.) Responsive Tasarım Sitenin Sunucuda\r\nKurulumu"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 183,
+    "fields": {
+      "code": "3311774",
+      "class_name": "MVC TABANLI WEB MİMARİSİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "MVC Tasarım Desenini anlamak, Razor ve diğer front end teknolojileri ile çalışmak URL Routing, Model, View, Controller ve Action'lar, Action\r\nFiltreleri, Yardımcı Methodlar, URL ve Ajax Yardımcı Methodlar, Model Bağlama, VERİ TABANI ve ORM (Object Relation Mapping) Güvenlik\r\n(Otantikasyon ve Otorizasyon), Front End Teknolojileri (CSS, Bootstrap, Ajax, Juery, Javascript etc.) Responsive Tasarım Sitenin Sunucuda\r\nKurulumu"
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 175,
+    "fields": {
+      "code": "3301771",
+      "class_name": "OYUN PROGRAMLAMA (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Oyun mantığı ve oyun programlamanın temelleri. Oyun Teorisi. Oyun prototipi geliştirme ve dizaynı. Oyunlarda Yapay Zekâ ve Kullanımı. Oyun\r\nStilleri ve Mekaniği. Oyun Programlama Araç ve Gereçleri. API ve Kütüphaneler. Grafik API’leri. DirectX ve OpenGL. Oyun Yapıları. Oyun\r\nGeliştirme. Kullanılan Programlama Dillerinin Güçleri ve Zayıf Yanları. Oyunlarda Scripting Dilleri, Lua ve XML. Öğrenci Konu ve Araştırma\r\nSunumları. İçerik Oluşturma. Seviye Tasarım Temelleri. Oyun Endüstrisi. Oyun Projelerinin Tanıtım ve Sunumu."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 176,
+    "fields": {
+      "code": "3311771",
+      "class_name": "OYUN PROGRAMLAMA (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Oyun mantığı ve oyun programlamanın temelleri. Oyun Teorisi. Oyun prototipi geliştirme ve dizaynı. Oyunlarda Yapay Zekâ ve Kullanımı. Oyun\r\nStilleri ve Mekaniği. Oyun Programlama Araç ve Gereçleri. API ve Kütüphaneler. Grafik API’leri. DirectX ve OpenGL. Oyun Yapıları. Oyun\r\nGeliştirme. Kullanılan Programlama Dillerinin Güçleri ve Zayıf Yanları. Oyunlarda Scripting Dilleri, Lua ve XML. Öğrenci Konu ve Araştırma\r\nSunumları. İçerik Oluşturma. Seviye Tasarım Temelleri. Oyun Endüstrisi. Oyun Projelerinin Tanıtım ve Sunumu."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 169,
+    "fields": {
+      "code": "3301768",
+      "class_name": "PAKET PROGRAMLAR (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Matlab'ın Genel Yapısı. Matlab Kullanımında Temel Kurallar, ifadeler, değişkenler, sayılar, operatörler (sayısal İşlemciler). Fonksiyonlar. Özel\r\nSabitler. Vektörler. Matlab'da Dizi (Matris) İşlemleri. Matrislerde Elemanlar. Genel Matrisler. Matrisler ve İşlemler. Basit grafikler oluşturma\r\n(grafik biçimlendirme), kopyalama, saklama, çıktı alma. Basit hesaplamalar yapma ve basit grafikler göstermek için Matlab’da m-dosyası\r\noluşturma. Matlab’ta cebirsel denklem tanımlama ve çözümü. Diferansiyel denklemlerin zaman düzleminde ve frekans düzleminde çözümü.\r\nKonuyla ilgili sembolik çözüm uygulamaları. Matlab’da mühendislik uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 170,
+    "fields": {
+      "code": "3311768",
+      "class_name": "PAKET PROGRAMLAR (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Matlab'ın Genel Yapısı. Matlab Kullanımında Temel Kurallar, ifadeler, değişkenler, sayılar, operatörler (sayısal İşlemciler). Fonksiyonlar. Özel\r\nSabitler. Vektörler. Matlab'da Dizi (Matris) İşlemleri. Matrislerde Elemanlar. Genel Matrisler. Matrisler ve İşlemler. Basit grafikler oluşturma\r\n(grafik biçimlendirme), kopyalama, saklama, çıktı alma. Basit hesaplamalar yapma ve basit grafikler göstermek için Matlab’da m-dosyası\r\noluşturma. Matlab’ta cebirsel denklem tanımlama ve çözümü. Diferansiyel denklemlerin zaman düzleminde ve frekans düzleminde çözümü.\r\nKonuyla ilgili sembolik çözüm uygulamaları. Matlab’da mühendislik uygulamaları."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 157,
+    "fields": {
+      "code": "3301762",
+      "class_name": "PARALEL İŞLEMCİLİ SİSTEMLER (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Paralel hesaplamanın temel görüşleri ve gelişimi. Paralel işlem sistemlerinin tasnifi. Paralel mimariler. Paralel iletişim yapıları. Paralel işletim\r\nsistemlerinin performansları. Paralel algoritmalar ve onların programlanması. Paralel işlem sistemlerine ait örnekler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 158,
+    "fields": {
+      "code": "3311762",
+      "class_name": "PARALEL İŞLEMCİLİ SİSTEMLER (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Paralel hesaplamanın temel görüşleri ve gelişimi. Paralel işlem sistemlerinin tasnifi. Paralel mimariler. Paralel iletişim yapıları. Paralel işletim\r\nsistemlerinin performansları. Paralel algoritmalar ve onların programlanması. Paralel işlem sistemlerine ait örnekler."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 180,
+    "fields": {
+      "code": "3301773",
+      "class_name": "PARALEL PROGRAMLAMA (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Paralel sistemlere giriş. Seri ve paralel programlama. Paralel algoritmaların analizi. Paralel programlama ortamları. Paralel algoritma tasarım\r\nprensipleri. Paralel algoritma tasarım prensipleri iletişim konuları. Sıralama,arama ve matris hesaplamaları için paralel algoritmalar. Paralel\r\nhesaplamalarda başarım kriterleri. MPI. OpenMPI. MPI ve OpenMPI kütüphanelerinin kullanılması. MPI ve OpenMPI ile paralel programlama\r\ngeliştirme."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 181,
+    "fields": {
+      "code": "3311773",
+      "class_name": "PARALEL PROGRAMLAMA (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Paralel sistemlere giriş. Seri ve paralel programlama. Paralel algoritmaların analizi. Paralel programlama ortamları. Paralel algoritma tasarım\r\nprensipleri. Paralel algoritma tasarım prensipleri iletişim konuları. Sıralama,arama ve matris hesaplamaları için paralel algoritmalar. Paralel\r\nhesaplamalarda başarım kriterleri. MPI. OpenMPI. MPI ve OpenMPI kütüphanelerinin kullanılması. MPI ve OpenMPI ile paralel programlama\r\ngeliştirme."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 155,
+    "fields": {
+      "code": "3301761",
+      "class_name": "PROGRAMLANABİLİR MANTIK KONTROLLÖR (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Denetim (kumanda) ve otomasyon sistemlerinin temel özellikleri; denetim devresi elemanları; kontaktörler, yardımcı röle, zaman rölesi, koruma\r\nröleleri ve denetim devrelerine ilişkin genel standartlar. Programlanabilir mantık denetleyicileri (PLC); içyapısı, merkezi işlem birimi, giriş-çıkış\r\narabirimi, bellek yapısı. PLC işletim sistemi ve kullanıcı programının yürütülmesi. Programlama dilleri; komut kümesi ve merdiven programı ile\r\nprogramlama tekniği. Temel komut kümesi, zamanlayıcı, sayısı aritmetik ve karşılaştırma fonksiyonları. PLC-PE ve PLC devre bağlantıları,\r\niletişim arabirimleri ve protokolleri, mantık devre tasarım yöntemleri. Program denetim komutları. Master kontrol işlemi ve komutları. PLC için\r\nseçim ölçütleri ve endüstriyel uygulamalar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 156,
+    "fields": {
+      "code": "3311761",
+      "class_name": "PROGRAMLANABİLİR MANTIK KONTROLLÖR (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Denetim (kumanda) ve otomasyon sistemlerinin temel özellikleri; denetim devresi elemanları; kontaktörler, yardımcı röle, zaman rölesi, koruma\r\nröleleri ve denetim devrelerine ilişkin genel standartlar. Programlanabilir mantık denetleyicileri (PLC); içyapısı, merkezi işlem birimi, giriş-çıkış\r\narabirimi, bellek yapısı. PLC işletim sistemi ve kullanıcı programının yürütülmesi. Programlama dilleri; komut kümesi ve merdiven programı ile\r\nprogramlama tekniği. Temel komut kümesi, zamanlayıcı, sayısı aritmetik ve karşılaştırma fonksiyonları. PLC-PE ve PLC devre bağlantıları,\r\niletişim arabirimleri ve protokolleri, mantık devre tasarım yöntemleri. Program denetim komutları. Master kontrol işlemi ve komutları. PLC için\r\nseçim ölçütleri ve endüstriyel uygulamalar."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 198,
+    "fields": {
+      "code": "3301787",
+      "class_name": "REKLAMCILIK VE STRATEJİLERİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Reklamda yaratıcılığın önemi. Yaratıcı stratejileri tanımları ve uygulama alanları. SWOT analizi, yaratıcı strateji, brif. TV , radyo, sinema, basın,\r\ninsert, açık hava, internet, doğrudan postalama, POP. Gazete ve dergi ilanları. Aralarındaki farklar. Bilinmesi gereken özel kurallar. Gazete ve\r\ndergi ilanı hazırlama. Başlık, metin, görsel. Açıkhava reklamları. Bilinmesi gereken özel kurallar. Billboard, raket hazırlama. Başlık, görsel.\r\nMağaza içi reklam malzemeleri (POP). Broşür, poster, stand, föy, dönkart, sticker hazırlama. Slogan, başlık, metin, görsel. Doğrudan postalama\r\nmalzemeleri. Mailing, mektup, kart hazırlama. Başlık, metin, görsel. İnternette reklam. Banner, site içi reklam, advergame, e-mail, internet\r\nvideoları hazırlama. Başlık, metin, görsel, animasyon."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 199,
+    "fields": {
+      "code": "3311787",
+      "class_name": "REKLAMCILIK VE STRATEJİLERİ (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Reklamda yaratıcılığın önemi. Yaratıcı stratejileri tanımları ve uygulama alanları. SWOT analizi, yaratıcı strateji, brif. TV , radyo, sinema, basın,\r\ninsert, açık hava, internet, doğrudan postalama, POP. Gazete ve dergi ilanları. Aralarındaki farklar. Bilinmesi gereken özel kurallar. Gazete ve\r\ndergi ilanı hazırlama. Başlık, metin, görsel. Açıkhava reklamları. Bilinmesi gereken özel kurallar. Billboard, raket hazırlama. Başlık, görsel.\r\nMağaza içi reklam malzemeleri (POP). Broşür, poster, stand, föy, dönkart, sticker hazırlama. Slogan, başlık, metin, görsel. Doğrudan postalama\r\nmalzemeleri. Mailing, mektup, kart hazırlama. Başlık, metin, görsel. İnternette reklam. Banner, site içi reklam, advergame, e-mail, internet\r\nvideoları hazırlama. Başlık, metin, görsel, animasyon."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 196,
+    "fields": {
+      "code": "3301786",
+      "class_name": "TOPLUMA HİZMET UYGULAMALARI (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Eğitimde topluma hizmetin tanımı, uygulama örnekleri. Topluma hizmet uygulamalarının önemi. Topluma hizmet uygulamaları geliştirme ve\r\ndeğerlendirme, toplumun güncel sorunlarını belirleme ve çözüm üretmeye yönelik projeler hazırlama. Sosyal sorumluluk projelerine gönüllü\r\nkatılım. Bilimsel etkinliklere katılım."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 197,
+    "fields": {
+      "code": "3311786",
+      "class_name": "TOPLUMA HİZMET UYGULAMALARI (7. YARIYIL SOSYAL SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 2.0,
+      "akts": 2,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Eğitimde topluma hizmetin tanımı, uygulama örnekleri. Topluma hizmet uygulamalarının önemi. Topluma hizmet uygulamaları geliştirme ve\r\ndeğerlendirme, toplumun güncel sorunlarını belirleme ve çözüm üretmeye yönelik projeler hazırlama. Sosyal sorumluluk projelerine gönüllü\r\nkatılım. Bilimsel etkinliklere katılım."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 173,
+    "fields": {
+      "code": "3301770",
+      "class_name": "VERİ İLETİŞİM TEKNİKLERİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Veri Haberleşmesi. Veri ağları ve ağ kategorileri. Standartlar. Ağ topolojileri. OSI. TCP/IP. Adresleme. Veri ve sinyaller. Dijital Veri\r\nHaberleşmesi. Analog Veri Haberleşmesi. Çoğullama. Yayılmış Spektrum. İletim Ortamı. Devre Anahtarlama ve Paket Anahtarlama. Veri\r\niletişiminde telefon ve kablo ağlarının kullanımı. Hata tespiti ve düzeltilmesi. Veri ağlarında kontrol. HDLC Multiple Access."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 174,
+    "fields": {
+      "code": "3311770",
+      "class_name": "VERİ İLETİŞİM TEKNİKLERİ (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Veri Haberleşmesi. Veri ağları ve ağ kategorileri. Standartlar. Ağ topolojileri. OSI. TCP/IP. Adresleme. Veri ve sinyaller. Dijital Veri\r\nHaberleşmesi. Analog Veri Haberleşmesi. Çoğullama. Yayılmış Spektrum. İletim Ortamı. Devre Anahtarlama ve Paket Anahtarlama. Veri\r\niletişiminde telefon ve kablo ağlarının kullanımı. Hata tespiti ve düzeltilmesi. Veri ağlarında kontrol. HDLC Multiple Access."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 184,
+    "fields": {
+      "code": "3301775",
+      "class_name": "YEŞİL BİLİŞİM (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Yeşil Bilişim Teknolojisine Genel Bakış. Yeşil Cihazlar, Donanım ve Yazılım. Sürdürülebilir Yazılım Geliştirme. Yeşil Veri Merkezleri. Yeşil Veri\r\nDepolama. Yeşil Ağlar ve İletişim. Sürdürülebilir Bilgi Sistemleri ve Yeşil Metrikler. Sürdürülebilir BT Servisleri: Servis İnovasyonu için bir\r\nÇerçeve Oluşturma. Çevreye Duyarlı İş Sürecini İyileştirme. Yeşil BT'yi Yönetme."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 185,
+    "fields": {
+      "code": "3311775",
+      "class_name": "YEŞİL BİLİŞİM (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Yeşil Bilgişim Teknolojisine Genel Bakış. Yeşil Cihazlar, Donanım ve Yazılım. Sürdürülebilir Yazılım Geliştirme. Yeşil Veri Merkezleri. Yeşil Veri\r\nDepolama. Yeşil Ağlar ve İletişim. Sürdürülebilir Bilgi Sistemleri ve Yeşil Metrikler. Sürdürülebilir BT Servisleri: Servis İnovasyonu için bir\r\nÇerçeve Oluşturma. Çevreye Duyarlı İş Sürecini İyileştirme. Yeşil BT'yi Yönetme."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 163,
+    "fields": {
+      "code": "3301765",
+      "class_name": "YÖNEYLEM ARAŞTIRMASI (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Verilecek kararlarda en iyi sonucu elde etmek için geliştirilmiş kantitatif modelleri ele almak, gerçek hayatta karşılaşılan uygulama alanlarını\r\ngöstermek ve çözüm yöntemlerini öğretmektir. Tanımı ve tarihsel gelişimi. Karar teorisi ve karar modelleri. Tamsayılı Lineer Programlama.\r\nŞebeke (Network) Analizleri: Maksimum akış, En kısa yol ve Minimal yayılma problemleri. PERT-CPM ile proje programlama. Stok (envanter)\r\nmodelleri. Kuyruk (bekleme hattı) modelleri. Markov zinciri ve analizleri. Dinamik Programlama. Geometrik Programlama."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 164,
+    "fields": {
+      "code": "3311765",
+      "class_name": "YÖNEYLEM ARAŞTIRMASI (7. YARIYIL TEKNİK SEÇMELİ DERS)",
+      "semester": 7,
+      "credit": 3.0,
+      "akts": 3,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Verilecek kararlarda en iyi sonucu elde etmek için geliştirilmiş kantitatif modelleri ele almak, gerçek hayatta karşılaşılan uygulama alanlarını\r\ngöstermek ve çözüm yöntemlerini öğretmektir. Tanımı ve tarihsel gelişimi. Karar teorisi ve karar modelleri. Tamsayılı Lineer Programlama.\r\nŞebeke (Network) Analizleri: Maksimum akış, En kısa yol ve Minimal yayılma problemleri. PERT-CPM ile proje programlama. Stok (envanter)\r\nmodelleri. Kuyruk (bekleme hattı) modelleri. Markov zinciri ve analizleri. Dinamik Programlama. Geometrik Programlama."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 202,
+    "fields": {
+      "code": "3301851",
+      "class_name": "İŞYERİ EĞİTİMİ",
+      "semester": 8,
+      "credit": 10.0,
+      "akts": 18,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Bu eğitiminde; öğrencilerinin okulda edindikleri bilgileri pratikte geliştirmeleri için “İşyeri Uygulamalı Eğitim” çalışmalarını ve bu çalışmaların\r\ngerçekleşmesini sağlayıcı yöntemleri kapsamaktadır. İşyeri Uygulamalı Eğitim’den amaç öğrencilerin kendi yetişme alanları ile ilgili\r\nkuruluşlarında ve gerçek iş ortamlarında üretime azami derecede katılmaları sağlanacaktır. Okuldaki öğrenim süreleri içinde kazandıkları teorik\r\nbilgi ve yeteneklerini pekiştirmelerini, laboratuvar ve atölye uygulamalarında edindikleri beceri ve kabiliyetlerini geliştirmelerini, görev alacakları\r\nişyerlerindeki sorumluluklarını, risk yönetimini, işçi-işveren ilişkilerini, organizasyon, üretim sistemleri, iş sağlığı ve iş güvenliğini, yeni\r\nteknolojileri tanımalarını ve raporlama tekniklerinin öğrenilmesini sağlamaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 203,
+    "fields": {
+      "code": "3311851",
+      "class_name": "İŞYERİ EĞİTİMİ",
+      "semester": 8,
+      "credit": 10.0,
+      "akts": 18,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Bu eğitiminde; öğrencilerinin okulda edindikleri bilgileri pratikte geliştirmeleri için “İşyeri Uygulamalı Eğitim” çalışmalarını ve bu çalışmaların\r\ngerçekleşmesini sağlayıcı yöntemleri kapsamaktadır. İşyeri Uygulamalı Eğitim’den amaç öğrencilerin kendi yetişme alanları ile ilgili\r\nkuruluşlarında ve gerçek iş ortamlarında üretime azami derecede katılmaları sağlanacaktır. Okuldaki öğrenim süreleri içinde kazandıkları teorik\r\nbilgi ve yeteneklerini pekiştirmelerini, laboratuvar ve atölye uygulamalarında edindikleri beceri ve kabiliyetlerini geliştirmelerini, görev alacakları\r\nişyerlerindeki sorumluluklarını, risk yönetimini, işçi-işveren ilişkilerini, organizasyon, üretim sistemleri, iş sağlığı ve iş güvenliğini, yeni\r\nteknolojileri tanımalarını ve raporlama tekniklerinin öğrenilmesini sağlamaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 204,
+    "fields": {
+      "code": "3301852",
+      "class_name": "STAJ 1*",
+      "semester": 8,
+      "credit": 0.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Staj yerinin tanınması, iş yerinde birimler arasındaki ilişkilerin tanınması, takım çalışmasına katılma, uygulama tabanlı öğrenme ve raporlama,\r\nÖğrencilerin öğrenim süreleri içinde kazandıkları bilgi ve deneyimlerini pekiştirmek için görev yapacakları iş yerlerindeki hiyerarşik\r\nsorumluluklarını, ilişkileri, organizasyon yapısını, iş disiplinini gözlemleyerek, uygulama yaparak ve sektör çalışanlarının yaptıkları işlevleri\r\nyakından izleyerek, diploma programlarına ilişkin bilgi ve görgülerini arttırma imkânı sağlamak, Almış oldukları teorik bilgileri kullanabilme ve\r\nuygulamaya aktarma becerisini kazandırmak, İşyeri eğitimi yaptıkları kurumun görevli personeli ile uyumlu çalışma ve işletmenin ilgili olduğu\r\ndiğer kişilerle (müşteri ya da diğer kurumlar) iyi iletişim kurabilme alışkanlığını kazandırmak, Sektörde yaşanan teknolojik gelişmeleri izleyerek\r\ntanımalarını sağlamaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 205,
+    "fields": {
+      "code": "3311852",
+      "class_name": "STAJ 1*",
+      "semester": 8,
+      "credit": 0.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Staj yerinin tanınması, iş yerinde birimler arasındaki ilişkilerin tanınması, takım çalışmasına katılma, uygulama tabanlı öğrenme ve raporlama,\r\nÖğrencilerin öğrenim süreleri içinde kazandıkları bilgi ve deneyimlerini pekiştirmek için görev yapacakları iş yerlerindeki hiyerarşik\r\nsorumluluklarını, ilişkileri, organizasyon yapısını, iş disiplinini gözlemleyerek, uygulama yaparak ve sektör çalışanlarının yaptıkları işlevleri\r\nyakından izleyerek, diploma programlarına ilişkin bilgi ve görgülerini arttırma imkânı sağlamak, Almış oldukları teorik bilgileri kullanabilme ve\r\nuygulamaya aktarma becerisini kazandırmak, İşyeri eğitimi yaptıkları kurumun görevli personeli ile uyumlu çalışma ve işletmenin ilgili olduğu\r\ndiğer kişilerle (müşteri ya da diğer kurumlar) iyi iletişim kurabilme alışkanlığını kazandırmak, Sektörde yaşanan teknolojik gelişmeleri izleyerek\r\ntanımalarını sağlamaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 206,
+    "fields": {
+      "code": "3301853",
+      "class_name": "STAJ 2*",
+      "semester": 8,
+      "credit": 0.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "n.ö",
+      "is_active": true,
+      "turkish_content": "Staj yerinin tanınması, iş yerinde birimler arasındaki ilişkilerin tanınması, takım çalışmasına katılma, uygulama tabanlı öğrenme ve raporlama,\r\nÖğrencilerin öğrenim süreleri içinde kazandıkları bilgi ve deneyimlerini pekiştirmek için görev yapacakları iş yerlerindeki hiyerarşik\r\nsorumluluklarını, ilişkileri, organizasyon yapısını, iş disiplinini gözlemleyerek, uygulama yaparak ve sektör çalışanlarının yaptıkları işlevleri\r\nyakından izleyerek, diploma programlarına ilişkin bilgi ve görgülerini arttırma imkânı sağlamak, Almış oldukları teorik bilgileri kullanabilme ve\r\nuygulamaya aktarma becerisini kazandırmak, İşyeri eğitimi yaptıkları kurumun görevli personeli ile uyumlu çalışma ve işletmenin ilgili olduğu\r\ndiğer kişilerle (müşteri ya da diğer kurumlar) iyi iletişim kurabilme alışkanlığını kazandırmak, Sektörde yaşanan teknolojik gelişmeleri izleyerek\r\ntanımalarını sağlamaktır."
+    }
+  },
+  {
+    "model": "adaptation.adapatationclass",
+    "pk": 207,
+    "fields": {
+      "code": "3311853",
+      "class_name": "STAJ 2*",
+      "semester": 8,
+      "credit": 0.0,
+      "akts": 6,
+      "link": "https://bologna.selcuk.edu.tr/tr/Dersler/teknoloji-bilgisayar_muhendisligi-bilgisayar_muhendisligi-lisans",
+      "education_time": "i.ö",
+      "is_active": true,
+      "turkish_content": "Staj yerinin tanınması, iş yerinde birimler arasındaki ilişkilerin tanınması, takım çalışmasına katılma, uygulama tabanlı öğrenme ve raporlama,\r\nÖğrencilerin öğrenim süreleri içinde kazandıkları bilgi ve deneyimlerini pekiştirmek için görev yapacakları iş yerlerindeki hiyerarşik\r\nsorumluluklarını, ilişkileri, organizasyon yapısını, iş disiplinini gözlemleyerek, uygulama yaparak ve sektör çalışanlarının yaptıkları işlevleri\r\nyakından izleyerek, diploma programlarına ilişkin bilgi ve görgülerini arttırma imkânı sağlamak, Almış oldukları teorik bilgileri kullanabilme ve\r\nuygulamaya aktarma becerisini kazandırmak, İşyeri eğitimi yaptıkları kurumun görevli personeli ile uyumlu çalışma ve işletmenin ilgili olduğu\r\ndiğer kişilerle (müşteri ya da diğer kurumlar) iyi iletişim kurabilme alışkanlığını kazandırmak, Sektörde yaşanan teknolojik gelişmeleri izleyerek\r\ntanımalarını sağlamaktır."
+    }
+  }
+]
