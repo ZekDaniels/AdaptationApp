@@ -81,6 +81,13 @@ class QueryListAPIView(generics.ListAPIView):
         return self._paginator
 
 
+class UniversityListView(QueryListAPIView):
+    
+    queryset = University.objects.all()
+    serializer_class = UniversityListSerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = '__all__'
+
 class FacultyListView(QueryListAPIView):
     
     custom_related_fields = ["university"]

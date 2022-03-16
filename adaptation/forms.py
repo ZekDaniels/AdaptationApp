@@ -1,6 +1,5 @@
 from django import forms
-import datetime
-from adaptation.models import AdapatationClass, Adaptation, Faculty, Science, StudentClass
+from adaptation.models import AdapatationClass, Adaptation, StudentClass
 
 STYLES = {
     "date-input":{
@@ -44,10 +43,19 @@ class ProtoAdaptionForm(forms.ModelForm,StyledFormMixin):
     faculty = forms.ChoiceField(choices=NULL_TUPPLE, required=True, label="Fakülte")
     science = forms.ChoiceField(choices=NULL_TUPPLE, required=True, label="Bölüm")
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for name in self.fields:
+            if name == "university_unrecorded":
+                self.fields[name].widget.attrs['id'] = "id_university"
+            if name == "faculty_unrecorded":
+                self.fields[name].widget.attrs['id'] = "id_faculty"
+            if name == "science_unrecorded":
+                self.fields[name].widget.attrs['id'] = "id_science"
 
     class Meta:
        model = Adaptation
-       exclude = ['is_confirmated', 'decision_date', 'adaptation_year', 'adaptation_semester','result_note','is_closed','user','created_at','update_at']
+       exclude = ['decision_date', 'adaptation_year', 'adaptation_semester','result_note','is_unrecorded','is_confirmated','is_closed','user','created_at','update_at']
       
 
 
@@ -73,7 +81,7 @@ class AdminAdaptationUpdateForm(AdaptationUpdateForm):
     
     class Meta:
        model = Adaptation
-       exclude = ['is_confirmated', 'result_note','is_closed','user','created_at','update_at']
+       exclude = ['result_note', 'is_unrecorded', 'is_confirmated', 'is_closed', 'user', 'created_at', 'update_at']
        widgets = {
             'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
         }
@@ -82,7 +90,7 @@ class DisableAdaptationForm(DisableForm):
 
     class Meta:
         model = Adaptation
-        exclude = ['is_confirmated', 'result_note','is_closed','user','created_at','update_at']
+        exclude = ['result_note', 'is_unrecorded', 'is_confirmated','is_closed', 'user', 'created_at', 'update_at']
         widgets = {
             'decision_date': forms.DateInput(format=('%Y-%m-%d'), attrs={'class':'form-control', 'placeholder':'Select Date','type': 'date'})
         }

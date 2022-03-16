@@ -33,8 +33,12 @@ class AdaptationManageView(LoginRequiredMixin, View):
         else:
             adaptation = get_object_or_404(Adaptation, pk=id)    
 
-        adaptation_update_form = AdaptationUpdateForm(instance=adaptation)
-        admin_adaptation_update_form = AdminAdaptationUpdateForm(instance=adaptation)
+        adaptation_update_form = None
+
+        if not request.user.profile.is_allowed_user():
+            adaptation_update_form = AdaptationUpdateForm(instance=adaptation)
+        else:
+            adaptation_update_form = AdminAdaptationUpdateForm(instance=adaptation)
         adaptation_classes = AdapatationClass.objects.filter(education_time=adaptation.user.profile.education_time).order_by("id")
         
         class_form = StudentClassForm(user=adaptation.user)
@@ -43,7 +47,6 @@ class AdaptationManageView(LoginRequiredMixin, View):
 
         context = {
             'adaptation_update_form': adaptation_update_form,
-            'admin_adaptation_update_form': admin_adaptation_update_form,
             'class_form': class_form,
             'disable_student_class_form': disable_student_class_form,
             'disable_adaptation_class_form': disable_adaptation_class_form,

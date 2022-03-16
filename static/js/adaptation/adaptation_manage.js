@@ -11,9 +11,9 @@ const semester_dropdowns_selector = ".toggle-semester-table";
 
 const add_class_modal_label = $("#AddClassModalLabel");
 
-const university_input = $("#id_university");
-const faculty_input = $("#id_faculty");
-const science_input = $("#id_science");
+let university_input = $("#id_university");
+let faculty_input = $("#id_faculty");
+let science_input = $("#id_science");
 const turkish_content = $("#turkish-content");
 
 const mainForm = $("#mainForm");
@@ -28,6 +28,11 @@ const add_class_button = $("#add_class_button");
 const finish_adaptation_button = $(finish_adaptation_button_selector);
 const activate_button = $("#activate_button");
 const deactivate_button = $("#deactivate_button");
+const custom_record = $("#custom_record");
+
+let university = null;
+let faculty = null;
+let science = null;
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -47,7 +52,6 @@ const fillOptions = function (select_input, data, callback = null) {
   // to select it with new option list
 
   cleanOptions(select_input);
-
 
   for (option of data) {
     $(select_input).append($('<option>', {
@@ -102,6 +106,7 @@ function getSelectionText() {
 
 function setupListeners() {
   university_input.change(() => {
+    console.log("dfdfd");
     updateFaculties();
   });
   faculty_input.change(() => {
@@ -116,6 +121,7 @@ function setupListeners() {
   mainForm.submit(function name(event) {
     event.preventDefault();
     let formData = new FormData(this);
+    formData.append("is_unrecorded", is_unrecorded);
     let data = Object.fromEntries(formData.entries());
     UpdateAdaptation(data, adaptation_update_api_url, main_submit_button);
   });
@@ -184,6 +190,24 @@ $(addClassModal).on('hidden.bs.modal', function () {
 
 
 //Adaptation Activies
+function fillUniversities() {
+  fetch(university_list_api_url)
+  .then((response) => response.json())
+  .then((data) => {
+    $("#id_university").append($('<option>', {
+      value: "",
+      text:"---------"
+    }));
+    for (option of data) {
+      $("#id_university").append($('<option>', {
+        value: option.id,
+        text: option.name
+      }));
+    }
+    
+  });
+}
+
 function updateFaculties() {
   new_value = getSelectionText(university_input)
   if (!new_value) {
@@ -523,11 +547,6 @@ function FillDataCompareClassModal(_data) {
     $(`.table-compare #id_${key}_adaptation_class`).val(value);
   });
   $(`#id_adaptation_class`).val(_data.adaptation_class.id);
-  $(`#sc_content_link`).html(_data.link);
-  $(`#sc_content_link`).prop("href", _data.link);
-  if (_data.link) $(`#sc_content_link_label`).removeClass("d-none");
-  else $(`#sc_content_link_label`).addClass("d-none");
-  
 }
 
 $(activate_button).on("click", function(){
@@ -596,3 +615,69 @@ function isClosedButtonControl(is_closed) {
   activate_button.prop("disabled", is_closed);
   deactivate_button.prop("disabled", !(is_closed));
 }
+
+$(custom_record).on("click", function(event){
+  event.preventDefault();
+  is_unrecorded = !is_unrecorded;
+  if (is_unrecorded){
+    context = {}
+    context['university_div'] =
+    `
+    <label>Üniversite</label>
+    <input type="text" name="university_unrecorded" value="" maxlength="255" class="form-control" id="id_university_unrecorded">
+    `;
+
+    context['faculty_div'] =
+    `
+    <label>Fakülte</label>
+    <input type="text" name="faculty_unrecorded" value="" maxlength="255" class="form-control" id="id_faculty_unrecorded">
+    `;
+
+    context['science_div'] =
+    `
+    <label>Bölüm</label>
+    <input type="text" name="science_unrecorded" value="" maxlength="255" class="form-control" id="id_science_unrecorded">
+    `;
+
+    $.each( context, function( key, value ) {     
+      $(`#${key}`).html(value);
+    });
+
+  }
+  else {
+
+    context = {}
+    context['university_div'] =
+    `<label>Üniversite</label>
+    <select name="university" class="form-control" id="id_university">
+      ${options}
+    </select>`
+    
+    context['faculty_div'] =
+    `<label>Fakülte</label>
+    <select name="faculty" class="form-control" id="id_faculty">
+      <option value="">---------</option>
+    </select>`
+    context['science_div'] =
+    `<label>Bölüm</label>
+    <select name="science" class="form-control" id="id_science">
+      <option value="">---------</option>
+    </select>`
+
+    $.each( context, function( key, value ) {     
+      $(`#${key}`).html(value);
+    });
+    fillUniversities();
+    university_input = $("#id_university");
+    faculty_input = $("#id_faculty");
+    science_input = $("#id_science");
+    
+    university_input.change(() => {
+      updateFaculties();
+    });
+    faculty_input.change(() => {
+      updateSciences();
+    });
+    
+  }
+});

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
-from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass, AdaptationClassConfirmation
+from adaptation.models import AdapatationClass, Adaptation, Faculty,Science, StudentClass, AdaptationClassConfirmation, University
 from django.forms.models import model_to_dict
 from django.db import transaction
 from user.api.serializers import UserListSerializer
@@ -27,7 +27,13 @@ class ErrorNameMixin(serializers.Serializer):
                 verbose_errors[field_name] = error
         print(verbose_errors)
         return verbose_errors
-    
+
+class UniversityListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = University
+        fields = "__all__"
+
 class FacultyListSerializer(serializers.ModelSerializer):
 
     class Meta:

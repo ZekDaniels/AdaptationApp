@@ -61,9 +61,13 @@ class Adaptation(models.Model):
     )
     SEMESETER_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"), (6, "6"), (7, "7"), (8, "8"), )
     YEAR_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), )
-    university = models.ForeignKey(University, on_delete=models.DO_NOTHING, verbose_name="Üniversite")    
-    faculty = models.ForeignKey(Faculty, on_delete=models.DO_NOTHING, verbose_name="Fakülte")
-    science = models.ForeignKey(Science, on_delete=models.DO_NOTHING, verbose_name="Bölüm")
+    university = models.ForeignKey(University, on_delete=models.DO_NOTHING, verbose_name="Üniversite", null=True, blank=True)    
+    faculty = models.ForeignKey(Faculty, on_delete=models.DO_NOTHING, verbose_name="Fakülte", null=True, blank=True)
+    science = models.ForeignKey(Science, on_delete=models.DO_NOTHING, verbose_name="Bölüm", null=True, blank=True)
+    university_unrecorded = models.CharField(verbose_name="Üniversite", max_length=255, null=True, blank=True)    
+    faculty_unrecorded = models.CharField(verbose_name="Fakülte", max_length=255, null=True, blank=True)
+    science_unrecorded = models.CharField(verbose_name="Bölüm", max_length=255, null=True, blank=True)
+
     reason_for_coming = models.CharField("Geliş Nedeni", max_length=3, choices=REASON_CHOCIES)
     adaptation_year = models.IntegerField("İntibak Sınıfı", choices=YEAR_CHOICES, default=1)
     adaptation_semester = models.IntegerField("İntibak Yarıyılı", choices=SEMESETER_CHOICES, default=1)
@@ -72,6 +76,8 @@ class Adaptation(models.Model):
       
     is_closed =  models.BooleanField(("Kapalı mı?"), default=False)
     is_confirmated =  models.BooleanField(("Onaylandı mı?"), default=False)
+    is_unrecorded =  models.BooleanField(("Kayıtsız mı?"), default=False)
+
     result_note = models.TextField("Sonuç Bilgisi", null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -175,9 +181,10 @@ class StudentClass(models.Model):
     adaptation = models.ForeignKey(Adaptation, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak", null=True, blank=False)      
 
     link = models.URLField("Ders İçeriği Linki", max_length=500, null=True, blank=True)
+    adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
+    
     turkish_content = models.TextField("Türkçe İçerik")
 
-    adaptation_class = models.ForeignKey(AdapatationClass, on_delete=models.CASCADE, related_name=("student_classes"), verbose_name="İntibak Dersi")      
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
