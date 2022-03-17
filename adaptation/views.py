@@ -179,6 +179,12 @@ class AdaptationComplexPDFView(LoginRequiredMixin, View):
 
         commission_members = User.objects.filter(profile__user_role=Profile.commission_member)
         commission_lead = User.objects.filter(profile__user_role=Profile.commission_lead).first()
+        print(any(commission_members))
+        print(commission_lead)
+        if not commission_lead and not any(commission_members):
+            messages.error(request, 'Lütfen önce Komisyon Lideri veya Komisyon Üyesi Ekleyin.')
+            return redirect('adaptation:adaptation_list')
+
 
         if adaptation.is_closed and adaptation.is_confirmated: 
             adaptation_classes = adaptation.get_adaptation_class_list()

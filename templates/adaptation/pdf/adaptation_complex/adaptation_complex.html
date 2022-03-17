@@ -440,14 +440,30 @@
         <table>
             <tbody>    
                 <tr class="table7row1">
-                    {% for member in commission_members %}
-                    <td style="width:33%" class="boldheader">{{member.profile.namesurname}}<br> Komisyon Üyesi</td>          
-                    
-                    {% if forloop.first %}
-                    <td style="width:33%" class="boldheader">{{commission_lead.profile.namesurname}}<br> Komisyon Başkanı</td>                           
-                    {% endif %}
+                    {% if not commission_members %}
+                        <td style="width:100%" class="boldheader">{{commission_lead.profile.namesurname}}<br> Komisyon Başkanı</td>                           
+
+                    {% elif commission_members.count == 1 %}
+                        {% for member in commission_members %}
+                            <td style="width:50%" class="boldheader">{{member.profile.namesurname}}<br> Komisyon Üyesi</td>          
+                            
+                            {% if forloop.first %}
+                                <td style="width:50%" class="boldheader">{{commission_lead.profile.namesurname}}<br> Komisyon Başkanı</td>                           
+                            {% endif %}
+                        {% endfor %}
                         
-                    {% endfor %}
+                    {% else %}
+                        {% for member in commission_members %}
+                            <td style="width:33%" class="boldheader">{{member.profile.namesurname}}<br> Komisyon Üyesi</td>          
+                        
+                            {% if forloop.first %}
+                                <td style="width:33%" class="boldheader">{{commission_lead.profile.namesurname}}<br> Komisyon Başkanı</td>                           
+                            {% endif %}
+                            
+                        {% endfor %}
+                    {% endif %}
+
+                    
                 </tr>          
             </tbody>
         </table>
