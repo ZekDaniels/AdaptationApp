@@ -61,7 +61,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         render: function (data, type, row) {
            button_url = adaptation_result_url.replace("0", data.id);
           return `
-            <a class='btn btn-sm btn-icon-split ml-auto btn-primary col-lg-12 mx-auto' href="${button_url}"><span class="icon text-white-50"><i class='text-white fas fa-list-alt'></i></span> <span class="text">Sonuç </span> </a>
+            <a class='btn btn-sm btn-icon-split ml-auto btn-primary col-lg-12 mx-auto' href="${button_url}"><span class="icon my-auto text-white-50"><i class='text-white fas fa-list-alt'></i></span> <span class="text">Sonuç </span> </a>
             `;
         },
       },
@@ -71,11 +71,11 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
             button_url = adaptation_basic_pdf_admin_url.replace("0", data.id);
             if(data.is_closed) 
             return `
-            <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto' href="${button_url}" disabled><span class="icon text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
+            <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto' href="${button_url}" disabled><span class="icon my-auto text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
             `;
             else
              return `
-             <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto disabled' href="${button_url}" disabled><span class="icon text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
+             <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto disabled' href="${button_url}" disabled><span class="icon my-auto text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
             `;
         },
       },
@@ -85,11 +85,11 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
             button_url = adaptation_complex_pdf_admin_url.replace("0", data.id);
             if(data.is_closed && data.is_confirmated) 
             return `
-            <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto' href="${button_url}" disabled><span class="icon text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
+            <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto' href="${button_url}" disabled><span class="icon my-auto text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
             `;
             else
              return `
-             <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto disabled' href="${button_url}" disabled><span class="icon text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
+             <a class='btn btn-sm btn-icon-split ml-auto btn-secondary col-lg-12 mx-auto disabled' href="${button_url}" disabled><span class="icon my-auto text-white-50"><i class='text-white fas fa-download'></i></span> <span class="text"> PDF'e git </span> </a>
             `;
         },
       },
@@ -98,7 +98,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         render: function (data, type, row) {
            button_url = adaptation_manage_url.replace("0", data.id);
           return `         
-            <a class='btn btn-sm btn-icon-split ml-auto btn-warning col-lg-12 mx-auto' href="${button_url}"><span class="icon text-white-50"><i class='text-white fas fa-edit'></i></span> <span class="text"> Düzenle </span> </a>
+            <a class='btn btn-sm btn-icon-split ml-auto btn-warning col-lg-12 mx-auto' href="${button_url}"><span class="icon my-auto text-white-50"><i class='text-white fas fa-edit'></i></span> <span class="text"> Düzenle </span> </a>
             `;
         },
       },
