@@ -51,15 +51,15 @@
 #### Backup
 
 - Let's say you have:
-    - The name of the file to extract: backup_file_2021.sql
+    - The name of the file to extract: backup_file_2022.sql
     - Database username: postgres
     - Source database name: intibak
 - Open the terminal:
 
-       pg_dump -h 127.0.0.1 -U postgres -T django_migrations intibak > backup_file_2021.sql
+       pg_dump -h 127.0.0.1 -U postgres -T django_migrations intibak > backup_file_2022.sql
 - Additionally, you can backup the database with clean parameter:
     
-       pg_dump -h 127.0.0.1 -U postgres -c -T django_migrations intibak > backup_file_2021_clean.sql
+       pg_dump -h 127.0.0.1 -U postgres -c -T django_migrations intibak > backup_file_2022_clean.sql
 - Enter your password
 - You are done
 
@@ -67,13 +67,13 @@
 WARNING: Be sure you have a full match backup file to the current models of the project!
 
 - Let's say you have:
-    - Backup filename: backup_file_2021.sql
+    - Backup filename: backup_file_2022.sql
     - Database username: postgres
     - Target database name: intibak
 - Open the terminal:
 
        python manage.py makemigrations
-       psql -h 127.0.0.1 -U postgres intibak < backup_file_2021.sql
+       psql -h 127.0.0.1 -U postgres intibak < backup_file_2022.sql
        python manage.py migrate --fake
 - Enter your password
 - You are done
