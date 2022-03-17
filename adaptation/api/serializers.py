@@ -63,7 +63,11 @@ class AdaptationListSerializer(serializers.ModelSerializer):
         return obj.is_confirmated
         
     def get_university(self, obj):
-        return obj.university.name
+        if obj.is_unrecorded:
+            return obj.university_unrecorded
+        else:
+            return obj.university.name
+
 
     class Meta:
         model = Adaptation

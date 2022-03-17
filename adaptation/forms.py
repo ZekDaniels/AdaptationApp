@@ -65,9 +65,10 @@ class AdaptationUpdateForm(ProtoAdaptionForm, StyledFormMixin):
         super().__init__(*args, **kwargs)
         self.fields['faculty'].choices = [(None, "---------")]
         self.fields['science'].choices = [(None, "---------")]
-       
-        self.fields['faculty'].choices += [(faculty.id, faculty.name) for faculty in self.instance.university.faculties.all()]
-        self.fields['science'].choices += [(science.id, science.name) for science in self.instance.faculty.sciences.all()]
+        print(self.instance.is_unrecorded)
+        if not self.instance.is_unrecorded:
+            self.fields['faculty'].choices += [(faculty.id, faculty.name) for faculty in self.instance.university.faculties.all()]
+            self.fields['science'].choices += [(science.id, science.name) for science in self.instance.faculty.sciences.all()]
 
 class AdminAdaptationUpdateForm(AdaptationUpdateForm):
 

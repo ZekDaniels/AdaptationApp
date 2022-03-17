@@ -41,7 +41,11 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         data: "university",
       },
       {
-        data: "decision_date",
+        data: null,
+        render: function (data, type, row) {
+            if(data.decision_date) return data.decision_date;
+            else return `Karar verilmedi`;
+        },
       },
 
       {
@@ -67,7 +71,7 @@ function initializeAdaptationDatatables(_table, _adaptations_list_api_url) {
         data: null,
         render: function (data, type, row) {
             button_url = adaptation_basic_pdf_admin_url.replace("0", data.id);
-            if(data.is_closed && data.is_confirmated) 
+            if(data.is_closed) 
             return `<div class="row">
             <a class='btn btn-secondary col-lg-12 mx-auto'  href="${button_url}" disabled><i class='text-white fas fa-download'></i><br> PDF'e git</a>
             </div>`;

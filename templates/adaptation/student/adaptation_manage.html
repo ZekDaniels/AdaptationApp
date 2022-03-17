@@ -151,10 +151,11 @@
             <span class="text">İntibak Başvursu Bitir</span>    
         </button>
     </div>
+    
+    {% if request.user.profile|is_allowed_user %}
     <div class="col-lg-12 mb-4 text-center">
        <h3><u>Onay Durumu</u></h3>
     </div>
-    
     <div class="col-lg-12 mb-4">
         <div class="text-center">
             <button id="deactivate_button" class="btn btn-danger btn-icon-split m-1" {% if not adaptation.is_confirmated %}disabled{% endif %}>
@@ -171,6 +172,8 @@
             </button>
         </div>
     </div>
+    {% endif %}
+
 </div>
 
 {% include "adaptation/student/components/modals.html" %}

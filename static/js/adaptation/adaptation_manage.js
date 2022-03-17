@@ -645,12 +645,10 @@ $(custom_record).on("click", function(event){
 
   }
   else {
-
     context = {}
     context['university_div'] =
     `<label>Üniversite</label>
     <select name="university" class="form-control" id="id_university">
-      ${options}
     </select>`
     
     context['faculty_div'] =
@@ -667,6 +665,7 @@ $(custom_record).on("click", function(event){
     $.each( context, function( key, value ) {     
       $(`#${key}`).html(value);
     });
+    
     fillUniversities();
     university_input = $("#id_university");
     faculty_input = $("#id_faculty");

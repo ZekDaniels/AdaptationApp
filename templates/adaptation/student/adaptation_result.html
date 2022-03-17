@@ -31,11 +31,26 @@
                     <div class="row">
 
                         {% for field in disable_adaptation_form %}
-                        <div class="form-group col-lg-4">
-                            <label>{{field.label}}</label>
-                            {{ field }}
-                            {{ field.errors }}
-                        </div>
+                        {% if not adaptation.is_unrecorded %}                             
+                                {% if field.name == 'university_unrecorded' or field.name == 'faculty_unrecorded' or field.name == 'science_unrecorded' %}
+                                {% else %}
+                                    <div id="{{field.name}}_div" class="form-group col-lg-4">
+                                        <label>{{field.label}}</label>
+                                        {{ field }}
+                                        {{ field.errors }}
+                                    </div>
+                                {% endif %}
+
+                            {% else %}
+                                {% if field.name == 'university' or field.name == 'faculty' or field.name == 'science' %}
+                                {% else %}
+                                    <div id="{% if field.name == 'university_unrecorded' %}university_div{% elif field.name == 'faculty_unrecorded' %}faculty_div{% elif field.name == 'science_unrecorded' %}science_div{% endif %}" class="form-group col-lg-4">
+                                        <label>{{field.label}}</label>
+                                        {{ field }}
+                                        {{ field.errors }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
                         {% endfor %}
 
                     </div>

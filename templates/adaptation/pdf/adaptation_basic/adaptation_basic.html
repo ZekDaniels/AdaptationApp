@@ -317,7 +317,12 @@
         <table class="table7">
             <tbody>    
                 <tr class="table7row2">
-                    <td style="margin-left: 4px;">Önceki Üniversite/Fakülte/Bölüm: {{adaptation.university}} / {{adaptation.faculty}} / {{adaptation.science}} <br> <br> </td>          
+                    <td style="margin-left: 4px;">Önceki Üniversite/Fakülte/Bölüm: 
+                    {% if adaptation.is_unrecorded %}
+                    {{adaptation.university_unrecorded}} / {{adaptation.faculty_unrecorded}} / {{adaptation.science_unrecorded}} <br> <br> </td>          
+                    {% else %}
+                    {{adaptation.university}} / {{adaptation.faculty}} / {{adaptation.science}} <br> <br> </td>          
+                    {% endif %}
                 </tr>          
             </tbody>
 

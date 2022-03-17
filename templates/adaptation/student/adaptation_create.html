@@ -27,26 +27,25 @@
                 <form id="mainForm">
                     {% csrf_token %}
                     {% for field in adaptation_create_form %}
-                    {% if field.name == 'decision_date' %}
-                    <div class="form-group" id="simple-date2">
-
-                        <label for="oneYearView">{{field.label}}</label>
-                        <div class="input-group date">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                            </div>
-                            {{field}}
-                        </div>
-                        {{field.errors}}
-                    </div>
-                    {% else %}
-                    <!-- General Element -->
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">{{field.label}}</label>
-                        {{field}}
-                        {{field.errors}}
+                    {% if forloop.first %}
+                    <div class="form-group col-lg-12 text-center">
+                        <button class="btn btn-primary" id="custom_record">                           
+                            <span class="text">                      
+                                Yeni Üniversite / Fakülte / Bölüm Seç
+                            </span>    
+                        </button>
                     </div>
                     {% endif %}
+                    <!-- General Element -->
+                    {% if field.name == 'university_unrecorded' or field.name == 'faculty_unrecorded' or field.name == 'science_unrecorded' %}
+                    {% else %}
+                        <div id="{{field.name}}_div" class="form-group col-lg-12 {% if field.name == 'university' or field.name == 'faculty' or field.name == 'science' %} border-top border-bottom border-gray p-4 {% endif %}">
+                            <label>{{field.label}}</label>
+                            {{ field }}
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                  
 
                     {% endfor %}
                     <br>
@@ -68,6 +67,10 @@
 
 {% block javascript %}
 <script>
+    is_unrecorded = false
+
+    university_list_api_url = new URL(window.location.href)
+    university_list_api_url.pathname = "{% url 'adaptation:university_list_api' %}"
     faculty_list_api_url = new URL(window.location.href) 
     faculty_list_api_url.pathname = "{% url 'adaptation:faculty_list_api' %}"
     science_list_api_url = new URL(window.location.href) 

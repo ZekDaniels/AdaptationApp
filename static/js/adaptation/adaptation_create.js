@@ -6,6 +6,11 @@ let faculty_input = $("#id_faculty");
 let science_input = $("#id_science");
 let mainForm = $("#mainForm")
 let submit_button = $("#mainForm button[type='submit']");
+const custom_record = $("#custom_record");
+
+let university = null;
+let faculty = null;
+let science = null;
 
 const cleanOptions = function (select_input , callback=null) {
   select_input.find("option").each(function () {
@@ -63,6 +68,25 @@ function getSelectionText() {
   }
 }
 
+//Adaptation Activies
+function fillUniversities() {
+  fetch(university_list_api_url)
+  .then((response) => response.json())
+  .then((data) => {
+    $("#id_university").append($('<option>', {
+      value: "",
+      text:"---------"
+    }));
+    for (option of data) {
+      $("#id_university").append($('<option>', {
+        value: option.id,
+        text: option.name
+      }));
+    }
+    
+  });
+}
+
 function updateFaculties() {
   new_value = getSelectionText(university_input)
   if (!new_value) {
@@ -102,6 +126,7 @@ function setupListeners() {
   mainForm.submit(function (event) {
     event.preventDefault();
     let formData = new FormData(this);
+    formData.append("is_unrecorded", is_unrecorded);
     let data = Object.fromEntries(formData.entries());
     let button = $(this).find("button[type='submit']").first();
     createAdaptation(data, adaptation_create_api_url, button);
@@ -136,3 +161,69 @@ function createAdaptation(_data, _url, _button) {
       }
     });
 }
+
+
+$(custom_record).on("click", function(event){
+  event.preventDefault();
+  is_unrecorded = !is_unrecorded;
+  if (is_unrecorded){
+    context = {}
+    context['university_div'] =
+    `
+    <label>Üniversite</label>
+    <input type="text" name="university_unrecorded" value="" maxlength="255" class="form-control" id="id_university_unrecorded">
+    `;
+
+    context['faculty_div'] =
+    `
+    <label>Fakülte</label>
+    <input type="text" name="faculty_unrecorded" value="" maxlength="255" class="form-control" id="id_faculty_unrecorded">
+    `;
+
+    context['science_div'] =
+    `
+    <label>Bölüm</label>
+    <input type="text" name="science_unrecorded" value="" maxlength="255" class="form-control" id="id_science_unrecorded">
+    `;
+
+    $.each( context, function( key, value ) {     
+      $(`#${key}`).html(value);
+    });
+
+  }
+  else {
+
+    context = {}
+    context['university_div'] =
+    `<label>Üniversite</label>
+    <select name="university" class="form-control" id="id_university">
+    </select>`
+    context['faculty_div'] =
+    `<label>Fakülte</label>
+    <select name="faculty" class="form-control" id="id_faculty">
+      <option value="">---------</option>
+    </select>`
+    context['science_div'] =
+    `<label>Bölüm</label>
+    <select name="science" class="form-control" id="id_science">
+      <option value="">---------</option>
+    </select>`
+
+    $.each( context, function( key, value ) {     
+      $(`#${key}`).html(value);
+    });
+    
+    fillUniversities();
+    university_input = $("#id_university");
+    faculty_input = $("#id_faculty");
+    science_input = $("#id_science");
+    
+    university_input.change(() => {
+      updateFaculties();
+    });
+    faculty_input.change(() => {
+      updateSciences();
+    });
+    
+  }
+});
