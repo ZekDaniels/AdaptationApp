@@ -9,7 +9,7 @@
  
               cmd
               py -m venv venv
-              source venv/scripts/activate
+              venv\scripts\activate
     - PyCharm:
         - File -> Settings / Project: intibak / Python Interpreter
         - Click settings icon and select Add...
