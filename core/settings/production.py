@@ -43,13 +43,3 @@ STATICFILES_DIRS = (
     os.path.join('static/fonts'),
     os.path.join('static/images'),
 )
-
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_REGION_NAME = os.getenv("AWS_S3_REGION_NAME")
-PUBLIC_MEDIA_LOCATION = os.getenv("PUBLIC_MEDIA_LOCATION")
-DEFAULT_FILE_STORAGE = os.getenv('DEFAULT_FILE_STORAGE')
-
-# MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com//{PUBLIC_MEDIA_LOCATION}/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
